@@ -9,4 +9,8 @@ class Apartment extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    public function address(){
+        return $this->hasOne('App\Address');
+    }
 }
