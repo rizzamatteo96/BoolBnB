@@ -21,5 +21,10 @@ class Apartment extends Model
     public function messages(){
         return $this->hasMany('App\Message');
     }
+
+    // Join table statistics
+    public function statistics(){
+        return $this->hasMany('App\Statistic');
+    }
     
 }
