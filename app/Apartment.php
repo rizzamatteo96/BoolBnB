@@ -16,6 +16,11 @@ class Apartment extends Model
     public function services(){
         return $this->belongsToMany('App\Service');
     }
+    
+    // Join table sponsorships
+    public function sponsorships(){
+        return $this->belongsToMany('App\Sponsorship');
+    }
 
     // Join table messages
     public function messages(){
