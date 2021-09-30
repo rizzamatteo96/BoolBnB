@@ -38,6 +38,7 @@ class User extends Authenticatable
     ];
 
 
+    // Join table apartments
     public function apartments(){
         return $this->hasMany('App\Apartment');
     }

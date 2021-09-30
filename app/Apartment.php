@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
 {
+
+    // Join table users
     public function user(){
         return $this->belongsTo('App\User');
     }
 
-    public function address(){
-        return $this->hasOne('App\Address');
-    }
-
+    // Join table services
     public function services(){
         return $this->belongsToMany('App\Service');
     }

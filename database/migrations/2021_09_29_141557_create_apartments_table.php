@@ -15,12 +15,15 @@ class CreateApartmentsTable extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
+
+            // Foreign key
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
                     ->onDelete('cascade');
 
+            // Apartment details
             $table->string('title')->required();
             $table->string('slug')->unique()->required();
             $table->text('description')->required();
@@ -31,6 +34,15 @@ class CreateApartmentsTable extends Migration
             $table->text('image')->required();
             $table->tinyInteger('visibility')->default(1);
             $table->float('daily_price', 6, 2)->nullable();
+
+            // Address section
+            $table->string('city')->required();
+            $table->string('address')->required();
+            $table->char('house_num', 20)->required();
+            $table->char('postal_code', 10)->required();
+            $table->char('latitude', 12)->required();
+            $table->char('longitude', 13)->required();
+
             $table->timestamps();
         });
     }
