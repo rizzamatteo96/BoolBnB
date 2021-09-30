@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,23 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {        
+
+        $username = null;
+
+        if(Auth::user()->name){
+
+            $username = Auth::user()->name;
+
+        } else{
+
+            $username = strstr(Auth::user()->email, '@', true);
+
+        }
+
+            $username = ucfirst($username);
+
+        return view('home', compact('username') );
+        
     }
 }
