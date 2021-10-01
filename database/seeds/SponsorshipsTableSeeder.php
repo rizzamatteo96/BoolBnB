@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Sponsorship;
 
-class SponsorshipTable extends Seeder
+class SponsorshipsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

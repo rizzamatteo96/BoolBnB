@@ -40,8 +40,10 @@ class CreateApartmentsTable extends Migration
             $table->string('address')->required();
             $table->char('house_num', 20)->required();
             $table->char('postal_code', 10)->required();
-            $table->char('latitude', 12)->required();
-            $table->char('longitude', 13)->required();
+            $table->float('latitude', 12, 10)->unsigned(false)->required();
+            $table->float('longitude', 13, 11)->unsigned(false)->required();
+            // $table->char('latitude', 12)->required();
+            // $table->char('longitude', 13)->required();
 
             $table->timestamps();
         });

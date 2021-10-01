@@ -22,6 +22,7 @@ class CreateStatisticsTable extends Migration
                     ->on('apartments');
 
             $table->dateTime('clicked_at')->required();
+            $table->ipAddress('visitor')->required();
 
             $table->timestamps();
         });

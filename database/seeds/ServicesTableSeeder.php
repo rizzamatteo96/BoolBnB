@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use App\Service;
 
-class SponsorshipTable extends Seeder
+class ServicesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
