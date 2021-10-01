@@ -1,4 +1,4 @@
-<nav class="col-2 sidebar py-5">
+<nav>
   <div class="sidebar-sticky">
       <ul class="nav flex-column border border-secondary rounded rounded-1 dashboard">
           <li class="nav-item">

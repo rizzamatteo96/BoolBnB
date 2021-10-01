@@ -78,10 +78,12 @@
         <div class="container-fluid">
             <div class="row">
                 @auth
-                    @yield('dashboard')
+                    <div class="col-2 sidebar py-5">
+                        @yield('dashboard')
+                    </div>
                 @endauth
     
-                <main role="main" class="col-10 py-4">
+                <main role="main" class="col-8 py-4">
                     @yield('content')
                 </main>
             </div>

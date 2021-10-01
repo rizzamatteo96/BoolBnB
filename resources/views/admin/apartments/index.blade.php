@@ -5,33 +5,32 @@
 @endsection
 
 @section('content')
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
+
+<table class="table mt-5">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nome appartamento</th>
+			<th scope="col">Città ubicazione</th>
+			<th scope="col">Azioni</th>
+		</tr>
+	</thead>
+	<tbody>
+		@forelse ($data as $item)
+			<tr>
+				<th scope="row">{{$item->id}}</th>
+				<td>{{$item->title}}</td>
+				<td>{{$item->city}}</td>
+				<td>
+					<a href="{{route('admin.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
+					<a href="#" class="btn btn-primary">Modifica</a>
+					<a href="#" class="btn btn-primary">Elimina</a>
+				</td>
+			</tr>
+		@empty
+			<h2>ancora nessun appartamento</h2>
+		@endforelse
+		
+	</tbody>
 </table>
 @endsection
