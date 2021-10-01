@@ -24,22 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {        
-
-        $username = null;
-
+        /*
+        Create a user name to show it on when it is logged
+        In case of name use that, in case it is not present, use the email part before @
+        */
         if(Auth::user()->name){
-
             $username = Auth::user()->name;
-
         } else{
-
             $username = strstr(Auth::user()->email, '@', true);
-
         }
+        $username = ucfirst($username);
 
-            $username = ucfirst($username);
-
-        return view('home', compact('username') );
-        
+        return view('home', compact('username'));
     }
 }

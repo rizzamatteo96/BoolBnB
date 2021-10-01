@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'BoolBnb') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -72,9 +72,52 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="container-fluid">
+            <div class="row">
+                @auth
+                <nav class="col-2 sidebar py-5">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column border border-secondary rounded rounded-1 dashboard">
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="#">
+                                    <i class="fas fa-home"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="#">
+                                    <i class="far fa-clipboard"></i>
+                                    Posts
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="#">
+                                    <i class="fas fa-users"></i>
+                                    Users
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="#">
+                                    <i class="fas fa-stream"></i>
+                                    Categories
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="#">
+                                    <i class="fas fa-tags"></i>
+                                    Tags
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                @endauth
+    
+                <main role="main" class="col-10 py-4">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
     </div>
 </body>
 </html>
