@@ -16,6 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    {{-- Fontawesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -75,42 +78,7 @@
         <div class="container-fluid">
             <div class="row">
                 @auth
-                <nav class="col-2 sidebar py-5">
-                    <div class="sidebar-sticky">
-                        <ul class="nav flex-column border border-secondary rounded rounded-1 dashboard">
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="fas fa-home"></i>
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="far fa-clipboard"></i>
-                                    Posts
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="fas fa-users"></i>
-                                    Users
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="fas fa-stream"></i>
-                                    Categories
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="fas fa-tags"></i>
-                                    Tags
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                    @yield('dashboard')
                 @endauth
     
                 <main role="main" class="col-10 py-4">

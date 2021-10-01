@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('dashboard')
+    @include('admin.partials.dashboard')
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,13 +18,7 @@
                         </div>
                     @endif
 
-                    <p class="text-center">Welcome in BoolBNB {{$username}}</p>
-
-                    <div class="row justify-content-around">
-                        <a href="{{route('userreg.apartments.index')}}" class="btn btn-primary">Vai alla pagina utente registrato</a>
-                        <a href="#" class="btn btn-primary">Vai alla pagina utente amministratore</a>
-                    </div>
-
+                    <p class="text-center">Welcome back admin</p>
 
                 </div>
             </div>
