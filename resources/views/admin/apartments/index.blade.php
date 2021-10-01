@@ -23,8 +23,8 @@
 				<td>{{$item->city}}</td>
 				<td>
 					<a href="{{route('admin.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
-					<a href="#" class="btn btn-primary">Modifica</a>
-					<a href="#" class="btn btn-primary">Elimina</a>
+					<a href="#" class="btn btn-warning">Modifica</a>
+					<a href="#" class="btn btn-danger">Elimina</a>
 				</td>
 			</tr>
 		@empty

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\UserReg;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Apartment;
 
 class ApartmentController extends Controller
 {
@@ -14,7 +16,12 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        return view('userreg.apartments.index');
+        // Retrive apartment list of the logged  user
+        $user = Auth::user()->id;
+        $data = Apartment::where('user_id', $user)->get();
+        // dd($data);
+        
+        return view('userreg.apartments.index', compact('data'));
     }
 
     /**
