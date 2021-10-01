@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
 {
-
+    // add table connection
     protected $table = 'apartments';
 
     // define fillable data in DB
