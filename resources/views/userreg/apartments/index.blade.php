@@ -7,7 +7,10 @@
 @section('content')
 
 {{-- @dd($data) --}}
-<table class="table mt-5">
+
+<a href="{{route('userreg.apartments.create')}}" class="btn btn-secondary mt-4">Aggiungi appartamento</a>
+
+<table class="table mt-3">
 	<thead>
 		<tr>
 			<th scope="col">#</th>
@@ -23,8 +26,8 @@
 				<td>{{$item->title}}</td>
 				<td>{{$item->city}}</td>
 				<td>
-					<a href="{{route('admin.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
-					<a href="#" class="btn btn-warning">Modifica</a>
+					<a href="{{route('userreg.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
+					<a href="" class="btn btn-warning">Modifica</a>
 					<a href="#" class="btn btn-danger">Elimina</a>
 				</td>
 			</tr>

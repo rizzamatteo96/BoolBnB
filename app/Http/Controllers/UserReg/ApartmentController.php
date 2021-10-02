@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Apartment;
+use App\Service;
 
 class ApartmentController extends Controller
 {
@@ -31,7 +32,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::all();
+        return view('userreg.apartments.create', compact('services'));
     }
 
     /**
@@ -51,9 +53,9 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Apartment $apartment)
     {
-        //
+        return view('userreg.apartments.show', compact('apartment'));
     }
 
     /**
