@@ -18,7 +18,7 @@
 
         <div class="col-2">
             {{-- Apartment image --}}
-            <img src="https://picsum.photos/200/300" alt="{{$apartment->title}}">
+            <img src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}">
         </div>
     </div>
 

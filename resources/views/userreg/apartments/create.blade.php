@@ -173,7 +173,7 @@
         </div>
         {{-- Fine - Campo inserimento del Indirizzo --}}
 
-        {{-- Inizio - Campo di selezione dei tags --}}
+        {{-- Inizio - Campo di selezione dei services --}}
         <div class="mb-3">
             @foreach ($services as $service)
                 <span class="mx-1">
@@ -185,7 +185,7 @@
                 </span>
             @endforeach
         </div>
-        {{-- Fine - Campo di selezione dei tags --}}
+        {{-- Fine - Campo di selezione dei services --}}
 
 
         <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left me-2"></i> Torna indietro</a>
