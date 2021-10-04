@@ -4,6 +4,8 @@ namespace App\Http\Controllers\UserReg;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -28,14 +30,13 @@ class HomeController extends Controller
         Create a user name to show it on when it is logged
         In case of name use that, in case it is not present, use the email part before @
         */
-        // if(Auth::user()->name){
-        //     $username = Auth::user()->name;
-        // } else{
-        //     $username = strstr(Auth::user()->email, '@', true);
-        // }
-        // $username = ucfirst($username);
+        if(Auth::user()->name){
+            $username = Auth::user()->name;
+        } else{
+            $username = strstr(Auth::user()->email, '@', true);
+        }
+        $username = ucfirst($username);
 
-        // return view('userreg.home', compact('username'));
-        return view('userreg.home');
+        return view('userreg.home', compact('username'));
     }
 }

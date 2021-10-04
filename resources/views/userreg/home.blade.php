@@ -18,8 +18,7 @@
                         </div>
                     @endif
 
-                    {{-- <p class="text-center">Welcome in BoolBNB {{$username}}</p> --}}
-                    <p class="text-center">Welcome in BoolBNB</p>
+                    <p class="text-center">Welcome in BoolBNB {{$username}}</p>
 
                 </div>
             </div>
