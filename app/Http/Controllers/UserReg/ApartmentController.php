@@ -99,7 +99,7 @@ class ApartmentController extends Controller
         $newApartment['longitude'] = 11.45460100000;
 
         // seleziono l'utente loggato
-        $newApartment['user_id'] = Auth::user()->id;;
+        $newApartment['user_id'] = Auth::user()->id;
 
         // Invio i dati e li salvo nel DB
         $upApartment->fill($newApartment);
@@ -128,9 +128,11 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
-        //
+        $services = Service::all();
+
+        return view('userreg.apartments.edit', compact('apartment','services'));
     }
 
     /**
@@ -140,9 +142,65 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+        // Creo le richieste di validazione
+        $request->validate([
+            // Apartment details
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'n_rooms' => 'required|min:1|numeric',
+            'n_beds' => 'required|min:1|numeric',
+            'n_bathrooms' => 'required|min:1|numeric',
+            'n_square_meters' => 'required|min:1|numeric',
+            'daily_price' => 'nullable|min:1|numeric',
+            'image' => 'image',
+            
+            // Address section
+            'city' => 'required|max:255',
+            'address' => 'required|max:255',
+            'house_num' => 'required|max:20',
+            'postal_code' => 'required|max:10'
+        ]);
+
+        // recupero i dati dal form
+        $editApartment = $request->all();
+
+        // imposto lo slug dal titolo verificando che non sia già presente nella tabella essendo questo univoco
+        $editSlug = Str::slug($editApartment['title'], '-');
+
+        if($editSlug != $apartment->slug){
+
+            $newEditSlug = $editSlug;
+            $counter = 0;
+            while(Apartment::where('slug', $newEditSlug)->first()){
+                $counter++;
+                $newEditSlug = $editSlug . '-' . $counter;
+            }
+            $editApartment['slug'] = $newEditSlug;
+        }
+
+        if(array_key_exists('image', $editApartment)){
+            // Se esista già una foto, elimino la vecchia immagine prima di scrivere quella nuova
+            if($apartment->image){
+                Storage::delete($apartment->image);
+            }
+            // salvo l'immagine e ne recupero il percorso
+            $image_path = Storage::put('covers', $editApartment['image']);
+            // salvo il tutto nella tabella posts
+            $editApartment['image'] = $image_path;
+        }
+
+
+        // forzo lat e long per test
+        // $editApartment['latitude'] = 45.7737690000;
+        // $editApartment['longitude'] = 11.45460100000;
+
+        // carico le modifiche nel DB
+        $apartment->update($editApartment);
+        $apartment->services()->sync($request->services);
+
+        return redirect()->route('userreg.apartments.index');
     }
 
     /**
