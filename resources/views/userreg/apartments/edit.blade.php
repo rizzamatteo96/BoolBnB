@@ -15,9 +15,9 @@
 
 
         {{-- Sezione titolo & visibilità --}}
-        <div class="row align-items-end">
+        <div class="row mb-3 align-items-end">
             {{-- Inizio - Campo inserimento del titolo --}}
-            <div class="mb-3 col-10">
+            <div class="col-10">
                 <label for="title" class="form-label">Titolo</label>
                 <input type="text" class="form-control
                 @error('title') 
@@ -30,8 +30,8 @@
             </div>
             {{-- Fine - Campo inserimento del titolo --}}
 
-            {{-- Inizio - Campo inserimento del titolo --}}
-            <div class="mb-3 col-1">
+            {{-- Start - visibility switch --}}
+            <div class="col-2">
                 <div class="custom-control custom-switch">
                     {{-- @dd(old('visibility')) --}}
                     <input name="visibility" type="checkbox" class="custom-control-input" id="customSwitch1" 
@@ -43,7 +43,7 @@
                     <label class="custom-control-label" for="customSwitch1">Visibilità</label>
                 </div>
             </div>
-            {{-- Fine - Campo inserimento del titolo --}}
+            {{-- End - visibility switch --}}
         </div>
         {{-- Fine - Sezione titolo & visibilità --}}
 

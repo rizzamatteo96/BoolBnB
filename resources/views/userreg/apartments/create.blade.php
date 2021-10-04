@@ -10,19 +10,35 @@
         {{-- generate token --}}
         @csrf
         
-        {{-- Inizio - Campo inserimento del titolo --}}
-        <div class="mb-3">
-            <label for="title" class="form-label">Titolo</label>
-            <input type="text" class="form-control
-            @error('title') 
-                is-invalid 
-            @enderror" 
-            id="title" name="title" value="{{old('title')}}">
-            @error('title')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+        {{-- Start - Input title field & visibility switch --}}
+        <div class="row mb-3 align-items-end">
+            {{-- start - Input title field --}}
+            <div class="col-10">
+                <label for="title" class="form-label">Titolo</label>
+                <input type="text" class="form-control
+                @error('title') 
+                    is-invalid 
+                @enderror" 
+                id="title" name="title" value="{{old('title')}}">
+                @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            {{-- Fine - Input title field --}}
+
+            {{-- Start - visibility switch --}}
+            <div class="col-2">
+                <div class="custom-control custom-switch">
+                    <input name="visibility" type="checkbox" class="custom-control-input" id="customSwitch1" 
+                    @if(old('visibility') == 'on')
+                        checked
+                    @endif>
+                    <label class="custom-control-label" for="customSwitch1">Visibilità</label>
+                </div>
+            </div>
+            {{-- End - visibility switch --}}
         </div>
-        {{-- Fine - Campo inserimento del titolo --}}
+        {{-- End - Input title field & visibility switch --}}
 
         {{-- Inizio - Campo caricamento foto --}}
         <div class="mb-3">
