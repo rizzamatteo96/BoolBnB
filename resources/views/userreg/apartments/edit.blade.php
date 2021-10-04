@@ -32,9 +32,9 @@
 
             {{-- Inizio - Campo inserimento del titolo --}}
             <div class="mb-3">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Visibilità</label>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Visibilità</label>
                 </div>
             </div>
             {{-- Fine - Campo inserimento del titolo --}}
