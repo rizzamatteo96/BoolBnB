@@ -196,6 +196,8 @@ class ApartmentController extends Controller
         // $editApartment['latitude'] = 45.7737690000;
         // $editApartment['longitude'] = 11.45460100000;
 
+        
+
         // carico le modifiche nel DB
         $apartment->update($editApartment);
         $apartment->services()->sync($request->services);

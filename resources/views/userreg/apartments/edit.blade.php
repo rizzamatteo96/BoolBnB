@@ -12,20 +12,35 @@
 
         {{-- imposto il metodo per il form --}}
         @method('PUT')
-        
-        {{-- Inizio - Campo inserimento del titolo --}}
-        <div class="mb-3">
-            <label for="title" class="form-label">Titolo</label>
-            <input type="text" class="form-control
-            @error('title') 
-                is-invalid 
-            @enderror" 
-            id="title" name="title" value="{{old('title', $apartment->title)}}">
-            @error('title')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+
+
+        {{-- Sezione titolo & visibilità --}}
+        <div class="row">
+            {{-- Inizio - Campo inserimento del titolo --}}
+            <div class="mb-3">
+                <label for="title" class="form-label">Titolo</label>
+                <input type="text" class="form-control
+                @error('title') 
+                    is-invalid 
+                @enderror" 
+                id="title" name="title" value="{{old('title', $apartment->title)}}">
+                @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            {{-- Fine - Campo inserimento del titolo --}}
+
+            {{-- Inizio - Campo inserimento del titolo --}}
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Visibilità</label>
+                </div>
+            </div>
+            {{-- Fine - Campo inserimento del titolo --}}
         </div>
-        {{-- Fine - Campo inserimento del titolo --}}
+        {{-- Fine - Sezione titolo & visibilità --}}
+
 
         {{-- Sezione immagine --}}
         <div class="row ">
