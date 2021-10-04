@@ -191,6 +191,13 @@ class ApartmentController extends Controller
             $editApartment['image'] = $image_path;
         }
 
+        // dd($editApartment['visibility']);
+
+        if(isset($editApartment['visibility'])){
+            $editApartment['visibility'] = 1;
+        } else{
+            $editApartment['visibility'] = 0;
+        };
 
         // forzo lat e long per test
         // $editApartment['latitude'] = 45.7737690000;

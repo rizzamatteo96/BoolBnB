@@ -33,7 +33,7 @@
             {{-- Inizio - Campo inserimento del titolo --}}
             <div class="mb-3">
                 <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <input name="visibility" type="checkbox" class="custom-control-input" id="customSwitch1">
                     <label class="custom-control-label" for="customSwitch1">Visibilità</label>
                 </div>
             </div>
