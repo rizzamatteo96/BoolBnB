@@ -84,7 +84,7 @@
 
             {{-- Start - number of bathrooms input field --}}
             <div class="col-3">
-                <label for="n_bathrooms" class="form-label">Numero di posti letto</label>
+                <label for="n_bathrooms" class="form-label">Numero di bagni</label>
                 <input type="number" class="form-control
                 @error('n_bathrooms') 
                     is-invalid 
