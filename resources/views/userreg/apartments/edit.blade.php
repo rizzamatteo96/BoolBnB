@@ -33,8 +33,11 @@
             {{-- Inizio - Campo inserimento del titolo --}}
             <div class="mb-3 col-1">
                 <div class="custom-control custom-switch">
+                    {{-- @dd(old('visibility')) --}}
                     <input name="visibility" type="checkbox" class="custom-control-input" id="customSwitch1" 
-                    @if ($apartment->visibility)
+                    @if (null == old('visibility') && $apartment->visibility)
+                        checked
+                    @elseif(old('visibility') == 'on')
                         checked
                     @endif>
                     <label class="custom-control-label" for="customSwitch1">Visibilità</label>
