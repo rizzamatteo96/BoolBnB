@@ -191,8 +191,6 @@ class ApartmentController extends Controller
             $editApartment['image'] = $image_path;
         }
 
-        // dd($editApartment['visibility']);
-
         if(isset($editApartment['visibility'])){
             $editApartment['visibility'] = 1;
         } else{

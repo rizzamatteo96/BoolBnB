@@ -15,9 +15,9 @@
 
 
         {{-- Sezione titolo & visibilità --}}
-        <div class="row">
+        <div class="row align-items-end">
             {{-- Inizio - Campo inserimento del titolo --}}
-            <div class="mb-3">
+            <div class="mb-3 col-10">
                 <label for="title" class="form-label">Titolo</label>
                 <input type="text" class="form-control
                 @error('title') 
@@ -31,9 +31,12 @@
             {{-- Fine - Campo inserimento del titolo --}}
 
             {{-- Inizio - Campo inserimento del titolo --}}
-            <div class="mb-3">
+            <div class="mb-3 col-1">
                 <div class="custom-control custom-switch">
-                    <input name="visibility" type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <input name="visibility" type="checkbox" class="custom-control-input" id="customSwitch1" 
+                    @if ($apartment->visibility)
+                        checked
+                    @endif>
                     <label class="custom-control-label" for="customSwitch1">Visibilità</label>
                 </div>
             </div>

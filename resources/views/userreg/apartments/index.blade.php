@@ -15,6 +15,7 @@
 					<th scope="col">#</th>
 					<th scope="col">Nome appartamento</th>
 					<th scope="col">Città ubicazione</th>
+					<th scope="col">Visibilità</th>
 					<th scope="col">Azioni</th>
 				</tr>
 			</thead>
@@ -25,6 +26,13 @@
 						<th scope="row">{{$key+1}}</th>
 						<td>{{$item->title}}</td>
 						<td>{{$item->city}}</td>
+						<td>
+							@if ($item->visibility)
+								<i class="far fa-eye"></i>
+							@else
+								<i class="far fa-eye-slash"></i>
+							@endif
+						</td>
 						<td>
 							<a href="{{route('userreg.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
 							<a href="{{route('userreg.apartments.edit', $item->id)}}" class="btn btn-warning">Modifica</a>
