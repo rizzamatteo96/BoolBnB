@@ -81,51 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/register-validation.js":
-/*!*********************************************!*\
-  !*** ./resources/js/register-validation.js ***!
-  \*********************************************/
+/***/ "./resources/js/front.js":
+/*!*******************************!*\
+  !*** ./resources/js/front.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function validateEmail(email) {
-  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
-}
 
-function validate() {
-  var $result = $("#result");
-  var email = $("#email").val();
-  $result.text("");
-
-  if (validateEmail(email)) {
-    $result.text(email + " is valid :)");
-    $result.css("color", "green");
-  } else {
-    $result.text(email + " is not valid :(");
-    $result.css("color", "red");
-  }
-
-  return false;
-}
-
-$("#email").on("input", validate);
 
 /***/ }),
 
-/***/ 1:
-/*!***************************************************!*\
-  !*** multi ./resources/js/register-validation.js ***!
-  \***************************************************/
+/***/ 2:
+/*!*************************************!*\
+  !*** multi ./resources/js/front.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\Progetto finale\BoolBnB\resources\js\register-validation.js */"./resources/js/register-validation.js");
+module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\Progetto finale\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
