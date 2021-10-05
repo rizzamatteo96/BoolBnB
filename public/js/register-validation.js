@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -118,14 +118,26 @@ $("#email").on("input", validate);
 
 /***/ }),
 
-/***/ 1:
-/*!***************************************************!*\
-  !*** multi ./resources/js/register-validation.js ***!
-  \***************************************************/
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!*****************************************************************************!*\
+  !*** multi ./resources/js/register-validation.js ./resources/sass/app.scss ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ADMIN\documents\boolean\esercitazioni\esercizi\mamp_public\boolbnb\resources\js\register-validation.js */"./resources/js/register-validation.js");
+__webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\Progetto finale\BoolBnB\resources\js\register-validation.js */"./resources/js/register-validation.js");
+module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\Progetto finale\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
