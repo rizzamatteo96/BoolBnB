@@ -117,9 +117,18 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Apartment $apartment)
+    public function show($id)
     {
-        return view('userreg.apartments.show', compact('apartment'));
+        // load apartment id and user id
+        $apartment = Apartment::where('id', $id)->first();
+        $user = Auth::user()->id;
+
+        // check if the apartment is one of the logged user otherwise go to 404 page
+        if($apartment && $apartment->user_id == $user){
+            return view('userreg.apartments.show', compact('apartment'));
+        } else {
+            abort(404);
+        }
     }
 
     /**
