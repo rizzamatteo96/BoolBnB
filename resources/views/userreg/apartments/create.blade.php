@@ -29,6 +29,7 @@
             {{-- Start - visibility switch --}}
             <div class="col-2">
                 <div class="custom-control custom-switch">
+                    {{-- @dd(old('visibility')) --}}
                     <input name="visibility" type="checkbox" class="custom-control-input" id="customSwitch1" 
                     @if(old('visibility') == 'on')
                         checked
