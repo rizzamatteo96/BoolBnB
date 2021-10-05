@@ -125,7 +125,7 @@ $("#email").on("input", validate);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\Progetto finale\BoolBnB\resources\js\register-validation.js */"./resources/js/register-validation.js");
+module.exports = __webpack_require__(/*! C:\Users\ADMIN\documents\boolean\esercitazioni\esercizi\mamp_public\boolbnb\resources\js\register-validation.js */"./resources/js/register-validation.js");
 
 
 /***/ })

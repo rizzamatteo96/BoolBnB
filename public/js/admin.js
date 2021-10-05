@@ -115,8 +115,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\Progetto finale\BoolBnB\resources\js\admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\Progetto finale\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\ADMIN\documents\boolean\esercitazioni\esercizi\mamp_public\boolbnb\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Users\ADMIN\documents\boolean\esercitazioni\esercizi\mamp_public\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
