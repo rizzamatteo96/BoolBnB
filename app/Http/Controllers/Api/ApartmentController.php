@@ -15,7 +15,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $apartments = Apartment::all();
+        $apartments = Apartment::where('visibility', 1)->get();
         return response()->json([
             'success' => true,
             'results' => $apartments

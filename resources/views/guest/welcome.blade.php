@@ -28,9 +28,10 @@
                 </div>
             @endif
 
-            <div id="app"></div>
-
-            <script src="{{ asset('js/front.js') }}"></script>
         </div>
+        
+        <div id="root"></div>
+
+        <script src="{{ asset('js/front.js') }}"></script>
     </body>
 </html>

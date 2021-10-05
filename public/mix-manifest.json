@@ -1,6 +1,5 @@
 {
-    "/js/admin.js": "/js/admin.js",
-    "/css/app.css": "/css/app.css",
     "/js/front.js": "/js/front.js",
-    "/js/register-validation.js": "/js/register-validation.js"
+    "/js/register-validation.js": "/js/register-validation.js",
+    "/css/app.css": "/css/app.css"
 }
