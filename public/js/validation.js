@@ -98,11 +98,11 @@ window.validateEmail = function (input) {
 
   if (input.value.match(validRegex)) {
     alert("Valid email address!");
-    document.form1.text1.focus();
+    document.registerForm.email.focus();
     return true;
   } else {
     alert("Invalid email address!");
-    document.form1.text1.focus();
+    document.registerForm.email.focus();
     return false;
   }
 };
@@ -116,7 +116,7 @@ window.validateEmail = function (input) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ADMIN\documents\boolean\esercitazioni\esercizi\mamp_public\boolbnb\resources\js\validation.js */"./resources/js/validation.js");
+module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\Progetto finale\BoolBnB\resources\js\validation.js */"./resources/js/validation.js");
 
 
 /***/ })
