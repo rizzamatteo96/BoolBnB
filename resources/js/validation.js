@@ -1,3 +1,9 @@
+
+
+
+// ************ VALIDATION REGISTER.BLADE.PHP *******************
+
+
 window.validateEmail = function(input) {
 
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -74,3 +80,24 @@ window.verifyConfPass = function(password, confPass) {
 //   }
 
 // }
+
+// ************ VALIDATION CREATE.BLADE.PHP *******************
+
+
+window.verifyTitle = function(tit) {
+
+  var lengthTitle = tit.length;
+
+  if(lengthTitle === 0) {
+
+    alert('non funziona')
+    document.getElementById('valTitle').innerHTML = 'Campo Vuoto';
+
+  }else {
+
+    alert('funziona')
+
+  }
+
+
+}
