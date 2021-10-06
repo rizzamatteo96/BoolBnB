@@ -66,12 +66,27 @@ window.verifyConfPass = function (password, confPass) {
 window.verifyTitle = function (input) {
   var title = input.value;
 
-  if (title.length === 0) {
+  if (title == '') {
     document.getElementById('valTitle').innerHTML = 'Campo Vuoto';
     return false;
   } else {
     document.getElementById('valTitle').innerHTML = '';
   }
+};
+
+window.verifyDescripton = function (input) {
+  var text = input.value;
+
+  if (text == '' || text == null || text == ' ') {
+    document.getElementById('valDescription').innerHTML = 'Campo Vuoto';
+    return false;
+  } else {
+    document.getElementById('valDescription').innerHTML = '';
+  }
+};
+
+window.prova = function (test) {
+  console.log(test.value.length);
 };
 /******/ })()
 ;

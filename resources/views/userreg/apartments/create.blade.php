@@ -50,6 +50,7 @@
             @error('image') 
                 is-invalid 
             @enderror">
+
             @error('image')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -64,7 +65,12 @@
             @error('description') 
                 is-invalid 
             @enderror" 
-            id="description" name="description" rows="5"> {{old('description')}}</textarea>
+            id="description" name="description" rows="5" onfocusout="verifyDescripton(description)"> {{old('description')}}</textarea>
+            
+            {{-- Add error write --}}
+            <span id="valDescription" class="btn-outline-danger"></span>
+
+
             @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
