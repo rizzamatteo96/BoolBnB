@@ -11,4 +11,7 @@ window.validateEmail = function(input) {
     document.registerForm.email.focus();
     return false;
   }
-}
+};
+
+
+

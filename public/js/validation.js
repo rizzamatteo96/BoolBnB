@@ -116,7 +116,7 @@ window.validateEmail = function (input) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ADMIN\documents\boolean\esercitazioni\esercizi\mamp_public\boolbnb\resources\js\validation.js */"./resources/js/validation.js");
+module.exports = __webpack_require__(/*! C:\Users\ADMIN\Documents\Boolean\Esercitazioni\Esercizi\mamp_public\BoolBnB\resources\js\validation.js */"./resources/js/validation.js");
 
 
 /***/ })

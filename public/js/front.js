@@ -57596,7 +57596,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ADMIN\documents\boolean\esercitazioni\esercizi\mamp_public\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\ADMIN\Documents\Boolean\Esercitazioni\Esercizi\mamp_public\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
