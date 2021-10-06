@@ -1,8 +1,10 @@
 <template>
   <div>
-    <Header/>
-    <Main/>
+        <Header/>
+        <Main/>
   </div>
+
+
 </template>
 
 <script>

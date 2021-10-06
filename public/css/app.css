@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -464,7 +465,7 @@ mark,
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "\2014\A0";
+  content: "— ";
 }
 
 .img-fluid {
@@ -7326,7 +7327,6 @@ button.bg-dark:focus {
 .user-select-all {
   -webkit-user-select: all !important;
      -moz-user-select: all !important;
-      -ms-user-select: all !important;
           user-select: all !important;
 }
 
@@ -7369,6 +7369,7 @@ button.bg-dark:focus {
 }
 
 .position-sticky {
+  position: -webkit-sticky !important;
   position: sticky !important;
 }
 
@@ -7388,8 +7389,9 @@ button.bg-dark:focus {
   z-index: 1030;
 }
 
-@supports (position: sticky) {
+@supports ((position: -webkit-sticky) or (position: sticky)) {
   .sticky-top {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;

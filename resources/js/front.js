@@ -9,7 +9,7 @@
  window.Vue = require('vue');
  window.axios = require('axios');
 
- import App from './views/App';
+ import App from './views/App.vue';
  import Vue from 'vue';
 
 const app = new Vue({
