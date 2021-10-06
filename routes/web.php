@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return view('guest.welcome');
-});
+// Route::get('/', function () {
+//     return view('guest.welcome');
+// });
 
 Route::middleware('auth')->namespace('UserReg')->prefix('userreg')->name('userreg.')
     ->group(function() {
@@ -39,3 +39,5 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
     Route::resource('/services', 'ServiceController');
     Route::resource('/sponsorships', 'SponsorshipController');
 });
+
+Route::get('/{any?}', 'HomeController@index')->where('any', '.*');
