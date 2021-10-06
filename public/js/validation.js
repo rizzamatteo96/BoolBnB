@@ -7,11 +7,11 @@ window.validateEmail = function (input) {
   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if (input.value.match(validRegex)) {
-    document.registerForm.email.focus();
+    // document.registerForm.email.focus();
     return true;
   } else {
-    alert("Invalid email address!");
-    document.registerForm.email.focus();
+    alert("Invalid email address!"); // document.registerForm.email.focus();
+
     return false;
   }
 };
@@ -26,6 +26,7 @@ window.verifyPassword = function (input) {
     return true;
   } else {
     document.getElementById('validation-password').innerHTML = 'Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character and should be between 8 and 15 characters';
+    return false;
   }
 };
 
@@ -37,6 +38,7 @@ window.verifyPasswordOnSubmit = function (input) {
 
   if (!userPassword.match(myparams)) {
     alert('Invalid password');
+    return false;
   }
 };
 /******/ })()
