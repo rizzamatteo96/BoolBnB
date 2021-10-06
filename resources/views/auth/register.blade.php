@@ -62,7 +62,9 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" onfocusout="verifyPassword(password)" name="password" required autocomplete="new-password">
+
+                                <span id="validation-password" class="btn-outline-danger"></span>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -85,7 +87,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" onclick="prova()" class="btn btn-primary">
+                                <button type="submit" onclick="verifyPasswordOnSubmit(password)" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>
