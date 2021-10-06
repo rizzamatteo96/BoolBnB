@@ -78,16 +78,24 @@
                         {{-- password confirmation --}}
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            
+                            
+
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                               
+                                <input id="password-confirm" type="password" class="form-control" onfocusout="verifyConfPass(password,password-confirm)" name="password_confirmation" required autocomplete="new-password">
+                                
+                                {{-- Add error write --}}
+                                <span id="validation-ConfPass" class="btn-outline-danger"></span>
+
                             </div>
                         </div>
                         {{-- end password confirmation --}}
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" onclick="verifyPasswordOnSubmit(password)" class="btn btn-primary">
+                                <button type="submit" onclick="verifyConfPassOnSubmit(password, confPass)" onclick="verifyPasswordOnSubmit(password)" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>

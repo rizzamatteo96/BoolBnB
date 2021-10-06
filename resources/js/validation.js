@@ -41,3 +41,36 @@ window.verifyPasswordOnSubmit = function(input) {
     return false;
   }
 };
+
+
+window.verifyConfPass = function(password, confPass) {
+
+  var confirm = confPass.value;
+  var pass = password.value;
+
+  if(confirm === pass) {
+
+    return true;
+
+  } else {
+
+    document.getElementById('validation-ConfPass').innerHTML = 'Non uguale';
+
+  }
+
+}
+
+
+// window.verifyConfPassOnSubmit = function(password, confPass) {
+
+//   var confirm = confPass.value;
+//   var pass = password.value;
+
+//   // Validate password
+//   if(confirm != pass){
+
+//     alert('Password non uguale');
+
+//   }
+
+// }
