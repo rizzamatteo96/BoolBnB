@@ -1,3 +1,9 @@
+
+
+
+// ************ VALIDATION REGISTER.BLADE.PHP *******************
+
+
 window.validateEmail = function(input) {
 
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -41,3 +47,57 @@ window.verifyPasswordOnSubmit = function(input) {
     return false;
   }
 };
+
+
+window.verifyConfPass = function(password, confPass) {
+
+  var confirm = confPass.value;
+  var pass = password.value;
+
+  if(confirm === pass) {
+
+    return true;
+
+  } else {
+
+    document.getElementById('validation-ConfPass').innerHTML = 'Non uguale';
+
+  }
+
+}
+
+
+// window.verifyConfPassOnSubmit = function(password, confPass) {
+
+//   var confirm = confPass.value;
+//   var pass = password.value;
+
+//   // Validate password
+//   if(confirm != pass){
+
+//     alert('Password non uguale');
+
+//   }
+
+// }
+
+// ************ VALIDATION CREATE.BLADE.PHP *******************
+
+
+window.verifyTitle = function(tit) {
+
+  var lengthTitle = tit.length;
+
+  if(lengthTitle === 0) {
+
+    alert('non funziona')
+    document.getElementById('valTitle').innerHTML = 'Campo Vuoto';
+
+  }else {
+
+    alert('funziona')
+
+  }
+
+
+}

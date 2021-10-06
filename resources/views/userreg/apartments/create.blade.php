@@ -19,7 +19,25 @@
                 @error('title') 
                     is-invalid 
                 @enderror" 
+
+
+                {{-- -- --}}
+                onfocusout="verifyTitle(title)"
+
+
+
+
                 id="title" name="title" value="{{old('title')}}">
+
+
+
+                {{-- Add error write --}}
+                <span id="valTitle" class="btn-outline-danger"></span>
+
+
+
+
+
                 @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
