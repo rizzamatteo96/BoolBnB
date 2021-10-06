@@ -69,6 +69,8 @@ window.verifyTitle = function (input) {
   if (title.length === 0) {
     document.getElementById('valTitle').innerHTML = 'Campo Vuoto';
     return false;
+  } else {
+    document.getElementById('valTitle').innerHTML = '';
   }
 };
 /******/ })()
