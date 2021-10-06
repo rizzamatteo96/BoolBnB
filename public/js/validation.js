@@ -63,14 +63,12 @@ window.verifyConfPass = function (password, confPass) {
 // ************ VALIDATION CREATE.BLADE.PHP *******************
 
 
-window.verifyTitle = function (tit) {
-  var lengthTitle = tit.length;
+window.verifyTitle = function (input) {
+  var title = input.value;
 
-  if (lengthTitle === 0) {
-    alert('non funziona');
+  if (title.length === 0) {
     document.getElementById('valTitle').innerHTML = 'Campo Vuoto';
-  } else {
-    alert('funziona');
+    return false;
   }
 };
 /******/ })()

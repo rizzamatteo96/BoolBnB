@@ -14,29 +14,13 @@
         <div class="row mb-3 align-items-end">
             {{-- start - Input title field --}}
             <div class="col-10">
-                <label for="title" class="form-label">Titolo</label>
-                <input type="text" class="form-control
-                @error('title') 
-                    is-invalid 
-                @enderror" 
 
+                <label for="apartmenttitle" class="form-label">Titolo</label>
 
-                {{-- -- --}}
-                onfocusout="verifyTitle(title)"
-
-
-
-
-                id="title" name="title" value="{{old('title')}}">
-
-
+                <input id="apartmenttitle" type="text" class="form-control @error('title')is-invalid @enderror" onfocusout="verifyTitle(apartmenttitle)" name="title" value="{{old('title')}}" required>
 
                 {{-- Add error write --}}
                 <span id="valTitle" class="btn-outline-danger"></span>
-
-
-
-
 
                 @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
