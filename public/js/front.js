@@ -38642,7 +38642,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container--logo" }, [
       _c("img", {
         staticClass: "container--logo--image",
-        attrs: { src: "", alt: "" }
+        attrs: { src: "img/boolbeb-icona.svg", alt: "" }
       })
     ])
   },

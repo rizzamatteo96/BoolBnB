@@ -4,7 +4,7 @@
 
         <div class="container--logo">
 
-            <img class="container--logo--image" src="" alt="">
+            <img class="container--logo--image" src="img/boolbeb-icona.svg" alt="">
         
         </div>
        
