@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+  <h1>ciao sono home</h1>
     <div class="row justify-content-around">
       <div class="card col-5 mb-3" v-for="apartment in apartments" :key="apartment.id">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
@@ -11,7 +12,6 @@
       </div>
     </div>
   </div>
-  <!-- <h1>ciao sono home</h1> -->
 </template>
 
 <script>
