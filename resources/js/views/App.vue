@@ -1,6 +1,8 @@
 <template>
   <div>
     <Header/>
+    <HeaderCopy/>
+
     <!-- <Main/> -->
 
     <div class="container">
@@ -12,12 +14,15 @@
 </template>
 
 <script>
-import Header from '../components/Header';
+//import Header from '../components/Header';
+import HeaderCopy from '../components/HeaderCopy';
+
 
 export default {
   name: 'App',
   components: {
-    Header
+    //Header,
+    HeaderCopy
   }
 }
 </script>
