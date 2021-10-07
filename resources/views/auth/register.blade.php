@@ -15,7 +15,7 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-left">{{ __('Name') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                         <div class="form-group row">
                             <label for="lastname" class="col-md-4 col-form-label text-md-left">{{ __('Lastname') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}"  autocomplete="lastname" autofocus>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                         <div class="form-group row">
                             <label for="birth" class="col-md-4 col-form-label text-md-left">{{ __('Date of birth') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <input id="birth" type="date" class="form-control" name="date_of_birth" value="{{ old('date_of_birth') }}"  autocomplete="date_of_birth" autofocus>
                             </div>
                         </div>
@@ -45,8 +45,10 @@
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-left">{{ __('E-Mail Address *') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" onfocusout="validateEmail(email)" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                <span id="user-email" class="text-danger"></span>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -61,10 +63,10 @@
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-left">{{ __('Password *') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" onfocusout="verifyPassword(password)" name="password" required autocomplete="new-password">
 
-                                <span id="validation-password" class="btn-outline-danger"></span>
+                                <span id="validation-password" class="text-danger"></span>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -79,12 +81,12 @@
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-left">{{ __('Confirm Password *') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                
                                 <input id="password-confirm" type="password" class="form-control" onfocusout="verifyConfPass(password,password-confirm)" name="password_confirmation" required autocomplete="new-password">
                                 
                                 {{-- Add error write --}}
-                                <span id="validation-ConfPass" class="btn-outline-danger"></span>
+                                <span id="validation-ConfPass" class="text-danger"></span>
 
                             </div>
                         </div>
