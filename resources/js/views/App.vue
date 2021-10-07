@@ -1,32 +1,52 @@
 <template>
-  <div>
+  <div class="app">
+    <!-- <HeaderVecchio/> -->
+
     <Header/>
-    <HeaderCopy/>
+    <Jumbotron/>
+    <Sponsor/>
+
+
+
+
+
+
+
 
     <!-- <Main/> -->
 
-    <div class="container">
+    <!-- <div class="container">
       <router-view></router-view>
-    </div>
+    </div> -->
   </div>
 
 
 </template>
 
 <script>
-//import Header from '../components/Header';
-import HeaderCopy from '../components/HeaderCopy';
+//import HeaderVecchio from '../components/HeaderVecchio';
+import Header from '../components/Header';
+import Jumbotron from '../components/Jumbotron';
+//import Sponsor from '../components/Sponsor';
+
+
 
 
 export default {
   name: 'App',
   components: {
-    //Header,
-    HeaderCopy
+    //HeaderVecchio,
+    Header,
+    Jumbotron,
+    //Sponsor
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+
+  @import '../../sass/commons';
+
+
 
 </style>
