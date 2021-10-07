@@ -13,7 +13,7 @@
 
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        {{-- <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="m-3 text-right">
                     @auth
@@ -28,9 +28,11 @@
                 </div>
             @endif
 
-        </div>
+        </div> --}}
         
-        <div id="root"></div>
+        <div id="app">
+            <router-view></router-view>
+        </div>
 
         <script src="{{ asset('js/front.js') }}"></script>
     </body>

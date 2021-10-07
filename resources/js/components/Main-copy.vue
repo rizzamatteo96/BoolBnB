@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'Main',
+  name: 'Main-copy',
   data(){
     return {
       apiUrl: 'http://localhost:8000/api/apartments',

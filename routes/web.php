@@ -40,4 +40,5 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
     Route::resource('/sponsorships', 'SponsorshipController');
 });
 
-Route::get('/{any?}', 'HomeController@index')->where('any', '.*');
+// Route::get('/{any?}', 'HomeController@index')->where('any', '.*');
+Route::get('/{any}', 'HomeController@index')->where('any', '.*');

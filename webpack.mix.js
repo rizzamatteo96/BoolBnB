@@ -10,6 +10,7 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.js('resources/js/front.js', 'public/js').vue();
 
 mix.js('resources/js/admin.js', 'public/js')
     .js('resources/js/validation.js', 'public/js')
@@ -17,5 +18,3 @@ mix.js('resources/js/admin.js', 'public/js')
     .options({
         processCssUrls: false
     });
-
-mix.js('resources/js/front.js', 'public/js').vue();

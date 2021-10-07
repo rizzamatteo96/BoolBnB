@@ -11,7 +11,7 @@
       </div>
     </div>
   </div> -->
-  <div>ciao</div>
+  <h1>ciao sono home</h1>
 </template>
 
 <script>

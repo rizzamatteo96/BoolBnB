@@ -3,15 +3,27 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-import Home from './pages/home';
+import Home from './pages/Home';
+import Show from './pages/Show';
+import Src from './pages/Src';
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: "history",
     routes: [
         {
             path: '/',
             name: 'home',
             component: Home
+        },
+        {
+            path: '/show',
+            name: 'show',
+            component: Show
+        },
+        {
+            path: '/src',
+            name: 'src',
+            component: Src
         }
     ]
 });
