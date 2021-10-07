@@ -2,20 +2,25 @@
 
     <div class="container-nav">
 
+        <!-- inizio logo  -->
         <div class="container--logo">
 
             <img class="container--logo--image" src="img/boolbeb-icona.svg" alt="">
         
         </div>
-       
+        <!-- fine logo  -->
+
+        <!-- inizio  menu mobile -->
         <div class="container--logo-mobile" @click="myFilter">
             
-            <img class="container--logo--image--mobile" src="" alt="">
+            <img class="container--logo--image--mobile" src="img/boolbeb-icona.svg" alt="">
 
             <span><i class="fas fa-caret-down"></i></span>
        
         </div>
-        
+        <!-- fine  menu mobile -->
+
+        <!-- inizio  menu link -->
         <ul class="container--menu" :class="{active: isActive}">
 
             <li class="container--menu--list" @click="myFilter">
@@ -31,6 +36,7 @@
             </li>
 
         </ul>
+        <!-- fine  menu link -->
         
         <!-- <Login :class="(ActiveLog === true) ? 'active' : 'not-active'"/> -->
 
@@ -65,6 +71,7 @@
 
         methods: {
 
+            // Funzione per attivare menu mobile
             myFilter: function() {
 
                 this.isActive = !this.isActive;
@@ -82,6 +89,7 @@
 
     @import '../../sass/_variables.scss';
 
+    //contenitore generale
     .container-nav {
         z-index: 10;
         width: 100%;
@@ -93,14 +101,6 @@
         top: 0;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;
         height: 60px;
-
-        .active {
-            display: block;
-        }
-
-        .not-active {
-            display: none;
-        }
 
         .container--logo {
             width: 60px;
@@ -142,6 +142,15 @@
         }
 
         .container--burgher-menu {
+            display: none;
+        }
+
+           // classi per menu mobile
+        .active {
+            display: block;
+        }
+
+        .not-active {
             display: none;
         }
         

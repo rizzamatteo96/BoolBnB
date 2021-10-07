@@ -27,7 +27,7 @@
 //import HeaderVecchio from '../components/HeaderVecchio';
 import Header from '../components/Header';
 import Jumbotron from '../components/Jumbotron';
-//import Sponsor from '../components/Sponsor';
+import Sponsor from '../components/Sponsor';
 
 
 
@@ -38,7 +38,7 @@ export default {
     //HeaderVecchio,
     Header,
     Jumbotron,
-    //Sponsor
+    Sponsor
   }
 }
 </script>

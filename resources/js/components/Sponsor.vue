@@ -6,90 +6,10 @@
         <h2 class="title-sponsor">Appartamenti in vetrina</h2>
 
         <VueSlickCarousel class="cont-caro" v-bind="settings">
-            
-            <div class="box">
 
-                <img class="container-box--img" src="../assets/house.jpg" alt="">
+            <div class="box" v-for="(apartment, i) in 10" :key="i">
 
-                <div class="container-description" >
-
-                    <h2 class="container-description--title"> Titolo casa</h2>
-
-                    <span class="container-description--price">Prezzo: 90€</span>
-
-                </div>
-
-                <span class="container-box--adress">Via</span>
-
-            </div>
-
-            <div class="box">
-
-                <img class="container-box--img" src="../assets/house.jpg" alt="">
-
-                <div class="container-description" >
-
-                    <h2 class="container-description--title"> Titolo casa</h2>
-
-                    <span class="container-description--price">Prezzo: 90€</span>
-
-                </div>
-
-                <span class="container-box--adress">Via</span>
-
-            </div>
-
-            <div class="box">
-
-                <img class="container-box--img" src="../assets/house.jpg" alt="">
-
-                <div class="container-description" >
-
-                    <h2 class="container-description--title"> Titolo casa</h2>
-
-                    <span class="container-description--price">Prezzo: 90€</span>
-
-                </div>
-
-                <span class="container-box--adress">Via</span>
-
-            </div>
-
-            <div class="box">
-
-                <img class="container-box--img" src="../assets/house.jpg" alt="">
-
-                <div class="container-description" >
-
-                    <h2 class="container-description--title"> Titolo casa</h2>
-
-                    <span class="container-description--price">Prezzo: 90€</span>
-
-                </div>
-
-                <span class="container-box--adress">Via</span>
-
-            </div>
-
-            <div class="box">
-
-                <img class="container-box--img" src="../assets/house.jpg" alt="">
-
-                <div class="container-description" >
-
-                    <h2 class="container-description--title"> Titolo casa</h2>
-
-                    <span class="container-description--price">Prezzo: 90€</span>
-
-                </div>
-
-                <span class="container-box--adress">Via</span>
-
-            </div>
-
-            <div class="box">
-
-                <img class="container-box--img" src="../assets/house.jpg" alt="">
+                <img class="container-box--img" src="img/house.jpg" alt="">
 
                 <div class="container-description" >
 
@@ -124,6 +44,7 @@
 
             return {
 
+                // npm impostazioni carousel
                 settings: {
 
                     "infinite": true,
@@ -147,10 +68,34 @@
 
                     ]
           
-                }
+                },
+
+                //API appartamenti
+                apiUrl: 'http://localhost:8000/api/apartments',
+
+                apartments: []
                 
             }
 
+        },
+        
+        created(){
+
+            this.chiamataApi();
+
+        },
+
+        methods: {
+            chiamataApi(){
+                axios.get(this.apiUrl)
+                        .then(response => {
+                        console.log(response.data.results);
+                        this.apartments = response.data.results;
+                        })
+                        .catch(e => {
+                        console.log(e);
+                });
+            }
         },
 
         components: { 
@@ -197,7 +142,7 @@
                 }
 
                 .container-description {
-                    display: flex;
+                    display: block;
                     align-items: center;
                     justify-content: space-between;
 
