@@ -52,7 +52,7 @@ window.verifyConfPass = function (password, confPass) {
 window.verifyTitle = function (input) {
   var title = input.value;
 
-  if (title == '') {
+  if (title == '' || title == ' ') {
     document.getElementById('valTitle').innerHTML = 'Campo da compilare';
     return false;
   } else {
@@ -125,6 +125,50 @@ window.verifySquareMeters = function (input) {
     return false;
   } else {
     document.getElementById('valSquareMeters').innerHTML = '';
+    return true;
+  }
+}; // City validation
+
+
+window.verifyCity = function (input) {
+  if (input.value == '' || input.value == ' ') {
+    document.getElementById('valCity').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valCity').innerHTML = '';
+    return true;
+  }
+}; // Address validation
+
+
+window.verifyAddress = function (input) {
+  if (input.value == '' || input.value == ' ') {
+    document.getElementById('valAddress').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valAddress').innerHTML = '';
+    return true;
+  }
+}; // HouseNum validation
+
+
+window.verifyHouseNum = function (input) {
+  if (input.value == '' || input.value == ' ') {
+    document.getElementById('valHouseNum').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valHouseNum').innerHTML = '';
+    return true;
+  }
+}; // PostalCode validation
+
+
+window.verifyPostalCode = function (input) {
+  if (input.value == '' || input.value == ' ') {
+    document.getElementById('valPostalCode').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valPostalCode').innerHTML = '';
     return true;
   }
 }; // ********************************password verification onclick

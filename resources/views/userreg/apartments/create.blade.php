@@ -122,7 +122,7 @@
             {{-- Start - number of bathrooms input field --}}
             <div class="col-3">
                 <label for="n_bathrooms" class="form-label">Numero di bagni *</label>
-                <input type="number" min="0" class="form-control
+                <input type="number" min="1" class="form-control
                 @error('n_bathrooms') 
                     is-invalid 
                 @enderror" 
@@ -166,7 +166,11 @@
                 @error('city') 
                     is-invalid 
                 @enderror" 
-                id="city" name="city" value="{{old('city')}}" required>
+                id="city" name="city" value="{{old('city')}}" required onfocusout="verifyCity(city)">
+
+                {{-- Add error write --}}
+                <span id="valCity" class="text-danger"></span>
+
                 @error('city')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -180,7 +184,11 @@
                 @error('address') 
                     is-invalid 
                 @enderror" 
-                id="address" name="address" value="{{old('address')}}" required>
+                id="address" name="address" value="{{old('address')}}" required onfocusout="verifyAddress(address)">
+
+                {{-- Add error write --}}
+                <span id="valAddress" class="text-danger"></span>
+
                 @error('address')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -194,7 +202,11 @@
                 @error('house_num') 
                     is-invalid 
                 @enderror" 
-                id="house_num" name="house_num" value="{{old('house_num')}}" required>
+                id="house_num" name="house_num" value="{{old('house_num')}}" required onfocusout="verifyHouseNum(house_num)">
+
+                {{-- Add error write --}}
+                <span id="valHouseNum" class="text-danger"></span>
+
                 @error('house_num')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -208,7 +220,11 @@
                 @error('postal_code') 
                     is-invalid 
                 @enderror" 
-                id="postal_code" name="postal_code" value="{{old('postal_code')}}" required>
+                id="postal_code" name="postal_code" value="{{old('postal_code')}}"  required onfocusout="verifyPostalCode(postal_code)">
+
+                {{-- Add error write --}}
+                <span id="valPostalCode" class="text-danger"></span>
+
                 @error('postal_code')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -235,6 +251,12 @@
 
                 </div>
             @endforeach
+
+            
+            @error('services')
+            <span class="text-danger d-block">{{ $message }}</div>
+            @enderror
+
         </div>
         {{-- Fine - Campo di selezione dei services --}}
 
