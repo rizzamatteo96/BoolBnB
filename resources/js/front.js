@@ -12,7 +12,6 @@ window.axios = require('axios');
 import Vue from 'vue';
 import router from './router';
 import App from './views/App.vue';
-// import Main from './components/Main.vue';
 
 const app = new Vue({
   el : '#root',

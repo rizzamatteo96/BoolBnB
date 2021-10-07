@@ -137,11 +137,20 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Apartment $apartment)
+    public function edit($id)
     {
         $services = Service::all();
 
-        return view('userreg.apartments.edit', compact('apartment','services'));
+        // load apartment id and user id
+        $apartment = Apartment::where('id', $id)->first();
+        $user = Auth::user()->id;
+
+        // check if the apartment is one of the logged user otherwise go to 404 page
+        if($apartment && $apartment->user_id == $user){
+            return view('userreg.apartments.edit', compact('apartment','services'));
+        } else {
+            abort(404);
+        }
     }
 
     /**
