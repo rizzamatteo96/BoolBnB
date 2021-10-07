@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mt-5">
   <h1>ciao sono home</h1>
     <div class="row justify-content-around">
       <div class="card col-5 mb-3" v-for="apartment in apartments" :key="apartment.id">
@@ -10,6 +10,7 @@
           <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class="btn btn-primary">Visualizza dettagli</router-link>             
         </div>
       </div>
+      <router-link :to="{name: 'mappe'}" class="btn btn-primary">Visualizza mappa</router-link>             
     </div>
   </div>
 </template>
