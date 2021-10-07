@@ -13,7 +13,7 @@
 
                         {{-- name --}}
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-left">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
@@ -23,7 +23,7 @@
 
                         {{-- lastname --}}
                         <div class="form-group row">
-                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Lastname') }}</label>
+                            <label for="lastname" class="col-md-4 col-form-label text-md-left">{{ __('Lastname') }}</label>
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}"  autocomplete="lastname" autofocus>
@@ -33,7 +33,7 @@
 
                         {{-- date of birth --}}
                         <div class="form-group row">
-                            <label for="birth" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth') }}</label>
+                            <label for="birth" class="col-md-4 col-form-label text-md-left">{{ __('Date of birth') }}</label>
 
                             <div class="col-md-6">
                                 <input id="birth" type="date" class="form-control" name="date_of_birth" value="{{ old('date_of_birth') }}"  autocomplete="date_of_birth" autofocus>
@@ -43,7 +43,7 @@
 
                         {{-- e-mail (needed validation) --}}
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-left">{{ __('E-Mail Address *') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" onfocusout="validateEmail(email)" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -59,7 +59,7 @@
 
                         {{-- password --}}
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-left">{{ __('Password *') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" onfocusout="verifyPassword(password)" name="password" required autocomplete="new-password">
@@ -77,7 +77,7 @@
 
                         {{-- password confirmation --}}
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-left">{{ __('Confirm Password *') }}</label>
 
                             <div class="col-md-6">
                                
@@ -96,6 +96,10 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                        </div>
+
+                        <div class="mb-0 form-group row">
+                            <span class="text-danger text-md-left col-md-9 col-form-label">I campi contrassegnati con * sono obbligatori</span>
                         </div>
                     </form>
                 </div>
