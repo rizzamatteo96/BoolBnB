@@ -1,108 +1,151 @@
 <template>
-  
-    <div class="container-footer">
+    
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #1c2331"
+            >
+        <!-- Section: Social media -->
+        <section
+                class="d-flex justify-content-between p-4"
+                style="background-color: #FF385B"
+                >
+        <!-- Left -->
+        <div class="me-5">
+            <span>Seguici sui nostri social:</span>
+        </div>
+        <!-- Left -->
 
-        <ul>
-            <h4>informazioni</h4>
-            <li> <a href="#">Come funziona</a></li>
-            <li> <a href="#">Invetitori</a></li>
-            <li> <a href="#">Newsroom</a></li>
-            <li> <a href="#">HotelTonight</a></li>
-            <li> <a href="#">Opportunità di lavoro</a></li>
-        </ul>
+        <!-- Right -->
+        <div>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
 
-        <ul>
-            <h4>community</h4>
-            <li><a href="#">Diversità e appartenenza</a></li>
-            <li><a href="#">Accessibilità</a></li>
-            <li><a href="#">Airbnb Associates</a></li>
-            <li><a href="#">Ospita i rifugiati afghani</a></li>
-            <li><a href="#">Invitare un ospite</a></li>
-            <li><a href="#">Airbnb.org</a></li>
+        <!-- Section: Links  -->
+        <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold">BoolBnB</h6>
+                <hr
+                    class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    />
+                <p>
+                Trova facilmente l'appartamento ideale per la tua vacanza. BoolBnB è la soluzione perfetta.
+                </p>
+                <img src="">
 
-        </ul>
+            </div>
+            <!-- Grid column -->
 
-        <ul>
-            <h4>ospita</h4>
-            <li><a href="#">Diventa un host</a></li>
-            <li><a href="#">Offri un'Esperienza</a></li>
-            <li><a href="#">Offri un'Esperienza online</a></li>
-            <li><a href="#">Ospitare responsabilmente</a></li>
-            <li><a href="#">Centro Risorse</a></li>
-            <li><a href="#">Community Center</a></li>
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold">Menu</h6>
+                <hr
+                    class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    />
+                <p>
+                <a href="#!" class="text-white">Prenota</a>
+                </p>
+                <p>
+                <a href="#!" class="text-white">Ospita</a>
+                </p>
+                <p>
+                <a href="#!" class="text-white">Contatti</a>
+                </p>
+            </div>
+            <!-- Grid column -->
 
-        </ul>
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold">Link Utili</h6>
+                <hr
+                    class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    />
+                <p>
+                <a href="#!" class="text-white">Login</a>
+                </p>
+                <p>
+                <a href="#!" class="text-white">Registrati</a>
+                </p>
+                <p>
+                <a href="#!" class="text-white">Termini e condizioni</a>
+                </p>
+                <p>
+                <a href="#!" class="text-white">Lavora con noi</a>
+                </p>
+            </div>
+            <!-- Grid column -->
 
-        <ul>
-            <h4>assistenza</h4>
-            <li><a href="#">La nostra risposta all'emergenza COVID-19</a></li>
-            <li><a href="#">Centro Assistenza</a></li>
-            <li><a href="#">Opzioni di cancellazione</a></li>
-            <li><a href="#">Servizio di supporto al vicinato</a></li>
-            <li><a href="#">Affidabilità e sicurezza</a></li>
-        </ul>
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold">Contatti</h6>
+                <hr
+                    class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    />
+                <p><i class="fas fa-home mr-3"></i> Roma, Italia</p>
+                <p><i class="fas fa-envelope mr-3"></i> info@boolbnb.it</p>
+                <p><i class="fas fa-phone mr-3"></i> +39 123 456 7890</p>
+            </div>
+            <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        </section>
+        <!-- Section: Links  -->
 
-    </div>
+        <!-- Copyright -->
+        <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+            >
+        © 2021 Copyright:
+        <a class="text-white" href="#"
+            >Team 1 Boolean</a
+            >
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
 
 </template>
 
-
 <script>
 
-    export default {
-
-    }
-
+export default {
+    name: 'ContactForm',
+}
 </script>
 
+<style scoped>
 
-<style lang="scss" scoped>
-
-    @import '../../sass/_variables.scss';
-
-
-
-    .container-footer {
-
-        margin-top: 100px;
-        padding: 100px;
-        width: 100%;
-        background: $BgcFooter;
-        display: flex;
-        justify-content: space-between;
-
-        ul {
-            list-style: none;
-
-            h4 {
-                text-transform: uppercase;
-            }
-
-            li{
-
-                a{
-                    text-decoration: none;
-                    color: rgb(78, 78, 78);
-                }
-
-            }
-
-        }
-
-    }
-
-    // PARTE RESPONSIVE
-    @media (max-width: 968px) {
-
-        .container-footer {
-            display: block;
-
-            ul {
-                margin: 30px 0px;
-            }
-
-        }
-
+    img{
+        height: 20%;
     }
 
 </style>

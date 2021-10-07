@@ -143,8 +143,6 @@
 
                 .container-description {
                     display: block;
-                    align-items: center;
-                    justify-content: space-between;
 
                 }
 

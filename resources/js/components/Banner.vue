@@ -73,7 +73,7 @@
         background-image: url("img/ospitality.jpg");
         background-size: cover;
         background-attachment: fixed;
-
+        margin-bottom: 100px;
         background-repeat: no-repeat;
 
          .active {

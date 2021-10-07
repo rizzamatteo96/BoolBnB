@@ -10,9 +10,9 @@
     
                     <div class="text-white">
         
-                        <h1 class="mb-3" :class="(Active === false) ? 'active' : 'not-active'">BoolBnB</h1>
+                        <h1 class="mb-3 bgc-text display-1" :class="(Active === false) ? 'active' : 'not-active'">BoolBnB</h1>
         
-                        <h4 class="mb-3" :class="(Active === false) ? 'active' : 'not-active'">La migliore piattaforma per appartamenti</h4>
+                        <h4 class="mb-3 bgc-text display-5" :class="(Active === false) ? 'active' : 'not-active'">La migliore piattaforma per appartamenti</h4>
         
                         <a class="btn btn-outline-light btn-lg" href="#"  :class="(Active === false) ? '' : 'not-active'" @click="Active = !Active">Cerca</a>
                         <a class="btn btn-outline-light btn-lg" href="#" :class="(Active === true) ? '' : 'not-active'"  @click="Active = !Active"><i class="fas fa-times"></i></a>
@@ -62,6 +62,9 @@
 </script>
 
 <style lang="scss" scoped>
+    
+    @import '../../sass/_variables.scss';
+
 
     .container-jumbo {
 
@@ -70,14 +73,18 @@
     }
     
     .bg-image {
-        background-image: url('img/house2.jpg');
+        background-image: url('img/house3.jpg');
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
-        height: 800px;
+        height: 100vh;
         width: 100%;
 
         
+    }
+
+    .bgc-text {
+        color: rgb(201, 201, 201);
     }
 
     .active {
@@ -91,7 +98,7 @@
         }
 
     .mask{
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.267);
         height: 100%;
         width: 100%;    
     }

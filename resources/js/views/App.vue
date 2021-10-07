@@ -56,4 +56,10 @@ export default {
 
   @import '../../sass/commons';
 
+
+  .app {
+
+    background: #eaddcf;
+
+  }
 </style>
