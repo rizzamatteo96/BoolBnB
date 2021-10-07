@@ -93,6 +93,49 @@ window.verifyDescripton = function(input) {
   }
 };
 
+// rooms validation
+window.verifyRooms = function(input) {
+  if(input.value == '' || input.value == null || input.value == ' ' || input.value == false){
+    document.getElementById('valRooms').innerHTML = 'Campo da compilare';
+    return false;
+  } else{
+    document.getElementById('valRooms').innerHTML = '';
+    return true;
+  }
+};
+
+// beds validation
+window.verifyBeds = function(input) {
+  if(input.value == '' || input.value == null || input.value == ' ' || input.value == false){
+    document.getElementById('valBeds').innerHTML = 'Campo da compilare';
+    return false;
+  } else{
+    document.getElementById('valBeds').innerHTML = '';
+    return true;
+  }
+};
+
+// bathrooms validation
+window.verifyBathrooms = function(input) {
+  if(input.value == '' || input.value == null || input.value == ' '){
+    document.getElementById('valBathrooms').innerHTML = 'Campo da compilare';
+    return false;
+  } else{
+    document.getElementById('valBathrooms').innerHTML = '';
+    return true;
+  }
+};
+
+// SquareMeters validation
+window.verifySquareMeters = function(input) {
+  if(input.value == '' || input.value == null || input.value == ' ' || input.value == false){
+    document.getElementById('valSquareMeters').innerHTML = 'Campo da compilare';
+    return false;
+  } else{
+    document.getElementById('valSquareMeters').innerHTML = '';
+    return true;
+  }
+};
 
 
 

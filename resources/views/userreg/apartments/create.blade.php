@@ -73,8 +73,7 @@
             id="description" name="description" rows="5" onfocusout="verifyDescripton(description)" required> {{old('description')}}</textarea>
             
             {{-- Add error write --}}
-            <span id="valDescription" class="btn-outline-danger"></span>
-
+            <span id="valDescription" class="text-danger"></span>
 
             @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -87,11 +86,15 @@
             {{-- Start - number of rooms input field --}}
             <div class="col-3">
                 <label for="n_rooms" class="form-label">Numero di stanze *</label>
-                <input type="number" class="form-control
+                <input type="number" min="1" class="form-control
                 @error('n_rooms') 
                     is-invalid 
                 @enderror" 
-                id="n_rooms" name="n_rooms" value="{{old('n_rooms')}}" required>
+                id="n_rooms" name="n_rooms" value="{{old('n_rooms')}}" required onfocusout="verifyRooms(n_rooms)">
+
+                {{-- Add error write --}}
+                <span id="valRooms" class="text-danger"></span>
+
                 @error('n_rooms')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -101,11 +104,15 @@
             {{-- Start - number of beds input field --}}
             <div class="col-3">
                 <label for="n_beds" class="form-label">Numero di posti letto *</label>
-                <input type="number" class="form-control
+                <input type="number" min="1" class="form-control
                 @error('n_beds') 
                     is-invalid 
                 @enderror" 
-                id="n_beds" name="n_beds" value="{{old('n_beds')}}" required>
+                id="n_beds" name="n_beds" value="{{old('n_beds')}}" required onfocusout="verifyBeds(n_beds)">
+
+                {{-- Add error write --}}
+                <span id="valBeds" class="text-danger"></span>
+
                 @error('n_beds')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -115,11 +122,15 @@
             {{-- Start - number of bathrooms input field --}}
             <div class="col-3">
                 <label for="n_bathrooms" class="form-label">Numero di bagni *</label>
-                <input type="number" class="form-control
+                <input type="number" min="0" class="form-control
                 @error('n_bathrooms') 
                     is-invalid 
                 @enderror" 
-                id="n_bathrooms" name="n_bathrooms" value="{{old('n_bathrooms')}}" required>
+                id="n_bathrooms" name="n_bathrooms" value="{{old('n_bathrooms')}}" required onfocusout="verifyBathrooms(n_bathrooms)">
+
+                {{-- Add error write --}}
+                <span id="valBathrooms" class="text-danger"></span>
+                
                 @error('n_bathrooms')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -129,11 +140,15 @@
             {{-- Start - square meters input field --}}
             <div class="col-3">
                 <label for="n_square_meters" class="form-label">Metri quadri totali *</label>
-                <input type="number" class="form-control
+                <input type="number" min="1" class="form-control
                 @error('n_square_meters') 
                     is-invalid 
                 @enderror" 
-                id="n_square_meters" name="n_square_meters" value="{{old('n_square_meters')}}" required>
+                id="n_square_meters" name="n_square_meters" value="{{old('n_square_meters')}}" required onfocusout="verifySquareMeters(n_square_meters)">
+
+                {{-- Add error write --}}
+                <span id="valSquareMeters" class="text-danger"></span>
+
                 @error('n_square_meters')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
