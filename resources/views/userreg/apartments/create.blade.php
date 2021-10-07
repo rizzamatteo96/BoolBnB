@@ -20,7 +20,7 @@
                 <input id="apartmenttitle" type="text" class="form-control @error('title')is-invalid @enderror" required onfocusout="verifyTitle(apartmenttitle)" name="title" value="{{old('title')}}" required>
 
                 {{-- Add error write --}}
-                <span id="valTitle" class="btn-outline-danger"></span>
+                <span id="valTitle" class="text-danger"></span>
 
                 @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -47,10 +47,13 @@
         {{-- Inizio - Campo caricamento foto --}}
         <div class="mb-3">
             <label for="img" class="form-label">Immagine copertina *</label>
-            <input type="file" name="image" id="img" class="form-control-file
+            <input type="file" name="image" id="image" class="form-control-file
             @error('image') 
                 is-invalid 
-            @enderror" required>
+            @enderror" required onfocusout="verifyImg(image)">
+
+            {{-- Add error write --}}
+            <span id="valImg" class="text-danger"></span>
 
             @error('image')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -207,7 +210,7 @@
 
             @foreach ($services as $service)
                 <div class="d-inline-block mr-2">
-                    
+
                     {{-- <div class="ms_input-checkbox"></div> --}}
                     <input type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}"
                     @if (in_array($service->id, old('services',[])))

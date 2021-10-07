@@ -3,7 +3,7 @@
 
 // ************ VALIDATION REGISTER.BLADE.PHP *******************
 
-
+// user registration validation
 window.validateEmail = function(input) {
 
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -17,6 +17,7 @@ window.validateEmail = function(input) {
   }
 };
 
+// user psw validation
 window.verifyPassword = function(input) {
   // Define params
   var myparams = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
@@ -34,21 +35,7 @@ window.verifyPassword = function(input) {
   }
 };
 
-// window.verifyPasswordOnSubmit = function(input) {
-//   // Define params
-//   var myparams = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-
-//   // Define input password
-//   var userPassword = input.value;
-
-//   // Validate password
-//   if(!userPassword.match(myparams)){
-//     alert('Invalid password');
-//     return false;
-//   }
-// };
-
-
+// user confirmation psw validation
 window.verifyConfPass = function(password, confPass) {
 
   var confirm = confPass.value;
@@ -69,6 +56,70 @@ window.verifyConfPass = function(password, confPass) {
 };
 
 
+// ************ VALIDATION CREATE.BLADE.PHP *******************
+
+// title validation
+window.verifyTitle = function(input) {
+  var title = input.value;
+  if(title == '') {
+    document.getElementById('valTitle').innerHTML = 'Campo da compilare';
+    return false;
+  } else{
+    document.getElementById('valTitle').innerHTML = '';
+    return true;
+  }
+};
+
+// img validation
+window.verifyImg = function(input){
+  if(input.value == false){
+    document.getElementById('valImg').innerHTML = 'Campo da compilare';
+    return false;
+  } else{
+    document.getElementById('valImg').innerHTML = '';
+    return true;
+  }
+};
+
+// description validation
+window.verifyDescripton = function(input) {
+  var text = input.value;
+  if(text == '' || text == null || text == ' ' ) {
+    document.getElementById('valDescription').innerHTML = 'Campo da compilare';
+    return false;
+  } else{
+    document.getElementById('valDescription').innerHTML = '';
+    return true;
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********************************password verification onclick
+// window.verifyPasswordOnSubmit = function(input) {
+//   // Define params
+//   var myparams = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+//   // Define input password
+//   var userPassword = input.value;
+
+//   // Validate password
+//   if(!userPassword.match(myparams)){
+//     alert('Invalid password');
+//     return false;
+//   }
+// };
+
 // window.verifyConfPassOnSubmit = function(password, confPass) {
 
 //   var confirm = confPass.value;
@@ -82,37 +133,5 @@ window.verifyConfPass = function(password, confPass) {
 //   }
 
 // }
-
-// ************ VALIDATION CREATE.BLADE.PHP *******************
-
-
-window.verifyTitle = function(input) {
-  var title = input.value;
-  if(title == '') {
-    document.getElementById('valTitle').innerHTML = 'Campo Vuoto';
-    return false;
-  } else{
-    document.getElementById('valTitle').innerHTML = '';
-  }
-};
-
-
-window.verifyDescripton = function(input) {
-  var text = input.value;
-  if(text == '' || text == null || text == ' ' ) {
-    document.getElementById('valDescription').innerHTML = 'Campo Vuoto';
-    return false;
-  } else{
-    document.getElementById('valDescription').innerHTML = '';
-  }
-
-};
-
-
-
-
-window.prova = function(test){
-  console.log(test.value.length);
-};
 
 
