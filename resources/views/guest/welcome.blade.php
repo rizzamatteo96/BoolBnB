@@ -13,7 +13,7 @@
 
     </head>
     <body>
-        {{-- <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="m-3 text-right">
                     @auth
@@ -28,9 +28,9 @@
                 </div>
             @endif
 
-        </div> --}}
+        </div>
         
-        <div id="app">
+        <div id="root">
             <router-view></router-view>
         </div>
 

@@ -15,7 +15,7 @@ import App from './views/App.vue';
 // import Main from './components/Main.vue';
 
 const app = new Vue({
-  el : '#app',
+  el : '#root',
   render: h => h(App),
   router
 });

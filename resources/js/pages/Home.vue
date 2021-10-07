@@ -1,17 +1,17 @@
 <template>
-  <!-- <div class="container">
+  <div class="container">
     <div class="row justify-content-around">
-      <div class="card col-5 mb-3" v-for="apartment in apartments" :key="apartment.id"> -->
+      <div class="card col-5 mb-3" v-for="apartment in apartments" :key="apartment.id">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
-        <!-- <div class="card-body">
+        <div class="card-body">
           <h5 class="card-title">{{apartment.title}}</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <p class="card-text">{{apartment.city}}</p>
+          <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class="btn btn-primary">Visualizza dettagli</router-link>             
         </div>
       </div>
     </div>
-  </div> -->
-  <h1>ciao sono home</h1>
+  </div>
+  <!-- <h1>ciao sono home</h1> -->
 </template>
 
 <script>
@@ -42,9 +42,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.container{
-    background-color: blue;
-}
 
 </style>
