@@ -2097,6 +2097,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //import Login from '@/components/Login.vue'
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'HeaderCopy',
@@ -38604,7 +38613,7 @@ var render = function() {
               "a",
               {
                 staticClass: "container--menu--list--link",
-                attrs: { href: "#" },
+                attrs: { href: "http://localhost:8000/login" },
                 on: {
                   click: function($event) {
                     _vm.ActiveLog = !_vm.ActiveLog
@@ -38624,7 +38633,7 @@ var render = function() {
               "a",
               {
                 staticClass: "container--menu--list--link",
-                attrs: { href: "#" }
+                attrs: { href: "http://localhost:8000/register" }
               },
               [_vm._v("register")]
             )

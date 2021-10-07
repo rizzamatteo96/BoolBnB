@@ -15,7 +15,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="m-3 text-right">
+                {{-- <div class="m-3 text-right">
                     @auth
                         <a href="{{ route('userreg.home') }}" class="btn btn-outline-secondary">Home</a>
                     @else
@@ -25,7 +25,7 @@
                             <a href="{{ route('register') }}" class="btn btn-outline-secondary">Register</a>
                         @endif
                     @endauth
-                </div>
+                </div> --}}
             @endif
 
         </div>
