@@ -3,8 +3,14 @@
     <!-- <HeaderVecchio/> -->
 
     <Header/>
+    
     <Jumbotron/>
+    
     <Sponsor/>
+    
+    <Banner/>
+
+    <Footer/>
 
 
 
@@ -24,13 +30,12 @@
 </template>
 
 <script>
-//import HeaderVecchio from '../components/HeaderVecchio';
-import Header from '../components/Header';
-import Jumbotron from '../components/Jumbotron';
-import Sponsor from '../components/Sponsor';
-
-
-
+  //import HeaderVecchio from '../components/HeaderVecchio';
+  import Header from '../components/Header';
+  import Jumbotron from '../components/Jumbotron';
+  import Sponsor from '../components/Sponsor';
+  import Banner from '../components/Banner';
+  import Footer from '../components/Footer.vue';
 
 export default {
   name: 'App',
@@ -38,7 +43,11 @@ export default {
     //HeaderVecchio,
     Header,
     Jumbotron,
-    Sponsor
+    Sponsor,
+    Banner,
+    Footer
+
+
   }
 }
 </script>
@@ -46,7 +55,5 @@ export default {
 <style lang="scss">
 
   @import '../../sass/commons';
-
-
 
 </style>
