@@ -5,15 +5,15 @@
 
         <h2 class="title-sponsor">Appartamenti in vetrina</h2>
 
-        <VueSlickCarousel class="cont-caro" v-bind="settings">
+        <VueSlickCarousel class="cont-caro" v-bind="settings" v-if="apartments.length>0">
 
-            <div class="box" v-for="(apartment, i) in 10" :key="i">
+            <div class="box" v-for="apartment in apartments" :key="apartment.id">
 
                 <img class="container-box--img" src="img/house.jpg" alt="">
 
                 <div class="container-description" >
 
-                    <h2 class="container-description--title"> Titolo casa</h2>
+                    <h2 class="container-description--title">{{apartment.title}}</h2>
 
                     <span class="container-description--price">Prezzo: 90€</span>
 
