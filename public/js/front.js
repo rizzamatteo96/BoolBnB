@@ -2769,9 +2769,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Src',
@@ -40696,55 +40693,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("h2", [_vm._v("Appartamenti nella zona di: ")]),
-      _vm._v(" "),
-      _vm._l(_vm.apartments, function(apartment) {
-        return _c("div", { key: apartment.id, staticClass: "box-container" }, [
-          _c("div", { staticClass: "box" }, [
-            _c("img", {
-              staticClass: "container-box--img",
-              attrs: { src: apartment.image, alt: "" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "container-description" }, [
-              _c("h2", { staticClass: "container-description--title" }, [
-                _vm._v(" Titolo " + _vm._s(apartment.title))
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "container-description--price" }, [
-                _vm._v("Prezzo: " + _vm._s(apartment.daily_price) + " €")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "container-description--price" }, [
-                _vm._v("citta: " + _vm._s(apartment.city))
-              ])
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "container-box--adress" }, [
-              _vm._v(
-                "Via: " +
-                  _vm._s(apartment.address) +
-                  ", " +
-                  _vm._s(apartment.house_num)
-              )
-            ])
-          ])
-        ])
-      })
-    ],
-    2
-  )
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 

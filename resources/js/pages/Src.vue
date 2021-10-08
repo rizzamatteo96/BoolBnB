@@ -1,10 +1,7 @@
 <template>
   <div class="container-src">
 
-
     <SearcPage/>
-
-
 
   </div>
 </template>
@@ -13,14 +10,14 @@
 
   import SearcPage from '../components/SearcPage';
 
-export default {
-  name: 'Src',
+  export default {
+    name: 'Src',
 
-  components: {
+    components: {
 
-    SearcPage
+      SearcPage
 
-  },
+    },
 
   data(){
     return{
@@ -28,6 +25,7 @@ export default {
       apartment: []
     }
   },
+
   mounted(){
     axios.get(this.apiUrl + this.$route.params.slug)
           .then(response => {

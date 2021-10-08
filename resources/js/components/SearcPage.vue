@@ -8,7 +8,7 @@
 
             <div class="box">
 
-                <img class="container-box--img" :src="apartment.image" alt="">
+                <img class="container-box--img" :src="apartment.image" alt="{{apartment.title}}">
 
                 <div class="container-description" >
 
@@ -23,7 +23,6 @@
 
             </div>
 
-           
         </div>
 
     </div>
