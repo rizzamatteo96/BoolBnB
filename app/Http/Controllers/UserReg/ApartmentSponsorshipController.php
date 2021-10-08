@@ -37,13 +37,14 @@ class ApartmentSponsorshipController extends Controller
     public function create(Request $request)
     {
         // $user = Auth::user()->id;
-        dd($request);
-        $id = $request->all()['id'];
+        $sponsorshipId = $request->all()['sponsorship-id'];
+        $apartmentId = $request->all()['apartment-id'];
 
-        $apartment = Apartment::where('id', $id)->first();
+        $apartment = Apartment::where('id', $apartmentId)->first();
         // dd($apartment);
-        $sponsorships = Sponsorship::all();
-        return view('userreg.apartment-sponsorship.index', compact( 'apartment', 'sponsorships'));
+        $sponsorship = Sponsorship::where('id', $sponsorshipId)->first();
+
+        return view('userreg.apartment-sponsorship.create', compact( 'apartment', 'sponsorship'));
     }
 
     /**
