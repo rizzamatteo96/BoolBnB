@@ -3,12 +3,12 @@
     <!-- Footer -->
     <footer
             class="text-center text-lg-start text-white"
-            style="background-color: #1c2331"
+            style="background-color: rgb(0 0 0 / 59%)"
             >
         <!-- Section: Social media -->
         <section
                 class="d-flex justify-content-between p-4"
-                style="background-color: #FF385B"
+                style="background-color: rgb(255 56 91 / 28%)"
                 >
         <!-- Left -->
         <div class="me-5">
@@ -46,7 +46,7 @@
                 <h6 class="text-uppercase fw-bold">BoolBnB</h6>
                 <hr
                     class="mb-4 mt-0 d-inline-block mx-auto"
-                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    style="width: 60px; background-color: #FF385B; height: 2px"
                     />
                 <p>
                 Trova facilmente l'appartamento ideale per la tua vacanza. BoolBnB è la soluzione perfetta.
@@ -62,7 +62,7 @@
                 <h6 class="text-uppercase fw-bold">Menu</h6>
                 <hr
                     class="mb-4 mt-0 d-inline-block mx-auto"
-                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    style="width: 60px; background-color: #FF385B; height: 2px"
                     />
                 <p>
                 <a href="#!" class="text-white">Prenota</a>
@@ -82,7 +82,7 @@
                 <h6 class="text-uppercase fw-bold">Link Utili</h6>
                 <hr
                     class="mb-4 mt-0 d-inline-block mx-auto"
-                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    style="width: 60px; background-color: #FF385B; height: 2px"
                     />
                 <p>
                 <a href="#!" class="text-white">Login</a>
@@ -105,7 +105,7 @@
                 <h6 class="text-uppercase fw-bold">Contatti</h6>
                 <hr
                     class="mb-4 mt-0 d-inline-block mx-auto"
-                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    style="width: 60px; background-color: #FF385B; height: 2px"
                     />
                 <p><i class="fas fa-home mr-3"></i> Roma, Italia</p>
                 <p><i class="fas fa-envelope mr-3"></i> info@boolbnb.it</p>

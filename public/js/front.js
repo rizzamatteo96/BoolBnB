@@ -2396,6 +2396,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Jumbotron',
@@ -2508,6 +2514,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -2570,6 +2578,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_Jumbotron__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Jumbotron */ "./resources/js/components/Jumbotron.vue");
+/* harmony import */ var _components_Sponsor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Sponsor */ "./resources/js/components/Sponsor.vue");
+/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Banner */ "./resources/js/components/Banner.vue");
 //
 //
 //
@@ -2586,8 +2597,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Home',
+  components: {
+    Jumbotron: _components_Jumbotron__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Sponsor: _components_Sponsor__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Banner: _components_Banner__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   data: function data() {
     return {
       apiUrl: 'http://localhost:8000/api/apartments',
@@ -2707,10 +2730,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.vue");
-/* harmony import */ var _components_Jumbotron__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Jumbotron */ "./resources/js/components/Jumbotron.vue");
-/* harmony import */ var _components_Sponsor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Sponsor */ "./resources/js/components/Sponsor.vue");
-/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Banner */ "./resources/js/components/Banner.vue");
-/* harmony import */ var _components_Footer_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer.vue */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
 //
 //
 //
@@ -2728,35 +2748,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//import HeaderVecchio from '../components/HeaderVecchio';
-
-
-
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'App',
   components: {
-    //HeaderVecchio,
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Jumbotron: _components_Jumbotron__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Sponsor: _components_Sponsor__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Banner: _components_Banner__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Footer: _components_Footer_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -7387,7 +7385,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-jumbo[data-v-0b8439d1] {\n  min-height: 400px;\n}\n.bg-image[data-v-0b8439d1] {\n  background-image: url(\"img/house3.jpg\");\n  background-position: center;\n  background-attachment: fixed;\n  background-size: cover;\n  height: 100vh;\n  width: 100%;\n}\n.bgc-text[data-v-0b8439d1] {\n  color: #c9c9c9;\n}\n.active[data-v-0b8439d1] {\n  display: block;\n}\n.not-active[data-v-0b8439d1] {\n  display: none;\n}\n.mask[data-v-0b8439d1] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-jumbo[data-v-0b8439d1] {\n  min-height: 400px;\n}\n.bg-image[data-v-0b8439d1] {\n  background-image: url(\"img/house3.jpg\");\n  background-position: center;\n  background-attachment: fixed;\n  background-size: cover;\n  height: 100vh;\n  width: 100%;\n}\n.bgc-text[data-v-0b8439d1] {\n  color: #c9c9c9;\n}\n.logo-foot[data-v-0b8439d1] {\n  width: 50%;\n  margin: 0 auto;\n}\n.active[data-v-0b8439d1] {\n  display: block;\n}\n.not-active[data-v-0b8439d1] {\n  display: none;\n}\n.mask[data-v-0b8439d1] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7411,7 +7409,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-search[data-v-5026ffd3] {\n  height: 300px;\n  width: 100%;\n}\n.container-search .container-form[data-v-5026ffd3] {\n  text-align: center;\n  padding: 30px;\n  width: 100%;\n}\n.container-search .container-form .city[data-v-5026ffd3] {\n  width: 100%;\n}\n.container-search .container-form label[data-v-5026ffd3] {\n  display: block;\n}\n.container-search .container-form input[data-v-5026ffd3] {\n  padding: 10px;\n  border-radius: 20px;\n  border: none;\n  display: block;\n  margin: 10px auto;\n  height: 40px;\n}\n@media (max-width: 968px) {\n.city[data-v-5026ffd3] {\n    width: 300px;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@-webkit-keyframes animate-data-v-5026ffd3 {\nfrom {\n    height: 0px;\n    width: 0%;\n}\nto {\n    height: 300px;\n    width: 100%;\n}\n}\n@keyframes animate-data-v-5026ffd3 {\nfrom {\n    height: 0px;\n    width: 0%;\n}\nto {\n    height: 300px;\n    width: 100%;\n}\n}\nlabel[data-v-5026ffd3] {\n  color: #c9c9c9;\n}\n.container-search[data-v-5026ffd3] {\n  height: 300px;\n  width: 100%;\n  -webkit-animation: animate-data-v-5026ffd3 1s;\n          animation: animate-data-v-5026ffd3 1s;\n}\n.container-search .container-form[data-v-5026ffd3] {\n  margin: 0 auto;\n  text-align: center;\n  width: 500px;\n  padding: 20px;\n  border-radius: 20px;\n  background-color: rgba(0, 0, 0, 0.39);\n}\n.container-search .container-form .city[data-v-5026ffd3] {\n  width: 100%;\n}\n.container-search .container-form label[data-v-5026ffd3] {\n  display: block;\n}\n.container-search .container-form input[data-v-5026ffd3] {\n  padding: 10px;\n  border-radius: 20px;\n  border: none;\n  display: block;\n  margin: 10px auto;\n  height: 40px;\n}\n@media (max-width: 968px) {\n.city[data-v-5026ffd3] {\n    width: 300px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7435,7 +7433,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-sponsor[data-v-0e0d5f7f] {\n  padding: 150px 50px 50px 50px;\n  width: 90%;\n  height: 700px;\n  margin: 0 auto;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n  text-align: center;\n  font-size: 40px;\n}\n.container-sponsor .cont-caro[data-v-0e0d5f7f] {\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n}\n.container-sponsor .cont-caro .box[data-v-0e0d5f7f] {\n  padding: 50px;\n}\n.container-sponsor .cont-caro .box .container-box--img[data-v-0e0d5f7f] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-sponsor .cont-caro .box .container-description[data-v-0e0d5f7f] {\n  display: block;\n}\n@media (max-width: 968px) {\n.container-sponsor[data-v-0e0d5f7f] {\n    padding: 5px;\n    width: 100%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-sponsor[data-v-0e0d5f7f] {\n  width: 90%;\n  height: 700px;\n  margin: 100px auto;\n}\n.container-sponsor .color-text[data-v-0e0d5f7f] {\n  color: #c9c9c9;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n  text-transform: uppercase;\n  text-align: center;\n  font-size: 50px;\n}\n.container-sponsor .cont-caro[data-v-0e0d5f7f] {\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n}\n.container-sponsor .cont-caro .box[data-v-0e0d5f7f] {\n  padding: 50px;\n  text-align: center;\n}\n.container-sponsor .cont-caro .box .box-container[data-v-0e0d5f7f] {\n  width: 100%;\n  padding-bottom: 5px;\n  border-radius: 20px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n}\n.container-sponsor .cont-caro .box .container-box--img[data-v-0e0d5f7f] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n}\n.container-sponsor .cont-caro .box .container-description[data-v-0e0d5f7f] {\n  width: 100%;\n  text-align: center;\n  padding: 10px;\n}\n.container-sponsor .cont-caro .box .container-description .info-text[data-v-0e0d5f7f] {\n  font-weight: bold;\n}\n@media (max-width: 968px) {\n.container-sponsor[data-v-0e0d5f7f] {\n    padding: 5px;\n    width: 100%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7459,7 +7457,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\nbody {\n  font-family: \"Montserrat\", sans-serif;\n}\n.app {\n  background: #eaddcf;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\nbody {\n  font-family: \"Montserrat\", sans-serif;\n}\n\n/* width */\n::-webkit-scrollbar {\n  width: 5px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #000000;\n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #292929;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #FF385C;\n}\n.app {\n  background: linear-gradient(140deg, #ff385c, #000000);\n  background-size: 400% 400%;\n  -webkit-animation: AnimationName 22s ease infinite;\n  animation: AnimationName 22s ease infinite;\n}\n@-webkit-keyframes AnimationName {\n0% {\n    background-position: 25% 0%;\n}\n50% {\n    background-position: 76% 100%;\n}\n100% {\n    background-position: 25% 0%;\n}\n}\n@keyframes AnimationName {\n0% {\n    background-position: 25% 0%;\n}\n50% {\n    background-position: 76% 100%;\n}\n100% {\n    background-position: 25% 0%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40048,14 +40046,14 @@ var staticRenderFns = [
       "footer",
       {
         staticClass: "text-center text-lg-start text-white",
-        staticStyle: { "background-color": "#1c2331" }
+        staticStyle: { "background-color": "rgb(0 0 0 / 59%)" }
       },
       [
         _c(
           "section",
           {
             staticClass: "d-flex justify-content-between p-4",
-            staticStyle: { "background-color": "#FF385B" }
+            staticStyle: { "background-color": "rgb(255 56 91 / 28%)" }
           },
           [
             _c("div", { staticClass: "me-5" }, [
@@ -40100,7 +40098,7 @@ var staticRenderFns = [
                       staticClass: "mb-4 mt-0 d-inline-block mx-auto",
                       staticStyle: {
                         width: "60px",
-                        "background-color": "#7c4dff",
+                        "background-color": "#FF385B",
                         height: "2px"
                       }
                     }),
@@ -40127,7 +40125,7 @@ var staticRenderFns = [
                       staticClass: "mb-4 mt-0 d-inline-block mx-auto",
                       staticStyle: {
                         width: "60px",
-                        "background-color": "#7c4dff",
+                        "background-color": "#FF385B",
                         height: "2px"
                       }
                     }),
@@ -40170,7 +40168,7 @@ var staticRenderFns = [
                       staticClass: "mb-4 mt-0 d-inline-block mx-auto",
                       staticStyle: {
                         width: "60px",
-                        "background-color": "#7c4dff",
+                        "background-color": "#FF385B",
                         height: "2px"
                       }
                     }),
@@ -40224,7 +40222,7 @@ var staticRenderFns = [
                       staticClass: "mb-4 mt-0 d-inline-block mx-auto",
                       staticStyle: {
                         width: "60px",
-                        "background-color": "#7c4dff",
+                        "background-color": "#FF385B",
                         height: "2px"
                       }
                     }),
@@ -40400,30 +40398,24 @@ var render = function() {
           [
             _c(
               "div",
-              { staticClass: "text-white" },
+              {
+                staticClass: "text-white animation",
+                class: _vm.Active === false ? "active" : "not-active"
+              },
               [
-                _c(
-                  "h1",
-                  {
-                    staticClass: "mb-3 bgc-text display-1",
-                    class: _vm.Active === false ? "active" : "not-active"
-                  },
-                  [_vm._v("BoolBnB")]
-                ),
+                _c("img", {
+                  staticClass: "logo-foot",
+                  attrs: { src: "img/boolbeb.svg", alt: "" }
+                }),
                 _vm._v(" "),
-                _c(
-                  "h4",
-                  {
-                    staticClass: "mb-3 bgc-text display-5",
-                    class: _vm.Active === false ? "active" : "not-active"
-                  },
-                  [_vm._v("La migliore piattaforma per appartamenti")]
-                ),
+                _c("h4", { staticClass: "mb-3 bgc-text display-5" }, [
+                  _vm._v("La migliore piattaforma per appartamenti")
+                ]),
                 _vm._v(" "),
                 _c(
                   "a",
                   {
-                    staticClass: "btn btn-outline-light btn-lg",
+                    staticClass: " btn btn-outline-light btn-lg",
                     class: _vm.Active === false ? "" : "not-active",
                     attrs: { href: "#" },
                     on: {
@@ -40433,8 +40425,13 @@ var render = function() {
                     }
                   },
                   [_vm._v("Cerca")]
-                ),
-                _vm._v(" "),
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              [
                 _c(
                   "a",
                   {
@@ -40554,7 +40551,7 @@ var render = function() {
     "div",
     { staticClass: "container-sponsor" },
     [
-      _c("h2", { staticClass: "title-sponsor" }, [
+      _c("h2", { staticClass: "title-sponsor color-text" }, [
         _vm._v("Appartamenti in vetrina")
       ]),
       _vm._v(" "),
@@ -40569,24 +40566,81 @@ var render = function() {
             ),
             _vm._l(_vm.apartments, function(apartment) {
               return _c("div", { key: apartment.id, staticClass: "box" }, [
-                _c("img", {
-                  staticClass: "container-box--img",
-                  attrs: { src: "img/house.jpg", alt: "" }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "container-description" }, [
-                  _c("h2", { staticClass: "container-description--title" }, [
-                    _vm._v(_vm._s(apartment.title))
-                  ]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "container-description--price" }, [
-                    _vm._v("Prezzo: 90€")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "container-box--adress" }, [
-                  _vm._v("Via")
-                ])
+                _c(
+                  "div",
+                  { staticClass: "box-container" },
+                  [
+                    _c("img", {
+                      staticClass: "container-box--img",
+                      attrs: { src: "img/house.jpg", alt: "" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "container-description" }, [
+                      _c(
+                        "h2",
+                        {
+                          staticClass: "color-text container-description--title"
+                        },
+                        [_vm._v(_vm._s(apartment.title))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass: "color-text container-description--price"
+                        },
+                        [
+                          _c("span", { staticClass: "info-text" }, [
+                            _vm._v("Prezzo: ")
+                          ]),
+                          _vm._v(" " + _vm._s(apartment.daily_price) + " €")
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticClass: "color-text container-box--adress" },
+                        [
+                          _c("span", { staticClass: "info-text" }, [
+                            _vm._v("Citta: ")
+                          ]),
+                          _vm._v(" " + _vm._s(apartment.city))
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticClass: "color-text container-box--adress" },
+                        [
+                          _c("span", { staticClass: "info-text" }, [
+                            _vm._v("Via: ")
+                          ]),
+                          _vm._v(
+                            " " +
+                              _vm._s(apartment.address) +
+                              ", " +
+                              _vm._s(apartment.house_num)
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: " btn btn-outline-light",
+                        attrs: {
+                          to: {
+                            name: "apartment-details",
+                            params: { slug: apartment.slug }
+                          }
+                        }
+                      },
+                      [_vm._v("Visualizza dettagli")]
+                    )
+                  ],
+                  1
+                )
               ])
             }),
             0
@@ -40619,51 +40673,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("ciao sono home")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row justify-content-around" },
-      _vm._l(_vm.apartments, function(apartment) {
-        return _c(
-          "div",
-          { key: apartment.id, staticClass: "card col-5 mb-3" },
-          [
-            _c(
-              "div",
-              { staticClass: "card-body" },
-              [
-                _c("h5", { staticClass: "card-title" }, [
-                  _vm._v(_vm._s(apartment.title))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(_vm._s(apartment.city))
-                ]),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: {
-                      to: {
-                        name: "apartment-details",
-                        params: { slug: apartment.slug }
-                      }
-                    }
-                  },
-                  [_vm._v("Visualizza dettagli")]
-                )
-              ],
-              1
-            )
-          ]
-        )
-      }),
-      0
-    )
-  ])
+  return _c(
+    "div",
+    { staticClass: "container-home" },
+    [_c("Jumbotron"), _vm._v(" "), _c("Sponsor"), _vm._v(" "), _c("Banner")],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -40764,11 +40779,7 @@ var render = function() {
     [
       _c("Header"),
       _vm._v(" "),
-      _c("Jumbotron"),
-      _vm._v(" "),
-      _c("Sponsor"),
-      _vm._v(" "),
-      _c("Banner"),
+      _c("main", [_c("router-view")], 1),
       _vm._v(" "),
       _c("Footer")
     ],

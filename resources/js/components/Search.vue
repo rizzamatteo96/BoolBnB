@@ -43,14 +43,41 @@ export default {
 
 <style lang="scss" scoped>
 
+    @import '../../sass/_variables.scss';
+
+    @keyframes animate {
+
+        from {
+            
+            height: 0px;
+            width: 0%;
+
+        }
+
+        to {
+            height: 300px;
+            width: 100%;
+        }
+
+    }
+    label {
+
+            color:$ColorText2;
+        }
     .container-search {
         height: 300px;
         width: 100%;
+        animation: animate 1s;
+
         
         .container-form {
+            margin: 0 auto;
             text-align: center;
-            padding: 30px;
-            width: 100%;
+            width: 500px;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.39);
+            
 
             .city {
                 width: 100%;
