@@ -4,6 +4,7 @@ namespace App\Http\Controllers\UserReg;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Apartment;
 use App\Sponsorship;
@@ -15,9 +16,12 @@ class ApartmentSponsorshipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        // $user = Auth::user()->id;
+        $apartment = Apartment::where('id', $id)->first();
+        $sponsorship = Sponsorship::all();
+        return view('userreg.apartment-sponsorship.index', compact( 'apartment', 'sponsorship'));
     }
 
     /**
