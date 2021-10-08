@@ -18,7 +18,7 @@ export default {
   name: 'show',
   data(){
     return{
-      apiUrl: 'http://localhost:8000/api/apartments/',
+      apiUrl: 'http://localhost:8000/api/apartment/',
       apartment: []
     }
   },

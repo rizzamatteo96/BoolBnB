@@ -38,6 +38,29 @@ export default {
     }
   }
 }
+
+
+//v-for="(apartment, i) in 10" :key="i"
+
+// <div class="box" v-for="apartment in apartments" :key="apartment.id">
+
+//                 <img class="container-box--img" src="img/house.jpg" alt="">
+
+//                 <div class="container-description" >
+
+//                     <p class="container-description--title">{{apartment.title}}</p>
+
+//                     <span class="container-description--price">Prezzo: 90€</span>
+
+//                 </div>
+
+//                 <span class="container-box--adress">Via</span>
+
+//             </div>
+
+//{{apartment.daily_price}} €
+
+//Città: {{apartment.address}}
 </script>
 
 <style>

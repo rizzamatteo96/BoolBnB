@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('Api')->group(function(){
   Route::get('/apartments', 'ApartmentController@index');
-  Route::get('/apartments/{slug}', 'ApartmentController@show');
+  Route::get('/apartment/{slug}', 'ApartmentController@show');
+  Route::get('/apartments/{slug}', 'ApartmentController@search');
 });

@@ -1,0 +1,189 @@
+
+<template>
+
+    <div class="container-sponsor">
+
+        <h2 class="title-sponsor color-text">Appartamenti in vetrina</h2>
+
+        <VueSlickCarousel class="cont-caro" v-bind="settings" v-if="apartments.length>0">
+
+            <div class="box" v-for="apartment in apartments" :key="apartment.id">
+
+                <div class="box-container">
+                    <img class="container-box--img" src="img/house.jpg" alt="">
+
+                    <div class="container-description" >
+
+                        <h2 class="color-text container-description--title">{{apartment.title}}</h2>
+                        <p class="color-text container-description--price"> <span class="info-text">Prezzo: </span> {{apartment.daily_price}} €</p>
+                        <p class="color-text container-box--adress"> <span class="info-text">Citta: </span> {{apartment.city}}</p>
+                        <p class="color-text container-box--adress"> <span class="info-text">Via: </span> {{apartment.address}}, {{apartment.house_num}}</p>
+
+                    </div>
+
+                    <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class=" btn btn-outline-light">Visualizza dettagli</router-link>
+                </div>
+            </div>
+        
+        </VueSlickCarousel>
+      
+    </div>
+
+</template>
+
+
+<script>
+
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
+    export default {
+
+        name: 'Sponsor',
+
+        data() {
+
+            return {
+
+                // npm impostazioni carousel
+                settings: {
+
+                    "infinite": true,
+                    "slidesToShow": 3,
+                    "slidesToScroll": 1,
+                    "autoplay": true,
+                    "arrows": false,
+                    "speed": 8000,
+                    "autoplaySpeed": 2000,
+                    "responsive": [
+                        
+                        {
+                            "breakpoint": 968,
+
+                            "settings": {
+                                "slidesToShow": 1,
+                                "arrows": false,  
+                            }
+
+                        }
+
+                    ]
+          
+                },
+
+                //API appartamenti
+                apiUrl: 'http://localhost:8000/api/apartments',
+
+                apartments: []
+                
+            }
+
+        },
+        
+        created(){
+
+            this.chiamataApi();
+
+        },
+
+        methods: {
+            chiamataApi(){
+                axios.get(this.apiUrl)
+                        .then(response => {
+                        console.log(response.data.results);
+                        this.apartments = response.data.results;
+                        })
+                        .catch(e => {
+                        console.log(e);
+                });
+            }
+        },
+
+        components: { 
+
+            VueSlickCarousel 
+
+        }
+
+    }
+
+</script>
+
+
+<style lang="scss" scoped>
+
+    @import '../../sass/_variables.scss';
+
+
+    .container-sponsor {
+        width: 90%;
+        height: 700px;
+        margin: 100px auto;
+
+        .color-text {
+
+            color: $ColorText2;
+
+        }
+
+        .title-sponsor {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .cont-caro {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+
+            .box {
+                padding: 50px;
+                text-align: center;
+
+                .box-container {
+                    width: 100%;
+                    padding-bottom: 5px;
+                    border-radius: 20px;
+                    box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
+                }
+
+                .container-box--img {
+                    width: 100%;
+                    height: 250px;
+                    border-radius: 10px;
+                }
+
+                .container-description {
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px;
+
+                    .info-text {
+                        font-weight: bold;
+                    }
+
+                }
+
+            } 
+
+        }   
+
+    }
+
+    // PARTE RESPONSIVE
+    @media (max-width: 968px) {
+
+        .container-sponsor {
+            padding: 5px;
+            width: 100%;
+      
+        }
+
+    }
+
+
+
+
+</style>
