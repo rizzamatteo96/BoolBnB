@@ -52,7 +52,8 @@
 						{{-- Sponsorships btn --}}
 						<td>
 
-							<a href="{{route('userreg.apartment-sponsorship.index', 14)}}" class="btn btn-success">Scopri le sposorizzazioni!</a>
+							<a href="{{route('userreg.apartment-sponsorship.index', ['id' => $item->id])}}" class="btn btn-warning">Sponsorizza</a>
+							{{-- <a href="{{route('userreg.apartment-sponsorship.index', 14)}}" class="btn btn-success">Scopri le sposorizzazioni!</a> --}}
 
 						</td>
 						{{-- end Sponsorships btn --}}

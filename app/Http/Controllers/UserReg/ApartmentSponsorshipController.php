@@ -13,13 +13,18 @@ class ApartmentSponsorshipController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * 
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index(Request $request)
     {
         // $user = Auth::user()->id;
+
+        $id = $request->all()['id'];
+
         $apartment = Apartment::where('id', $id)->first();
+        dd($apartment);
         $sponsorship = Sponsorship::all();
         return view('userreg.apartment-sponsorship.index', compact( 'apartment', 'sponsorship'));
     }
