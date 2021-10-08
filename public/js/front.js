@@ -2205,27 +2205,41 @@ __webpack_require__.r(__webpack_exports__);
     return {
       location: '',
       apiFirst: 'https://api.tomtom.com/search/2/geocode/',
-      apiSecond: '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo'
+      apiSecond: '.JSON?key=',
+      apiKey: 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
+      lat: '52.360306',
+      lon: '4.876935'
     };
   },
   mounted: function mounted() {
-    var apiKey = 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
-    var map = tt.map({
-      key: apiKey,
-      container: 'map',
-      center: [4.876935, 52.360306],
-      zoom: 13
-    });
+    this.loadMap();
   },
   methods: {
     findMap: function findMap() {
-      var src = this.apiFirst + this.location + this.apiSecond;
+      var _this = this;
+
+      var src = this.apiFirst + this.location + this.apiSecond + this.apiKey;
       console.log(this.location);
       axios.get(src).then(function (response) {
-        console.log(response);
+        console.log(response.data.results[0].position.lat);
+        _this.lat = response.data.results[0].position.lat;
+        _this.lon = response.data.results[0].position.lon;
+        console.log(_this.lat, _this.lon);
       })["catch"](function (e) {
         console.log(e);
-      });
+      })["finally"](this.loadMap(this.lat, this.lon));
+    },
+    loadMap: function loadMap() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        var map = tt.map({
+          key: _this2.apiKey,
+          container: 'map',
+          center: [_this2.lon, _this2.lat],
+          zoom: 18
+        });
+      }, 1000);
     }
   }
 });
@@ -2362,8 +2376,8 @@ try {
  */
 
 
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); // window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

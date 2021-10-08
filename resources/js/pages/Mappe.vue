@@ -13,30 +13,41 @@ export default {
     return {
       location : '',
       apiFirst : 'https://api.tomtom.com/search/2/geocode/',
-      apiSecond : '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo'
+      apiSecond : '.JSON?key=',
+      apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
+      lat : '52.360306',
+      lon : '4.876935'
     }
   },
   mounted(){
-    const apiKey = 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
-    const map = tt.map({
-      key: apiKey,
-      container: 'map',
-      center: [4.876935, 52.360306],
-      zoom: 13
-    });
+    this.loadMap();
   },
   methods: {
     findMap(){
-      let src = this.apiFirst + this.location + this.apiSecond;
+      let src = this.apiFirst + this.location + this.apiSecond + this.apiKey;
       console.log(this.location);
 
       axios.get(src)
           .then(response => {
-            console.log(response);
+            console.log(response.data.results[0].position.lat);
+            this.lat = response.data.results[0].position.lat;
+            this.lon = response.data.results[0].position.lon;
+            console.log(this.lat, this.lon);
           })
           .catch(e => {
             console.log(e);
-          });
+          })
+          .finally(this.loadMap(this.lat, this.lon));
+    },
+    loadMap(){
+      setTimeout(() => {
+        const map = tt.map({
+          key: this.apiKey,
+          container: 'map',
+          center: [this.lon, this.lat],
+          zoom: 18
+        });
+      }, 1000);      
     }
   }
 }
