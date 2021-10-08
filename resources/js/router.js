@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 import Home from './pages/Home';
 import Show from './pages/Show';
 import Src from './pages/Src';
+import Mappe from './pages/Mappe';
 
 const router = new VueRouter({
     mode: "history",
@@ -24,6 +25,11 @@ const router = new VueRouter({
             path: '/src',
             name: 'src',
             component: Src
+        },
+        {
+            path: '/mappe',
+            name: 'mappe',
+            component: Mappe
         }
     ]
 });
