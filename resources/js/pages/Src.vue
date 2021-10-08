@@ -1,10 +1,27 @@
 <template>
-  <h2>src</h2>
+  <div class="container-src">
+
+
+    <SearcPage/>
+
+
+
+  </div>
 </template>
 
 <script>
+
+  import SearcPage from '../components/SearcPage';
+
 export default {
   name: 'Src',
+
+  components: {
+
+    SearcPage
+
+  },
+
   data(){
     return{
       apiUrl: 'http://localhost:8000/api/apartments/',
@@ -12,20 +29,15 @@ export default {
     }
   },
   mounted(){
-    console.log('montata');
     axios.get(this.apiUrl + this.$route.params.slug)
           .then(response => {
-            console.log(response.data.results);
             this.apartment = response.data.results;
-            // console.log(response.data.results);
           })
           .catch();
   }
 }
 </script>
 
-<style>
-  h2{
-    margin-top: 100px;
-  }
+<style lang="scss" scoped>
+ 
 </style>
