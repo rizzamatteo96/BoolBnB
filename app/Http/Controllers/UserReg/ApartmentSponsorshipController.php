@@ -24,9 +24,9 @@ class ApartmentSponsorshipController extends Controller
         $id = $request->all()['id'];
 
         $apartment = Apartment::where('id', $id)->first();
-        dd($apartment);
-        $sponsorship = Sponsorship::all();
-        return view('userreg.apartment-sponsorship.index', compact( 'apartment', 'sponsorship'));
+        // dd($apartment);
+        $sponsorships = Sponsorship::all();
+        return view('userreg.apartment-sponsorship.index', compact( 'apartment', 'sponsorships'));
     }
 
     /**
