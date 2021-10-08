@@ -101,6 +101,13 @@ class ApartmentController extends Controller
         // seleziono l'utente loggato
         $newApartment['user_id'] = Auth::user()->id;
 
+        if(isset($newApartment['visibility'])){
+            $newApartment['visibility'] = 1;
+        } else{
+            $newApartment['visibility'] = 0;
+        };
+
+
         // Invio i dati e li salvo nel DB
         $upApartment->fill($newApartment);
         $upApartment->save();
