@@ -106,6 +106,7 @@ class ApartmentController extends Controller
         $upApartment->fill($newApartment);
         $upApartment->save();
 
+        // carico i servizi nella tabella ponte
         $upApartment->services()->attach($request->services);
 
         return redirect()->route('userreg.apartments.index');
@@ -243,4 +244,5 @@ class ApartmentController extends Controller
 
         return redirect()->route('userreg.apartments.index');
     }
+
 }

@@ -21,6 +21,7 @@ Route::middleware('auth')->namespace('UserReg')->prefix('userreg')->name('userre
     Route::resource('/apartments', 'ApartmentController');
     Route::resource('/messages', 'MessageController');
     Route::resource('/statistics', 'StatisticController');
+    Route::resource('/apartment-sponsorship', 'ApartmentSponsorshipController');
 });
 
 Route::get('/{any?}', 'SpaController@index')->where('any', '.*');

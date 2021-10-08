@@ -17,12 +17,14 @@
 					<th scope="col">Città ubicazione</th>
 					<th scope="col">Visibilità</th>
 					<th scope="col">Azioni</th>
+					<th scope="col">Promozioni</th>
 				</tr>
 			</thead>
 			<tbody>
 
 				@foreach ($data as $key => $item)
 					<tr>
+					
 						<th scope="row">{{$key+1}}</th>
 						<td>{{$item->title}}</td>
 						<td>{{$item->city}}</td>
@@ -33,6 +35,8 @@
 								<i class="far fa-eye-slash"></i>
 							@endif
 						</td>
+
+						{{-- action btns --}}
 						<td>
 							<a href="{{route('userreg.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
 							<a href="{{route('userreg.apartments.edit', $item->id)}}" class="btn btn-warning">Modifica</a>
@@ -43,6 +47,15 @@
 								<button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')">Elimina</button>
 							</form>
 						</td>
+						{{-- end action btns --}}
+
+						{{-- Sponsorships btn --}}
+						<td>
+
+							<a href="{{route('userreg.apartment-sponsorship.create')}}" class="btn btn-success">Scopri le sposorizzazioni!</a>
+
+						</td>
+						{{-- end Sponsorships btn --}}
 					</tr>
 				@endforeach
 				
