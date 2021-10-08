@@ -3,12 +3,12 @@
     <!-- Footer -->
     <footer
             class="text-center text-lg-start text-white"
-            style="background-color: rgba(00, 00, 00, 0.82)"
+            style="background-color: rgb(0 0 0 / 59%)"
             >
         <!-- Section: Social media -->
         <section
                 class="d-flex justify-content-between p-4"
-                style="background-color: #FF385B"
+                style="background-color: rgb(255 56 91 / 28%)"
                 >
         <!-- Left -->
         <div class="me-5">

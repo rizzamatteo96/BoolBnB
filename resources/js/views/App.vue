@@ -1,65 +1,68 @@
 <template>
   <div class="app">
-    <!-- <HeaderVecchio/> -->
 
     <Header/>
     
-    <Jumbotron/>
-    
-    <Sponsor/>
-    
-    <Banner/>
+    <main>
+
+      <router-view></router-view>
+
+    </main>  
 
     <Footer/>
 
-
-
-
-
-
-
-
-    <!-- <Main/> -->
-
-    <!-- <div class="container">
-      <router-view></router-view>
-    </div> -->
   </div>
-
 
 </template>
 
 <script>
-  //import HeaderVecchio from '../components/HeaderVecchio';
   import Header from '../components/Header';
-  import Jumbotron from '../components/Jumbotron';
-  import Sponsor from '../components/Sponsor';
-  import Banner from '../components/Banner';
-  import Footer from '../components/Footer.vue';
+  import Footer from '../components/Footer';
 
-export default {
-  name: 'App',
-  components: {
-    //HeaderVecchio,
-    Header,
-    Jumbotron,
-    Sponsor,
-    Banner,
-    Footer
+  export default {
+    name: 'App',
+    components: {
+      Header,
+      Footer
 
-
+    }
   }
-}
 </script>
 
 <style lang="scss">
 
   @import '../../sass/commons';
 
-
   .app {
 
-    background: #f6dfd8;
+   background: linear-gradient(140deg, #ff385c, #000000);
+    background-size: 400% 400%;
 
-  }
+    -webkit-animation: AnimationName 22s ease infinite;
+    -moz-animation: AnimationName 22s ease infinite;
+    -o-animation: AnimationName 22s ease infinite;
+    animation: AnimationName 22s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:25% 0%}
+    50%{background-position:76% 100%}
+    100%{background-position:25% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:25% 0%}
+    50%{background-position:76% 100%}
+    100%{background-position:25% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:25% 0%}
+    50%{background-position:76% 100%}
+    100%{background-position:25% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:25% 0%}
+    50%{background-position:76% 100%}
+    100%{background-position:25% 0%}
+}
+
 </style>

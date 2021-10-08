@@ -3,24 +3,26 @@
 
     <div class="container-sponsor">
 
-        <h2 class="title-sponsor">Appartamenti in vetrina</h2>
+        <h2 class="title-sponsor color-text">Appartamenti in vetrina</h2>
 
         <VueSlickCarousel class="cont-caro" v-bind="settings" v-if="apartments.length>0">
 
             <div class="box" v-for="apartment in apartments" :key="apartment.id">
 
-                <img class="container-box--img" src="img/house.jpg" alt="">
+                <div class="box-container">
+                    <img class="container-box--img" src="img/house.jpg" alt="">
 
-                <div class="container-description" >
+                    <div class="container-description" >
 
-                    <h2 class="container-description--title">{{apartment.title}}</h2>
+                        <h2 class="color-text container-description--title">{{apartment.title}}</h2>
+                        <p class="color-text container-description--price"> <span class="info-text">Prezzo: </span> {{apartment.daily_price}} €</p>
+                        <p class="color-text container-box--adress"> <span class="info-text">Citta: </span> {{apartment.city}}</p>
+                        <p class="color-text container-box--adress"> <span class="info-text">Via: </span> {{apartment.address}}, {{apartment.house_num}}</p>
 
-                    <span class="container-description--price">Prezzo: 90€</span>
+                    </div>
 
+                    <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class=" btn btn-outline-light">Visualizza dettagli</router-link>
                 </div>
-
-                <span class="container-box--adress">Via</span>
-
             </div>
         
         </VueSlickCarousel>
@@ -115,35 +117,52 @@
 
 
     .container-sponsor {
-        padding: 100px 50px 50px 50px;
         width: 90%;
         height: 700px;
-        margin: 0 auto;
+        margin: 100px auto;
+
+        .color-text {
+
+            color: $ColorText2;
+
+        }
 
         .title-sponsor {
+            text-transform: uppercase;
             text-align: center;
-            font-size: 40px;
-            color: $ColorTitle;
+            font-size: 50px;
         }
 
         .cont-caro {
             width: 100%;
             margin: 0 auto;
             display: flex;
-        
+
             .box {
                 padding: 50px;
-                width: 500px;
+                text-align: center;
+
+                .box-container {
+                    width: 100%;
+                    padding-bottom: 5px;
+                    border-radius: 20px;
+                    box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
+                }
+
                 .container-box--img {
                     width: 100%;
                     height: 250px;
                     border-radius: 10px;
-                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
                 }
 
                 .container-description {
-                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px;
+
+                    .info-text {
+                        font-weight: bold;
+                    }
 
                 }
 

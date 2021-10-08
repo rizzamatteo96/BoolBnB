@@ -8,19 +8,24 @@
     
                 <div class="d-flex justify-content-center align-items-center h-100">
     
-                    <div class="text-white">
+                    <div class="text-white animation" :class="(Active === false) ? 'active' : 'not-active'">
                         
-                        <img src="img/boolbeb.svg" class="logo-foot" :class="(Active === false) ? 'active' : 'not-active'" alt="">
-                        <!-- <h1 class="mb-3 bgc-text display-1" :class="(Active === false) ? 'active' : 'not-active'">BoolBnB</h1> -->
+                        <img src="img/boolbeb.svg" class="logo-foot"  alt="">
         
-                        <h4 class="mb-3 bgc-text display-5" :class="(Active === false) ? 'active' : 'not-active'">La migliore piattaforma per appartamenti</h4>
+                        <h4 class="mb-3 bgc-text display-5">La migliore piattaforma per appartamenti</h4>
         
-                        <a class="btn btn-outline-light btn-lg" href="#"  :class="(Active === false) ? '' : 'not-active'" @click="Active = !Active">Cerca</a>
+                        <a class=" btn btn-outline-light btn-lg" href="#"  :class="(Active === false) ? '' : 'not-active'" @click="Active = !Active">Cerca</a>
+
+                    </div>
+                    <div>
+
                         <a class="btn btn-outline-light btn-lg" href="#" :class="(Active === true) ? '' : 'not-active'"  @click="Active = !Active"><i class="fas fa-times"></i></a>
 
                         <Search :class="(Active === true) ? 'active' : 'not-active'"/>
 
+
                     </div>
+                        
     
                 </div>
     
@@ -72,7 +77,31 @@
         min-height: 400px;
 
     }
+
+    // @keyframes animate {
+
+    //     from {
+            
+    //         left: 0px;
+
+    //     }
+
+    //     to {
+    //         left: 100px;
+            
+    //     }
+
+    // }
+
+    // .animation {
+
+    //     animation: animate 2s;
+
+
+    // }
     
+
+
     .bg-image {
         background-image: url('img/house3.jpg');
         background-position: center;
@@ -81,11 +110,10 @@
         height: 100vh;
         width: 100%;
 
-        
     }
 
     .bgc-text {
-        color: rgb(201, 201, 201);
+        color: $ColorText2
     }
 
     .logo-foot {
