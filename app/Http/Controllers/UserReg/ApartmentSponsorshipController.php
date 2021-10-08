@@ -34,11 +34,16 @@ class ApartmentSponsorshipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $apartment = Apartment::all();
-        $sponsorship = Sponsorship::all();
-        return view('userreg.apartment-sponsorship.create', compact('apartment', 'sponsorship'));
+        // $user = Auth::user()->id;
+        dd($request);
+        $id = $request->all()['id'];
+
+        $apartment = Apartment::where('id', $id)->first();
+        // dd($apartment);
+        $sponsorships = Sponsorship::all();
+        return view('userreg.apartment-sponsorship.index', compact( 'apartment', 'sponsorships'));
     }
 
     /**
