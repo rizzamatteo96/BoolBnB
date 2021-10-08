@@ -29,9 +29,8 @@ export default {
     findMap(){
       let src = this.apiFirst + this.location + this.apiSecond;
       console.log(this.location);
-      axios.get(src, {
-        headers: {"Access-Control-Allow-Origin": "*"}
-      })
+
+      axios.get(src)
           .then(response => {
             console.log(response);
           })
@@ -45,6 +44,7 @@ export default {
 
 <style lang="scss" scoped>
   .stile-map{
+    margin-top: 100px;
     width: 500px; 
     height: 500px;
 
