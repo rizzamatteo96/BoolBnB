@@ -25,5 +25,7 @@ export default {
 </script>
 
 <style>
-
+  h2{
+    margin-top: 100px;
+  }
 </style>
