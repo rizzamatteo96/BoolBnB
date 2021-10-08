@@ -59,7 +59,7 @@ export default {
 
   .app {
 
-    background: #eaddcf;
+    background: #f6dfd8;
 
   }
 </style>

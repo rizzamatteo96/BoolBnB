@@ -115,7 +115,7 @@
 
 
     .container-sponsor {
-        padding: 150px 50px 50px 50px;
+        padding: 100px 50px 50px 50px;
         width: 90%;
         height: 700px;
         margin: 0 auto;
@@ -123,6 +123,7 @@
         .title-sponsor {
             text-align: center;
             font-size: 40px;
+            color: $ColorTitle;
         }
 
         .cont-caro {
@@ -132,7 +133,7 @@
         
             .box {
                 padding: 50px;
-
+                width: 500px;
                 .container-box--img {
                     width: 100%;
                     height: 250px;

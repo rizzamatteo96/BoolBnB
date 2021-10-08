@@ -9,8 +9,9 @@
                 <div class="d-flex justify-content-center align-items-center h-100">
     
                     <div class="text-white">
-        
-                        <h1 class="mb-3 bgc-text display-1" :class="(Active === false) ? 'active' : 'not-active'">BoolBnB</h1>
+                        
+                        <img src="img/boolbeb.svg" class="logo-foot" :class="(Active === false) ? 'active' : 'not-active'" alt="">
+                        <!-- <h1 class="mb-3 bgc-text display-1" :class="(Active === false) ? 'active' : 'not-active'">BoolBnB</h1> -->
         
                         <h4 class="mb-3 bgc-text display-5" :class="(Active === false) ? 'active' : 'not-active'">La migliore piattaforma per appartamenti</h4>
         
@@ -85,6 +86,11 @@
 
     .bgc-text {
         color: rgb(201, 201, 201);
+    }
+
+    .logo-foot {
+        width: 50%;
+        margin: 0 auto;
     }
 
     .active {

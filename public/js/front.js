@@ -2396,6 +2396,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Jumbotron',
@@ -7364,7 +7365,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-jumbo[data-v-0b8439d1] {\n  min-height: 400px;\n}\n.bg-image[data-v-0b8439d1] {\n  background-image: url(\"img/house3.jpg\");\n  background-position: center;\n  background-attachment: fixed;\n  background-size: cover;\n  height: 100vh;\n  width: 100%;\n}\n.bgc-text[data-v-0b8439d1] {\n  color: #c9c9c9;\n}\n.active[data-v-0b8439d1] {\n  display: block;\n}\n.not-active[data-v-0b8439d1] {\n  display: none;\n}\n.mask[data-v-0b8439d1] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-jumbo[data-v-0b8439d1] {\n  min-height: 400px;\n}\n.bg-image[data-v-0b8439d1] {\n  background-image: url(\"img/house3.jpg\");\n  background-position: center;\n  background-attachment: fixed;\n  background-size: cover;\n  height: 100vh;\n  width: 100%;\n}\n.bgc-text[data-v-0b8439d1] {\n  color: #c9c9c9;\n}\n.logo-foot[data-v-0b8439d1] {\n  width: 50%;\n  margin: 0 auto;\n}\n.active[data-v-0b8439d1] {\n  display: block;\n}\n.not-active[data-v-0b8439d1] {\n  display: none;\n}\n.mask[data-v-0b8439d1] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7412,7 +7413,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-sponsor[data-v-0e0d5f7f] {\n  padding: 150px 50px 50px 50px;\n  width: 90%;\n  height: 700px;\n  margin: 0 auto;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n  text-align: center;\n  font-size: 40px;\n}\n.container-sponsor .cont-caro[data-v-0e0d5f7f] {\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n}\n.container-sponsor .cont-caro .box[data-v-0e0d5f7f] {\n  padding: 50px;\n}\n.container-sponsor .cont-caro .box .container-box--img[data-v-0e0d5f7f] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-sponsor .cont-caro .box .container-description[data-v-0e0d5f7f] {\n  display: block;\n}\n@media (max-width: 968px) {\n.container-sponsor[data-v-0e0d5f7f] {\n    padding: 5px;\n    width: 100%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-sponsor[data-v-0e0d5f7f] {\n  padding: 100px 50px 50px 50px;\n  width: 90%;\n  height: 700px;\n  margin: 0 auto;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n  text-align: center;\n  font-size: 40px;\n  color: #1c2331c7;\n}\n.container-sponsor .cont-caro[data-v-0e0d5f7f] {\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n}\n.container-sponsor .cont-caro .box[data-v-0e0d5f7f] {\n  padding: 50px;\n  width: 500px;\n}\n.container-sponsor .cont-caro .box .container-box--img[data-v-0e0d5f7f] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-sponsor .cont-caro .box .container-description[data-v-0e0d5f7f] {\n  display: block;\n}\n@media (max-width: 968px) {\n.container-sponsor[data-v-0e0d5f7f] {\n    padding: 5px;\n    width: 100%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7436,7 +7437,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\nbody {\n  font-family: \"Montserrat\", sans-serif;\n}\n.app {\n  background: #eaddcf;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\nbody {\n  font-family: \"Montserrat\", sans-serif;\n}\n.app {\n  background: #f6dfd8;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40025,7 +40026,7 @@ var staticRenderFns = [
       "footer",
       {
         staticClass: "text-center text-lg-start text-white",
-        staticStyle: { "background-color": "#1c2331" }
+        staticStyle: { "background-color": "rgba(00, 00, 00, 0.82)" }
       },
       [
         _c(
@@ -40077,7 +40078,7 @@ var staticRenderFns = [
                       staticClass: "mb-4 mt-0 d-inline-block mx-auto",
                       staticStyle: {
                         width: "60px",
-                        "background-color": "#7c4dff",
+                        "background-color": "#FF385B",
                         height: "2px"
                       }
                     }),
@@ -40104,7 +40105,7 @@ var staticRenderFns = [
                       staticClass: "mb-4 mt-0 d-inline-block mx-auto",
                       staticStyle: {
                         width: "60px",
-                        "background-color": "#7c4dff",
+                        "background-color": "#FF385B",
                         height: "2px"
                       }
                     }),
@@ -40147,7 +40148,7 @@ var staticRenderFns = [
                       staticClass: "mb-4 mt-0 d-inline-block mx-auto",
                       staticStyle: {
                         width: "60px",
-                        "background-color": "#7c4dff",
+                        "background-color": "#FF385B",
                         height: "2px"
                       }
                     }),
@@ -40201,7 +40202,7 @@ var staticRenderFns = [
                       staticClass: "mb-4 mt-0 d-inline-block mx-auto",
                       staticStyle: {
                         width: "60px",
-                        "background-color": "#7c4dff",
+                        "background-color": "#FF385B",
                         height: "2px"
                       }
                     }),
@@ -40379,14 +40380,11 @@ var render = function() {
               "div",
               { staticClass: "text-white" },
               [
-                _c(
-                  "h1",
-                  {
-                    staticClass: "mb-3 bgc-text display-1",
-                    class: _vm.Active === false ? "active" : "not-active"
-                  },
-                  [_vm._v("BoolBnB")]
-                ),
+                _c("img", {
+                  staticClass: "logo-foot",
+                  class: _vm.Active === false ? "active" : "not-active",
+                  attrs: { src: "img/boolbeb.svg", alt: "" }
+                }),
                 _vm._v(" "),
                 _c(
                   "h4",
