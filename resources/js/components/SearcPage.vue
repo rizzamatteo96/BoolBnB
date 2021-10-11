@@ -146,8 +146,7 @@ import router from "../router";
 
             }
 
-        } 
-
+        }
     }
 
 </style>
