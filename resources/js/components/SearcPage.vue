@@ -38,8 +38,8 @@
 
                 <ul v-for="service in services" :key="service.id">
                     <li>
-                        <input type="checkbox" id="" name="" value="">
-                        <label for="">{{service.name}}</label>
+                        <input type="checkbox" :id="service.slug" :value="service.id">
+                        <label :for="service.slug">{{service.name}}</label>
                     </li>
                 </ul>
 
