@@ -1,6 +1,25 @@
 <template>
   
     <div class="container">
+
+        <div class="container-form">
+            
+            <label for="">Dove</label>
+            <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc">
+
+            <!-- <label for="">Check-in</label>
+            <input type="date">
+
+            <label for="">Check-out</label>
+            <input type="date">
+
+            <label for="">Adulti</label>
+            <input type="number"> -->
+
+            <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
+            <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link>
+
+        </div>
         
         <h2>Appartamenti nella zona di: </h2>
 
@@ -41,7 +60,8 @@
             return{
 
                 apiUrl: 'http://localhost:8000/api/apartments/',
-                apartments: []
+                apartments: [],
+                citySrc : ''
             }
         },
 
