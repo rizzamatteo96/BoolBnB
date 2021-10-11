@@ -2763,8 +2763,9 @@ __webpack_require__.r(__webpack_exports__);
     findMap: function findMap() {
       var _this = this;
 
-      var src = this.apiFirst + this.location + this.apiSecond + this.apiKey;
-      console.log(this.location);
+      var pippo = document.getElementsByClassName('tt-search-box-input').value;
+      var src = this.apiFirst + pippo + this.apiSecond + this.apiKey;
+      console.log(pippo);
       axios.get(src).then(function (response) {
         console.log(response.data.results[0].position.lat);
         _this.lat = response.data.results[0].position.lat;
