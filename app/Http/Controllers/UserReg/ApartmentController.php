@@ -150,7 +150,7 @@ class ApartmentController extends Controller
         if($apartment && $apartment->user_id == $user){
             return view('userreg.apartments.show', compact('apartment'));
         } else {
-            abort(404);
+            abort(403);
         }
     }
 
@@ -172,7 +172,7 @@ class ApartmentController extends Controller
         if($apartment && $apartment->user_id == $user){
             return view('userreg.apartments.edit', compact('apartment','services'));
         } else {
-            abort(404);
+            abort(403);
         }
     }
 

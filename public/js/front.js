@@ -40617,19 +40617,19 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", [
-              _c("a", { staticClass: "text-white me-4", attrs: { href: "" } }, [
+              _c("a", { staticClass: "text-white mr-4", attrs: { href: "" } }, [
                 _c("i", { staticClass: "fab fa-facebook-f" })
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "text-white me-4", attrs: { href: "" } }, [
+              _c("a", { staticClass: "text-white mr-4", attrs: { href: "" } }, [
                 _c("i", { staticClass: "fab fa-twitter" })
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "text-white me-4", attrs: { href: "" } }, [
+              _c("a", { staticClass: "text-white mr-4", attrs: { href: "" } }, [
                 _c("i", { staticClass: "fab fa-instagram" })
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "text-white me-4", attrs: { href: "" } }, [
+              _c("a", { staticClass: "text-white mr-4", attrs: { href: "" } }, [
                 _c("i", { staticClass: "fab fa-linkedin" })
               ])
             ])
