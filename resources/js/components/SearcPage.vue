@@ -33,6 +33,17 @@
                 </div>
 
             </div>
+
+            <div class="container-services">
+
+                <ul v-for="service in services" :key="service.id">
+                    <li>
+                        <input type="checkbox" id="" name="" value="">
+                        <label for="">{{service.name}}</label>
+                    </li>
+                </ul>
+
+            </div>
             <!-- Fine Filtri -->
 
             <!-- <label for="">Check-in</label>
@@ -69,10 +80,10 @@
 
                 </div>
 
+                <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class="btn btn-outline-light">Visualizza dettagli</router-link>
 
             </div>
 
-           
         </div>
 
     </div>
@@ -213,6 +224,7 @@ import router from "../router";
             box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
             margin: 20px 0px;
             border-radius: 20px;
+            text-align: center;
 
             .container-box--img {
                 width: 100%;
@@ -279,6 +291,23 @@ import router from "../router";
                 }
 
             }
+
+            .container-services {
+                margin-top: 30px;
+                display: flex;
+                justify-content: start;
+                flex-flow: wrap;
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        margin: 0px 20px;
+                    }
+                }
+
+            }
+
             .title-search {
 
                 text-transform: uppercase;
