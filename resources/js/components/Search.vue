@@ -5,7 +5,9 @@
         <div class="container-form">
             
             <label for="">Dove</label>
-            <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc">
+            <div id="search-field"></div>
+
+            <!-- <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
 
             <!-- <label for="">Check-in</label>
             <input type="date">
@@ -17,7 +19,7 @@
             <input type="number"> -->
 
             <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
-            <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link>
+            <router-link :to="{ name: 'src', params: {slug : document.querySelector('input.tt-search-box-input').value} }" class="btn btn-outline-light" @click="findMap">Cerca</router-link>
 
         </div>
     
@@ -33,8 +35,35 @@ export default {
     name: 'Search',
     data(){
         return{
-            citySrc : ''
+            citySrc : '',
+            apiFirst : 'https://api.tomtom.com/search/2/geocode/',
+            apiSecond : '.JSON?key=',
+            apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
         }
+    },
+    mounted(){
+      this.searchBox();
+    },
+    methods: {
+        findMap(){
+            this.citySrc = document.querySelector('input.tt-search-box-input').value;
+        },
+        searchBox(){
+        var options = {
+            searchOptions: {
+                key: this.apiKey,
+                language: 'it-IT',
+                limit: 5
+            },
+            autocompleteOptions: {
+                key: this.apiKey,
+                language: 'it-IT'
+            }
+        };
+        var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+        var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+        document.getElementById('search-field').append(searchBoxHTML);
+    }
     }
 
 }
