@@ -7671,7 +7671,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container[data-v-1c94c414] {\n  padding-top: 100px;\n}\n.container .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n}\n.container .box[data-v-1c94c414] {\n  padding: 50px;\n  width: 400px;\n}\n.container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container .box .container-description[data-v-1c94c414] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0 auto;\n  padding-top: 100px;\n}\n.container-search .title-serach[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box[data-v-1c94c414] {\n  padding: 50px;\n  width: 400px;\n}\n.container-search .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box .container-description[data-v-1c94c414] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41032,60 +41032,65 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("div", { staticClass: "container-form" }, [
-        _c("label", { attrs: { for: "" } }, [_vm._v("Dove")]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "search-field" } }),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "btn btn-outline-light", on: { click: _vm.findMap } },
-          [_vm._v("Cerca")]
-        )
+  return _c("div", { staticClass: "container-search" }, [
+    _c("div", { staticClass: "container-form" }, [
+      _c("label", { staticClass: "title-search", attrs: { for: "" } }, [
+        _vm._v("Dove")
       ]),
       _vm._v(" "),
-      _c("h2", [_vm._v("Appartamenti nella zona di: ")]),
+      _c("div", { attrs: { id: "search-field" } }),
       _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "btn mt-3 btn-outline-light",
+          on: { click: _vm.findMap }
+        },
+        [_vm._v("Cerca")]
+      )
+    ]),
+    _vm._v(" "),
+    _c("h2", { staticClass: "title-serach" }, [
+      _vm._v("Appartamenti nella zona di: ")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "box-container" },
       _vm._l(_vm.apartments, function(apartment) {
-        return _c("div", { key: apartment.id, staticClass: "box-container" }, [
-          _c("div", { staticClass: "box" }, [
-            _c("img", {
-              staticClass: "container-box--img",
-              attrs: { src: apartment.image, alt: "" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "container-description" }, [
-              _c("h2", { staticClass: "container-description--title" }, [
-                _vm._v(" Titolo " + _vm._s(apartment.title))
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "container-description--price" }, [
-                _vm._v("Prezzo: " + _vm._s(apartment.daily_price) + " €")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "container-description--price" }, [
-                _vm._v("citta: " + _vm._s(apartment.city))
-              ])
+        return _c("div", { key: apartment.id, staticClass: "box" }, [
+          _c("img", {
+            staticClass: "container-box--img",
+            attrs: { src: apartment.image, alt: "" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container-description" }, [
+            _c("h2", { staticClass: "container-description--title" }, [
+              _vm._v(" Titolo " + _vm._s(apartment.title))
             ]),
             _vm._v(" "),
-            _c("span", { staticClass: "container-box--adress" }, [
-              _vm._v(
-                "Via: " +
-                  _vm._s(apartment.address) +
-                  ", " +
-                  _vm._s(apartment.house_num)
-              )
+            _c("span", { staticClass: "container-description--price" }, [
+              _vm._v("Prezzo: " + _vm._s(apartment.daily_price) + " €")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "container-description--price" }, [
+              _vm._v("citta: " + _vm._s(apartment.city))
             ])
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "container-box--adress" }, [
+            _vm._v(
+              "Via: " +
+                _vm._s(apartment.address) +
+                ", " +
+                _vm._s(apartment.house_num)
+            )
           ])
         ])
-      })
-    ],
-    2
-  )
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
