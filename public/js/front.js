@@ -2763,7 +2763,7 @@ __webpack_require__.r(__webpack_exports__);
     findMap: function findMap() {
       var _this = this;
 
-      var pippo = document.getElementsByClassName('tt-search-box-input').value;
+      var pippo = document.querySelector('input.tt-search-box-input').value;
       var src = this.apiFirst + pippo + this.apiSecond + this.apiKey;
       console.log(pippo);
       axios.get(src).then(function (response) {
