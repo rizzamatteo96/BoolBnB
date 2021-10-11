@@ -39,10 +39,10 @@
 
                     <span class="container-description--price">Prezzo: {{apartment.daily_price}} €</span>
                     <span class="container-description--price">citta: {{apartment.city}}</span>
+                    <p class="container-box--adress">Via: {{apartment.address}}, {{apartment.house_num}}</p>
 
                 </div>
 
-                <span class="container-box--adress">Via: {{apartment.address}}, {{apartment.house_num}}</span>
 
             </div>
 
@@ -141,6 +141,7 @@ import router from "../router";
         .box {
             padding: 50px;
             width: 400px;
+            box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
 
             .container-box--img {
                 width: 100%;
@@ -151,10 +152,9 @@ import router from "../router";
             }
 
             .container-description {
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-
+                display: block;
+                text-align: center;
+                margin-top: 20px;
             }
 
         } 
