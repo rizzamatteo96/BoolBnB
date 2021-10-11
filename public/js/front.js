@@ -2742,6 +2742,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Mappe',
   data: function data() {
@@ -2756,6 +2757,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.loadMap();
+    this.searchBox();
   },
   methods: {
     findMap: function findMap() {
@@ -2783,6 +2785,22 @@ __webpack_require__.r(__webpack_exports__);
           zoom: 18
         });
       }, 1000);
+    },
+    searchBox: function searchBox() {
+      var options = {
+        searchOptions: {
+          key: this.apiKey,
+          language: 'it-IT',
+          limit: 5
+        },
+        autocompleteOptions: {
+          key: this.apiKey,
+          language: 'it-IT'
+        }
+      };
+      var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+      var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+      document.getElementById('test').append(searchBoxHTML);
     }
   }
 });
@@ -41262,6 +41280,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "stile-map" }, [
     _c("div", { attrs: { id: "map" } }),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "test" } }),
     _vm._v(" "),
     _c("input", {
       directives: [

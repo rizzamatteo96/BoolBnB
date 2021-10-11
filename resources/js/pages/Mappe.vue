@@ -1,6 +1,7 @@
 <template>
   <div class="stile-map">
         <div :id="'map'"></div>
+        <div id="test"></div>
         <input type="text" v-model="location">
         <a @click="findMap" class="btn btn-primary">cerca mappa</a>
     </div>
@@ -21,6 +22,7 @@ export default {
   },
   mounted(){
     this.loadMap();
+    this.searchBox();
   },
   methods: {
     findMap(){
@@ -48,6 +50,22 @@ export default {
           zoom: 18
         });
       }, 1000);      
+    },
+    searchBox(){
+        var options = {
+            searchOptions: {
+                key: this.apiKey,
+                language: 'it-IT',
+                limit: 5
+            },
+            autocompleteOptions: {
+                key: this.apiKey,
+                language: 'it-IT'
+            }
+        };
+        var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+        var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+        document.getElementById('test').append(searchBoxHTML);
     }
   }
 }
