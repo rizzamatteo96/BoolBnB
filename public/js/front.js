@@ -2460,12 +2460,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearcPage',
   data: function data() {
     return {
       apiUrl: 'http://localhost:8000/api/apartments/',
-      apartments: []
+      apartments: [],
+      citySrc: ''
     };
   },
   created: function created() {
@@ -40917,6 +40937,46 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
+      _c(
+        "div",
+        { staticClass: "container-form" },
+        [
+          _c("label", { attrs: { for: "" } }, [_vm._v("Dove")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.citySrc,
+                expression: "citySrc"
+              }
+            ],
+            staticClass: "city",
+            attrs: { type: "text", placeholder: "Scrivi la citta" },
+            domProps: { value: _vm.citySrc },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.citySrc = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "btn btn-outline-light",
+              attrs: { to: { name: "src", params: { slug: _vm.citySrc } } }
+            },
+            [_vm._v("Cerca")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
       _c("h2", [_vm._v("Appartamenti nella zona di: ")]),
       _vm._v(" "),
       _vm._l(_vm.apartments, function(apartment) {
