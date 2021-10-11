@@ -239,11 +239,30 @@ class ApartmentController extends Controller
             $editApartment['visibility'] = 0;
         };
 
-        // forzo lat e long per test
-        // $editApartment['latitude'] = 45.7737690000;
-        // $editApartment['longitude'] = 11.45460100000;
 
-        
+        // --- TOMTOM section ---
+        // prepare full address
+        $fullAddress = $editApartment['city'] . ' via ' . $editApartment['address'] . ' ' . $editApartment['house_num'] . ' ' . $editApartment['postal_code'];
+
+        // prepare full address from DB
+        $fullAddressDB = $apartment->city . ' via ' . $apartment->address . ' ' . $apartment->house_num . ' ' . $apartment->postal_code;
+
+        // check if something change from DB to new edited data
+        if($fullAddress != $fullAddressDB){
+            // prepare apiUrl to call it
+            $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $fullAddress . '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
+    
+            // call TomTom api
+            $response = Http::get($apiUrl);
+    
+            // take TomTom response
+            $positionCoord = $response->json()['results'][0]['position'];
+    
+            // save TomTom response position
+            $editApartment['latitude'] = $positionCoord['lat'];
+            $editApartment['longitude'] = $positionCoord['lon'];
+        }
+
 
         // carico le modifiche nel DB
         $apartment->update($editApartment);
