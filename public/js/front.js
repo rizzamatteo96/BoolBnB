@@ -2515,6 +2515,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../router */ "./resources/js/router.js");
 //
 //
 //
@@ -2545,6 +2546,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Search',
   data: function data() {
@@ -2561,6 +2564,12 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     findMap: function findMap() {
       this.citySrc = document.querySelector('input.tt-search-box-input').value;
+      _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
+        name: 'src',
+        params: {
+          slug: this.citySrc
+        }
+      });
     },
     searchBox: function searchBox() {
       var options = {
@@ -41088,34 +41097,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-search" }, [
-    _c(
-      "div",
-      { staticClass: "container-form" },
-      [
-        _c("label", { attrs: { for: "" } }, [_vm._v("Dove")]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "search-field" } }),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          {
-            staticClass: "btn btn-outline-light",
-            attrs: {
-              to: {
-                name: "src",
-                params: {
-                  slug: _vm.document.querySelector("input.tt-search-box-input")
-                    .value
-                }
-              }
-            },
-            on: { click: _vm.findMap }
-          },
-          [_vm._v("Cerca")]
-        )
-      ],
-      1
-    )
+    _c("div", { staticClass: "container-form" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Dove")]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "search-field" } }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "btn btn-outline-light", on: { click: _vm.findMap } },
+        [_vm._v("Cerca")]
+      )
+    ])
   ])
 }
 var staticRenderFns = []

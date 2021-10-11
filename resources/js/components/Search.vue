@@ -19,7 +19,8 @@
             <input type="number"> -->
 
             <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
-            <router-link :to="{ name: 'src', params: {slug : document.querySelector('input.tt-search-box-input').value} }" class="btn btn-outline-light" @click="findMap">Cerca</router-link>
+            <!-- <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link> -->
+            <div @click="findMap" class="btn btn-outline-light">Cerca</div>
 
         </div>
     
@@ -29,6 +30,7 @@
 
 
 <script>
+import router from "../router";
 
 export default {
 
@@ -47,6 +49,7 @@ export default {
     methods: {
         findMap(){
             this.citySrc = document.querySelector('input.tt-search-box-input').value;
+            router.push({ name: 'src', params: {slug : this.citySrc} });
         },
         searchBox(){
         var options = {
