@@ -2511,7 +2511,8 @@ __webpack_require__.r(__webpack_exports__);
       apiUrl: 'http://localhost:8000/api/apartments/',
       apartments: [],
       citySrc: '',
-      apiKey: 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo'
+      apiKey: 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
+      filters: 'beds=*;rooms=*;distance=*'
     };
   },
   mounted: function mounted() {
@@ -2522,9 +2523,12 @@ __webpack_require__.r(__webpack_exports__);
     chiamataApi: function chiamataApi() {
       var _this = this;
 
-      axios.get(this.apiUrl + this.$route.params.slug).then(function (response) {
+      axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters).then(function (response) {
+        console.log(response);
         _this.apartments = response.data.results;
-      })["catch"]();
+      })["catch"](function (e) {
+        console.log(e);
+      });
     },
     findMap: function findMap() {
       this.apartments = [];

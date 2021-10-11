@@ -87,6 +87,7 @@ import router from "../router";
                 apartments: [],
                 citySrc : '',
                 apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
+                filters : 'beds=*;rooms=*;distance=*',
             }
         },
 
@@ -99,11 +100,14 @@ import router from "../router";
 
         methods: {
             chiamataApi(){
-                axios.get(this.apiUrl + this.$route.params.slug)
+                axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters)
                 .then(response => {
+                    console.log(response);
                     this.apartments = response.data.results;
                 })
-                .catch();
+                .catch(e => {
+                    console.log(e);
+                });
             },
             findMap(){
                 this.apartments = [];
