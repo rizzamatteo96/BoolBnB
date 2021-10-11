@@ -2484,6 +2484,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearcPage',
@@ -2552,13 +2571,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../router */ "./resources/js/router.js");
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -7671,7 +7683,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0 auto;\n  padding-top: 100px;\n}\n.container-search .title-serach[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box[data-v-1c94c414] {\n  padding: 50px;\n  width: 400px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n}\n.container-search .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0 auto;\n  padding-top: 100px;\n}\n.container-search .title-serach[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box[data-v-1c94c414] {\n  padding: 50px;\n  width: 400px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n}\n.container-search .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41040,6 +41052,8 @@ var render = function() {
       _vm._v(" "),
       _c("div", { attrs: { id: "search-field" } }),
       _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
       _c(
         "div",
         {
@@ -41092,7 +41106,40 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-filter" }, [
+      _c("div", { staticClass: "filter" }, [
+        _c("label", { staticClass: "title-filter", attrs: { for: "" } }, [
+          _vm._v("Numero di stanze")
+        ]),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "number" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "filter" }, [
+        _c("label", { staticClass: "title-filter", attrs: { for: "" } }, [
+          _vm._v("Numero posti letto")
+        ]),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "number" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "filter" }, [
+        _c("label", { staticClass: "title-filter", attrs: { for: "" } }, [
+          _vm._v("Raggio di default ")
+        ]),
+        _vm._v(" "),
+        _c("input", { staticClass: "filter-range", attrs: { type: "range" } }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "volume" } }, [_vm._v("Km")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

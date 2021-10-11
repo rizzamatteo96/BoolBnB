@@ -8,6 +8,25 @@
             <div id="search-field"></div>
             <!-- <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
 
+            <div class="container-filter">
+
+                <div class="filter">
+                     <label class="title-filter" for="">Numero di stanze</label>
+                    <input type="number"> 
+                </div>
+
+                <div class="filter">
+                    <label class="title-filter" for="">Numero posti letto</label>
+                    <input type="number"> 
+                </div>
+
+                <div class="filter">
+                    <label class="title-filter" for="">Raggio di default </label>
+                    <input class="filter-range" type="range">
+                    <label for="volume">Km</label>
+                </div>
+
+            </div>
 
             <!-- <label for="">Check-in</label>
             <input type="date">
@@ -166,6 +185,36 @@ import router from "../router";
             border-radius: 20px; 
             text-align: center;  
 
+            .container-filter {
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-around;
+
+                .filter {
+
+                    .title-filter {
+                        display: block;
+                    }
+
+                    input{
+                        width: 47px;
+                        height: 30px;
+                        border-radius: 10px;
+                        padding: 5px;
+                        border: none;
+                    }
+
+                    .filter-range {
+                        line-height: middle;
+                        width: 90px;
+                        height: 20px;
+                        vertical-align: middle;
+                        margin: 0px 10px;
+                    }
+
+                }
+
+            }
             .title-search {
 
                 text-transform: uppercase;

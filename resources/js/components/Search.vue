@@ -7,16 +7,9 @@
             <label for="">Dove</label>
             <div id="search-field"></div>
 
-            <!-- <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
-
-            <!-- <label for="">Check-in</label>
-            <input type="date">
-
-            <label for="">Check-out</label>
-            <input type="date">
-
-            <label for="">Adulti</label>
-            <input type="number"> -->
+           <!--<input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
+            
+            
 
             <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
             <!-- <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link> -->
