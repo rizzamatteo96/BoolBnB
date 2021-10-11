@@ -54,7 +54,7 @@ class ApartmentController extends Controller
     public function search($slug)
     {
         // richiamo il post presente nel DB che riporta lo slug richiesto
-        $apartments = Apartment::where('city', $slug)->with(['services'])->get();
+        $apartments = Apartment::where('city', $slug)->where('visibility', 1)->with(['services'])->get();
 
         // controllo se c'è l'immagine salvata e preparo il path per la visualizzazione in front end
         foreach($apartments as $apartment){
