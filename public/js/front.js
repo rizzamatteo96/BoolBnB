@@ -2428,6 +2428,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../router */ "./resources/js/router.js");
 //
 //
 //
@@ -2479,16 +2480,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearcPage',
   data: function data() {
     return {
       apiUrl: 'http://localhost:8000/api/apartments/',
       apartments: [],
-      citySrc: ''
+      citySrc: '',
+      apiKey: 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo'
     };
   },
-  created: function created() {
+  mounted: function mounted() {
+    this.searchBox();
     this.chiamataApi();
   },
   methods: {
@@ -2498,6 +2506,34 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(this.apiUrl + this.$route.params.slug).then(function (response) {
         _this.apartments = response.data.results;
       })["catch"]();
+    },
+    findMap: function findMap() {
+      this.apartments = [];
+      this.citySrc = '';
+      this.citySrc = document.querySelector('input.tt-search-box-input').value;
+      _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
+        name: 'src',
+        params: {
+          slug: this.citySrc
+        }
+      });
+      this.chiamataApi();
+    },
+    searchBox: function searchBox() {
+      var options = {
+        searchOptions: {
+          key: this.apiKey,
+          language: 'it-IT',
+          limit: 5
+        },
+        autocompleteOptions: {
+          key: this.apiKey,
+          language: 'it-IT'
+        }
+      };
+      var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+      var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+      document.getElementById('search-field').append(searchBoxHTML);
     }
   }
 });
@@ -41000,45 +41036,17 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c(
-        "div",
-        { staticClass: "container-form" },
-        [
-          _c("label", { attrs: { for: "" } }, [_vm._v("Dove")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.citySrc,
-                expression: "citySrc"
-              }
-            ],
-            staticClass: "city",
-            attrs: { type: "text", placeholder: "Scrivi la citta" },
-            domProps: { value: _vm.citySrc },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.citySrc = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-outline-light",
-              attrs: { to: { name: "src", params: { slug: _vm.citySrc } } }
-            },
-            [_vm._v("Cerca")]
-          )
-        ],
-        1
-      ),
+      _c("div", { staticClass: "container-form" }, [
+        _c("label", { attrs: { for: "" } }, [_vm._v("Dove")]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "search-field" } }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "btn btn-outline-light", on: { click: _vm.findMap } },
+          [_vm._v("Cerca")]
+        )
+      ]),
       _vm._v(" "),
       _c("h2", [_vm._v("Appartamenti nella zona di: ")]),
       _vm._v(" "),
