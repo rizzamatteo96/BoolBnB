@@ -13,7 +13,7 @@
 
             <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
             <!-- <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link> -->
-            <div @click="findMap" class="btn btn-outline-light mt-3">Cerca</div>
+            <div @click="loadCoordinate" class="btn btn-outline-light mt-3">Cerca</div>
 
         </div>
     
@@ -40,9 +40,28 @@ export default {
       this.searchBox();
     },
     methods: {
-        findMap(){
-            this.citySrc = document.querySelector('input.tt-search-box-input').value;
-            router.push({ name: 'src', params: {slug : this.citySrc} });
+        loadCoordinate(){
+            var srcLoc = document.querySelector('input.tt-search-box-input').value;
+            let src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey;
+            console.log(srcLoc);
+
+            axios.get(src)
+                .then(response => {
+                    // console.log(response.data.results[0].position.lat);
+                    this.lat = response.data.results[0].position.lat;
+                    this.lon = response.data.results[0].position.lon;
+                    this.citySrc = '';
+                    this.citySrc = this.lat + ',' + this.lon;
+                    this.citySrc = this.citySrc.replaceAll('.', '-');
+                    console.log(this.citySrc);
+                    console.log(this.lat, this.lon);
+                })
+                .catch(e => {
+                    console.log(e);
+                })
+                .finally(() => {
+                    router.push({ name: 'src', params: {slug : this.citySrc} });
+                });
         },
         searchBox(){
             var options = {
@@ -59,7 +78,7 @@ export default {
             var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
             var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
             document.getElementById('search-field').append(searchBoxHTML);
-        }
+        },
     }
 
 }

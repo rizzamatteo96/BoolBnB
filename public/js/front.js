@@ -2524,7 +2524,9 @@ __webpack_require__.r(__webpack_exports__);
       services: [],
       citySrc: '',
       apiKey: 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
-      filters: 'beds=*;rooms=*;distance=*'
+      filters: '',
+      apiFirst: 'https://api.tomtom.com/search/2/geocode/',
+      apiSecond: '.JSON?key='
     };
   },
   mounted: function mounted() {
@@ -2536,10 +2538,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       // prepare filter before call the apartments api
-      this.filters = 'beds=' + this.beds + ';rooms=' + this.rooms + ';distance=*'; // Api to get apartments from DB
+      this.filters = 'beds=' + this.beds + ';rooms=' + this.rooms + ';distance=' + this.distance; // Api to get apartments from DB
 
       axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters).then(function (response) {
-        // console.log(response);
+        console.log(response);
         _this.apartments = response.data.results;
       })["catch"](function (e) {
         console.log(e);
@@ -2551,18 +2553,6 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (e) {
         console.log(e);
       });
-    },
-    findMap: function findMap() {
-      this.apartments = [];
-      this.citySrc = '';
-      this.citySrc = document.querySelector('input.tt-search-box-input').value;
-      _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
-        name: 'src',
-        params: {
-          slug: this.citySrc
-        }
-      });
-      this.chiamataApi();
     },
     searchBox: function searchBox() {
       var options = {
@@ -2579,6 +2569,34 @@ __webpack_require__.r(__webpack_exports__);
       var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
       var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
       document.getElementById('search-field').append(searchBoxHTML);
+    },
+    loadCoordinate: function loadCoordinate() {
+      var _this2 = this;
+
+      var srcLoc = document.querySelector('input.tt-search-box-input').value;
+      var src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey; // console.log(srcLoc);
+
+      axios.get(src).then(function (response) {
+        // console.log(response.data.results[0].position.lat);
+        _this2.lat = response.data.results[0].position.lat;
+        _this2.lon = response.data.results[0].position.lon;
+        _this2.citySrc = '';
+        _this2.citySrc = _this2.lat + ',' + _this2.lon;
+        _this2.citySrc = _this2.citySrc.replaceAll('.', '-'); // console.log(this.citySrc);
+        // console.log(this.lat, this.lon);
+      })["catch"](function (e) {
+        console.log(e);
+      })["finally"](function () {
+        console.log(_this2.citySrc);
+        _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
+          name: 'src',
+          params: {
+            slug: _this2.citySrc
+          }
+        });
+
+        _this2.chiamataApi();
+      });
     }
   }
 });
@@ -2636,13 +2654,30 @@ __webpack_require__.r(__webpack_exports__);
     this.searchBox();
   },
   methods: {
-    findMap: function findMap() {
-      this.citySrc = document.querySelector('input.tt-search-box-input').value;
-      _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
-        name: 'src',
-        params: {
-          slug: this.citySrc
-        }
+    loadCoordinate: function loadCoordinate() {
+      var _this = this;
+
+      var srcLoc = document.querySelector('input.tt-search-box-input').value;
+      var src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey;
+      console.log(srcLoc);
+      axios.get(src).then(function (response) {
+        // console.log(response.data.results[0].position.lat);
+        _this.lat = response.data.results[0].position.lat;
+        _this.lon = response.data.results[0].position.lon;
+        _this.citySrc = '';
+        _this.citySrc = _this.lat + ',' + _this.lon;
+        _this.citySrc = _this.citySrc.replaceAll('.', '-');
+        console.log(_this.citySrc);
+        console.log(_this.lat, _this.lon);
+      })["catch"](function (e) {
+        console.log(e);
+      })["finally"](function () {
+        _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
+          name: 'src',
+          params: {
+            slug: _this.citySrc
+          }
+        });
       });
     },
     searchBox: function searchBox() {
@@ -41193,7 +41228,7 @@ var render = function() {
         "div",
         {
           staticClass: "btn mt-3 btn-outline-light",
-          on: { click: _vm.findMap }
+          on: { click: _vm.loadCoordinate }
         },
         [_vm._v("Cerca")]
       )
@@ -41274,7 +41309,7 @@ var render = function() {
         "div",
         {
           staticClass: "btn btn-outline-light mt-3",
-          on: { click: _vm.findMap }
+          on: { click: _vm.loadCoordinate }
         },
         [_vm._v("Cerca")]
       )

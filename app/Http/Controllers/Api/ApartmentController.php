@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\Response;
+
 use App\Apartment;
 use App\Service;
 
@@ -54,6 +58,10 @@ class ApartmentController extends Controller
      */
     public function search($slug, $filters)
     {
+
+        // change '-' with '.' because it is not possible to transfer '.'
+        $apiQuery = str_replace("-", ".", $slug);
+        
         // take the filters from the other page and divide them to single var
         list($beds, $rooms, $distance) = explode(";", $filters);
 
@@ -62,8 +70,20 @@ class ApartmentController extends Controller
         $distance = intval(substr($distance, strpos($distance, "=") + 1)); 
 
 
-        // richiamo il post presente nel DB che riporta lo slug richiesto
-        $apartments = Apartment::where('city', $slug)
+        // prepare apiUrl to call it
+        $apiUrl = 'https://api.tomtom.com/search/2/reverseGeocode/' . $apiQuery . '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
+    
+        // call TomTom api
+        $response = Http::get($apiUrl);
+
+        // take TomTom response
+        $positionCity = $response->json()['addresses'][0]['address']['localName'];
+
+
+
+
+        // richiamo il post presente nel DB che riporta positionCity richiesto
+        $apartments = Apartment::where('city', $positionCity)
                                 ->where('visibility', 1)
                                 ->where('n_rooms', '>=', $rooms)
                                 ->where('n_beds', '>=', $beds)
@@ -77,7 +97,9 @@ class ApartmentController extends Controller
                 $apartment->img = url('storage/' . $apartment->img); 
             }
 
-            // if((pow($apartment->longitude - $center_longitude, 2) + pow($apartment->latitude - $center_latitude, 2)) < pow($radius, 2)){     }
+            // if((pow($apartment->longitude - $center_longitude, 2) + pow($apartment->latitude - $center_latitude, 2)) < pow($radius, 2)){
+
+            // }
 
         }
 
