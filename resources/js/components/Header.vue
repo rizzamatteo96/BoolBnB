@@ -4,8 +4,8 @@
 
         <!-- inizio logo  -->
         <div class="container--logo">
-
-            <img class="container--logo--image" src="img/boolbeb-icona.svg" alt="">
+            <a href="http://localhost:8000"><img class="container--logo--image" src="img/boolbeb-icona.svg" alt=""></a>
+            
         
         </div>
         <!-- fine logo  -->

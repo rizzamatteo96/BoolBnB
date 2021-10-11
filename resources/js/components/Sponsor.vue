@@ -120,9 +120,9 @@
         width: 90%;
         height: 700px;
         margin: 100px auto;
+        word-wrap: break-word;
 
         .color-text {
-
             color: $ColorText2;
 
         }
@@ -131,6 +131,7 @@
             text-transform: uppercase;
             text-align: center;
             font-size: 50px;
+            width: 100%;
         }
 
         .cont-caro {
@@ -177,9 +178,13 @@
 
         .container-sponsor {
             padding: 5px;
-            width: 100%;
+
+            .title-sponsor {
+                font-size: 39px;
+            }
       
         }
+
 
     }
 

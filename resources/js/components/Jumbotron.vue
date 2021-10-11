@@ -17,7 +17,7 @@
                         <a class=" btn btn-outline-light btn-lg" href="#"  :class="(Active === false) ? '' : 'not-active'" @click="Active = !Active">Cerca</a>
 
                     </div>
-                    <div>
+                    <div class="search-container" :class="(Active === true) ? 'active' : 'not-active'">
 
                         <a class="btn btn-outline-light btn-lg" href="#" :class="(Active === true) ? '' : 'not-active'"  @click="Active = !Active"><i class="fas fa-times"></i></a>
 
@@ -73,7 +73,6 @@
 
 
     .container-jumbo {
-
         min-height: 400px;
 
     }
@@ -99,8 +98,6 @@
 
 
     // }
-    
-
 
     .bg-image {
         background-image: url('img/house3.jpg');
@@ -109,6 +106,12 @@
         background-size: cover;
         height: 100vh;
         width: 100%;
+
+    }
+
+    .search-container {
+        margin: 0 auto;
+        width: 90%;
 
     }
 

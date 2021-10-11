@@ -7611,7 +7611,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-jumbo[data-v-0b8439d1] {\n  min-height: 400px;\n}\n.bg-image[data-v-0b8439d1] {\n  background-image: url(\"img/house3.jpg\");\n  background-position: center;\n  background-attachment: fixed;\n  background-size: cover;\n  height: 100vh;\n  width: 100%;\n}\n.bgc-text[data-v-0b8439d1] {\n  color: #c9c9c9;\n}\n.logo-foot[data-v-0b8439d1] {\n  width: 50%;\n  margin: 0 auto;\n}\n.active[data-v-0b8439d1] {\n  display: block;\n}\n.not-active[data-v-0b8439d1] {\n  display: none;\n}\n.mask[data-v-0b8439d1] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-jumbo[data-v-0b8439d1] {\n  min-height: 400px;\n}\n.bg-image[data-v-0b8439d1] {\n  background-image: url(\"img/house3.jpg\");\n  background-position: center;\n  background-attachment: fixed;\n  background-size: cover;\n  height: 100vh;\n  width: 100%;\n}\n.search-container[data-v-0b8439d1] {\n  margin: 0 auto;\n  width: 90%;\n}\n.bgc-text[data-v-0b8439d1] {\n  color: #c9c9c9;\n}\n.logo-foot[data-v-0b8439d1] {\n  width: 50%;\n  margin: 0 auto;\n}\n.active[data-v-0b8439d1] {\n  display: block;\n}\n.not-active[data-v-0b8439d1] {\n  display: none;\n}\n.mask[data-v-0b8439d1] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7659,7 +7659,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@-webkit-keyframes animate-data-v-5026ffd3 {\nfrom {\n    height: 0px;\n    width: 0%;\n}\nto {\n    height: 300px;\n    width: 100%;\n}\n}\n@keyframes animate-data-v-5026ffd3 {\nfrom {\n    height: 0px;\n    width: 0%;\n}\nto {\n    height: 300px;\n    width: 100%;\n}\n}\nlabel[data-v-5026ffd3] {\n  color: #c9c9c9;\n}\n.container-search[data-v-5026ffd3] {\n  height: 300px;\n  width: 100%;\n  -webkit-animation: animate-data-v-5026ffd3 1s;\n          animation: animate-data-v-5026ffd3 1s;\n}\n.container-search .container-form[data-v-5026ffd3] {\n  margin: 0 auto;\n  text-align: center;\n  width: 500px;\n  padding: 20px;\n  border-radius: 20px;\n  background-color: rgba(0, 0, 0, 0.39);\n}\n.container-search .container-form .city[data-v-5026ffd3] {\n  width: 100%;\n}\n.container-search .container-form label[data-v-5026ffd3] {\n  display: block;\n}\n.container-search .container-form input[data-v-5026ffd3] {\n  padding: 10px;\n  border-radius: 20px;\n  border: none;\n  display: block;\n  margin: 10px auto;\n  height: 40px;\n}\n@media (max-width: 968px) {\n.city[data-v-5026ffd3] {\n    width: 300px;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@-webkit-keyframes animate-data-v-5026ffd3 {\nfrom {\n    height: 0px;\n    width: 0%;\n}\nto {\n    height: 300px;\n    width: 100%;\n}\n}\n@keyframes animate-data-v-5026ffd3 {\nfrom {\n    height: 0px;\n    width: 0%;\n}\nto {\n    height: 300px;\n    width: 100%;\n}\n}\nlabel[data-v-5026ffd3] {\n  color: #c9c9c9;\n}\n.container-search[data-v-5026ffd3] {\n  height: 300px;\n  width: 100%;\n  -webkit-animation: animate-data-v-5026ffd3 1s;\n          animation: animate-data-v-5026ffd3 1s;\n}\n.container-search .container-form[data-v-5026ffd3] {\n  margin: 0 auto;\n  text-align: center;\n  width: 90%;\n  padding: 20px;\n  border-radius: 20px;\n  background-color: rgba(0, 0, 0, 0.39);\n}\n.container-search .container-form .city[data-v-5026ffd3] {\n  width: 100%;\n}\n.container-search .container-form label[data-v-5026ffd3] {\n  display: block;\n}\n.container-search .container-form input[data-v-5026ffd3] {\n  padding: 10px;\n  border-radius: 20px;\n  border: none;\n  display: block;\n  margin: 10px auto;\n  height: 40px;\n}\n@media (max-width: 968px) {\n.city[data-v-5026ffd3] {\n    width: 300px;\n}\n.container-form[data-v-5026ffd3] {\n    width: auto;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7683,7 +7683,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-sponsor[data-v-0e0d5f7f] {\n  width: 90%;\n  height: 700px;\n  margin: 100px auto;\n}\n.container-sponsor .color-text[data-v-0e0d5f7f] {\n  color: #c9c9c9;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n  text-transform: uppercase;\n  text-align: center;\n  font-size: 50px;\n}\n.container-sponsor .cont-caro[data-v-0e0d5f7f] {\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n}\n.container-sponsor .cont-caro .box[data-v-0e0d5f7f] {\n  padding: 50px;\n  text-align: center;\n}\n.container-sponsor .cont-caro .box .box-container[data-v-0e0d5f7f] {\n  width: 100%;\n  padding-bottom: 5px;\n  border-radius: 20px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n}\n.container-sponsor .cont-caro .box .container-box--img[data-v-0e0d5f7f] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n}\n.container-sponsor .cont-caro .box .container-description[data-v-0e0d5f7f] {\n  width: 100%;\n  text-align: center;\n  padding: 10px;\n}\n.container-sponsor .cont-caro .box .container-description .info-text[data-v-0e0d5f7f] {\n  font-weight: bold;\n}\n@media (max-width: 968px) {\n.container-sponsor[data-v-0e0d5f7f] {\n    padding: 5px;\n    width: 100%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-sponsor[data-v-0e0d5f7f] {\n  width: 90%;\n  height: 700px;\n  margin: 100px auto;\n  word-wrap: break-word;\n}\n.container-sponsor .color-text[data-v-0e0d5f7f] {\n  color: #c9c9c9;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n  text-transform: uppercase;\n  text-align: center;\n  font-size: 50px;\n  width: 100%;\n}\n.container-sponsor .cont-caro[data-v-0e0d5f7f] {\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n}\n.container-sponsor .cont-caro .box[data-v-0e0d5f7f] {\n  padding: 50px;\n  text-align: center;\n}\n.container-sponsor .cont-caro .box .box-container[data-v-0e0d5f7f] {\n  width: 100%;\n  padding-bottom: 5px;\n  border-radius: 20px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n}\n.container-sponsor .cont-caro .box .container-box--img[data-v-0e0d5f7f] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n}\n.container-sponsor .cont-caro .box .container-description[data-v-0e0d5f7f] {\n  width: 100%;\n  text-align: center;\n  padding: 10px;\n}\n.container-sponsor .cont-caro .box .container-description .info-text[data-v-0e0d5f7f] {\n  font-weight: bold;\n}\n@media (max-width: 968px) {\n.container-sponsor[data-v-0e0d5f7f] {\n    padding: 5px;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n    font-size: 39px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40859,10 +40859,12 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container--logo" }, [
-      _c("img", {
-        staticClass: "container--logo--image",
-        attrs: { src: "img/boolbeb-icona.svg", alt: "" }
-      })
+      _c("a", { attrs: { href: "http://localhost:8000" } }, [
+        _c("img", {
+          staticClass: "container--logo--image",
+          attrs: { src: "img/boolbeb-icona.svg", alt: "" }
+        })
+      ])
     ])
   },
   function() {
@@ -40939,6 +40941,10 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
+              {
+                staticClass: "search-container",
+                class: _vm.Active === true ? "active" : "not-active"
+              },
               [
                 _c(
                   "a",
@@ -41104,7 +41110,10 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "btn btn-outline-light", on: { click: _vm.findMap } },
+        {
+          staticClass: "btn btn-outline-light mt-3",
+          on: { click: _vm.findMap }
+        },
         [_vm._v("Cerca")]
       )
     ])
@@ -67796,7 +67805,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Boolean\\\\corso-live-36\\\\1-ESERCIZI\\\\mamp_public\\\\Progetto-finale\\\\BoolBnB"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Boolean\\\\corso-live-36\\\\1-ESERCIZI\\\\mamp_public\\\\Progetto-finale\\\\BoolBnB","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","/Users/marco/Desktop/BoolBnB"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"/Users/marco/Desktop/BoolBnB","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 
