@@ -8,25 +8,32 @@
             <div id="search-field"></div>
             <!-- <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
 
+            <!-- Inizio Filtri -->
             <div class="container-filter">
 
                 <div class="filter">
                      <label class="title-filter" for="">Numero di stanze</label>
-                    <input type="number"> 
+                    <button class="button-filter" @click="rooms!=0 ? rooms-- : '' ">-</button>
+                    <span class="number-range" v-text="rooms"></span>
+                    <button class="button-filter" @click="rooms++">+</button>
                 </div>
 
                 <div class="filter">
                     <label class="title-filter" for="">Numero posti letto</label>
-                    <input type="number"> 
+                    <button class="button-filter" @click="beds!=0 ? beds-- : '' ">-</button>
+                    <span class="number-range" v-text="beds"></span>
+                    <button class="button-filter" @click="beds++">+</button>
                 </div>
 
                 <div class="filter">
                     <label class="title-filter" for="">Raggio di default </label>
-                    <input class="filter-range" type="range">
-                    <label for="volume">Km</label>
+                    <input class="filter-range" type="range" min="0" max="100" step="1" value="0" v-model="value">
+                    <span v-text="value"></span>
+                    <label for="">Km</label>
                 </div>
 
             </div>
+            <!-- Fine Filtri -->
 
             <!-- <label for="">Check-in</label>
             <input type="date">
@@ -82,7 +89,9 @@ import router from "../router";
         data(){
 
             return{
-
+                value: 0,
+                beds: 0,
+                rooms: 0,
                 apiUrl: 'http://localhost:8000/api/apartments/',
                 apartments: [],
                 citySrc : '',
@@ -204,6 +213,18 @@ import router from "../router";
                         border-radius: 10px;
                         padding: 5px;
                         border: none;
+                    }
+                    
+                    .number-range {
+                        margin: 0px 20px;
+                    }
+
+                    .button-filter {
+
+                        border-radius: 20%;
+                        padding: 5px 10px;
+                        border: none;
+
                     }
 
                     .filter-range {
