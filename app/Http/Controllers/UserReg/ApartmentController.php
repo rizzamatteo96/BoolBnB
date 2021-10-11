@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\Response;
 
 use App\Apartment;
 use App\Service;
@@ -94,10 +96,16 @@ class ApartmentController extends Controller
         }
 
 
+        $fullAddress = $newApartment['city'] . ' via ' . $newApartment['address'] . ' ' . $newApartment['house_num'] . ' ' . $newApartment['postal_code'];
+        $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $fullAddress . '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
+
+        $response = Http::get($apiUrl);
+        $positionCoord = $response->json()['results'][0]['position'];
+        // dd($positionCoord);
 
         // forzo lat e long per test
-        $newApartment['latitude'] = 45.7737690000;
-        $newApartment['longitude'] = 11.45460100000;
+        $newApartment['latitude'] = $positionCoord['lat'];
+        $newApartment['longitude'] = $positionCoord['lon'];
 
         // seleziono l'utente loggato
         $newApartment['user_id'] = Auth::user()->id;
