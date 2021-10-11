@@ -56,8 +56,8 @@
 
                     <h2 class="container-description--title"> Titolo {{apartment.title}}</h2>
 
-                    <span class="container-description--price">Prezzo: {{apartment.daily_price}} €</span>
-                    <span class="container-description--price">citta: {{apartment.city}}</span>
+                    <p class="container-description--price">Prezzo: {{apartment.daily_price}} €</p>
+                    <p class="container-description--price">citta: {{apartment.city}}</p>
                     <p class="container-box--adress">Via: {{apartment.address}}, {{apartment.house_num}}</p>
 
                 </div>
@@ -139,7 +139,7 @@ import router from "../router";
     .container-search {
         color: white;
         width: 90%;
-        margin: 0 auto;
+        margin: 0px auto 70px;
         padding-top: 100px;
 
         .title-serach {
@@ -161,6 +161,8 @@ import router from "../router";
             padding: 50px;
             width: 400px;
             box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
+            margin: 20px 0px;
+            border-radius: 20px;
 
             .container-box--img {
                 width: 100%;
