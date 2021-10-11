@@ -27,8 +27,8 @@
 
                 <div class="filter">
                     <label class="title-filter" for="">Raggio di default </label>
-                    <input class="filter-range" type="range" min="0" max="100" step="1" value="0" v-model="value">
-                    <span v-text="value"></span>
+                    <input class="filter-range" type="range" min="0" max="100" step="5" value="0" v-model="distance">
+                    <span v-text="distance"></span>
                     <label for="">Km</label>
                 </div>
 
@@ -89,11 +89,13 @@ import router from "../router";
         data(){
 
             return{
-                value: 0,
+                distance: 20,
                 beds: 0,
                 rooms: 0,
                 apiUrl: 'http://localhost:8000/api/apartments/',
+                apiServices : 'http://localhost:8000/api/apartments/services',
                 apartments: [],
+                services: [],
                 citySrc : '',
                 apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
                 filters : 'beds=*;rooms=*;distance=*',
@@ -109,14 +111,29 @@ import router from "../router";
 
         methods: {
             chiamataApi(){
+                // prepare filter before call the apartments api
+                this.filters = 'beds=' + this.beds +  ';rooms=' + this.rooms + ';distance=*';
+
+                // Api to get apartments from DB
                 axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters)
                 .then(response => {
-                    console.log(response);
+                    // console.log(response);
                     this.apartments = response.data.results;
                 })
                 .catch(e => {
                     console.log(e);
                 });
+
+                // Api to get services from DB
+                axios.get(this.apiServices)
+                .then(response => {
+                    // console.log(response.data.results);
+                    this.services = response.data.results;
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+
             },
             findMap(){
                 this.apartments = [];

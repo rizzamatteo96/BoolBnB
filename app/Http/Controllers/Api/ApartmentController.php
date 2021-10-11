@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
+use App\Service;
 
 class ApartmentController extends Controller
 {
@@ -56,30 +57,25 @@ class ApartmentController extends Controller
         // take the filters from the other page and divide them to single var
         list($beds, $rooms, $distance) = explode(";", $filters);
 
-        $beds = substr($beds, strpos($beds, "=") + 1);  
-        $rooms = substr($rooms, strpos($rooms, "=") + 1);  
-        $distance = substr($distance, strpos($distance, "=") + 1);  
+        $beds = intval(substr($beds, strpos($beds, "=") + 1));  
+        $rooms = intval(substr($rooms, strpos($rooms, "=") + 1));  
+        $distance = intval(substr($distance, strpos($distance, "=") + 1)); 
 
 
         // richiamo il post presente nel DB che riporta lo slug richiesto
-        $apartments = Apartment::where('city', $slug)->where('visibility', 1)->with(['services'])->get();
+        $apartments = Apartment::where('city', $slug)
+                                ->where('visibility', 1)
+                                ->where('n_rooms', '>=', $rooms)
+                                ->where('n_beds', '>=', $beds)
+                                ->with(['services'])->get();
 
         // controllo se c'è l'immagine salvata e preparo il path per la visualizzazione in front end
         foreach($apartments as $apartment){
 
             // formula to find if th epoint is inside the radius (x-center_x)^2 + (y - center_y)^2 < radius^2
-            if($beds && $rooms && $distance){
-                if($apartment->img){
-                    $apartment->img = url('storage/' . $apartment->img); 
-                }
-            } else {
-                return response()->json([
-                    'success' => false
-                ]);
+            if($apartment->img){
+                $apartment->img = url('storage/' . $apartment->img); 
             }
-
-
-
 
             // if((pow($apartment->longitude - $center_longitude, 2) + pow($apartment->latitude - $center_latitude, 2)) < pow($radius, 2)){     }
 
@@ -89,6 +85,17 @@ class ApartmentController extends Controller
         return response()->json([
             'success' => true,
             'results' => $apartments
+        ]);
+    }
+
+    public function services()
+    {
+        $services = Service::all();
+
+        // restituisco un JSON visibile anche alla route che si trova in api.php
+        return response()->json([
+            'success' => true,
+            'results' => $services
         ]);
     }
 }
