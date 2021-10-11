@@ -20,7 +20,7 @@
 
             <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
             <!-- <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link> -->
-            <div @click="findMap" class="btn btn-outline-light">Cerca</div>
+            <div @click="findMap" class="btn btn-outline-light mt-3">Cerca</div>
 
         </div>
     
@@ -92,10 +92,12 @@ export default {
         }
 
     }
+    
     label {
 
             color:$ColorText2;
         }
+        
     .container-search {
         height: 300px;
         width: 100%;
@@ -105,7 +107,7 @@ export default {
         .container-form {
             margin: 0 auto;
             text-align: center;
-            width: 500px;
+            width: 90%;
             padding: 20px;
             border-radius: 20px;
             background-color: rgba(0, 0, 0, 0.39);
@@ -118,6 +120,8 @@ export default {
             label{
                 display: block;
             }
+
+           
 
             input {
                 padding: 10px;
@@ -137,6 +141,12 @@ export default {
 
         .city {
             width: 300px;
+        }
+
+        .container-form {
+
+            width: auto;
+
         }
 
     }

@@ -1,10 +1,10 @@
 <template>
   
-    <div class="container">
+    <div class="container-search">
 
         <div class="container-form">
             
-            <label for="">Dove</label>
+            <label class="title-search" for="">Dove</label>
             <div id="search-field"></div>
             <!-- <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
 
@@ -20,16 +20,16 @@
 
             <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
             <!-- <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link> -->
-            <div @click="findMap" class="btn btn-outline-light">Cerca</div>
+            <div @click="findMap" class="btn mt-3 btn-outline-light">Cerca</div>
 
 
         </div>
         
-        <h2>Appartamenti nella zona di: </h2>
+        <h2 class="title-serach">Appartamenti nella zona di: </h2>
 
-        <div class="box-container" v-for="apartment in apartments" :key="apartment.id">
+        <div class="box-container" >
 
-            <div class="box">
+            <div class="box" v-for="apartment in apartments" :key="apartment.id">
 
                 <img class="container-box--img" :src="apartment.image" alt="">
 
@@ -39,10 +39,10 @@
 
                     <span class="container-description--price">Prezzo: {{apartment.daily_price}} €</span>
                     <span class="container-description--price">citta: {{apartment.city}}</span>
+                    <p class="container-box--adress">Via: {{apartment.address}}, {{apartment.house_num}}</p>
 
                 </div>
 
-                <span class="container-box--adress">Via: {{apartment.address}}, {{apartment.house_num}}</span>
 
             </div>
 
@@ -117,20 +117,32 @@ import router from "../router";
 
 <style lang="scss" scoped>
 
-    .container {
-
+    .container-search {
+        color: white;
+        width: 90%;
+        margin: 0 auto;
         padding-top: 100px;
+
+        .title-serach {
+            text-align: center;
+            margin-top: 50px;
+            text-transform: uppercase;
+
+        }
 
         .box-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
-
+            width: 100%;
+            margin: 0 auto;
         }
         
         .box {
             padding: 50px;
             width: 400px;
+            box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
+
             .container-box--img {
                 width: 100%;
                 height: 250px;
@@ -140,13 +152,28 @@ import router from "../router";
             }
 
             .container-description {
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-
+                display: block;
+                text-align: center;
+                margin-top: 20px;
             }
 
+        } 
+        .container-form {
+             background-color: rgba(0, 0, 0, 0.267);
+            height: 100%;
+            width: 100%; 
+            padding: 20px;
+            border-radius: 20px; 
+            text-align: center;  
+
+            .title-search {
+
+                text-transform: uppercase;
+                font-size: 30px;
+
+            }
         }
+
     }
 
 </style>
