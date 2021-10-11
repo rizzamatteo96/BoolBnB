@@ -96,14 +96,20 @@ class ApartmentController extends Controller
         }
 
 
+        // --- TOMTOM section ---
+        // prepare full address
         $fullAddress = $newApartment['city'] . ' via ' . $newApartment['address'] . ' ' . $newApartment['house_num'] . ' ' . $newApartment['postal_code'];
+
+        // prepare apiUrl to call it
         $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $fullAddress . '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
 
+        // call TomTom api
         $response = Http::get($apiUrl);
-        $positionCoord = $response->json()['results'][0]['position'];
-        // dd($positionCoord);
 
-        // forzo lat e long per test
+        // take TomTom response
+        $positionCoord = $response->json()['results'][0]['position'];
+
+        // save TomTom response position
         $newApartment['latitude'] = $positionCoord['lat'];
         $newApartment['longitude'] = $positionCoord['lon'];
 
