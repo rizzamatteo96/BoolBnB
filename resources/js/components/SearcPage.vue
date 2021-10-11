@@ -8,6 +8,25 @@
             <div id="search-field"></div>
             <!-- <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
 
+            <div class="container-filter">
+
+                <div class="filter">
+                     <label class="title-filter" for="">Numero di stanze</label>
+                    <input type="number"> 
+                </div>
+
+                <div class="filter">
+                    <label class="title-filter" for="">Numero posti letto</label>
+                    <input type="number"> 
+                </div>
+
+                <div class="filter">
+                    <label class="title-filter" for="">Raggio di default </label>
+                    <input class="filter-range" type="range">
+                    <label for="volume">Km</label>
+                </div>
+
+            </div>
 
             <!-- <label for="">Check-in</label>
             <input type="date">
@@ -37,8 +56,8 @@
 
                     <h2 class="container-description--title"> Titolo {{apartment.title}}</h2>
 
-                    <span class="container-description--price">Prezzo: {{apartment.daily_price}} €</span>
-                    <span class="container-description--price">citta: {{apartment.city}}</span>
+                    <p class="container-description--price">Prezzo: {{apartment.daily_price}} €</p>
+                    <p class="container-description--price">citta: {{apartment.city}}</p>
                     <p class="container-box--adress">Via: {{apartment.address}}, {{apartment.house_num}}</p>
 
                 </div>
@@ -120,7 +139,7 @@ import router from "../router";
     .container-search {
         color: white;
         width: 90%;
-        margin: 0 auto;
+        margin: 0px auto 70px;
         padding-top: 100px;
 
         .title-serach {
@@ -142,6 +161,8 @@ import router from "../router";
             padding: 50px;
             width: 400px;
             box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
+            margin: 20px 0px;
+            border-radius: 20px;
 
             .container-box--img {
                 width: 100%;
@@ -166,6 +187,36 @@ import router from "../router";
             border-radius: 20px; 
             text-align: center;  
 
+            .container-filter {
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-around;
+
+                .filter {
+
+                    .title-filter {
+                        display: block;
+                    }
+
+                    input{
+                        width: 47px;
+                        height: 30px;
+                        border-radius: 10px;
+                        padding: 5px;
+                        border: none;
+                    }
+
+                    .filter-range {
+                        line-height: middle;
+                        width: 90px;
+                        height: 20px;
+                        vertical-align: middle;
+                        margin: 0px 10px;
+                    }
+
+                }
+
+            }
             .title-search {
 
                 text-transform: uppercase;
