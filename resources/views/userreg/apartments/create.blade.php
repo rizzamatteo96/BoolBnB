@@ -220,7 +220,7 @@
                 @error('postal_code') 
                     is-invalid 
                 @enderror" 
-                id="postal_code" name="postal_code" value="{{old('postal_code')}}"  required onfocusout="verifyPostalCode(postal_code)">
+                id="postal_code" name="postal_code" value="{{old('postal_code')}}" required onfocusout="verifyPostalCode(postal_code)">
 
                 {{-- Add error write --}}
                 <span id="valPostalCode" class="text-danger"></span>

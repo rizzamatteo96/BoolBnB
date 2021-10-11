@@ -182,6 +182,7 @@ class ApartmentController extends Controller
             'n_square_meters' => 'required|min:1|numeric',
             'daily_price' => 'nullable|min:1|numeric',
             'image' => 'image',
+            'services' => 'required',
             
             // Address section
             'city' => 'required|max:255',
