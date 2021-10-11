@@ -52,21 +52,21 @@ export default {
             router.push({ name: 'src', params: {slug : this.citySrc} });
         },
         searchBox(){
-        var options = {
-            searchOptions: {
-                key: this.apiKey,
-                language: 'it-IT',
-                limit: 5
-            },
-            autocompleteOptions: {
-                key: this.apiKey,
-                language: 'it-IT'
-            }
-        };
-        var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
-        var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-        document.getElementById('search-field').append(searchBoxHTML);
-    }
+            var options = {
+                searchOptions: {
+                    key: this.apiKey,
+                    language: 'it-IT',
+                    limit: 5
+                },
+                autocompleteOptions: {
+                    key: this.apiKey,
+                    language: 'it-IT'
+                }
+            };
+            var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+            var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+            document.getElementById('search-field').append(searchBoxHTML);
+        }
     }
 
 }
