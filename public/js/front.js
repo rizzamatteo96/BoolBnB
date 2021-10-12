@@ -42068,8 +42068,7 @@ var render = function() {
           [
             _c("img", {
               staticClass: "container-box--img",
-              attrs: { src: apartment.image, alt: "" },
-              on: { error: _vm.aVueFunctionThatChangesTheSrc }
+              attrs: { src: apartment.image, alt: "" }
             }),
             _vm._v(" "),
             _c("div", { staticClass: "container-description" }, [

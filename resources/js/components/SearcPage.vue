@@ -91,7 +91,7 @@
 
             <div class="box" v-for="apartment in apartments" :key="apartment.id">
 
-                <img class="container-box--img" :src="apartment.image" alt="" @error="aVueFunctionThatChangesTheSrc">
+                <img class="container-box--img" :src="apartment.image" alt="">
 
                 <div class="container-description" >
 
