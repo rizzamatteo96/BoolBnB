@@ -11,7 +11,7 @@
 
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <form  @submit.prevent="sendData" id="contact-form" name="contact-form" action="mail.php" method="POST">
 
                     <!--Grid row-->
                     <div class="row">
@@ -29,7 +29,7 @@
                         <div class="col-md-6">
                             <div class="md-form mb-0">
                                 <label for="email" class="cform">Email</label>
-                                <input type="text" id="email" name="email" class="form-control">
+                                <input type="text" id="email" name="email" class="form-control" v-model="email">
                             </div>
                         </div>
                         <!--Grid column-->
@@ -55,13 +55,15 @@
                         <div class="col-md-12">
 
                             <div class="md-form">
-                                <label class="cform" for="message">Messaggio</label>
-                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                <label class="cform" for="description">Messaggio</label>
+                                <textarea type="text" id="description" name="description" rows="2" class="form-control md-textarea" v-model="description"></textarea>
                             </div>
 
                         </div>
                     </div>
                     <!--Grid row-->
+
+                    <button class="btn-primary" type="submit">click me</button>
 
                 </form>
 
@@ -103,7 +105,27 @@
 
   export default {
     name: 'ContactForm',
-    
+    data() {
+        return {
+            email: '',
+            description: '',
+            errors:{}
+        }
+    },
+    methods: {
+        sendData(){
+            axios.post('/api/contacts', {
+                'email': this.email,
+                'description': this.description
+            })
+                .then(response => {
+                    console.log(response.data.success);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+    }
   }
 
 </script>
