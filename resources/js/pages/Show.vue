@@ -10,12 +10,19 @@
         <p class="card-text">{{apartment.address}}</p>
       </div>
     </div>
+    <Contacts />
   </div>
 </template>
 
 <script>
+
+  import Contacts from '../components/Contacts';
+
 export default {
   name: 'show',
+  components: {
+    Contacts
+  },
   data(){
     return{
       apiUrl: 'http://localhost:8000/api/apartment/',
