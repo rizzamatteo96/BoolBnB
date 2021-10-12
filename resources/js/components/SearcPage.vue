@@ -193,20 +193,18 @@
 
             loadCoordinate(){
                 var srcLoc = document.querySelector('input.tt-search-box-input').value;
+                console.log(srcLoc);
                 let src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey;
                 // console.log(srcLoc);
 
                 axios.get(src)
 
                     .then(response => {
-                        // console.log(response.data.results[0].position.lat);
                         this.lat = response.data.results[0].position.lat;
                         this.lon = response.data.results[0].position.lon;
                         this.citySrc = '';
                         this.citySrc = this.lat + ',' + this.lon;
                         this.citySrc = this.citySrc.replaceAll('.', '_');
-                        // console.log(this.citySrc);
-                        // console.log(this.lat, this.lon);
                     })
                     .catch(e => {
                         console.log(e);
