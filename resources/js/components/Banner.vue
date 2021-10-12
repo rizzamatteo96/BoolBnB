@@ -5,11 +5,15 @@
         <div class="information">
 
             <h2 class="title">Prova ad ospitare</h2>
+           
             <p class="description">Condividi il tuo spazio per guardare <br> qualcosa in piu e cogiere nuove opportunita.</p>
+           
             <a href="#accept" class="btn btn-outline-light btn-lg" @click="ActiveLog = !ActiveLog">Scopri di piu</a>
 
             <div class="accept" id="accept" :class="(ActiveLog === true) ? 'active' : 'not-active'">
+               
                 <h2>Accetta</h2>
+                
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia illo, omnis quos magni totam quibusdam. Molestias, quisquam obcaecati aliquam odit labore beatae est sunt debitis, iste, sed veniam. Odit, adipisci?
                 Doloribus maiores voluptates totam ea, iure laborum similique odio esse nisi ipsum eum autem quos temporibus numquam, quasi officia tenetur cumque deleniti rem. Explicabo sit a est perferendis minus cumque.
                 Corporis architecto fuga molestiae quia facilis id atque nihil totam hic non! Repellendus dolores aperiam necessitatibus neque enim at corrupti quidem laboriosam ex! Iure ratione fugit, illum nesciunt esse qui.
@@ -30,8 +34,11 @@
                 Temporibus debitis illo deserunt a quam tempora, amet provident corporis minus dignissimos. Quod reprehenderit, saepe tempora voluptatem repellat nam omnis error ex voluptate numquam tenetur nobis, eveniet ducimus natus ut.
                 Quisquam voluptatem sunt explicabo accusamus aspernatur maxime quibusdam vitae totam accusantium! Odio, voluptas iusto officiis quibusdam quo, reprehenderit dolorum laborum facilis rem deserunt beatae debitis nesciunt unde modi accusamus iure.
                 Dignissimos ad eveniet laborum, facere odio cumque porro repudiandae sapiente illo eius dicta, quaerat amet fuga vero voluptates possimus accusamus praesentium quidem incidunt odit beatae nobis adipisci ipsam sint? Omnis.</p>
+                
                 <button class="btn btn-outline-light m-3 btn-lg" @click="ActiveLog = !ActiveLog">Rifiuta</button>
+                
                 <button class="btn btn-outline-light m-3 btn-lg" >Acconsento</button>
+           
             </div>
        
 
@@ -117,9 +124,7 @@
             .description {
                 font-size: 20px;
             }
-
          
-
         }
        
     }

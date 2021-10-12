@@ -5,14 +5,9 @@
         <div class="container-form">
             
             <label for="">Dove</label>
+
             <div id="search-field"></div>
 
-           <!--<input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
-            
-            
-
-            <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
-            <!-- <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link> -->
             <div @click="loadCoordinate" class="btn btn-outline-light mt-3">Cerca</div>
 
         </div>
@@ -23,23 +18,32 @@
 
 
 <script>
+
 import router from "../router";
 
 export default {
 
     name: 'Search',
+
     data(){
+
         return{
             citySrc : '',
             apiFirst : 'https://api.tomtom.com/search/2/geocode/',
             apiSecond : '.JSON?key=',
             apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
         }
+
     },
+
     mounted(){
+
       this.searchBox();
+
     },
+
     methods: {
+
         loadCoordinate(){
             var srcLoc = document.querySelector('input.tt-search-box-input').value;
             let src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey;
@@ -63,6 +67,7 @@ export default {
                     router.push({ name: 'src', params: {slug : this.citySrc} });
                 });
         },
+
         searchBox(){
             var options = {
                 searchOptions: {
@@ -79,6 +84,7 @@ export default {
             var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
             document.getElementById('search-field').append(searchBoxHTML);
         },
+
     }
 
 }
@@ -92,10 +98,8 @@ export default {
     @keyframes animate {
 
         from {
-            
             height: 0px;
             width: 0%;
-
         }
 
         to {
@@ -106,9 +110,8 @@ export default {
     }
     
     label {
-
-            color:$ColorText2;
-        }
+        color:$ColorText2;
+    }
         
     .container-search {
         height: 300px;
@@ -133,8 +136,6 @@ export default {
                 display: block;
             }
 
-           
-
             input {
                 padding: 10px;
                 border-radius: 20px;
@@ -156,9 +157,7 @@ export default {
         }
 
         .container-form {
-
             width: auto;
-
         }
 
     }

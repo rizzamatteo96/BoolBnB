@@ -17,22 +17,20 @@
                         <a class=" btn btn-outline-light btn-lg" href="#"  :class="(Active === false) ? '' : 'not-active'" @click="Active = !Active">Cerca</a>
 
                     </div>
+
                     <div class="search-container" :class="(Active === true) ? 'active' : 'not-active'">
 
                         <a class="btn btn-outline-light btn-lg" href="#" :class="(Active === true) ? '' : 'not-active'"  @click="Active = !Active"><i class="fas fa-times"></i></a>
 
                         <Search :class="(Active === true) ? 'active' : 'not-active'"/>
 
-
                     </div>
                         
-    
                 </div>
     
             </div>
    
         </div>
-
 
     </header>
 
@@ -41,7 +39,6 @@
 <script>
 
     import Search from '../components/Search.vue'
-
 
     export default {
 
@@ -71,33 +68,9 @@
     
     @import '../../sass/_variables.scss';
 
-
     .container-jumbo {
         min-height: 400px;
-
     }
-
-    // @keyframes animate {
-
-    //     from {
-            
-    //         left: 0px;
-
-    //     }
-
-    //     to {
-    //         left: 100px;
-            
-    //     }
-
-    // }
-
-    // .animation {
-
-    //     animation: animate 2s;
-
-
-    // }
 
     .bg-image {
         background-image: url('img/house3.jpg');
@@ -106,13 +79,11 @@
         background-size: cover;
         height: 100vh;
         width: 100%;
-
     }
 
     .search-container {
         margin: 0 auto;
         width: 90%;
-
     }
 
     .bgc-text {
@@ -125,14 +96,12 @@
     }
 
     .active {
-            display: block;    
-                
-        }
+        display: block;                  
+    }
 
-        .not-active {
-            display: none;
-
-        }
+    .not-active {
+        display: none;
+    }
 
     .mask{
         background-color: rgba(0, 0, 0, 0.267);
