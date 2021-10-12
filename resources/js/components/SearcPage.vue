@@ -319,7 +319,7 @@
             .container-services {
                 margin-top: 30px;
                 display: flex;
-                justify-content: start;
+                //justify-content: start;
                 flex-flow: wrap;
 
                 ul {
