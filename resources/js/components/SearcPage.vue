@@ -5,42 +5,64 @@
         <div class="container-form">
             
             <label class="title-search" for="">Dove</label>
+
             <div id="search-field"></div>
-            <!-- <input class="city" type="text" placeholder="Scrivi la citta" v-model="citySrc"> -->
 
             <!-- Inizio Filtri -->
             <div class="container-filter">
 
                 <div class="filter">
-                     <label class="title-filter" for="">Numero di stanze</label>
+
+                    <label class="title-filter" for="">Numero di stanze</label>
+
                     <button class="button-filter" @click="rooms!=0 ? rooms-- : '' ">-</button>
+
                     <span class="number-range" v-text="rooms"></span>
+
                     <button class="button-filter" @click="rooms++">+</button>
+
                 </div>
 
+                
                 <div class="filter">
+                
                     <label class="title-filter" for="">Numero posti letto</label>
+                
                     <button class="button-filter" @click="beds!=0 ? beds-- : '' ">-</button>
+                
                     <span class="number-range" v-text="beds"></span>
+                
                     <button class="button-filter" @click="beds++">+</button>
+                
                 </div>
 
+                
                 <div class="filter">
+                
                     <label class="title-filter" for="">Raggio di default </label>
+                
                     <input class="filter-range" type="range" min="0" max="100" step="5" value="0" v-model="distance">
+                
                     <span v-text="distance"></span>
+                
                     <label for="">Km</label>
+                
                 </div>
 
             </div>
 
             <div class="container-services">
-
+  
                 <ul v-for="service in services" :key="service.id">
+                
                     <li>
+                
                         <input type="checkbox" :id="service.slug" :value="service.id">
+                
                         <label :for="service.slug">{{service.name}}</label>
+                
                     </li>
+                
                 </ul>
 
             </div>
@@ -91,7 +113,8 @@
 </template>
 
 <script>
-import router from "../router";
+
+    import router from "../router";
 
     export default {
 
@@ -113,6 +136,7 @@ import router from "../router";
                 apiFirst : 'https://api.tomtom.com/search/2/geocode/',
                 apiSecond : '.JSON?key=',
             }
+
         },
 
         mounted(){
@@ -123,6 +147,7 @@ import router from "../router";
         },
 
         methods: {
+
             chiamataApi(){
                 // prepare filter before call the apartments api
                 this.filters = 'beds=' + this.beds +  ';rooms=' + this.rooms + ';distance=' + this.distance;
@@ -148,6 +173,7 @@ import router from "../router";
                 });
 
             },
+
             searchBox(){
                 var options = {
                     searchOptions: {
@@ -164,12 +190,14 @@ import router from "../router";
                 var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
                 document.getElementById('search-field').append(searchBoxHTML);
             },
+
             loadCoordinate(){
                 var srcLoc = document.querySelector('input.tt-search-box-input').value;
                 let src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey;
                 // console.log(srcLoc);
 
                 axios.get(src)
+
                     .then(response => {
                         // console.log(response.data.results[0].position.lat);
                         this.lat = response.data.results[0].position.lat;
@@ -192,7 +220,7 @@ import router from "../router";
         }
 
     }
-    
+        
 </script>
 
 <style lang="scss" scoped>
@@ -207,7 +235,6 @@ import router from "../router";
             text-align: center;
             margin-top: 50px;
             text-transform: uppercase;
-
         }
 
         .box-container {
@@ -231,7 +258,6 @@ import router from "../router";
                 height: 250px;
                 border-radius: 10px;
                 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
             }
 
             .container-description {
@@ -242,7 +268,7 @@ import router from "../router";
 
         } 
         .container-form {
-             background-color: rgba(0, 0, 0, 0.267);
+            background-color: rgba(0, 0, 0, 0.267);
             height: 100%;
             width: 100%; 
             padding: 20px;
@@ -273,11 +299,9 @@ import router from "../router";
                     }
 
                     .button-filter {
-
                         border-radius: 20%;
                         padding: 5px 10px;
                         border: none;
-
                     }
 
                     .filter-range {
@@ -304,16 +328,17 @@ import router from "../router";
                     li {
                         margin: 0px 20px;
                     }
+
                 }
 
             }
 
             .title-search {
-
                 text-transform: uppercase;
                 font-size: 30px;
 
             }
+            
         }
 
     }

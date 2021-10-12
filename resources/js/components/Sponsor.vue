@@ -10,11 +10,13 @@
             <div class="box" v-for="apartment in apartments" :key="apartment.id">
 
                 <div class="box-container">
+                    
                     <img class="container-box--img" src="img/house.jpg" alt="">
 
                     <div class="container-description" >
 
                         <h2 class="color-text container-description--title">{{apartment.title}}</h2>
+
                         <p class="color-text container-description--price"> <span class="info-text">Prezzo: </span> {{apartment.daily_price}} €</p>
                         <p class="color-text container-box--adress"> <span class="info-text">Citta: </span> {{apartment.city}}</p>
                         <p class="color-text container-box--adress"> <span class="info-text">Via: </span> {{apartment.address}}, {{apartment.house_num}}</p>
@@ -22,7 +24,9 @@
                     </div>
 
                     <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class=" btn btn-outline-light">Visualizza dettagli</router-link>
+                
                 </div>
+
             </div>
         
         </VueSlickCarousel>
@@ -88,6 +92,7 @@
         },
 
         methods: {
+
             chiamataApi(){
                 axios.get(this.apiUrl)
                         .then(response => {
@@ -98,6 +103,7 @@
                         console.log(e);
                 });
             }
+
         },
 
         components: { 
@@ -124,7 +130,6 @@
 
         .color-text {
             color: $ColorText2;
-
         }
 
         .title-sponsor {
@@ -185,10 +190,6 @@
       
         }
 
-
     }
-
-
-
 
 </style>
