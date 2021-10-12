@@ -128,10 +128,19 @@ class ApartmentController extends Controller
         }
 
         // prepare the img for the single apartment
-        foreach ($apartments as $apartment) {
-            if($apartment->img){
-                $apartment->img = url('storage/' . $apartment->img); 
+        if(isset($apartments)){
+            foreach ($apartments as $apartment) {
+                if($apartment->img){
+                    $apartment->img = url('storage/' . $apartment->img); 
+                }
             }
+        } else {
+            // return a JSON as response
+            return response()->json([
+                'success' => true,
+                'results' => '',
+
+            ]);
         }
         
         // return a JSON as response

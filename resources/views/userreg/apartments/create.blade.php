@@ -231,6 +231,8 @@
             </div>
             {{-- Fine - Campo inserimento del postal code --}}
             
+            <div id="search-field" onload="searchBox()"></div>
+
         </div>
         {{-- Fine - Campo inserimento del Indirizzo --}}
 

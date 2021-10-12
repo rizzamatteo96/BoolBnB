@@ -2750,16 +2750,15 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       var srcLoc = document.querySelector('input.tt-search-box-input').value;
+      console.log(srcLoc);
       var src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey; // console.log(srcLoc);
 
       axios.get(src).then(function (response) {
-        // console.log(response.data.results[0].position.lat);
         _this2.lat = response.data.results[0].position.lat;
         _this2.lon = response.data.results[0].position.lon;
         _this2.citySrc = '';
         _this2.citySrc = _this2.lat + ',' + _this2.lon;
-        _this2.citySrc = _this2.citySrc.replaceAll('.', '_'); // console.log(this.citySrc);
-        // console.log(this.lat, this.lon);
+        _this2.citySrc = _this2.citySrc.replaceAll('.', '_');
       })["catch"](function (e) {
         console.log(e);
       })["finally"](function () {
