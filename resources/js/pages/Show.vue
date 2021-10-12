@@ -80,14 +80,10 @@
 
   export default {
     name: 'show',
-
     components: {
       BannerMap,
       ContactForm
-
     },
-
-
     data(){
       return{
         apiUrl: 'http://localhost:8000/api/apartment/',

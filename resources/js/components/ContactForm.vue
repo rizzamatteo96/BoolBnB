@@ -63,7 +63,7 @@
                     </div>
                     <!--Grid row-->
 
-                    <button class="btn-primary" type="submit">click me</button>
+                    <button class="btn btn-primary" type="submit">click me</button>
 
                 </form>
 
@@ -105,6 +105,7 @@
 
   export default {
     name: 'ContactForm',
+    props: ['apartment'],
     data() {
         return {
             email: '',
@@ -114,7 +115,7 @@
     },
     methods: {
         sendData(){
-            axios.post('/api/contacts', {
+            axios.post('/api/contacts/', {
                 'email': this.email,
                 'description': this.description
             })
