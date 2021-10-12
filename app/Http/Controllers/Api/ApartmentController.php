@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\Response;
+
+use Illuminate\Support\Facades\DB;
 use App\Apartment;
 use App\Service;
 
@@ -46,6 +51,19 @@ class ApartmentController extends Controller
         ]);
     }
 
+    public function getDistanceFromLatLonInKm($lat1, $lon1, $lat2, $lon2) {
+        $R = 6371; // Radius of the earth in km
+        $dLat = deg2rad($lat2 - $lat1);  // deg2rad below
+        $dLon = deg2rad($lon2 - $lon1); 
+        $a = 
+            sin($dLat / 2) * sin($dLat / 2) +
+            cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * 
+            sin($dLon / 2) * sin($dLon / 2); 
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a)); 
+        $d = $R * $c; // Distance in km
+        return $d;
+    }
+
     /**
      * Display the specified resource.
      *
@@ -54,37 +72,73 @@ class ApartmentController extends Controller
      */
     public function search($slug, $filters)
     {
+        // function to get the distances between two point on the earth surface
+        function getDistanceFromLatLonInKm($lat1, $lon1, $lat2, $lon2) {
+            $R = 6371; // Radius of the earth in km
+            $dLat = deg2rad($lat2 - $lat1);  // deg2rad below
+            $dLon = deg2rad($lon2 - $lon1); 
+            $a = 
+                sin($dLat / 2) * sin($dLat / 2) +
+                cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * 
+                sin($dLon / 2) * sin($dLon / 2); 
+            $c = 2 * atan2(sqrt($a), sqrt(1 - $a)); 
+            $d = $R * $c; // Distance in km
+            return $d;
+        }
+
+
+        // change '-' with '.' because it is not possible to transfer '.'
+        $apiQuery = str_replace("_", ".", $slug);
+
+        list($lat, $lon) = explode(",", $apiQuery);
+        
+
         // take the filters from the other page and divide them to single var
         list($beds, $rooms, $distance) = explode(";", $filters);
 
         $beds = intval(substr($beds, strpos($beds, "=") + 1));  
         $rooms = intval(substr($rooms, strpos($rooms, "=") + 1));  
-        $distance = intval(substr($distance, strpos($distance, "=") + 1)); 
+        $distanceUser = intval(substr($distance, strpos($distance, "=") + 1)); 
 
 
-        // richiamo il post presente nel DB che riporta lo slug richiesto
-        $apartments = Apartment::where('city', $slug)
-                                ->where('visibility', 1)
+        // // prepare apiUrl to call it
+        // $apiUrl = 'https://api.tomtom.com/search/2/reverseGeocode/' . $apiQuery . '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
+    
+        // // call TomTom api
+        // $response = Http::get($apiUrl);
+
+        // // take TomTom response
+        // $positionCity = $response->json()['addresses'][0]['address']['localName'];
+
+        $apartmentsDb = Apartment::where('visibility', 1)
                                 ->where('n_rooms', '>=', $rooms)
                                 ->where('n_beds', '>=', $beds)
                                 ->with(['services'])->get();
 
-        // controllo se c'è l'immagine salvata e preparo il path per la visualizzazione in front end
-        foreach($apartments as $apartment){
 
-            // formula to find if th epoint is inside the radius (x-center_x)^2 + (y - center_y)^2 < radius^2
-            if($apartment->img){
-                $apartment->img = url('storage/' . $apartment->img); 
+
+        // check the distance between the point and the apartment
+        foreach($apartmentsDb as $apartmentDb){
+
+            $distancePoints = getDistanceFromLatLonInKm($lat, $lon, $apartmentDb->latitude, $apartmentDb->longitude);
+            if($distancePoints <= $distanceUser){
+                $apartments[] = $apartmentDb;
             }
-
-            // if((pow($apartment->longitude - $center_longitude, 2) + pow($apartment->latitude - $center_latitude, 2)) < pow($radius, 2)){     }
 
         }
 
-        // restituisco un JSON visibile anche alla route che si trova in api.php
+        // prepare the img for the single apartment
+        foreach ($apartments as $apartment) {
+            if($apartment->img){
+                $apartment->img = url('storage/' . $apartment->img); 
+            }
+        }
+        
+        // return a JSON as response
         return response()->json([
             'success' => true,
-            'results' => $apartments
+            'results' => $apartments,
+
         ]);
     }
 
