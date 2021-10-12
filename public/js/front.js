@@ -2593,7 +2593,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.lon = response.data.results[0].position.lon;
         _this2.citySrc = '';
         _this2.citySrc = _this2.lat + ',' + _this2.lon;
-        _this2.citySrc = _this2.citySrc.replaceAll('.', '-'); // console.log(this.citySrc);
+        _this2.citySrc = _this2.citySrc.replaceAll('.', '_'); // console.log(this.citySrc);
         // console.log(this.lat, this.lon);
       })["catch"](function (e) {
         console.log(e);
@@ -2677,7 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.lon = response.data.results[0].position.lon;
         _this.citySrc = '';
         _this.citySrc = _this.lat + ',' + _this.lon;
-        _this.citySrc = _this.citySrc.replaceAll('.', '-');
+        _this.citySrc = _this.citySrc.replaceAll('.', '_');
         console.log(_this.citySrc);
         console.log(_this.lat, _this.lon);
       })["catch"](function (e) {
