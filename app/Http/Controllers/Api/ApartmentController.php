@@ -60,7 +60,7 @@ class ApartmentController extends Controller
     {
 
         // change '-' with '.' because it is not possible to transfer '.'
-        $apiQuery = str_replace("-", ".", $slug);
+        $apiQuery = str_replace("_", ".", $slug);
         
         // take the filters from the other page and divide them to single var
         list($beds, $rooms, $distance) = explode(";", $filters);

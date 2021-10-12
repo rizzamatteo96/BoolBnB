@@ -52,7 +52,7 @@ export default {
                     this.lon = response.data.results[0].position.lon;
                     this.citySrc = '';
                     this.citySrc = this.lat + ',' + this.lon;
-                    this.citySrc = this.citySrc.replaceAll('.', '-');
+                    this.citySrc = this.citySrc.replaceAll('.', '_');
                     console.log(this.citySrc);
                     console.log(this.lat, this.lon);
                 })
