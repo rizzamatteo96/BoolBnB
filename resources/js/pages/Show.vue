@@ -55,11 +55,7 @@
             
           <ul class="list-add-serv" v-for="service in apartment.services" :key="service.id">
                 
-            <li>
-                        
-              <label>{{service.name}}</label>
-        
-            </li>
+            <li>{{service.name}}</li>
                   
           </ul>
         
@@ -237,33 +233,69 @@
   @media (max-width: 968px) {
 
     .container-show {
-      margin-top: 150px;
-
+      padding-top: 150px;
+      
       .container--img--desc {
-
+        height: auto;
         display: block;
         animation: none;
         width: 90%;
 
         img { 
-          width: 90%;
+          width: 100%;
           height: 300px;
         }
 
         .descrizioni {
-          width: 50%;
+          bottom: 0;
+          width: 100%;
           margin-left: 0;
-          padding: 350px 0px 0px 30px;
+        //word-wrap: break-word;
+
         }
 
       }
 
-      .el-servizi {
-        display: flex;
-        flex-wrap: wrap;
+      .banner-servizi {
+        display: block;
+        
+        .services{
+          text-align: center;
+          width: 100%;
+          
+          h2 {
+            font-size: 20px;
+          }
 
-        li {
-          margin: 50px 0px;
+          .el-servizi {
+            width: 100%;
+            margin: 0 auto;
+
+            li {
+              margin: 9px;
+            }
+
+          }
+
+        }
+
+        .cont-separation {
+          width: 100%;
+
+          .separation {
+            width: 100%;
+            height: 3px;
+          }
+          
+        }
+        .addtional-services {
+            width: 100%;
+            text-align: center;
+
+            h2 {
+            font-size: 20px;
+          }
+
         }
 
       }

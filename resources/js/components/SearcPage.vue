@@ -52,7 +52,8 @@
             </div>
 
             <div class="container-services">
-  
+                
+
                 <ul v-for="service in services" :key="service.id">
                 
                     <li>
@@ -86,7 +87,7 @@
         
         <h2 class="title-serach">Appartamenti nella zona di: </h2>
 
-        <div class="box-container" >
+        <div class="box-container">
 
             <div class="box" v-for="apartment in apartments" :key="apartment.id">
 
@@ -240,28 +241,30 @@
             justify-content: space-between;
             flex-wrap: wrap;
             width: 100%;
-            margin: 0 auto;
-        }
+            margin: 0 auto;   
         
-        .box {
-            padding: 50px;
-            width: 400px;
-            box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
-            margin: 20px 0px;
-            border-radius: 20px;
-            text-align: center;
-
-            .container-box--img {
-                width: 100%;
-                height: 250px;
-                border-radius: 10px;
-                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            }
-
-            .container-description {
-                display: block;
+            .box {
+                padding: 50px;
+                width: 400px;
+                box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
+                margin: 20px 0px;
+                border-radius: 20px;
                 text-align: center;
-                margin-top: 20px;
+
+                .container-box--img {
+                    width: 100%;
+                    height: 250px;
+                    border-radius: 10px;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                }
+
+                .container-description {
+                    display: block;
+                    text-align: center;
+                    margin-top: 20px;
+                    word-wrap: break-word;
+
+                }
             }
 
         } 
@@ -338,6 +341,43 @@
             }
             
         }
+
+    }
+
+    // PARTE RESPONSIVE
+    @media (max-width: 968px) {
+
+        .container-search {
+            padding-top: 150px;
+
+            .container-form {
+
+                .container-filter {
+                    display: block;
+
+                    .filter {
+                        margin: 20px 0px;
+                    }
+                }
+
+            }
+
+            .box-container {
+                width: 90%;
+
+                .box {
+                    word-wrap: break-word;
+                    width: 100%;
+
+                }
+            }
+
+        }
+
+            
+        
+        
+
 
     }
 
