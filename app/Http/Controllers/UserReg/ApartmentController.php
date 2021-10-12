@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\Response;
+use Illuminate\Support\Facades\Validator;
 
 use App\Apartment;
 use App\Service;
@@ -50,6 +51,60 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        // --- TOMTOM section ---
+        // prepare apiUrl to call it
+        $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $request->address . '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
+
+        // call TomTom api
+        $responseTT = Http::get($apiUrl);
+
+        // prepare variables to validate
+        $city = NULL;
+        $address = NULL;
+        $house_num = NULL;
+        $postal_code = NULL;
+
+        if(isset($responseTT->json()['results'][0]['address']['municipality'])){
+            $city = $responseTT->json()['results'][0]['address']['municipality'];
+        }
+
+        if(isset($responseTT->json()['results'][0]['address']['streetName'])){
+            $address = $responseTT->json()['results'][0]['address']['streetName'];
+        }
+
+        if(isset($responseTT->json()['results'][0]['address']['streetNumber'])){
+            $house_num = $responseTT->json()['results'][0]['address']['streetNumber'];
+        }
+
+        if(isset($responseTT->json()['results'][0]['address']['postalCode'])){
+            $postal_code = $responseTT->json()['results'][0]['address']['postalCode'];
+        }
+
+        // prepare validation data package
+        $validationData = [
+            'city' => $city,
+            'address' => $address,
+            'house_num' => $house_num,
+            'postal_code' => $postal_code,
+
+        ];
+
+        // prepare validatio rules package
+        $validationRules = [
+            'city' => 'required|max:255',
+            'address' => 'required|max:255',
+            'house_num' => 'required|max:20',
+            'postal_code' => 'required|max:10'
+        ];
+
+        // call validator method
+        $validator = Validator::make($validationData, $validationRules);
+
+        // if valudation fails redirect to the previous page with error
+        if($validator->fails()){
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+
         // Create validation request
         $request->validate([
             // Apartment details
@@ -61,13 +116,7 @@ class ApartmentController extends Controller
             'n_square_meters' => 'required|min:1|numeric',
             'daily_price' => 'nullable|min:1|numeric',
             'image' => 'required|image',
-            'services' => 'required',
-            
-            // Address section
-            'city' => 'required|max:255',
-            'address' => 'required|max:255',
-            'house_num' => 'required|max:20',
-            'postal_code' => 'required|max:10'
+            'services' => 'required'
         ]);
 
         // recupero i dati dal form
@@ -84,7 +133,22 @@ class ApartmentController extends Controller
         }
 
         $newApartment['slug'] = $newSlug;
+
         
+        // save full address
+        $newApartment['city'] = $city;
+        $newApartment['address'] = $address;
+        $newApartment['house_num'] = $house_num;
+        $newApartment['postal_code'] = $postal_code;
+
+        // take TomTom response
+        $positionCoord = $responseTT->json()['results'][0]['position'];
+
+        // save TomTom response position
+        $newApartment['latitude'] = $positionCoord['lat'];
+        $newApartment['longitude'] = $positionCoord['lon'];
+        
+
         // creo la nuova istanza per inviare i dati al DB
         $upApartment = new Apartment();
 
@@ -95,23 +159,6 @@ class ApartmentController extends Controller
             $newApartment['image'] = $img_path;
         }
 
-
-        // --- TOMTOM section ---
-        // prepare full address
-        $fullAddress = $newApartment['city'] . ' via ' . $newApartment['address'] . ' ' . $newApartment['house_num'] . ' ' . $newApartment['postal_code'];
-
-        // prepare apiUrl to call it
-        $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $fullAddress . '.JSON?key=K3xnfxcXAODvZopP0scVRnmjNxjruLUo';
-
-        // call TomTom api
-        $response = Http::get($apiUrl);
-
-        // take TomTom response
-        $positionCoord = $response->json()['results'][0]['position'];
-
-        // save TomTom response position
-        $newApartment['latitude'] = $positionCoord['lat'];
-        $newApartment['longitude'] = $positionCoord['lon'];
 
         // seleziono l'utente loggato
         $newApartment['user_id'] = Auth::user()->id;
