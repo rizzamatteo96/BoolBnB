@@ -35,9 +35,9 @@
                 Quisquam voluptatem sunt explicabo accusamus aspernatur maxime quibusdam vitae totam accusantium! Odio, voluptas iusto officiis quibusdam quo, reprehenderit dolorum laborum facilis rem deserunt beatae debitis nesciunt unde modi accusamus iure.
                 Dignissimos ad eveniet laborum, facere odio cumque porro repudiandae sapiente illo eius dicta, quaerat amet fuga vero voluptates possimus accusamus praesentium quidem incidunt odit beatae nobis adipisci ipsam sint? Omnis.</p>
                 
-                <button class="btn btn-outline-light m-3 btn-lg" @click="ActiveLog = !ActiveLog">Rifiuta</button>
+                <a class="btn btn-outline-light m-3 btn-lg" @click="ActiveLog = !ActiveLog" href="">Rifiuta</a>
                 
-                <button class="btn btn-outline-light m-3 btn-lg" >Acconsento</button>
+                <a class="btn btn-outline-light m-3 btn-lg" href="http://localhost:8000/userreg/apartments/create">Acconsento</a>
            
             </div>
        
