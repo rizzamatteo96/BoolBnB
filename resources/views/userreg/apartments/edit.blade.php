@@ -175,76 +175,36 @@
         </div>
         {{-- End - Apartment details input fields --}}
 
+        {{-- Start - Show address saved in DB --}}
+        <div class="row">
+            <h6 class="col-12">Indirizzo</h6>
+            <div class="col-12">
+                Attuale :  {{$apartment->city . ', Via ' . $apartment->address . ' ' . $apartment->house_num . ' , ' . $apartment->postal_code}}
+            </div>
+        </div>
+        {{-- End - Show address saved in DB --}}
+
+
         {{-- Inizio - Campo inserimento del Indirizzo --}}
         <div class="row mb-3">
-            {{-- Inizio - Campo inserimento del Città --}}
-            <div class="col-3">
-                <label for="city" class="form-label">Città *</label>
-                <input type="text" class="form-control
-                @error('city') 
-                    is-invalid 
-                @enderror" 
-                id="city" name="city" value="{{old('city', $apartment->city)}}">
-                @error('city')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+
+            {{-- Input address field with autocomplete from tomtom --}}
+            <div id="search-field" class="col-12"></div>
+
+            {{-- Start - error messages container from validator --}}
+            <div class="col-12">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
-            {{-- Fine - Campo inserimento del Città --}}
+            {{-- End - error messages container from validator --}}
 
-            {{-- Inizio - Campo inserimento del Via --}}
-            <div class="col-3">
-                <label for="address" class="form-label">Via *</label>
-                <input type="text" class="form-control
-                @error('address') 
-                    is-invalid 
-                @enderror" 
-                id="address" name="address" value="{{old('address', $apartment->address)}}" required onfocusout="verifyAddress(address)">
-
-                {{-- Add error write --}}
-                <span id="valAddress" class="text-danger"></span>
-
-                @error('address')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-            </div>
-            {{-- Fine - Campo inserimento del Via --}}
-
-            {{-- Inizio - Campo inserimento del numero civico --}}
-            <div class="col-3">
-                <label for="house_num" class="form-label">Numero civico *</label>
-                <input type="text" class="form-control
-                @error('house_num') 
-                    is-invalid 
-                @enderror" 
-                id="house_num" name="house_num" value="{{old('house_num', $apartment->house_num)}}" required onfocusout="verifyHouseNum(house_num)">
-
-                {{-- Add error write --}}
-                <span id="valHouseNum" class="text-danger"></span>
-
-                @error('house_num')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-            </div>
-            {{-- Fine - Campo inserimento del numero civico --}}
-
-            {{-- Inizio - Campo inserimento del postal code --}}
-            <div class="col-3">
-                <label for="postal_code" class="form-label">CAP *</label>
-                <input type="text" class="form-control
-                @error('postal_code') 
-                    is-invalid 
-                @enderror" 
-                id="postal_code" name="postal_code" value="{{old('postal_code', $apartment->postal_code)}}" required onfocusout="verifyPostalCode(postal_code)">
-
-                {{-- Add error write --}}
-                <span id="valPostalCode" class="text-danger"></span>
-
-                @error('postal_code')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-            </div>
-            {{-- Fine - Campo inserimento del postal code --}}
-            
         </div>
         {{-- Fine - Campo inserimento del Indirizzo --}}
 

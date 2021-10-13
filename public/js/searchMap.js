@@ -5,7 +5,6 @@ var __webpack_exports__ = {};
   \***********************************/
 // ************ SearchMap on create and update .blade.php *******************
 window.searchBox = function () {
-  console.log('fando');
   var options = {
     searchOptions: {
       key: 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
