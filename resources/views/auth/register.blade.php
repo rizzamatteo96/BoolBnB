@@ -97,6 +97,8 @@
                                 <button type="submit" onclick="verifyConfPassOnSubmit(password, confPass)" onclick="verifyPasswordOnSubmit(password)" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <span>Se sei registrato <a href="http://localhost:8000/login">clicca qui</a></span>
+
                             </div>
                         </div>
 

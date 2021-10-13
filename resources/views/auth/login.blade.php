@@ -36,6 +36,8 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+
+                                <span>Se non sei registrato <a href="http://localhost:8000/register">clicca qui</a></span>
                             </div>
                         </div>
 
