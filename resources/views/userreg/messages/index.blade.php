@@ -12,9 +12,9 @@
         <table class="table mb-4">
             <thead>
               <tr>
-                <th scope="col" style="width: 60%">Appartamento: {{$apartment->title}}</th>
+                <th scope="col" style="width: 45%">Appartamento: {{$apartment->title}}</th>
                 <th scope="col" style="width: 25%">Email di contatto</th>
-                {{-- <th scope="col" style="width: 15%">Mostra</th> --}}
+                <th scope="col" style="width: 15%">Mostra</th>
                 <th scope="col" style="width: 15%">Elimina</th>
               </tr>
             </thead>
@@ -28,10 +28,10 @@
                             @if($item['apartment_id'] == $apartment->id)
                                 <td>Messaggio: {{$item['description']}}</td>
                                 <td>{{$item['email']}}</td>
-                                {{-- <td>
+                                <td>
                                     <a href="{{route('userreg.messages.show', $item['id'])}}" class="btn btn-primary">Dettagli</a>
 
-                                </td> --}}
+                                </td>
                                 <td>
                                     <form action="{{route('userreg.messages.destroy',  $item['id'])}}" method="POST" class="d-inline-block">
                                         {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
