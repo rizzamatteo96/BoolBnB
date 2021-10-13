@@ -115,12 +115,13 @@
     },
     methods: {
         sendData(){
-            axios.post('/api/contacts/', {
+            axios.post('/api/contacts/' + 'apartment', {
                 'email': this.email,
-                'description': this.description
+                'description': this.description,
+                'apartment_id': this.apartment
             })
                 .then(response => {
-                    console.log(response.data.success);
+                    response.data.success;
                 })
                 .catch(error => {
                     console.log(error);

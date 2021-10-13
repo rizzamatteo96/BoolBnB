@@ -67,7 +67,7 @@
     
     <BannerMap/>
 
-    <ContactForm/>
+    <ContactForm :apartment="apartmentId" />
 
   </div>
 
@@ -87,15 +87,16 @@
     data(){
       return{
         apiUrl: 'http://localhost:8000/api/apartment/',
-        apartment: []
+        apartment: [],
+        apartmentId: ''
       }
     },
     mounted(){
       axios.get(this.apiUrl + this.$route.params.slug)
             .then(response => {
-              console.log(response.data.results);
+              // console.log(response.data.results.id);
               this.apartment = response.data.results;
-              // console.log(response.data.results);
+              this.apartmentId = response.data.results.id;
             })
             .catch();
     }

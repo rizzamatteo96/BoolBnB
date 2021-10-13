@@ -2276,11 +2276,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendData: function sendData() {
-      axios.post('/api/contacts/', {
+      axios.post('/api/contacts/' + 'apartment', {
         'email': this.email,
-        'description': this.description
+        'description': this.description,
+        'apartment_id': this.apartment
       }).then(function (response) {
-        console.log(response.data.success);
+        response.data.success;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -3250,15 +3251,17 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: 'http://localhost:8000/api/apartment/',
-      apartment: []
+      apartment: [],
+      apartmentId: ''
     };
   },
   mounted: function mounted() {
     var _this = this;
 
     axios.get(this.apiUrl + this.$route.params.slug).then(function (response) {
-      console.log(response.data.results);
-      _this.apartment = response.data.results; // console.log(response.data.results);
+      // console.log(response.data.results.id);
+      _this.apartment = response.data.results;
+      _this.apartmentId = response.data.results.id;
     })["catch"]();
   }
 });
@@ -42547,7 +42550,7 @@ var render = function() {
       _vm._v(" "),
       _c("BannerMap"),
       _vm._v(" "),
-      _c("ContactForm")
+      _c("ContactForm", { attrs: { apartment: _vm.apartmentId } })
     ],
     1
   )
