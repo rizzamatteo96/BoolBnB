@@ -58,7 +58,7 @@
                 
                     <li>
                 
-                        <input type="checkbox" :id="service.slug" :value="service.id">
+                        <input type="checkbox" @click="servicesCheck(service.id)" :id="service.slug" :name="servicesSave" :value="service.id">
                 
                         <label :for="service.slug">{{service.name}}</label>
                 
@@ -132,8 +132,9 @@
                 apartments: [],
                 services: [],
                 citySrc : '',
-                apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
                 filters : '',
+                servicesFilters : [],
+                apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
                 apiFirst : 'https://api.tomtom.com/search/2/geocode/',
                 apiSecond : '.JSON?key=',
             }
@@ -215,6 +216,20 @@
                         router.push({ name: 'src', params: {slug : this.citySrc} });
                         this.chiamataApi();
                     });
+            },
+
+            servicesCheck(serviceToSave){
+
+                if(!this.servicesFilters.includes(serviceToSave)){
+                    // save it if it was not present
+                    this.servicesFilters.push(serviceToSave);
+                } else {
+                    // delete it if it was already present
+                    const index = this.servicesFilters.indexOf(serviceToSave);
+                    this.servicesFilters.splice(index, 1);
+                }
+
+                console.log(this.servicesFilters);
             }
         }
 
