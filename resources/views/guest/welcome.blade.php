@@ -47,5 +47,6 @@
         </div>
 
         <script src="{{ asset('js/front.js') }}"></script>
+        <script src="{{ asset('js/validation.js') }}"></script>
     </body>
 </html>

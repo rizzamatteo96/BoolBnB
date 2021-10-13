@@ -31,5 +31,9 @@ class MessageController extends Controller
 
         $new_message->save();
 
+        return response()->json([
+            'success' => true
+        ]);
+
     }
 }

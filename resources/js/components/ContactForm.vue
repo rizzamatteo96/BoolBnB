@@ -28,8 +28,9 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <label for="email" class="cform">Email</label>
-                                <input type="text" id="email" name="email" class="form-control" v-model="email">
+                                <label for="email" class="cform">Email *</label>
+                                <input onfocusout="validateEmail(email)" type="text" id="email" name="email" class="form-control" v-model="email" required>
+                                <span id="user-email" class="text-danger"></span>
                             </div>
                         </div>
                         <!--Grid column-->
@@ -55,22 +56,26 @@
                         <div class="col-md-12">
 
                             <div class="md-form">
-                                <label class="cform" for="description">Messaggio</label>
-                                <textarea type="text" id="description" name="description" rows="2" class="form-control md-textarea" v-model="description"></textarea>
+                                <label class="cform" for="description">Messaggio *</label>
+                                <textarea type="text" id="description" name="description" rows="2" class="form-control md-textarea" v-model="description" required></textarea>
                             </div>
+
+                            <div v-if="messageSent" class="alert alert-primary mt-4">Messaggio inviato con successo</div>
 
                         </div>
                     </div>
                     <!--Grid row-->
+                    <div class="text-center text-md-left">
+                        <button class="btn btn-outline-danger mt-4" type="submit">Invia</button>
+                    </div>
+                    
+                    <div class="mb-0 form-group row">
+                        <span class="text-danger text-md-left col-md-9 col-form-label">I campi contrassegnati con * sono obbligatori</span>
+                    </div>
 
-                    <button class="btn btn-primary" type="submit">click me</button>
 
                 </form>
 
-                <div class="text-center text-md-left">
-                    <button type="button" class="btn btn-outline-danger mt-4" onclick="document.getElementById('contact-form').submit();">Invia</button>
-                </div>
-                <div class="status"></div>
             </div>
             <!--Grid column-->
 
@@ -103,6 +108,8 @@
 
 <script>
 
+import validation from '../validation';
+
   export default {
     name: 'ContactForm',
     props: ['apartment'],
@@ -110,7 +117,8 @@
         return {
             email: '',
             description: '',
-            errors:{}
+            errors:{},
+            messageSent: false
         }
     },
     methods: {
@@ -121,7 +129,9 @@
                 'apartment_id': this.apartment
             })
                 .then(response => {
-                    response.data.success;
+                    this.messageSent = response.data.success;
+                    this.email = '';
+                    this.description = '';
                 })
                 .catch(error => {
                     console.log(error);
