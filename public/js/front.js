@@ -2717,6 +2717,7 @@ __webpack_require__.r(__webpack_exports__);
       distance: 20,
       beds: 0,
       rooms: 0,
+      servicesList: '',
       apiUrl: 'http://localhost:8000/api/apartments/',
       apiServices: 'http://localhost:8000/api/apartments/services',
       apartments: [],
@@ -2737,8 +2738,18 @@ __webpack_require__.r(__webpack_exports__);
     chiamataApi: function chiamataApi() {
       var _this = this;
 
-      // prepare filter before call the apartments api
-      this.filters = 'beds=' + this.beds + ';rooms=' + this.rooms + ';distance=' + this.distance; // Api to get apartments from DB
+      // prepare services list
+      this.servicesList = '';
+
+      if (this.servicesFilters) {
+        this.servicesFilters.forEach(function (item) {
+          _this.servicesList += item + ',';
+        });
+        this.servicesList = this.servicesList.substring(',', this.servicesList.length - 1);
+      } // prepare filter before call the apartments api
+
+
+      this.filters = 'beds=' + this.beds + ';rooms=' + this.rooms + ';distance=' + this.distance + ';services=' + this.servicesList; // Api to get apartments from DB
 
       axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters).then(function (response) {
         console.log(response);
@@ -42127,11 +42138,7 @@ var render = function() {
           return _c("ul", { key: service.id }, [
             _c("li", [
               _c("input", {
-                attrs: {
-                  type: "checkbox",
-                  id: service.slug,
-                  name: _vm.servicesSave
-                },
+                attrs: { type: "checkbox", id: service.slug },
                 domProps: { value: service.id },
                 on: {
                   click: function($event) {

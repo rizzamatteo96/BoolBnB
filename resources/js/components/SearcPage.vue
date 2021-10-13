@@ -58,7 +58,7 @@
                 
                     <li>
                 
-                        <input type="checkbox" @click="servicesCheck(service.id)" :id="service.slug" :name="servicesSave" :value="service.id">
+                        <input type="checkbox" @click="servicesCheck(service.id)" :id="service.slug" :value="service.id">
                 
                         <label :for="service.slug">{{service.name}}</label>
                 
@@ -124,13 +124,14 @@
         data(){
 
             return{
-                distance: 20,
-                beds: 0,
-                rooms: 0,
-                apiUrl: 'http://localhost:8000/api/apartments/',
+                distance : 20,
+                beds : 0,
+                rooms : 0,
+                servicesList : '',
+                apiUrl : 'http://localhost:8000/api/apartments/',
                 apiServices : 'http://localhost:8000/api/apartments/services',
-                apartments: [],
-                services: [],
+                apartments : [],
+                services : [],
                 citySrc : '',
                 filters : '',
                 servicesFilters : [],
@@ -151,8 +152,18 @@
         methods: {
 
             chiamataApi(){
+                // prepare services list
+                this.servicesList = '';
+                if(this.servicesFilters){
+                    this.servicesFilters.forEach((item) => {
+                        this.servicesList += item + ',';
+                    });
+
+                    this.servicesList = this.servicesList.substring(',', this.servicesList.length - 1);
+                }
+
                 // prepare filter before call the apartments api
-                this.filters = 'beds=' + this.beds +  ';rooms=' + this.rooms + ';distance=' + this.distance;
+                this.filters = 'beds=' + this.beds +  ';rooms=' + this.rooms + ';distance=' + this.distance + ';services=' + this.servicesList;
 
                 // Api to get apartments from DB
                 axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters)

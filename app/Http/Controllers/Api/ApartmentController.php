@@ -51,19 +51,6 @@ class ApartmentController extends Controller
         ]);
     }
 
-    public function getDistanceFromLatLonInKm($lat1, $lon1, $lat2, $lon2) {
-        $R = 6371; // Radius of the earth in km
-        $dLat = deg2rad($lat2 - $lat1);  // deg2rad below
-        $dLon = deg2rad($lon2 - $lon1); 
-        $a = 
-            sin($dLat / 2) * sin($dLat / 2) +
-            cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * 
-            sin($dLon / 2) * sin($dLon / 2); 
-        $c = 2 * atan2(sqrt($a), sqrt(1 - $a)); 
-        $d = $R * $c; // Distance in km
-        return $d;
-    }
-
     /**
      * Display the specified resource.
      *
@@ -94,11 +81,18 @@ class ApartmentController extends Controller
         
 
         // take the filters from the other page and divide them to single var
-        list($beds, $rooms, $distance) = explode(";", $filters);
+        list($beds, $rooms, $distance, $services) = explode(";", $filters);
 
         $beds = intval(substr($beds, strpos($beds, "=") + 1));  
         $rooms = intval(substr($rooms, strpos($rooms, "=") + 1));  
         $distanceUser = intval(substr($distance, strpos($distance, "=") + 1)); 
+        $services = substr($services, strpos($services, "=") + 1); 
+
+        if($services != ''){
+            // divide the service in array elements
+            $servicesList = explode(",", $services);
+
+        }
 
 
         // // prepare apiUrl to call it
@@ -122,10 +116,48 @@ class ApartmentController extends Controller
 
             $distancePoints = getDistanceFromLatLonInKm($lat, $lon, $apartmentDb->latitude, $apartmentDb->longitude);
             if($distancePoints <= $distanceUser){
-                $apartments[] = $apartmentDb;
+                $apartmentsDistanceOk[] = $apartmentDb;
             }
 
         }
+
+
+        // check if the apartment has the required services
+        if(isset($apartmentsDistanceOk) && isset($servicesList)){
+            
+            foreach ($apartmentsDistanceOk as $apartmentDistanceOk) {
+    
+                if(isset($apartmentDistanceOk->services)){
+                    $apartmentServices = null;
+                    foreach ($apartmentDistanceOk->services as $apartmentService) {
+                        $apartmentServices[] = $apartmentService->id;
+                    }
+        
+                    if(isset($apartmentServices)){
+
+                        foreach ($servicesList as $service) {
+                            if(!in_array($service, $apartmentServices)){
+                                $save = false;
+                                break 1;
+                            } else {
+                                $save = true;
+                            }
+                        }
+            
+                        if($save){
+                            $apartments[] = $apartmentDistanceOk;
+                        }
+                    }
+                }
+
+            }
+
+        } elseif(isset($apartmentsDistanceOk) && !isset($servicesList)){
+            
+            $apartments = $apartmentsDistanceOk;
+
+        }
+
 
         // prepare the img for the single apartment
         if(isset($apartments)){
