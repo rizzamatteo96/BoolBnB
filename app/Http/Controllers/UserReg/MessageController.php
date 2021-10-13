@@ -51,7 +51,20 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $user = Auth::user()->id;
+        // load message with ID 
+        $message = Message::where('id', $id)->first();
+        // load apartment
+        $apartment = Apartment::where('id', $message['apartment_id'])->first();
+
+        // check if the apartment is one of the logged user otherwise go to 404 page
+        if($apartment && $apartment->user_id == $user){
+            return view('userreg.messages.show', compact('message', 'apartment'));
+        } else{
+            abort(403);
+        }
+
     }
 
     /**
