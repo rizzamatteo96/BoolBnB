@@ -4,6 +4,10 @@ namespace App\Http\Controllers\UserReg;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use App\Apartment;
+use App\Message;
 
 class MessageController extends Controller
 {
@@ -14,28 +18,29 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $user = Auth::user()->id;
+        $apartments = Apartment::where('user_id', $user)->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        // $apartments_id_array = [];
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        // foreach($apartments as $apartment){
+        //     array_push($apartments_id_array, $apartment->id);
+        // }
+
+        foreach($apartments as $apartment){
+            $messages[] = Message::where('apartment_id', $apartment->id)->get();
+        }
+
+        $messages_list = [];
+
+        foreach($messages as $message){
+            array_push($messages_list, $message->toArray());
+        }
+        // dd($messages_list);
+
+        // dd($apartments_id_array);
+
+        return view('userreg.messages.index', compact('messages_list', 'apartments'));
     }
 
     /**
@@ -45,29 +50,6 @@ class MessageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
     {
         //
     }

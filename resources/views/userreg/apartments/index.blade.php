@@ -17,6 +17,7 @@
 					<th scope="col">Città ubicazione</th>
 					<th scope="col">Visibilità</th>
 					<th scope="col">Azioni</th>
+					<th scope="col">Messaggi</th>
 					<th scope="col">Promozioni</th>
 				</tr>
 			</thead>
@@ -49,11 +50,18 @@
 						</td>
 						{{-- end action btns --}}
 
+						{{-- Messages btn --}}
+						<td>
+
+							<a href="{{route('userreg.messages.index')}}" class="btn btn-success">Messaggi</a>
+
+						</td>
+						{{-- end Messages btn --}}
+
 						{{-- Sponsorships btn --}}
 						<td>
 
 							<a href="{{route('userreg.apartment-sponsorship.index', ['id' => $item->id])}}" class="btn btn-success">Sponsorizza</a>
-							{{-- <a href="{{route('userreg.apartment-sponsorship.index', 14)}}" class="btn btn-success">Scopri le sposorizzazioni!</a> --}}
 
 						</td>
 						{{-- end Sponsorships btn --}}
