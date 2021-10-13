@@ -25,8 +25,13 @@ class StatisticController extends Controller
             ]);
         }
 
-        $new_statistic = new Statistic();
-        $new_statistic->fill($data);
-        $new_statistic->save();
+
+
+        $visitorData = Statistic::where('visitor', $data['visitor'])->first();
+        if(!$visitorData){
+            $new_statistic = new Statistic();
+            $new_statistic->fill($data);
+            $new_statistic->save();
+        }
     }
 }
