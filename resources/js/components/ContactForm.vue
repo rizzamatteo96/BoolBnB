@@ -115,7 +115,7 @@
     },
     methods: {
         sendData(){
-            axios.post('/api/contacts/' + 'apartment', {
+            axios.post('/api/contacts/', {
                 'email': this.email,
                 'description': this.description,
                 'apartment_id': this.apartment

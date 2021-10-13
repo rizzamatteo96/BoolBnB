@@ -2276,7 +2276,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendData: function sendData() {
-      axios.post('/api/contacts/' + 'apartment', {
+      axios.post('/api/contacts/', {
         'email': this.email,
         'description': this.description,
         'apartment_id': this.apartment
@@ -3275,18 +3275,51 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: 'http://localhost:8000/api/apartment/',
+      apiIpUrl: 'https://api.ipify.org',
       apartment: [],
-      apartmentId: ''
+      apartmentId: '',
+      userIp: ''
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    axios.get(this.apiUrl + this.$route.params.slug).then(function (response) {
-      // console.log(response.data.results.id);
-      _this.apartment = response.data.results;
-      _this.apartmentId = response.data.results.id;
-    })["catch"]();
+    axios.all([axios.get(this.apiUrl + this.$route.params.slug), axios.get(this.apiIpUrl)]).then(axios.spread(function (response1, response2) {
+      // console.log('data1', data1, 'data2', data2)
+      _this.apartment = response1.data.results;
+      _this.apartmentId = response1.data.results.id;
+      _this.userIp = response2.data; // console.log(this.userIp);
+    }))["catch"](axios.spread(function (err1, err2) {
+      console.log(err1, err2);
+    }))["finally"](function () {
+      _this.sendData();
+    });
+  },
+  methods: {
+    sendData: function sendData() {
+      // first of all take the actual date
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+      var yyyy = today.getFullYear(); // save the actual date in a variable
+
+      today = mm + '/' + dd + '/' + yyyy;
+      console.log(today);
+      console.log(this.apartmentId);
+      console.log(this.userIp); // call api to save the visitor
+
+      axios.post('/api/statistics/', {
+        'apartment_id': this.apartmentId,
+        'clicked_at': today,
+        'visitor': this.userIp
+      }).then(function (response) {
+        response.data.success;
+        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 

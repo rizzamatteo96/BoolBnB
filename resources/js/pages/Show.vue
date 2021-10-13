@@ -87,18 +87,62 @@
     data(){
       return{
         apiUrl: 'http://localhost:8000/api/apartment/',
+        apiIpUrl: 'https://api.ipify.org',
         apartment: [],
-        apartmentId: ''
+        apartmentId: '',
+        userIp: '',
       }
     },
     mounted(){
-      axios.get(this.apiUrl + this.$route.params.slug)
-            .then(response => {
-              // console.log(response.data.results.id);
-              this.apartment = response.data.results;
-              this.apartmentId = response.data.results.id;
+      axios.all([
+          axios.get(this.apiUrl + this.$route.params.slug),
+          axios.get(this.apiIpUrl)
+        ])
+        .then(axios.spread((response1, response2) => {
+          // console.log('data1', data1, 'data2', data2)
+          this.apartment = response1.data.results;
+          this.apartmentId = response1.data.results.id;
+
+          this.userIp = response2.data;
+          // console.log(this.userIp);
+        }))
+        .catch(axios.spread((err1, err2) => {
+          console.log(err1, err2);
+        }))
+        .finally(() => {
+          this.sendData(); 
+        });
+    },
+    methods: {
+        sendData(){
+
+          // first of all take the actual date
+          let today = new Date();
+          let dd = String(today.getDate()).padStart(2, '0');
+          let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+          let yyyy = today.getFullYear();
+          
+          // save the actual date in a variable
+          today = mm + '/' + dd + '/' + yyyy;
+
+          console.log(today);
+          console.log(this.apartmentId);
+          console.log(this.userIp);
+
+          // call api to save the visitor
+          axios.post('/api/statistics/', {
+              'apartment_id': this.apartmentId,
+              'clicked_at': today,
+              'visitor': this.userIp,
             })
-            .catch();
+            .then(response => {
+              response.data.success;
+              console.log(response);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+        },
     }
   }
 
