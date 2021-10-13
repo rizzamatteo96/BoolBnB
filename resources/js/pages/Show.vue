@@ -123,7 +123,7 @@
           let yyyy = today.getFullYear();
           
           // save the actual date in a variable
-          today = mm + '/' + dd + '/' + yyyy;
+          today = yyyy + '/' + mm + '/' + dd;
 
           console.log(today);
           console.log(this.apartmentId);
