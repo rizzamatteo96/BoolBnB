@@ -8,7 +8,7 @@
     {{-- @dd($apartment) --}}
 
     <div class="row mt-5">
-        <div class="col-10">
+        <div class="col-6">
             {{-- Apartment title and description --}}
             <h2>{{$apartment->title}}</h2>
             <div>
@@ -16,9 +16,9 @@
             </div>
         </div>
 
-        <div class="col-2">
+        <div class="col-6">
             {{-- Apartment image --}}
-            <img src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}">
+            <img class="img-thumbnail" src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}">
         </div>
     </div>
 
@@ -40,4 +40,5 @@
         <div class="d-inline-block border border-dark rounded me-2 p-2">CAP: {{$apartment->postal_code}}</div>
     </div>
 
+    <button class="btn btn-outline-dark mt-5" onclick="history.go(-1);">Indietro</button>
 @endsection

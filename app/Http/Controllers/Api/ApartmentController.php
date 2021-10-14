@@ -22,6 +22,13 @@ class ApartmentController extends Controller
     public function index()
     {
         $apartments = Apartment::where('visibility', 1)->get();
+
+        foreach ($apartments as $apartment) {
+            if($apartment->image){
+                $apartment->image = url('storage/' . $apartment->image); 
+            }
+        }
+
         return response()->json([
             'success' => true,
             'results' => $apartments
@@ -40,8 +47,8 @@ class ApartmentController extends Controller
         $apartment = Apartment::where('slug', $slug)->with(['services'])->first();
 
         // controllo se c'è l'immagine salvata e prepare il path per la visualizzazione in front end
-        if($apartment->img){
-            $apartment->img = url('storage/' . $apartment->img); 
+        if($apartment->image){
+            $apartment->image = url('storage/' . $apartment->image); 
         }
 
         // restituisco un JSON visibile anche alla route che si trova in api.php
@@ -162,8 +169,8 @@ class ApartmentController extends Controller
         // prepare the img for the single apartment
         if(isset($apartments)){
             foreach ($apartments as $apartment) {
-                if($apartment->img){
-                    $apartment->img = url('storage/' . $apartment->img); 
+                if($apartment->image){
+                    $apartment->image = url('storage/' . $apartment->image); 
                 }
             }
         } else {

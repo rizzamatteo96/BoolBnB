@@ -53,12 +53,15 @@
                     @endforeach
                 @endforeach
                 {{-- @else --}}
-                {{-- <td>Nessun messaggio ricevuto per l'appartamento</td>
-                @endif --}}
+                <td>Nessun messaggio ricevuto per l'appartamento</td>
+                {{-- @endif --}}
 
             </tbody>
         </table>
             
     @endforeach
+
+    <button class="btn btn-outline-dark mt-5" onclick="history.go(-1);">Indietro</button>
+
 
 @endsection
