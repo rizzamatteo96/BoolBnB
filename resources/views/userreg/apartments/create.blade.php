@@ -6,7 +6,7 @@
 
 @section('content')
    
-    <form action="{{route('userreg.apartments.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('userreg.apartments.store')}}" method="POST" name="createApartment" enctype="multipart/form-data">
         {{-- generate token --}}
         @csrf
         
@@ -159,22 +159,27 @@
 
         {{-- Inizio - Campo inserimento del Indirizzo --}}
         <div class="row mb-3">
-            {{-- Input address field with autocomplete from tomtom --}}
-            <div id="search-field" class="col-12"></div>
 
-            {{-- Start - error messages container from validator --}}
-            <div class="col-12">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+            <div class="col-8">
+                <label for="pippo" class="form-label">Indirizzo</label>
+                {{-- Input address field with autocomplete from tomtom --}}
+                <div id="search-field" class="col-8 pl-0"></div>
+    
+                {{-- Start - error messages container from validator --}}
+                <div class="col-8">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
+                {{-- End - error messages container from validator --}}
             </div>
-            {{-- End - error messages container from validator --}}
+
 
         </div>
         {{-- Fine - Campo inserimento del Indirizzo --}}
@@ -205,13 +210,45 @@
         </div>
         {{-- Fine - Campo di selezione dei services --}}
 
+        {{-- start btn pop-up (go-back to index.apartment) --}}
+        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
+            <i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i>
+            Torna indietro
+        </button>
+        {{-- start btn pop-up (go-back to index.apartment) --}}
 
-        <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left me-2"></i> Torna indietro</a>
+        {{-- start btn save data --}}
         <button type="submit" class="btn btn-primary">Salva</button>
+        {{-- end btn save data --}}
 
         <div class="mb-0 form-group row">
             <span class="text-danger text-md-left col-md-9 col-form-label">I campi contrassegnati con * sono obbligatori</span>
         </div>
 
     </form>
+   
+    {{-- Pop-up (go back to apartmnet.index or stay in create) --}}
+    <form method="get" action="{{route('userreg.apartments.index')}}">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Torna indietro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    Sei sicuro di voler tornare indietro? Tutte le modifiche effettuate andranno perse.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Continua l'inserimento dati</button>
+                <button type="submit" class="btn btn-secondary">Torna indietro</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </form>
+    {{-- end Pop-up (go back to apartmnet.index or stay in create) --}}
+
 @endsection

@@ -60,7 +60,7 @@
             
     @endforeach
 
-    <button class="btn btn-outline-dark mt-5" onclick="history.go(-1);">Indietro</button>
+    <button class="btn btn-outline-dark mt-5" onclick="history.go(-1);"><i class="fas fa-arrow-left mr-2"></i> Indietro</button>
 
 
 @endsection

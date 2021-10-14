@@ -21,5 +21,5 @@ window.searchBox = function() {
 
   // set the name for the form data send
   document.querySelector('input.tt-search-box-input').name = 'address';
-
+  document.querySelector('input.tt-search-box-input').id = 'pippo';
 };

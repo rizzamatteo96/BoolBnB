@@ -3299,7 +3299,8 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.all([axios.get(this.apiUrl + this.$route.params.slug), axios.get(this.apiIpUrl), axios.get(this.apiEmailUrl)]).then(axios.spread(function (response1, response2) {
+    axios.all([axios.get(this.apiUrl + this.$route.params.slug), axios.get(this.apiIpUrl) // axios.get(this.apiEmailUrl)
+    ]).then(axios.spread(function (response1, response2) {
       // console.log('data1', data1, 'data2', data2)
       _this.apartment = response1.data.results;
       _this.apartmentId = response1.data.results.id;
