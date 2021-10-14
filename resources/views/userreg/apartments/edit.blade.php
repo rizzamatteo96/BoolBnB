@@ -18,7 +18,7 @@
         <div class="row mb-3 align-items-end">
             {{-- Inizio - Campo inserimento del titolo --}}
             <div class="col-6">
-                <label for="title" class="form-label h4">Titolo *</label>
+                <label for="apartmenttitle" class="form-label h4">Titolo *</label>
                 <input type="text" class="form-control
                 @error('title') 
                     is-invalid 
@@ -57,7 +57,7 @@
             <hr>
         </div>
 
-        <label for="img" class="form-label h4 mb-4">Immagine copertina *</label>
+        <label for="image" class="form-label h4 mb-4">Immagine copertina *</label>
 
         {{-- Sezione immagine --}}
         <div class="row ">
@@ -65,10 +65,10 @@
                 {{-- Inizio - Campo caricamento foto --}}
                 
                 <div class="mb-3">
-                    <input type="file" name="image" id="image" class="form-control-file
+                    <input type="file" accept="image/*" name="image" id="image" class="form-control-file
                     @error('image') 
                         is-invalid 
-                    @enderror">
+                    @enderror" required>
 
                     @error('image')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -98,7 +98,7 @@
             @error('description') 
                 is-invalid 
             @enderror" 
-            id="description" name="description" rows="5" onfocusout="verifyDescripton(description)" required> {{old('description', $apartment->description)}}</textarea>
+            id="description" name="description" rows="5" onfocusout="verifyDescripton(description)" required>{{old('description', $apartment->description)}}</textarea>
 
             {{-- Add error write --}}
             <span id="valDescription" class="text-danger"></span>
@@ -208,16 +208,22 @@
 
             {{-- Start - error messages container from validator --}}
             <div class="col-12">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                <div>
+                    @error('city')
+                        <div class="alert alert-danger pt-1">{{ $message }}</div>
+                    @enderror
+                    @error('address')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    @error('house_num')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    @error('postal_code')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
+
             {{-- End - error messages container from validator --}}
 
         </div>
