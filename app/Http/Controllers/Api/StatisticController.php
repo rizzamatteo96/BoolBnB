@@ -27,7 +27,9 @@ class StatisticController extends Controller
 
 
 
-        $visitorData = Statistic::where('visitor', $data['visitor'])->first();
+        $visitorData = Statistic::where('visitor', $data['visitor'])
+                                    ->where('apartment_id', $data['apartment_id'])
+                                    ->first();
         if(!$visitorData){
             $new_statistic = new Statistic();
             $new_statistic->fill($data);

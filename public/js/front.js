@@ -2161,6 +2161,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../validation */ "./resources/js/validation.js");
+/* harmony import */ var _validation__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_validation__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2264,6 +2266,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ContactForm',
   props: ['apartment'],
@@ -2271,17 +2279,22 @@ __webpack_require__.r(__webpack_exports__);
     return {
       email: '',
       description: '',
-      errors: {}
+      errors: {},
+      messageSent: false
     };
   },
   methods: {
     sendData: function sendData() {
+      var _this = this;
+
       axios.post('/api/contacts/', {
         'email': this.email,
         'description': this.description,
         'apartment_id': this.apartment
       }).then(function (response) {
-        response.data.success;
+        _this.messageSent = response.data.success;
+        _this.email = '';
+        _this.description = '';
       })["catch"](function (error) {
         console.log(error);
       });
@@ -3535,6 +3548,203 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }]
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
+
+/***/ }),
+
+/***/ "./resources/js/validation.js":
+/*!************************************!*\
+  !*** ./resources/js/validation.js ***!
+  \************************************/
+/***/ (() => {
+
+// ************ VALIDATION REGISTER.BLADE.PHP *******************
+// user registration validation
+window.validateEmail = function (input) {
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+  if (input.value.match(validRegex)) {
+    document.getElementById('user-email').innerHTML = '';
+    return true;
+  } else {
+    document.getElementById('user-email').innerHTML = 'Il campo e-mail è obbligatorio';
+    return false;
+  }
+}; // user psw validation
+
+
+window.verifyPassword = function (input) {
+  // Define params
+  var myparams = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/; // Define input password
+
+  var userPassword = input.value; // Validate password
+
+  if (userPassword.match(myparams)) {
+    document.getElementById('validation-password').innerHTML = '';
+    return true;
+  } else {
+    document.getElementById('validation-password').innerHTML = 'La password deve avere almeno: una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale, e deve essere di lunghezza compresa tra 8 e 15 caratteri';
+    return false;
+  }
+}; // user confirmation psw validation
+
+
+window.verifyConfPass = function (password, confPass) {
+  var confirm = confPass.value;
+  var pass = password.value;
+
+  if (confirm === pass) {
+    document.getElementById('validation-ConfPass').innerHTML = '';
+    return true;
+  } else {
+    document.getElementById('validation-ConfPass').innerHTML = 'Le password non coincidono';
+    return false;
+  }
+}; // ************ VALIDATION CREATE.BLADE.PHP *******************
+// title validation
+
+
+window.verifyTitle = function (input) {
+  var title = input.value;
+
+  if (title == '' || title == ' ') {
+    document.getElementById('valTitle').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valTitle').innerHTML = '';
+    return true;
+  }
+}; // img validation
+
+
+window.verifyImg = function (input) {
+  if (input.value == false) {
+    document.getElementById('valImg').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valImg').innerHTML = '';
+    return true;
+  }
+}; // description validation
+
+
+window.verifyDescripton = function (input) {
+  var text = input.value;
+
+  if (text == '' || text == null || text == ' ') {
+    document.getElementById('valDescription').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valDescription').innerHTML = '';
+    return true;
+  }
+}; // rooms validation
+
+
+window.verifyRooms = function (input) {
+  if (input.value == '' || input.value == null || input.value == ' ' || input.value == false) {
+    document.getElementById('valRooms').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valRooms').innerHTML = '';
+    return true;
+  }
+}; // beds validation
+
+
+window.verifyBeds = function (input) {
+  if (input.value == '' || input.value == null || input.value == ' ' || input.value == false) {
+    document.getElementById('valBeds').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valBeds').innerHTML = '';
+    return true;
+  }
+}; // bathrooms validation
+
+
+window.verifyBathrooms = function (input) {
+  if (input.value == '' || input.value == null || input.value == ' ') {
+    document.getElementById('valBathrooms').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valBathrooms').innerHTML = '';
+    return true;
+  }
+}; // SquareMeters validation
+
+
+window.verifySquareMeters = function (input) {
+  if (input.value == '' || input.value == null || input.value == ' ' || input.value == false) {
+    document.getElementById('valSquareMeters').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valSquareMeters').innerHTML = '';
+    return true;
+  }
+}; // City validation
+
+
+window.verifyCity = function (input) {
+  if (input.value == '' || input.value == ' ') {
+    document.getElementById('valCity').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valCity').innerHTML = '';
+    return true;
+  }
+}; // Address validation
+
+
+window.verifyAddress = function (input) {
+  if (input.value == '' || input.value == ' ') {
+    document.getElementById('valAddress').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valAddress').innerHTML = '';
+    return true;
+  }
+}; // HouseNum validation
+
+
+window.verifyHouseNum = function (input) {
+  if (input.value == '' || input.value == ' ') {
+    document.getElementById('valHouseNum').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valHouseNum').innerHTML = '';
+    return true;
+  }
+}; // PostalCode validation
+
+
+window.verifyPostalCode = function (input) {
+  if (input.value == '' || input.value == ' ') {
+    document.getElementById('valPostalCode').innerHTML = 'Campo da compilare';
+    return false;
+  } else {
+    document.getElementById('valPostalCode').innerHTML = '';
+    return true;
+  }
+}; // ********************************password verification onclick
+// window.verifyPasswordOnSubmit = function(input) {
+//   // Define params
+//   var myparams = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+//   // Define input password
+//   var userPassword = input.value;
+//   // Validate password
+//   if(!userPassword.match(myparams)){
+//     alert('Invalid password');
+//     return false;
+//   }
+// };
+// window.verifyConfPassOnSubmit = function(password, confPass) {
+//   var confirm = confPass.value;
+//   var pass = password.value;
+//   // Validate password
+//   if(confirm != pass){
+//     alert('Password non uguale');
+//   }
+// }
 
 /***/ }),
 
@@ -41408,7 +41618,7 @@ var render = function() {
                   _c(
                     "label",
                     { staticClass: "cform", attrs: { for: "email" } },
-                    [_vm._v("Email")]
+                    [_vm._v("Email *")]
                   ),
                   _vm._v(" "),
                   _c("input", {
@@ -41421,7 +41631,13 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "text", id: "email", name: "email" },
+                    attrs: {
+                      onfocusout: "validateEmail(email)",
+                      type: "text",
+                      id: "email",
+                      name: "email",
+                      required: ""
+                    },
                     domProps: { value: _vm.email },
                     on: {
                       input: function($event) {
@@ -41431,6 +41647,11 @@ var render = function() {
                         _vm.email = $event.target.value
                       }
                     }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "text-danger",
+                    attrs: { id: "user-email" }
                   })
                 ])
               ])
@@ -41444,7 +41665,7 @@ var render = function() {
                   _c(
                     "label",
                     { staticClass: "cform", attrs: { for: "description" } },
-                    [_vm._v("Messaggio")]
+                    [_vm._v("Messaggio *")]
                   ),
                   _vm._v(" "),
                   _c("textarea", {
@@ -41461,7 +41682,8 @@ var render = function() {
                       type: "text",
                       id: "description",
                       name: "description",
-                      rows: "2"
+                      rows: "2",
+                      required: ""
                     },
                     domProps: { value: _vm.description },
                     on: {
@@ -41473,24 +41695,24 @@ var render = function() {
                       }
                     }
                   })
-                ])
+                ]),
+                _vm._v(" "),
+                _vm.messageSent
+                  ? _c("div", { staticClass: "alert alert-primary mt-4" }, [
+                      _vm._v("Messaggio inviato con successo")
+                    ])
+                  : _vm._e()
               ])
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("click me")]
-            )
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._m(3)
           ]
-        ),
-        _vm._v(" "),
-        _vm._m(2),
-        _vm._v(" "),
-        _c("div", { staticClass: "status" })
+        )
       ]),
       _vm._v(" "),
-      _vm._m(3)
+      _vm._m(4)
     ])
   ])
 }
@@ -41540,12 +41762,21 @@ var staticRenderFns = [
         "button",
         {
           staticClass: "btn btn-outline-danger mt-4",
-          attrs: {
-            type: "button",
-            onclick: "document.getElementById('contact-form').submit();"
-          }
+          attrs: { type: "submit" }
         },
         [_vm._v("Invia")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-0 form-group row" }, [
+      _c(
+        "span",
+        { staticClass: "text-danger text-md-left col-md-9 col-form-label" },
+        [_vm._v("I campi contrassegnati con * sono obbligatori")]
       )
     ])
   },
