@@ -22,6 +22,7 @@ window.searchBox = function () {
 
   document.querySelector('input.tt-search-box-input').name = 'address';
   document.querySelector('input.tt-search-box-input').id = 'pippo';
+  document.querySelector('input.tt-search-box-input').placeholder = 'Cambia indirizzo';
 };
 /******/ })()
 ;

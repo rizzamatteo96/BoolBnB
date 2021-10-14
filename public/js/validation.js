@@ -171,7 +171,23 @@ window.verifyPostalCode = function (input) {
     document.getElementById('valPostalCode').innerHTML = '';
     return true;
   }
-}; // ********************************password verification onclick
+}; // Remove image on close pop-up
+
+
+window.removeImg = function () {
+  document.getElementById('image').value = null;
+}; // display img
+
+
+window.displayImg = function (event) {
+  var image = document.getElementById('output');
+  image.src = URL.createObjectURL(event.target.files[0]);
+}; // display img if confirmed
+// window.displayIfConfirmed = function() {
+//   document.getElementById('output-if-confirmed').src = '';
+// 	document.getElementById('output-if-confirmed').src = console.log(document.getElementById('image').value);
+// };
+// ********************************password verification onclick
 // window.verifyPasswordOnSubmit = function(input) {
 //   // Define params
 //   var myparams = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;

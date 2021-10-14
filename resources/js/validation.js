@@ -181,7 +181,21 @@ window.verifyPostalCode = function(input) {
   }
 };
 
+// Remove image on close pop-up
+window.removeImg = function(){
+  document.getElementById('image').value = null;
+}
+// display img
+window.displayImg = function(event) {
+	let image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
 
+// display img if confirmed
+// window.displayIfConfirmed = function() {
+//   document.getElementById('output-if-confirmed').src = '';
+// 	document.getElementById('output-if-confirmed').src = console.log(document.getElementById('image').value);
+// };
 
 
 

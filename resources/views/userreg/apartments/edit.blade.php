@@ -63,8 +63,46 @@
         <div class="row ">
             <div class="col-4">
                 {{-- Inizio - Campo caricamento foto --}}
-                
                 <div class="mb-3">
+                    <input type="file" accept="image/*" onchange="displayImg(event)" name="image" id="image" class="form-control-file mb-2
+                    @error('image') 
+                        is-invalid 
+                    @enderror">
+                </div>
+                
+                {{-- Prove --}}
+                {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Modifica immagine
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modifica immagine</h5>
+                          <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          @error('image')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                          @enderror
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <input type="file" accept="image/*" onchange="displayImg(event)" name="image" id="image" class="form-control-file mb-2
+                                @error('image') 
+                                    is-invalid 
+                                @enderror">
+                                <img id="output" src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}" class="w-100">  
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="removeImg()">Close</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div> --}}
+                {{-- <div class="mb-3">
                     <input type="file" accept="image/*" name="image" id="image" class="form-control-file
                     @error('image') 
                         is-invalid 
@@ -73,12 +111,15 @@
                     @error('image')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                </div>
+                </div> --}}
                 {{-- Fine - Campo caricamento foto --}}
             </div>
             <div class="col-6">
                 {{-- Visualizza immagine in DB --}}
-                <img src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}" class="w-50">  
+                <img id="output" src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}" class="w-75">  
+                @error('image')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
         </div>        
 
@@ -194,7 +235,9 @@
         <div class="row">
             <h6 class="col-12 h4">Indirizzo *</h6>
             <div class="col-12">
-                Attuale :  {{$apartment->city . ', Via ' . $apartment->address . ' ' . $apartment->house_num . ' , ' . $apartment->postal_code}}
+                <span>Attuale : </span>
+                <span id="address-placeholder">{{$apartment->city . ' ' . $apartment->address . ' ' . $apartment->house_num . ' , ' . $apartment->postal_code}}</span>
+                {{-- {{$apartment->city . ', Via ' . $apartment->address . ' ' . $apartment->house_num . ' , ' . $apartment->postal_code}} --}}
             </div>
         </div>
         {{-- End - Show address saved in DB --}}
