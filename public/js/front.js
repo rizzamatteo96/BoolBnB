@@ -42588,7 +42588,7 @@ var render = function() {
                   [
                     _c("img", {
                       staticClass: "container-box--img",
-                      attrs: { src: "img/house.jpg", alt: "" }
+                      attrs: { src: apartment.image, alt: apartment.title }
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "container-description" }, [

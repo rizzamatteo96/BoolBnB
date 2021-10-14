@@ -11,7 +11,7 @@
 
                 <div class="box-container">
                     
-                    <img class="container-box--img" src="img/house.jpg" alt="">
+                    <img class="container-box--img" :src="apartment.image" :alt="apartment.title">
 
                     <div class="container-description" >
 
