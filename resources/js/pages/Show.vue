@@ -99,7 +99,7 @@
       axios.all([
           axios.get(this.apiUrl + this.$route.params.slug),
           axios.get(this.apiIpUrl),
-          axios.get(this.apiEmailUrl)
+          // axios.get(this.apiEmailUrl)
         ])
         .then(axios.spread((response1, response2) => {
           // console.log('data1', data1, 'data2', data2)

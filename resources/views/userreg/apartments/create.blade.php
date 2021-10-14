@@ -6,7 +6,7 @@
 
 @section('content')
    
-    <form action="{{route('userreg.apartments.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('userreg.apartments.store')}}" method="POST" name="createApartment" enctype="multipart/form-data">
         {{-- generate token --}}
         @csrf
         
@@ -159,22 +159,27 @@
 
         {{-- Inizio - Campo inserimento del Indirizzo --}}
         <div class="row mb-3">
-            {{-- Input address field with autocomplete from tomtom --}}
-            <div id="search-field" class="col-12"></div>
 
-            {{-- Start - error messages container from validator --}}
-            <div class="col-12">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+            <div class="col-8">
+                <label for="pippo" class="form-label">Indirizzo</label>
+                {{-- Input address field with autocomplete from tomtom --}}
+                <div id="search-field" class="col-8 pl-0"></div>
+    
+                {{-- Start - error messages container from validator --}}
+                <div class="col-8">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
+                {{-- End - error messages container from validator --}}
             </div>
-            {{-- End - error messages container from validator --}}
+
 
         </div>
         {{-- Fine - Campo inserimento del Indirizzo --}}
@@ -206,7 +211,8 @@
         {{-- Fine - Campo di selezione dei services --}}
 
 
-        <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left me-2"></i> Torna indietro</a>
+        {{-- <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i> Torna indietro</a> --}}
+
         <button type="submit" class="btn btn-primary">Salva</button>
 
         <div class="mb-0 form-group row">
@@ -214,4 +220,29 @@
         </div>
 
     </form>
+
+    <form method="get" action="{{route('userreg.apartments.index')}}">
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Continue</button>
+    </form>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+           
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
 @endsection
