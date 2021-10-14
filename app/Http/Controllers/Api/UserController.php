@@ -12,9 +12,11 @@ use App\User;
 class UserController extends Controller
 {
 
-    public function email()
+    public function email($id)
     {
-        $user = Auth::all();
+        $data = User::where('id', $id);
+
+        $user = $data->email;
 
         return response()->json([
             'email' => $user
