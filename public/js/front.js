@@ -2510,6 +2510,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 //import Login from '@/components/Login.vue'
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Header',
@@ -3021,7 +3023,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.apiUrl).then(function (response) {
-        console.log(response.data.results);
+        // console.log(response.data.results);
         _this.apartments = response.data.results;
       })["catch"](function (e) {
         console.log(e);
@@ -3093,7 +3095,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.apiUrl).then(function (response) {
-        console.log(response.data.results);
+        // console.log(response.data.results);
         _this.apartments = response.data.results;
       })["catch"](function (e) {
         console.log(e);
@@ -3321,10 +3323,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var yyyy = today.getFullYear(); // save the actual date in a variable
 
-      today = yyyy + '/' + mm + '/' + dd;
-      console.log(today);
-      console.log(this.apartmentId);
-      console.log(this.userIp); // call api to save the visitor
+      today = yyyy + '/' + mm + '/' + dd; // call api to save the visitor
 
       axios.post('/api/statistics/', {
         'apartment_id': this.apartmentId,
@@ -3421,9 +3420,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'App',
+  props: ['authUser'],
   components: {
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
     Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  mounted: function mounted() {
+    console.log('ciao');
+    console.log(this.authUser);
   }
 });
 
@@ -42093,7 +42097,7 @@ var render = function() {
       [
         _c("img", {
           staticClass: "container--logo--image--mobile",
-          attrs: { src: "img/boolbeb-icona.svg", alt: "" }
+          attrs: { src: "img/boolbeb-icona.svg", alt: "BoolBnb" }
         }),
         _vm._v(" "),
         _vm._m(1)
@@ -42151,7 +42155,7 @@ var staticRenderFns = [
       _c("a", { attrs: { href: "http://localhost:8000" } }, [
         _c("img", {
           staticClass: "container--logo--image",
-          attrs: { src: "img/boolbeb-icona.svg", alt: "" }
+          attrs: { src: "img/boolbeb-icona.svg", alt: "BoolBnb" }
         })
       ])
     ])

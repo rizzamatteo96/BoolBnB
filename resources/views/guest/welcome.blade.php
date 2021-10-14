@@ -27,6 +27,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
+                    {{-- @dd(Auth::user()->email) --}}
                 {{-- <div class="m-3 text-right">
                     @auth
                         <a href="{{ route('userreg.home') }}" class="btn btn-outline-secondary">Home</a>
@@ -43,7 +44,7 @@
         </div>
         
         <div id="root">
-            <router-view></router-view>
+            <router-view :auth-user={{Auth::user()}} ></router-view>
         </div>
 
         <script src="{{ asset('js/front.js') }}"></script>

@@ -129,10 +129,6 @@
           // save the actual date in a variable
           today = yyyy + '/' + mm + '/' + dd;
 
-          console.log(today);
-          console.log(this.apartmentId);
-          console.log(this.userIp);
-
           // call api to save the visitor
           axios.post('/api/statistics/', {
               'apartment_id': this.apartmentId,
