@@ -44,12 +44,21 @@
         </div>
         {{-- End - Input title field & visibility switch --}}
 
+        <div class="mt-5">
+            <hr>
+        </div>
+
         {{-- Sezione immagine --}}
         <div class="row ">
+
+            <div class="col-12">
+                <label for="image" class="form-label h4 mb-4">Immagine copertina *</label>
+            </div>
+
             <div class="col-4">
                 {{-- Inizio - Campo caricamento foto --}}
                 <div class="mb-3">
-                    <input type="file" accept="image/*" onchange="displayImg(event)" name="image" id="image" class="form-control-file mb-2
+                    <input type="file" required accept="image/*" onchange="displayImg(event)" name="image" id="image" class="form-control-file mb-2
                     @error('image') 
                         is-invalid 
                     @enderror">
@@ -64,10 +73,16 @@
                 @enderror
             </div>
         </div>
+        {{-- end img section --}}
 
+        <div class="mt-5">
+            <hr>
+        </div>
 
         {{-- Inizio - Campo inserimento descrizione --}}
         <div class="mb-3">
+            <div class="h4">Informazioni *</div>
+
             <label for="description" class="form-label">Descrizione *</label>
             <textarea class="form-control
             @error('description') 
@@ -160,32 +175,42 @@
         </div>
         {{-- End - Apartment details input fields --}}
 
-        {{-- Inizio - Campo inserimento del Indirizzo --}}
-        <div class="row mb-3">
+         {{-- Inizio - Campo inserimento del Indirizzo --}}
+         <div class="row mb-3">
 
-            <div class="col-8">
-                <label for="pippo" class="form-label">Indirizzo</label>
-                {{-- Input address field with autocomplete from tomtom --}}
-                <div id="search-field" class="col-8 pl-0"></div>
-    
-                {{-- Start - error messages container from validator --}}
-                <div class="col-8">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+            {{-- Input address field with autocomplete from tomtom --}}
+            <div id="search-field" class="col-12"></div>
+
+            {{-- Start - error messages container from validator --}}
+            <div class="col-12">
+                <div>
+                    @error('city')
+                        <div class="alert alert-danger pt-1">{{ $message }}</div>
+                    @enderror
+                    @error('address')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    @error('house_num')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    @error('postal_code')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
-                {{-- End - error messages container from validator --}}
             </div>
+
+            {{-- End - error messages container from validator --}}
+
+        </div>
+        {{-- Fine - Campo inserimento del Indirizzo --}}
 
 
         </div>
         {{-- Fine - Campo inserimento del Indirizzo --}}
+
+        <div class="mt-5">
+            <hr>
+        </div>
 
         {{-- Inizio - Campo di selezione dei services --}}
         <div class="mb-3">
@@ -212,6 +237,10 @@
 
         </div>
         {{-- Fine - Campo di selezione dei services --}}
+
+        <div class="my-5">
+            <hr>
+        </div>
 
         {{-- start btn pop-up (go-back to index.apartment) --}}
         <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">

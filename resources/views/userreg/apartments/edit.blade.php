@@ -57,10 +57,13 @@
             <hr>
         </div>
 
-        <label for="image" class="form-label h4 mb-4">Immagine copertina *</label>
-
         {{-- Sezione immagine --}}
         <div class="row ">
+
+            <div class="col-12">
+                <label for="image" class="form-label h4 mb-4">Immagine copertina *</label>
+            </div>
+
             <div class="col-4">
                 {{-- Inizio - Campo caricamento foto --}}
                 <div class="mb-3">
@@ -122,18 +125,18 @@
                 @enderror
             </div>
         </div>        
+        {{-- end img section --}}
+
 
         <div class="mt-5">
             <hr>
         </div>
 
 
-        <div class="h4" >Informazioni *</div>
-
-
-
         {{-- Inizio - Campo inserimento descrizione --}}
         <div class="mb-3">
+            <div class="h4">Informazioni *</div>
+
             <label for="description" class="form-label">Descrizione *</label>
             <textarea class="form-control
             @error('description') 
