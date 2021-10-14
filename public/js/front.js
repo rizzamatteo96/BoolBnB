@@ -2997,9 +2997,9 @@ __webpack_require__.r(__webpack_exports__);
         "slidesToShow": 3,
         "slidesToScroll": 1,
         "autoplay": true,
-        "arrows": false,
-        "speed": 8000,
-        "autoplaySpeed": 2000,
+        "arrows": true,
+        "speed": 2000,
+        "autoplaySpeed": 4000,
         "responsive": [{
           "breakpoint": 968,
           "settings": {
@@ -3289,7 +3289,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       apiUrl: 'http://localhost:8000/api/apartment/',
       apiIpUrl: 'https://api.ipify.org',
-      apiEmailUrl: 'http://localhost:8000/api/user',
+      // apiEmailUrl: 'http://localhost:8000/api/user/' + 'apartmentId',
       apartment: [],
       apartmentId: '',
       userIp: '',
@@ -3299,15 +3299,15 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.all([axios.get(this.apiUrl + this.$route.params.slug), axios.get(this.apiIpUrl), axios.get(this.apiEmailUrl)]).then(axios.spread(function (response1, response2, response3) {
+    axios.all([axios.get(this.apiUrl + this.$route.params.slug), axios.get(this.apiIpUrl) // axios.get(this.apiEmailUrl)
+    ]).then(axios.spread(function (response1, response2) {
       // console.log('data1', data1, 'data2', data2)
       _this.apartment = response1.data.results;
       _this.apartmentId = response1.data.results.id;
-      _this.userIp = response2.data;
-      console.log(response3); // this.userEmail = response3.data;
+      _this.userIp = response2.data; // this.userEmail = response3.data;
       // console.log(this.userIp);
-    }))["catch"](axios.spread(function (err1, err2, err3) {
-      console.log(err1, err2, err3);
+    }))["catch"](axios.spread(function (err1, err2) {
+      console.log(err1, err2);
     }))["finally"](function () {
       _this.sendData();
     });
@@ -8473,7 +8473,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\nbody {\n  font-family: \"Montserrat\", sans-serif;\n}\n\n/* width */\n::-webkit-scrollbar {\n  width: 5px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #000000;\n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #292929;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #FF385C;\n}\n.app {\n  background: linear-gradient(140deg, #ff385c, #000000);\n  background-size: 400% 400%;\n  -webkit-animation: AnimationName 22s ease infinite;\n  animation: AnimationName 22s ease infinite;\n}\n@-webkit-keyframes AnimationName {\n0% {\n    background-position: 25% 0%;\n}\n50% {\n    background-position: 76% 100%;\n}\n100% {\n    background-position: 25% 0%;\n}\n}\n@keyframes AnimationName {\n0% {\n    background-position: 25% 0%;\n}\n50% {\n    background-position: 76% 100%;\n}\n100% {\n    background-position: 25% 0%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\nbody {\n  font-family: \"Montserrat\", sans-serif;\n}\n\n/* width */\n::-webkit-scrollbar {\n  width: 5px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #000000;\n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #292929;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #FF385C;\n}\n.app {\n  background: linear-gradient(108deg, #bb2b45, #000000);\n  background-size: 400% 400%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42588,7 +42588,7 @@ var render = function() {
                   [
                     _c("img", {
                       staticClass: "container-box--img",
-                      attrs: { src: "img/house.jpg", alt: "" }
+                      attrs: { src: apartment.image, alt: apartment.title }
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "container-description" }, [

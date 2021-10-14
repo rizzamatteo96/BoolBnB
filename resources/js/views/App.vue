@@ -54,34 +54,10 @@
 
   .app {
 
-   background: linear-gradient(140deg, #ff385c, #000000);
+   background: linear-gradient(108deg, #bb2b45, #000000);
     background-size: 400% 400%;
 
-    -webkit-animation: AnimationName 22s ease infinite;
-    -moz-animation: AnimationName 22s ease infinite;
-    -o-animation: AnimationName 22s ease infinite;
-    animation: AnimationName 22s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:25% 0%}
-    50%{background-position:76% 100%}
-    100%{background-position:25% 0%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:25% 0%}
-    50%{background-position:76% 100%}
-    100%{background-position:25% 0%}
-}
-@-o-keyframes AnimationName {
-    0%{background-position:25% 0%}
-    50%{background-position:76% 100%}
-    100%{background-position:25% 0%}
-}
-@keyframes AnimationName {
-    0%{background-position:25% 0%}
-    50%{background-position:76% 100%}
-    100%{background-position:25% 0%}
-}
 
 </style>
