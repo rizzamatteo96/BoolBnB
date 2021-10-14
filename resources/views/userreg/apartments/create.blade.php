@@ -66,7 +66,7 @@
 
             <div class="col-6">
                 {{-- Visualizza immagine in DB --}}
-                <img id="output" class="w-75">  
+                <img id="output" class="w-75" src="{{asset("img/empty-image-white.jpg")}}">  
                 @error('image')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
