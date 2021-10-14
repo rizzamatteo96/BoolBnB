@@ -386,6 +386,8 @@ class ApartmentController extends Controller
     {
         Storage::delete($apartment->image);
         $apartment->services()->detach();
+        $apartment->messages()->delete();
+        $apartment->statistics()->delete();
         $apartment->delete();
 
         return redirect()->route('userreg.apartments.index');
