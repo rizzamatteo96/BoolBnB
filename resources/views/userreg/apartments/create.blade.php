@@ -210,39 +210,45 @@
         </div>
         {{-- Fine - Campo di selezione dei services --}}
 
+        {{-- start btn pop-up (go-back to index.apartment) --}}
+        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
+            <i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i>
+            Torna indietro
+        </button>
+        {{-- start btn pop-up (go-back to index.apartment) --}}
 
-        {{-- <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i> Torna indietro</a> --}}
-
+        {{-- start btn save data --}}
         <button type="submit" class="btn btn-primary">Salva</button>
+        {{-- end btn save data --}}
 
         <div class="mb-0 form-group row">
             <span class="text-danger text-md-left col-md-9 col-form-label">I campi contrassegnati con * sono obbligatori</span>
         </div>
 
     </form>
-
+   
+    {{-- Pop-up (go back to apartmnet.index or stay in create) --}}
     <form method="get" action="{{route('userreg.apartments.index')}}">
-        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Continue</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Torna indietro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    Sei sicuro di voler tornare indietro? Tutte le modifiche effettuate andranno perse.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Continua l'inserimento dati</button>
+                <button type="submit" class="btn btn-secondary">Torna indietro</button>
+                </div>
+            </div>
+            </div>
+        </div>
     </form>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-           
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-        </div>
-    </div>
+    {{-- end Pop-up (go back to apartmnet.index or stay in create) --}}
+
 @endsection
