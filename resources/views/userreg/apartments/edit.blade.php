@@ -62,10 +62,7 @@
                     <input type="file" name="image" id="image" class="form-control-file
                     @error('image') 
                         is-invalid 
-                    @enderror" required onfocusout="verifyImg(image)">
-
-                    {{-- Add error write --}}
-                    <span id="valImg" class="text-danger"></span>
+                    @enderror">
 
                     @error('image')
                         <div class="alert alert-danger">{{ $message }}</div>

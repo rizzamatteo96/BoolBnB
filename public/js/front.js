@@ -3289,21 +3289,25 @@ __webpack_require__.r(__webpack_exports__);
     return {
       apiUrl: 'http://localhost:8000/api/apartment/',
       apiIpUrl: 'https://api.ipify.org',
+      apiEmailUrl: 'http://localhost:8000/api/user',
       apartment: [],
       apartmentId: '',
-      userIp: ''
+      userIp: '',
+      userEmail: ''
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    axios.all([axios.get(this.apiUrl + this.$route.params.slug), axios.get(this.apiIpUrl)]).then(axios.spread(function (response1, response2) {
+    axios.all([axios.get(this.apiUrl + this.$route.params.slug), axios.get(this.apiIpUrl), axios.get(this.apiEmailUrl)]).then(axios.spread(function (response1, response2, response3) {
       // console.log('data1', data1, 'data2', data2)
       _this.apartment = response1.data.results;
       _this.apartmentId = response1.data.results.id;
-      _this.userIp = response2.data; // console.log(this.userIp);
-    }))["catch"](axios.spread(function (err1, err2) {
-      console.log(err1, err2);
+      _this.userIp = response2.data;
+      console.log(response3); // this.userEmail = response3.data;
+      // console.log(this.userIp);
+    }))["catch"](axios.spread(function (err1, err2, err3) {
+      console.log(err1, err2, err3);
     }))["finally"](function () {
       _this.sendData();
     });
@@ -3327,8 +3331,7 @@ __webpack_require__.r(__webpack_exports__);
         'clicked_at': today,
         'visitor': this.userIp
       }).then(function (response) {
-        response.data.success;
-        console.log(response);
+        response.data.success; // console.log(response);
       })["catch"](function (error) {
         console.log(error);
       });
