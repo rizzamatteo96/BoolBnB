@@ -257,10 +257,10 @@
             <hr>
         </div>
 
-        <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left mr-2"></i> Torna indietro</a>
+        {{-- <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left mr-2"></i> Torna indietro</a> --}}
         {{-- start btn pop-up (go-back to index.apartment) --}}
         <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
-            <i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i>
+            <i class="fas fa-arrow-left mr-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i>
             Torna indietro
         </button>
         {{-- start btn pop-up (go-back to index.apartment) --}}
