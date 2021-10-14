@@ -88,26 +88,32 @@
       return{
         apiUrl: 'http://localhost:8000/api/apartment/',
         apiIpUrl: 'https://api.ipify.org',
+        apiEmailUrl: 'http://localhost:8000/api/user',
         apartment: [],
         apartmentId: '',
         userIp: '',
+        userEmail: ''
       }
     },
     mounted(){
       axios.all([
           axios.get(this.apiUrl + this.$route.params.slug),
-          axios.get(this.apiIpUrl)
+          axios.get(this.apiIpUrl),
+          axios.get(this.apiEmailUrl)
         ])
-        .then(axios.spread((response1, response2) => {
+        .then(axios.spread((response1, response2, response3) => {
           // console.log('data1', data1, 'data2', data2)
           this.apartment = response1.data.results;
           this.apartmentId = response1.data.results.id;
 
           this.userIp = response2.data;
+
+          console.log(response3);
+          // this.userEmail = response3.data;
           // console.log(this.userIp);
         }))
-        .catch(axios.spread((err1, err2) => {
-          console.log(err1, err2);
+        .catch(axios.spread((err1, err2, err3) => {
+          console.log(err1, err2, err3);
         }))
         .finally(() => {
           this.sendData(); 
@@ -137,7 +143,7 @@
             })
             .then(response => {
               response.data.success;
-              console.log(response);
+              // console.log(response);
             })
             .catch(error => {
               console.log(error);
