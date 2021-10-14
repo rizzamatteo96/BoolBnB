@@ -6,7 +6,7 @@
 
 @section('content')
 
-	<a href="{{route('userreg.apartments.create')}}" class="btn btn-secondary mt-4">Aggiungi appartamento</a>
+	<a href="{{route('userreg.apartments.create')}}" class="btn btn-secondary mt-4"><i class="fas fa-plus mr-2"></i> Aggiungi appartamento</a>
 
 	@if ($data->isNotEmpty())
 		<table class="table mt-3">

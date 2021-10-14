@@ -190,7 +190,7 @@ class ApartmentController extends Controller
     public function show($id)
     {
         // load apartment id and user id
-        $apartment = Apartment::where('id', $id)->first();
+        $apartment = Apartment::where('id', $id)->with(['services'])->first();
         $user = Auth::user()->id;
 
         // check if the apartment is one of the logged user otherwise go to 404 page
