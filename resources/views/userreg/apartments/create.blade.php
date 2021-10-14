@@ -11,7 +11,7 @@
         @csrf
         
         {{-- Start - Input title field & visibility switch --}}
-        <label for="apartmenttitle" class="form-label">Titolo *</label>
+        <label for="apartmenttitle" class="form-labe h4">Titolo *</label>
 
         <div class="row mb-3 align-items-center">
             {{-- start - Input title field --}}
@@ -44,23 +44,26 @@
         </div>
         {{-- End - Input title field & visibility switch --}}
 
-        {{-- Inizio - Campo caricamento foto --}}
-        <div class="mb-3">
-            <label for="img" class="form-label">Immagine copertina *</label>
-            <input type="file" name="image" id="image" class="form-control-file
-            @error('image') 
-                is-invalid 
-            @enderror" required onfocusout="verifyImg(image)">
+        {{-- Sezione immagine --}}
+        <div class="row ">
+            <div class="col-4">
+                {{-- Inizio - Campo caricamento foto --}}
+                <div class="mb-3">
+                    <input type="file" accept="image/*" onchange="displayImg(event)" name="image" id="image" class="form-control-file mb-2
+                    @error('image') 
+                        is-invalid 
+                    @enderror">
+                </div>
 
-            {{-- Add error write --}}
-            <span id="valImg" class="text-danger"></span>
-
-            @error('image')
+            </div>
+            <div class="col-6">
+                {{-- Visualizza immagine in DB --}}
+                <img id="output" class="w-75">  
+                @error('image')
                 <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-            
+                @enderror
+            </div>
         </div>
-        {{-- Fine - Campo caricamento foto --}}
 
 
         {{-- Inizio - Campo inserimento descrizione --}}

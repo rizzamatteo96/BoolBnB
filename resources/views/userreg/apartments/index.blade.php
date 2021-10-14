@@ -24,6 +24,7 @@
 			<tbody>
 
 				@foreach ($data as $key => $item)
+				
 					<tr>
 					
 						<th scope="row">{{$key+1}}</th>
@@ -39,10 +40,40 @@
 
 						{{-- action btns --}}
 						<td>
+							{{-- show --}}
 							<a href="{{route('userreg.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
-							<a href="{{route('userreg.apartments.edit', $item->id)}}" class="btn btn-warning">Modifica</a>
-							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Elimina</button>
 
+							{{-- Edit --}}
+							<a href="{{route('userreg.apartments.edit', $item->id)}}" class="btn btn-warning">Modifica</a>
+							
+							{{-- delete --}}
+							<form action="{{route('userreg.apartments.destroy', $item->id)}}" method="POST" class="d-inline-block">
+								{{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
+								@csrf
+								@method('DELETE')
+								<div class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{$item->id}}">Elimina</div>
+								{{-- delete pop-up --}}
+								<div class="modal fade" id="deleteModal{{$item->id}}" tabindex="-1" aria-labelledby="deleteModalLabel{{$item->id}}" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+											<h5 class="modal-title" id="deleteModalLabel{{$item->id}}">{{$item->title}}</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											</div>
+											<div class="modal-body">
+												Sei sicuro di voler eliminare l'appartamento? Perderai anche tutti i messaggi e le statistiche relative all'appartamento.
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" data-dismiss="modal">Annulla</button>
+												<button type="submit" class="btn btn-danger">Elimina</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+							
 						</td>
 						{{-- end action btns --}}
 
@@ -66,31 +97,30 @@
 				
 			</tbody>
 		</table>
+
+		{{-- delete pop-up --}}
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">{{$item->title}}</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					</div>
+					<div class="modal-body">
+						Sei sicuro di voler eliminare l'appartamento? Perderai anche tutti i messaggi e le statistiche relative all'appartamento.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Annulla</button>
+						<button type="submit" class="btn btn-danger">Elimina {{$item->id}}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	@else
 		<h2 class="mt-3 text-center">Ancora nessun appartamento registrato</h2>
 	@endif
-	<form action="{{route('userreg.apartments.destroy', $item->id)}}" method="POST" class="d-inline-block">
-		{{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
-		@csrf
-		@method('DELETE')
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Elimina appartamento</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				</div>
-				<div class="modal-body">
-					Sei sicuro di voler eliminare l'appartamento? Perderai anche tutti i messaggi e le statistiche relative all'appartamento.
-				</div>
-				<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">Annulla</button>
-				<button type="submit" class="btn btn-danger">Elimina</button>
-				</div>
-			</div>
-			</div>
-		</div>
-	</form>
+
 @endsection

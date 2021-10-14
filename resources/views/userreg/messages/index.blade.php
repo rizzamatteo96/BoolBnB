@@ -44,18 +44,18 @@
 
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Elimina</button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$item['id']}}">Elimina</button>
 
                                     {{-- pop-up --}}
                                     <form action="{{route('userreg.messages.destroy',  $item['id'])}}" method="POST" class="d-inline-block">
                                         {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
                                         @csrf
                                         @method('DELETE')
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModal{{$item['id']}}" tabindex="-1" aria-labelledby="exampleModalLabel{{$item['id']}}" aria-hidden="true">
                                             <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Elimina messaggio</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel{{$item['id']}}">Elimina messaggio</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
