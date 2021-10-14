@@ -50,7 +50,6 @@
                                 @endforeach --}}
                             @endif 
                         </tr>
-                    @endforeach
                 @endforeach
                 {{-- @else --}}
                 <td>Nessun messaggio ricevuto per l'appartamento</td>

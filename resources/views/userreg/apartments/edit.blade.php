@@ -18,7 +18,7 @@
         <div class="row mb-3 align-items-end">
             {{-- Inizio - Campo inserimento del titolo --}}
             <div class="col-6">
-                <label for="title" class="form-label">Titolo *</label>
+                <label for="title" class="form-label h4">Titolo *</label>
                 <input type="text" class="form-control
                 @error('title') 
                     is-invalid 
@@ -33,6 +33,7 @@
                 @enderror
             </div>
             {{-- Fine - Campo inserimento del titolo --}}
+
 
             {{-- Start - visibility switch --}}
             <div class="col-6">
@@ -52,13 +53,18 @@
         </div>
         {{-- Fine - Sezione titolo & visibilità --}}
 
+        <div class="mt-5">
+            <hr>
+        </div>
+
+        <label for="img" class="form-label h4 mb-4">Immagine copertina *</label>
 
         {{-- Sezione immagine --}}
         <div class="row ">
             <div class="col-4">
                 {{-- Inizio - Campo caricamento foto --}}
+                
                 <div class="mb-3">
-                    <label for="img" class="form-label">Immagine copertina *</label>
                     <input type="file" name="image" id="image" class="form-control-file
                     @error('image') 
                         is-invalid 
@@ -75,6 +81,14 @@
                 <img src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}" class="w-50">  
             </div>
         </div>        
+
+        <div class="mt-5">
+            <hr>
+        </div>
+
+
+        <div class="h4" >Informazioni *</div>
+
 
 
         {{-- Inizio - Campo inserimento descrizione --}}
@@ -172,9 +186,13 @@
         </div>
         {{-- End - Apartment details input fields --}}
 
+        <div class="mt-5">
+            <hr>
+        </div>
+
         {{-- Start - Show address saved in DB --}}
         <div class="row">
-            <h6 class="col-12">Indirizzo</h6>
+            <h6 class="col-12 h4">Indirizzo *</h6>
             <div class="col-12">
                 Attuale :  {{$apartment->city . ', Via ' . $apartment->address . ' ' . $apartment->house_num . ' , ' . $apartment->postal_code}}
             </div>
@@ -205,10 +223,14 @@
         </div>
         {{-- Fine - Campo inserimento del Indirizzo --}}
 
+        <div class="mt-5">
+            <hr>
+        </div>
+
         {{-- Inizio - Campo di selezione dei services --}}
         <div class="mb-3">
             
-            <h6 class="form-label">Servizi *</h6>
+            <h6 class="form-label h4">Servizi *</h6>
             
             @foreach ($services as $service)
 
@@ -231,8 +253,11 @@
         </div>
         {{-- Fine - Campo di selezione dei services --}}
 
+        <div class="my-5">
+            <hr>
+        </div>
 
-        <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left me-2"></i> Torna indietro</a>
+        <a href="{{route('userreg.apartments.index')}}" class="btn btn-outline-dark"><i class="fas fa-arrow-left mr-2"></i> Torna indietro</a>
         <button type="submit" class="btn btn-primary">Salva</button>
     </form>
 @endsection
