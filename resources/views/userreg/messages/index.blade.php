@@ -53,8 +53,8 @@
                     @endforeach
                 @endforeach
                 {{-- @else --}}
-                {{-- <td>Nessun messaggio ricevuto per l'appartamento</td>
-                @endif --}}
+                <td>Nessun messaggio ricevuto per l'appartamento</td>
+                {{-- @endif --}}
 
             </tbody>
         </table>
