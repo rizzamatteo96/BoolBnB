@@ -4,16 +4,18 @@
 
         <!-- inizio logo  -->
         <div class="container--logo">
-            <a href="http://localhost:8000"><img class="container--logo--image" src="img/boolbeb-icona.svg" alt=""></a>
-            
-        
+
+            <a href="http://localhost:8000">
+                <img class="container--logo--image" src="img/boolbeb-icona.svg" alt="BoolBnb">
+            </a>
+
         </div>
         <!-- fine logo  -->
 
         <!-- inizio  menu mobile -->
         <div class="container--logo-mobile" @click="myFilter">
             
-            <img class="container--logo--image--mobile" src="img/boolbeb-icona.svg" alt="">
+            <img class="container--logo--image--mobile" src="img/boolbeb-icona.svg" alt="BoolBnb">
 
             <span><i class="fas fa-caret-down"></i></span>
        

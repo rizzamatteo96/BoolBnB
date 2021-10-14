@@ -49,7 +49,7 @@
           chiamataApi(){
           axios.get(this.apiUrl)
               .then(response => {
-                console.log(response.data.results);
+                // console.log(response.data.results);
                 this.apartments = response.data.results;
               })
               .catch(e => {
