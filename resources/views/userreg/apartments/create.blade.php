@@ -11,12 +11,10 @@
         @csrf
         
         {{-- Start - Input title field & visibility switch --}}
-        <label for="apartmenttitle" class="form-labe h4">Titolo *</label>
-
         <div class="row mb-3 align-items-center">
             {{-- start - Input title field --}}
             <div class="col-6">
-
+                <label for="apartmenttitle" class="form-labe h4">Titolo *</label>
                 <input id="apartmenttitle" type="text" class="form-control @error('title')is-invalid @enderror" required onfocusout="verifyTitle(apartmenttitle)" name="title" value="{{old('title')}}" required>
 
                 {{-- Add error write --}}
@@ -49,7 +47,7 @@
         </div>
 
         {{-- Sezione immagine --}}
-        <div class="row ">
+        <div class="row">
 
             <div class="col-12">
                 <label for="image" class="form-label h4 mb-4">Immagine copertina *</label>
@@ -65,6 +63,7 @@
                 </div>
 
             </div>
+
             <div class="col-6">
                 {{-- Visualizza immagine in DB --}}
                 <img id="output" class="w-75">  
@@ -175,6 +174,10 @@
         </div>
         {{-- End - Apartment details input fields --}}
 
+        <div class="mt-5">
+            <hr>
+        </div>
+
          {{-- Inizio - Campo inserimento del Indirizzo --}}
          <div class="row mb-3">
 
@@ -204,10 +207,6 @@
         </div>
         {{-- Fine - Campo inserimento del Indirizzo --}}
 
-
-        </div>
-        {{-- Fine - Campo inserimento del Indirizzo --}}
-
         <div class="mt-5">
             <hr>
         </div>
@@ -215,7 +214,7 @@
         {{-- Inizio - Campo di selezione dei services --}}
         <div class="mb-3">
 
-            <h6 class="form-label">Servizi *</h6>
+            <h6 class="form-label h4">Servizi *</h6>
 
             @foreach ($services as $service)
                 <div class="d-inline-block mr-2">

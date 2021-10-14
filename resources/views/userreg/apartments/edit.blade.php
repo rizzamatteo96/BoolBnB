@@ -58,7 +58,7 @@
         </div>
 
         {{-- Sezione immagine --}}
-        <div class="row ">
+        <div class="row">
 
             <div class="col-12">
                 <label for="image" class="form-label h4 mb-4">Immagine copertina *</label>
@@ -117,6 +117,7 @@
                 </div> --}}
                 {{-- Fine - Campo caricamento foto --}}
             </div>
+
             <div class="col-6">
                 {{-- Visualizza immagine in DB --}}
                 <img id="output" src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}" class="w-75">  
