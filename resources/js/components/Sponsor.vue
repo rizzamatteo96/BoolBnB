@@ -57,9 +57,9 @@
                     "slidesToShow": 3,
                     "slidesToScroll": 1,
                     "autoplay": true,
-                    "arrows": false,
-                    "speed": 8000,
-                    "autoplaySpeed": 2000,
+                    "arrows": true,
+                    "speed": 2000,
+                    "autoplaySpeed": 4000,
                     "responsive": [
                         
                         {
