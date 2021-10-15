@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,12 @@ Route::middleware('auth')->namespace('UserReg')->prefix('userreg')->name('userre
     Route::resource('/statistics', 'StatisticController');
     Route::resource('/apartment-sponsorship', 'ApartmentSponsorshipController');
 });
+
+Route::prefix('api')->namespace('Api')->middleware('auth')->group(function (){
+    Route::get('/user', 'UserController@user');
+});
+
+// Route::get('/user/', 'Api/UserController@user');
 
 Route::get('/{any?}', 'SpaController@index')->where('any', '.*');
 

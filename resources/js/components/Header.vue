@@ -22,24 +22,35 @@
         </div>
         <!-- fine  menu mobile -->
 
-        <!-- inizio  menu link -->
-        <ul class="container--menu" :class="{active: isActive}">
 
-            <li class="container--menu--list">
-                
-                <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" >login</a>
-                
-            </li>
+        <div v-if="user == '' && !loading">
 
-            <li class="container--menu--list">
-                
-                <a class="container--menu--list--link" href="http://localhost:8000/register">register</a>
-                
-            </li>
+            <!-- inizio  menu link -->
+            <ul class="container--menu" :class="{active: isActive}">
 
-        </ul>
-        <!-- fine  menu link -->
+                <li class="container--menu--list">
+                    
+                    <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" >login</a>
+                    
+                </li>
+
+                <li class="container--menu--list">
+                    
+                    <a class="container--menu--list--link" href="http://localhost:8000/register">register</a>
+                    
+                </li>
+
+            </ul>
+            <!-- fine  menu link -->
         
+        </div>
+
+        <div v-if="user != '' && !loading" class="container--menu" :class="{active: isActive}">
+            <div class="container--menu--list">
+                <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" ><i class="fas fa-user-circle"></i> {{user.name}} </a>
+            </div>
+        </div>
+
         <!-- <Login :class="(ActiveLog === true) ? 'active' : 'not-active'"/> -->
 
     </div>
@@ -66,11 +77,14 @@
             return {
             
                 isActive: false,
-
+                user: '',
+                loading: true
             }
         
         },
-
+        mounted(){
+            this.isLogged()
+        },
         methods: {
 
             // Funzione per attivare menu mobile
@@ -78,6 +92,15 @@
 
                 this.isActive = !this.isActive;
 
+            },
+            isLogged(){
+                axios.get('http://localhost:8000/api/user')
+                     .then( response => {
+                        this.user = response.data.pippo;
+                     })
+                     .finally(()=>{
+                        this.loading = false;
+                     });
             }
 
         }
