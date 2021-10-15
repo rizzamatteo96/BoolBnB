@@ -144,22 +144,42 @@
                 citySrc : '',
                 filters : '',
                 servicesFilters : [],
+                oldInput: '',
                 apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
                 apiFirst : 'https://api.tomtom.com/search/2/geocode/',
                 apiSecond : '.JSON?key=',
+                apiThird : 'https://api.tomtom.com/search/2/reverseGeocode/'
             }
 
         },
 
         mounted(){
 
-            this.searchBox();
             this.chiamataApi();
+            this.getOldSearchInput();
 
         },
 
         methods: {
-
+            
+            getOldSearchInput(){
+                let coordinates = this.$route.params.slug;
+                coordinates = coordinates.replaceAll('_', '.');
+                // console.log(coordinates);
+                let oldSrc = this.apiThird + coordinates + this.apiSecond + this.apiKey;
+                // console.log(oldSrc);
+                axios.get(oldSrc)
+                .then(response => {
+                    // console.log(response.data.addresses[0].address.municipality);
+                    this.oldInput = response.data.addresses[0].address.municipality;
+                    console.log(this.oldInput);
+                    this.searchBox();
+                })
+                .catch(e => {
+                    console.log(e);
+                })
+            },
+          
             chiamataApi(){
                 // prepare services list
                 this.servicesList = '';
@@ -213,12 +233,14 @@
                 document.getElementById('search-field').append(searchBoxHTML);
                 document.querySelector('input.tt-search-box-input').name = 'address';
                 document.querySelector('input.tt-search-box-input').id = 'search-input-for-coordinates';
-                document.querySelector('input.tt-search-box-input').value = 'Milano';
+                document.querySelector('input.tt-search-box-input').value = this.oldInput;
+                console.log(this.oldInput);
+
             },
 
             loadCoordinate(){
                 var srcLoc = document.querySelector('input.tt-search-box-input').value;
-                console.log(srcLoc);
+                // console.log(srcLoc);
                 let src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey;
                 // console.log(srcLoc);
 
@@ -258,7 +280,6 @@
                 window.scrollTo(0,0);
             }
         }
-
     }
         
 </script>
