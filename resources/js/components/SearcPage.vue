@@ -41,7 +41,7 @@
                 
                     <label class="title-filter" for="radius">Raggio di default </label>
                 
-                    <input class="filter-range" id="radius" type="range" min="0" max="50" step="1" value="0" v-model="distance">
+                    <input class="filter-range" id="radius" type="range" min="0" max="20" step="1" value="0" v-model="distance">
                 
                     <span v-text="distance"></span>
                 
@@ -133,7 +133,7 @@
         data(){
 
             return{
-                distance : 5,
+                distance : 3,
                 beds : 0,
                 rooms : 0,
                 servicesList : '',
