@@ -25,13 +25,13 @@
         <!-- inizio  menu link -->
         <ul class="container--menu" :class="{active: isActive}">
 
-            <li class="container--menu--list" @click="myFilter">
+            <li class="container--menu--list">
                 
                 <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" >login</a>
                 
             </li>
 
-            <li class="container--menu--list" @click="myFilter">
+            <li class="container--menu--list">
                 
                 <a class="container--menu--list--link" href="http://localhost:8000/register">register</a>
                 
