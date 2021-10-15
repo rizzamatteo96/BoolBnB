@@ -104,7 +104,7 @@
 
                     </div>
 
-                    <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class="btn btn-outline-light">Visualizza dettagli</router-link>
+                    <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" @click.native="scrollToTop()" class="btn btn-outline-light">Visualizza dettagli</router-link>
 
                 </div>
             </div>
@@ -250,6 +250,9 @@
                 }
 
                 console.log(this.servicesFilters);
+            },
+            scrollToTop() {
+                window.scrollTo(0,0);
             }
         }
 
