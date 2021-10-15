@@ -2280,8 +2280,12 @@ __webpack_require__.r(__webpack_exports__);
       email: '',
       description: '',
       errors: {},
-      messageSent: false
+      messageSent: false,
+      user: ''
     };
+  },
+  mounted: function mounted() {
+    this.isLogged();
   },
   methods: {
     sendData: function sendData() {
@@ -2297,6 +2301,18 @@ __webpack_require__.r(__webpack_exports__);
         _this.description = '';
       })["catch"](function (error) {
         console.log(error);
+      })["finally"](function () {
+        _this.isLogged();
+      });
+    },
+    isLogged: function isLogged() {
+      var _this2 = this;
+
+      axios.get('http://localhost:8000/api/user').then(function (response) {
+        _this2.user = response.data.user;
+        _this2.email = response.data.user.email;
+      })["finally"](function () {
+        _this2.loading = false;
       });
     }
   }
@@ -2512,6 +2528,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //import Login from '@/components/Login.vue'
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Header',
@@ -2519,13 +2546,27 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      isActive: false
+      isActive: false,
+      user: '',
+      loading: true
     };
+  },
+  mounted: function mounted() {
+    this.isLogged();
   },
   methods: {
     // Funzione per attivare menu mobile
     myFilter: function myFilter() {
       this.isActive = !this.isActive;
+    },
+    isLogged: function isLogged() {
+      var _this = this;
+
+      axios.get('http://localhost:8000/api/user').then(function (response) {
+        _this.user = response.data.user;
+      })["finally"](function () {
+        _this.loading = false;
+      });
     }
   }
 });
@@ -2738,7 +2779,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'SearcPage',
   data: function data() {
     return {
-      distance: 5,
+      distance: 3,
       beds: 0,
       rooms: 0,
       servicesList: '',
@@ -2749,25 +2790,44 @@ __webpack_require__.r(__webpack_exports__);
       citySrc: '',
       filters: '',
       servicesFilters: [],
+      oldInput: '',
       apiKey: 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
       apiFirst: 'https://api.tomtom.com/search/2/geocode/',
-      apiSecond: '.JSON?key='
+      apiSecond: '.JSON?key=',
+      apiThird: 'https://api.tomtom.com/search/2/reverseGeocode/'
     };
   },
   mounted: function mounted() {
-    this.searchBox();
     this.chiamataApi();
+    this.getOldSearchInput();
   },
   methods: {
-    chiamataApi: function chiamataApi() {
+    getOldSearchInput: function getOldSearchInput() {
       var _this = this;
+
+      var coordinates = this.$route.params.slug;
+      coordinates = coordinates.replaceAll('_', '.'); // console.log(coordinates);
+
+      var oldSrc = this.apiThird + coordinates + this.apiSecond + this.apiKey; // console.log(oldSrc);
+
+      axios.get(oldSrc).then(function (response) {
+        // console.log(response.data.addresses[0].address.municipality);
+        _this.oldInput = response.data.addresses[0].address.municipality; // console.log(this.oldInput);
+
+        _this.searchBox();
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    },
+    chiamataApi: function chiamataApi() {
+      var _this2 = this;
 
       // prepare services list
       this.servicesList = '';
 
       if (this.servicesFilters) {
         this.servicesFilters.forEach(function (item) {
-          _this.servicesList += item + ',';
+          _this2.servicesList += item + ',';
         });
         this.servicesList = this.servicesList.substring(',', this.servicesList.length - 1);
       } // prepare filter before call the apartments api
@@ -2776,15 +2836,15 @@ __webpack_require__.r(__webpack_exports__);
       this.filters = 'beds=' + this.beds + ';rooms=' + this.rooms + ';distance=' + this.distance + ';services=' + this.servicesList; // Api to get apartments from DB
 
       axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters).then(function (response) {
-        console.log(response);
-        _this.apartments = response.data.results;
+        // console.log(response);
+        _this2.apartments = response.data.results;
       })["catch"](function (e) {
         console.log(e);
       }); // Api to get services from DB
 
       axios.get(this.apiServices).then(function (response) {
         // console.log(response.data.results);
-        _this.services = response.data.results;
+        _this2.services = response.data.results;
       })["catch"](function (e) {
         console.log(e);
       });
@@ -2804,32 +2864,35 @@ __webpack_require__.r(__webpack_exports__);
       var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
       var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
       document.getElementById('search-field').append(searchBoxHTML);
+      document.querySelector('input.tt-search-box-input').name = 'address';
+      document.querySelector('input.tt-search-box-input').id = 'search-input-for-coordinates';
+      document.querySelector('input.tt-search-box-input').value = this.oldInput; // console.log(this.oldInput);
     },
     loadCoordinate: function loadCoordinate() {
-      var _this2 = this;
+      var _this3 = this;
 
-      var srcLoc = document.querySelector('input.tt-search-box-input').value;
-      console.log(srcLoc);
+      var srcLoc = document.querySelector('input.tt-search-box-input').value; // console.log(srcLoc);
+
       var src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey; // console.log(srcLoc);
 
       axios.get(src).then(function (response) {
-        _this2.lat = response.data.results[0].position.lat;
-        _this2.lon = response.data.results[0].position.lon;
-        _this2.citySrc = '';
-        _this2.citySrc = _this2.lat + ',' + _this2.lon;
-        _this2.citySrc = _this2.citySrc.replaceAll('.', '_');
+        _this3.lat = response.data.results[0].position.lat;
+        _this3.lon = response.data.results[0].position.lon;
+        _this3.citySrc = '';
+        _this3.citySrc = _this3.lat + ',' + _this3.lon;
+        _this3.citySrc = _this3.citySrc.replaceAll('.', '_');
       })["catch"](function (e) {
         console.log(e);
       })["finally"](function () {
-        console.log(_this2.citySrc);
+        console.log(_this3.citySrc);
         _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
           name: 'src',
           params: {
-            slug: _this2.citySrc
+            slug: _this3.citySrc
           }
         });
 
-        _this2.chiamataApi();
+        _this3.chiamataApi();
       });
     },
     servicesCheck: function servicesCheck(serviceToSave) {
@@ -2840,9 +2903,11 @@ __webpack_require__.r(__webpack_exports__);
         // delete it if it was already present
         var index = this.servicesFilters.indexOf(serviceToSave);
         this.servicesFilters.splice(index, 1);
-      }
+      } // console.log(this.servicesFilters);
 
-      console.log(this.servicesFilters);
+    },
+    scrollToTop: function scrollToTop() {
+      window.scrollTo(0, 0);
     }
   }
 });
@@ -2899,17 +2964,16 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var srcLoc = document.querySelector('input.tt-search-box-input').value;
-      var src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey;
-      console.log(srcLoc);
+      var src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey; // console.log(srcLoc);
+
       axios.get(src).then(function (response) {
         // console.log(response.data.results[0].position.lat);
         _this.lat = response.data.results[0].position.lat;
         _this.lon = response.data.results[0].position.lon;
         _this.citySrc = '';
         _this.citySrc = _this.lat + ',' + _this.lon;
-        _this.citySrc = _this.citySrc.replaceAll('.', '_');
-        console.log(_this.citySrc);
-        console.log(_this.lat, _this.lon);
+        _this.citySrc = _this.citySrc.replaceAll('.', '_'); // console.log(this.citySrc);
+        // console.log(this.lat, this.lon);
       })["catch"](function (e) {
         console.log(e);
       })["finally"](function () {
@@ -2936,6 +3000,9 @@ __webpack_require__.r(__webpack_exports__);
       var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
       var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
       document.getElementById('search-field').append(searchBoxHTML);
+      document.querySelector('input.tt-search-box-input').name = 'address';
+      document.querySelector('input.tt-search-box-input').id = 'search-input-for-coordinates';
+      document.querySelector('input.tt-search-box-input').placeholder = 'Indirizzo';
     }
   }
 });
@@ -3037,6 +3104,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (e) {
         console.log(e);
       });
+    },
+    scrollToTop: function scrollToTop() {
+      window.scrollTo(0, 0);
     }
   },
   components: {
@@ -3193,6 +3263,9 @@ __webpack_require__.r(__webpack_exports__);
       var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
       var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
       document.getElementById('test').append(searchBoxHTML);
+      document.querySelector('input.tt-search-box-input').name = 'address';
+      document.querySelector('input.tt-search-box-input').id = 'search-input-for-coordinates';
+      document.querySelector('input.tt-search-box-input').placeholder = 'Indirizzo';
     }
   }
 });
@@ -42120,29 +42193,60 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _c(
-      "ul",
-      { staticClass: "container--menu", class: { active: _vm.isActive } },
-      [
-        _c("li", { staticClass: "container--menu--list" }, [
+    _vm.user == "" && !_vm.loading
+      ? _c("div", [
           _c(
-            "a",
-            {
-              staticClass: "container--menu--list--link",
-              attrs: { href: "http://localhost:8000/login" },
-              on: {
-                click: function($event) {
-                  _vm.ActiveLog = !_vm.ActiveLog
-                }
-              }
-            },
-            [_vm._v("login")]
+            "ul",
+            { staticClass: "container--menu", class: { active: _vm.isActive } },
+            [
+              _c("li", { staticClass: "container--menu--list" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "container--menu--list--link",
+                    attrs: { href: "http://localhost:8000/login" },
+                    on: {
+                      click: function($event) {
+                        _vm.ActiveLog = !_vm.ActiveLog
+                      }
+                    }
+                  },
+                  [_vm._v("login")]
+                )
+              ]),
+              _vm._v(" "),
+              _vm._m(2)
+            ]
           )
-        ]),
-        _vm._v(" "),
-        _vm._m(2)
-      ]
-    )
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.user != "" && !_vm.loading
+      ? _c(
+          "div",
+          { staticClass: "container--menu", class: { active: _vm.isActive } },
+          [
+            _c("div", { staticClass: "container--menu--list" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "container--menu--list--link",
+                  attrs: { href: "http://localhost:8000/login" },
+                  on: {
+                    click: function($event) {
+                      _vm.ActiveLog = !_vm.ActiveLog
+                    }
+                  }
+                },
+                [
+                  _c("i", { staticClass: "fas fa-user-circle" }),
+                  _vm._v(" " + _vm._s(_vm.user.name) + " ")
+                ]
+              )
+            ])
+          ]
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -42305,9 +42409,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-search" }, [
     _c("div", { staticClass: "container-form" }, [
-      _c("label", { staticClass: "title-search", attrs: { for: "" } }, [
-        _vm._v("Dove")
-      ]),
+      _c(
+        "label",
+        {
+          staticClass: "title-search",
+          attrs: { for: "search-input-for-coordinates" }
+        },
+        [_vm._v("Dove")]
+      ),
       _vm._v(" "),
       _c("div", { attrs: { id: "search-field" } }),
       _vm._v(" "),
@@ -42407,7 +42516,7 @@ var render = function() {
               id: "radius",
               type: "range",
               min: "0",
-              max: "50",
+              max: "20",
               step: "1",
               value: "0"
             },
@@ -42511,6 +42620,11 @@ var render = function() {
                         name: "apartment-details",
                         params: { slug: apartment.slug }
                       }
+                    },
+                    nativeOn: {
+                      click: function($event) {
+                        return _vm.scrollToTop()
+                      }
                     }
                   },
                   [_vm._v("Visualizza dettagli")]
@@ -42558,7 +42672,9 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-search" }, [
     _c("div", { staticClass: "container-form" }, [
-      _c("label", { attrs: { for: "" } }, [_vm._v("Dove")]),
+      _c("label", { attrs: { for: "search-input-for-coordinates" } }, [
+        _vm._v("Dove")
+      ]),
       _vm._v(" "),
       _c("div", { attrs: { id: "search-field" } }),
       _vm._v(" "),
@@ -42677,11 +42793,16 @@ var render = function() {
                     _c(
                       "router-link",
                       {
-                        staticClass: " btn btn-outline-light",
+                        staticClass: "btn btn-outline-light",
                         attrs: {
                           to: {
                             name: "apartment-details",
                             params: { slug: apartment.slug }
+                          }
+                        },
+                        nativeOn: {
+                          click: function($event) {
+                            return _vm.scrollToTop()
                           }
                         }
                       },

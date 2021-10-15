@@ -29,7 +29,7 @@
                         <div class="col-md-6">
                             <div class="md-form mb-0">
                                 <label for="email" class="cform">Email *</label>
-                                <input onfocusout="validateEmail(email)" type="text" id="email" name="email" class="form-control" v-model="email" required>
+                                <input onfocusout="validateEmail(email)" type="text" id="email" name="email" class="form-control" required v-model="email">
                                 <span id="user-email" class="text-danger"></span>
                             </div>
                         </div>
@@ -118,8 +118,12 @@ import validation from '../validation';
             email: '',
             description: '',
             errors:{},
-            messageSent: false
+            messageSent: false,
+            user: ''
         }
+    },
+    mounted(){
+        this.isLogged()
     },
     methods: {
         sendData(){
@@ -135,8 +139,21 @@ import validation from '../validation';
                 })
                 .catch(error => {
                     console.log(error);
+                })
+                .finally(()=>{
+                    this.isLogged();
                 });
         },
+        isLogged(){
+            axios.get('http://localhost:8000/api/user')
+                 .then( response => {
+                    this.user = response.data.user;
+                    this.email = response.data.user.email;
+                 })
+                 .finally(()=>{
+                    this.loading = false;
+                 });
+        }
     }
   }
 
