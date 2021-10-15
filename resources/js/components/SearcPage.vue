@@ -17,7 +17,7 @@
 
                     <button class="button-filter" @click="rooms!=0 ? rooms-- : '' ">-</button>
 
-                    <span class="number-range" v-text="rooms"></span>
+                    <output class="number-range" v-text="rooms"></output>
 
                     <button class="button-filter" @click="rooms++">+</button>
 
@@ -30,7 +30,7 @@
                 
                     <button class="button-filter" @click="beds!=0 ? beds-- : '' ">-</button>
                 
-                    <span class="number-range" v-text="beds"></span>
+                    <output class="number-range" v-text="beds"></output>
                 
                     <button class="button-filter" @click="beds++">+</button>
                 
@@ -43,7 +43,7 @@
                 
                     <input class="filter-range" id="radius" type="range" min="0" max="20" step="1" value="0" v-model="distance">
                 
-                    <span v-text="distance"></span>
+                    <output class="number-distance" v-text="distance"></output>
                 
                     <label for="">Km</label>
                 
@@ -319,11 +319,10 @@
                 margin-top: 20px;
                 display: flex;
                 justify-content: space-around;
-
                 .filter {
-
                     .title-filter {
                         display: block;
+                        // position: fixed;
                     }
 
                     input{
@@ -332,10 +331,16 @@
                         border-radius: 10px;
                         padding: 5px;
                         border: none;
+                     
                     }
                     
                     .number-range {
                         margin: 0px 20px;
+                        width: 20px;
+                    }
+
+                    .number-distance {
+                        width: 20px;
                     }
 
                     .button-filter {
