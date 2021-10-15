@@ -21,15 +21,10 @@
 
   export default {
     name: 'App',
-    props: ['authUser'],
     components: {
       Header,
       Footer
 
-    },
-    mounted(){
-      console.log('ciao');
-      console.log(this.authUser);
     }
   }
 </script>

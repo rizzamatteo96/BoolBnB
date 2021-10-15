@@ -44,7 +44,7 @@
         </div>
         
         <div id="root">
-            <router-view :auth-user={{Auth::user()}} ></router-view>
+            <router-view></router-view>
         </div>
 
         <script src="{{ asset('js/front.js') }}"></script>
