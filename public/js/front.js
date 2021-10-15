@@ -2738,7 +2738,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'SearcPage',
   data: function data() {
     return {
-      distance: 20,
+      distance: 5,
       beds: 0,
       rooms: 0,
       servicesList: '',
@@ -3155,14 +3155,13 @@ __webpack_require__.r(__webpack_exports__);
     findMap: function findMap() {
       var _this = this;
 
-      var pippo = document.querySelector('input.tt-search-box-input').value;
-      var src = this.apiFirst + pippo + this.apiSecond + this.apiKey;
-      console.log(pippo);
+      var search = document.querySelector('input.tt-search-box-input').value;
+      var src = this.apiFirst + search + this.apiSecond + this.apiKey; // console.log(search);
+
       axios.get(src).then(function (response) {
         console.log(response.data.results[0].position.lat);
         _this.lat = response.data.results[0].position.lat;
-        _this.lon = response.data.results[0].position.lon;
-        console.log(_this.lat, _this.lon);
+        _this.lon = response.data.results[0].position.lon; // console.log(this.lat, this.lon);
       })["catch"](function (e) {
         console.log(e);
       })["finally"](this.loadMap(this.lat, this.lon));
@@ -8374,7 +8373,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 50px;\n  width: 400px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n  min-height: 650px;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n  word-wrap: break-word;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n  min-height: 650px;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n  word-wrap: break-word;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42388,9 +42387,11 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "filter" }, [
-          _c("label", { staticClass: "title-filter", attrs: { for: "" } }, [
-            _vm._v("Raggio di default ")
-          ]),
+          _c(
+            "label",
+            { staticClass: "title-filter", attrs: { for: "radius" } },
+            [_vm._v("Raggio di default ")]
+          ),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -42403,10 +42404,11 @@ var render = function() {
             ],
             staticClass: "filter-range",
             attrs: {
+              id: "radius",
               type: "range",
               min: "0",
-              max: "100",
-              step: "5",
+              max: "50",
+              step: "1",
               value: "0"
             },
             domProps: { value: _vm.distance },
@@ -42467,7 +42469,7 @@ var render = function() {
       { staticClass: "box-container row" },
       [
         _vm._l(_vm.apartments, function(apartment) {
-          return _c("div", { key: apartment.id, staticClass: "col-4 pb-4" }, [
+          return _c("div", { key: apartment.id, staticClass: "col-4 p-4" }, [
             _c(
               "div",
               { staticClass: "box m-auto" },
@@ -69328,7 +69330,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Boolean\\\\corso-live-36\\\\1-ESERCIZI\\\\mamp_public\\\\Progetto-finale\\\\BoolBnB"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Boolean\\\\corso-live-36\\\\1-ESERCIZI\\\\mamp_public\\\\Progetto-finale\\\\BoolBnB","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\ADMIN\\\\Documents\\\\Boolean\\\\Esercitazioni\\\\Esercizi\\\\mamp_public\\\\BoolBnB"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\ADMIN\\\\Documents\\\\Boolean\\\\Esercitazioni\\\\Esercizi\\\\mamp_public\\\\BoolBnB","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

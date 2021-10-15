@@ -28,14 +28,14 @@ export default {
     findMap(){
       var search = document.querySelector('input.tt-search-box-input').value;
       let src = this.apiFirst + search + this.apiSecond + this.apiKey;
-      console.log(search);
+      // console.log(search);
 
       axios.get(src)
           .then(response => {
             console.log(response.data.results[0].position.lat);
             this.lat = response.data.results[0].position.lat;
             this.lon = response.data.results[0].position.lon;
-            console.log(this.lat, this.lon);
+            // console.log(this.lat, this.lon);
           })
           .catch(e => {
             console.log(e);
