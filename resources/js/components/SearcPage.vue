@@ -4,7 +4,7 @@
 
         <div class="container-form">
             
-            <label class="title-search" for="">Dove</label>
+            <label class="title-search" for="search-input-for-coordinates">Dove</label>
 
             <div id="search-field"></div>
 
