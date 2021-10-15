@@ -237,7 +237,7 @@
 
         {{-- Start - Show address saved in DB --}}
         <div class="row">
-            <h6 class="col-12 h4">Indirizzo *</h6>
+            <label for="search-input-for-coordinates" class="col-12 h4">Indirizzo *</label>
             <div class="col-12">
                 <span>Attuale : </span>
                 <span id="address-placeholder">{{$apartment->city . ' ' . $apartment->address . ' ' . $apartment->house_num . ' , ' . $apartment->postal_code}}</span>

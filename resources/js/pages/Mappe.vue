@@ -26,9 +26,9 @@ export default {
   },
   methods: {
     findMap(){
-      var pippo = document.querySelector('input.tt-search-box-input').value;
-      let src = this.apiFirst + pippo + this.apiSecond + this.apiKey;
-      console.log(pippo);
+      var search = document.querySelector('input.tt-search-box-input').value;
+      let src = this.apiFirst + search + this.apiSecond + this.apiKey;
+      console.log(search);
 
       axios.get(src)
           .then(response => {

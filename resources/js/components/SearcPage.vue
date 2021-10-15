@@ -39,9 +39,9 @@
                 
                 <div class="filter">
                 
-                    <label class="title-filter" for="">Raggio di default </label>
+                    <label class="title-filter" for="radius">Raggio di default </label>
                 
-                    <input class="filter-range" type="range" min="0" max="100" step="5" value="0" v-model="distance">
+                    <input class="filter-range" id="radius" type="range" min="0" max="100" step="5" value="0" v-model="distance">
                 
                     <span v-text="distance"></span>
                 

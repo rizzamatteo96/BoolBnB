@@ -181,6 +181,8 @@
          {{-- Inizio - Campo inserimento del Indirizzo --}}
          <div class="row mb-3">
 
+            <label for="search-input-for-coordinates" class="col-12 h4">Indirizzo *</label>
+
             {{-- Input address field with autocomplete from tomtom --}}
             <div id="search-field" class="col-12"></div>
 
