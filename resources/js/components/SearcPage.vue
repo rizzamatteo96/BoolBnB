@@ -172,7 +172,7 @@
                 .then(response => {
                     // console.log(response.data.addresses[0].address.municipality);
                     this.oldInput = response.data.addresses[0].address.municipality;
-                    console.log(this.oldInput);
+                    // console.log(this.oldInput);
                     this.searchBox();
                 })
                 .catch(e => {
@@ -197,7 +197,7 @@
                 // Api to get apartments from DB
                 axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters)
                 .then(response => {
-                    console.log(response);
+                    // console.log(response);
                     this.apartments = response.data.results;
                 })
                 .catch(e => {
@@ -234,7 +234,7 @@
                 document.querySelector('input.tt-search-box-input').name = 'address';
                 document.querySelector('input.tt-search-box-input').id = 'search-input-for-coordinates';
                 document.querySelector('input.tt-search-box-input').value = this.oldInput;
-                console.log(this.oldInput);
+                // console.log(this.oldInput);
 
             },
 
@@ -274,7 +274,7 @@
                     this.servicesFilters.splice(index, 1);
                 }
 
-                console.log(this.servicesFilters);
+                // console.log(this.servicesFilters);
             },
             scrollToTop() {
                 window.scrollTo(0,0);
