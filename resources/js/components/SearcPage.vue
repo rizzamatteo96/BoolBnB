@@ -211,6 +211,9 @@
                 var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
                 var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
                 document.getElementById('search-field').append(searchBoxHTML);
+                document.querySelector('input.tt-search-box-input').name = 'address';
+                document.querySelector('input.tt-search-box-input').id = 'search-input-for-coordinates';
+                document.querySelector('input.tt-search-box-input').value = 'Milano';
             },
 
             loadCoordinate(){

@@ -47,7 +47,7 @@ export default {
         loadCoordinate(){
             var srcLoc = document.querySelector('input.tt-search-box-input').value;
             let src = this.apiFirst + srcLoc + this.apiSecond + this.apiKey;
-            console.log(srcLoc);
+            // console.log(srcLoc);
 
             axios.get(src)
                 .then(response => {
@@ -57,8 +57,8 @@ export default {
                     this.citySrc = '';
                     this.citySrc = this.lat + ',' + this.lon;
                     this.citySrc = this.citySrc.replaceAll('.', '_');
-                    console.log(this.citySrc);
-                    console.log(this.lat, this.lon);
+                    // console.log(this.citySrc);
+                    // console.log(this.lat, this.lon);
                 })
                 .catch(e => {
                     console.log(e);
@@ -83,6 +83,9 @@ export default {
             var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
             var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
             document.getElementById('search-field').append(searchBoxHTML);
+            document.querySelector('input.tt-search-box-input').name = 'address';
+            document.querySelector('input.tt-search-box-input').id = 'search-input-for-coordinates';
+            document.querySelector('input.tt-search-box-input').placeholder = 'Indirizzo';
         },
 
     }
