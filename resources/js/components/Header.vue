@@ -23,7 +23,7 @@
         <!-- fine  menu mobile -->
 
 
-        <div v-if="user == ''">
+        <div v-if="user == '' && !loading">
 
             <!-- inizio  menu link -->
             <ul class="container--menu" :class="{active: isActive}">
@@ -45,7 +45,7 @@
         
         </div>
 
-        <div v-else class="container--menu" :class="{active: isActive}">
+        <div v-if="user != '' && !loading" class="container--menu" :class="{active: isActive}">
             <div class="container--menu--list">
                 <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" ><i class="fas fa-user-circle"></i> {{user.name}} </a>
             </div>
@@ -77,11 +77,12 @@
             return {
             
                 isActive: false,
-                user: ''
+                user: '',
+                loading: true
             }
         
         },
-        created(){
+        mounted(){
             this.isLogged()
         },
         methods: {
@@ -96,8 +97,10 @@
                 axios.get('http://localhost:8000/api/user')
                      .then( response => {
                         this.user = response.data.pippo;
-                        console.log(this.user);
                      })
+                     .finally(()=>{
+                        this.loading = false;
+                     });
             }
 
         }
