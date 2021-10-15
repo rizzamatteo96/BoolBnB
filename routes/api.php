@@ -20,7 +20,6 @@ Route::namespace('Api')->group(function(){
   Route::get('/apartment/{slug}', 'ApartmentController@show');
   Route::get('/apartments/{slug}&&{filters}', 'ApartmentController@search');
   Route::get('/apartments/services', 'ApartmentController@services');
-  Route::get('/user/{id}', 'UserController@email');
   Route::post('/contacts/', 'MessageController@store');
   Route::post('/statistics/', 'StatisticController@store');
 });

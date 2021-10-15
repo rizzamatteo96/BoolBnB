@@ -24,7 +24,6 @@
     components: {
       Header,
       Footer
-
     }
   }
 </script>

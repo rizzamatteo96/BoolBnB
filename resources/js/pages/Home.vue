@@ -45,6 +45,9 @@
       created(){
           this.chiamataApi();
       },
+      mounted(){
+        this.user()
+      },
       methods: {
           chiamataApi(){
           axios.get(this.apiUrl)
@@ -55,7 +58,13 @@
               .catch(e => {
                 console.log(e);
               });
-      }
+          },
+          user(){
+            axios.get('http://localhost:8000/api/user')
+            .then( response => {
+              console.log(response);
+            })
+          }
     }
   }
 </script>
