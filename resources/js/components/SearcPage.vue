@@ -85,29 +85,38 @@
 
         </div>
         
-        <h2 class="title-serach">Appartamenti nella zona di: </h2>
+        <h2 class="title-search">Appartamenti nella zona di: </h2>
 
-        <div class="box-container">
+        <div class="box-container row">
 
-            <div class="box" v-for="apartment in apartments" :key="apartment.id">
+            <div class="col-4 pb-4" v-for="apartment in apartments" :key="apartment.id">
+                <div class="box m-auto">
 
-                <img class="container-box--img" :src="apartment.image" alt="">
+                    <img class="container-box--img" :src="apartment.image" alt="">
 
-                <div class="container-description" >
+                    <div class="container-description">
 
-                    <h2 class="container-description--title"> Titolo {{apartment.title}}</h2>
+                        <h2 class="container-description--title">{{apartment.title}}</h2>
 
-                    <p class="container-description--price">Prezzo: {{apartment.daily_price}} €</p>
-                    <p class="container-description--price">citta: {{apartment.city}}</p>
-                    <p class="container-box--adress">Via: {{apartment.address}}, {{apartment.house_num}}</p>
+                        <p class="container-description--price">Prezzo: {{apartment.daily_price}} €</p>
+                        <p class="container-description--price">Citta: {{apartment.city}}</p>
+                        <p class="container-box--adress">Indirizzo: {{apartment.address}}, {{apartment.house_num}}</p>
+
+                    </div>
+
+                    <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class="btn btn-outline-light">Visualizza dettagli</router-link>
 
                 </div>
-
-                <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" class="btn btn-outline-light">Visualizza dettagli</router-link>
-
             </div>
 
+
+            <div class="col-4" v-if="(apartments.length % 2) == 0"></div>
+            <div class="col-4" v-if="(apartments.length % 2) == 0"></div>
+
+
         </div>
+
+
 
     </div>
 
@@ -256,7 +265,7 @@
         margin: 0px auto 70px;
         padding-top: 100px;
 
-        .title-serach {
+        .title-search {
             text-align: center;
             margin-top: 50px;
             text-transform: uppercase;
@@ -265,7 +274,7 @@
         .box-container {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
             width: 100%;
             margin: 0 auto;   
         
@@ -276,6 +285,7 @@
                 margin: 20px 0px;
                 border-radius: 20px;
                 text-align: center;
+                min-height: 650px;
 
                 .container-box--img {
                     width: 100%;
