@@ -6,7 +6,7 @@
         <div class="container--logo">
 
             <a href="http://localhost:8000">
-                <img class="container--logo--image" src="img/boolbeb-icona.svg" alt="BoolBnb">
+                <img class="container--logo--image" src="/img/boolbeb-icona.svg" alt="BoolBnb">
             </a>
 
         </div>

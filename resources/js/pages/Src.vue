@@ -1,10 +1,7 @@
 <template>
   <div class="container-src">
 
-
     <SearcPage/>
-
-
 
   </div>
 </template>
