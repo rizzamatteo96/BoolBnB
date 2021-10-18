@@ -6,8 +6,9 @@
 
 @section('content')
 
-<div class="row mt-5">
-        <div class="col-6">
+<div class="container">
+    <div class="row mt-md-5">
+        <div class="col-md-6 col-12">
             {{-- Apartment title and description --}}
             <h2>{{$apartment->title}}</h2>
             <div>
@@ -15,7 +16,7 @@
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-md-6 col-12 mt-2">
             {{-- Apartment image --}}
             <img class="img-thumbnail" src="{{asset('storage/' . $apartment->image)}}" alt="{{$apartment->title}}">
         </div>
@@ -49,7 +50,7 @@
         <div class="col-12 border border-dark rounded me-2 p-2">
             <div class="row">
                 @forelse ($apartment->services as $service)
-                    <div class="col-2 text-center">{{$service->name}}</div>
+                    <div class="col-6 col-md-2 text-center">{{$service->name}}</div>
                 @empty
                     <div class="col-12">Nessun servizio in questo appartamento</div>
                 @endforelse
@@ -83,5 +84,7 @@
 
         </div>
     </div>
+</div>
+
 
 @endsection
