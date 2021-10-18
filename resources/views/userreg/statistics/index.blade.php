@@ -12,10 +12,10 @@
 		<table class="table mt-3">
 			<thead>
 				<tr>
-					<th scope="col">#</th>
+					<th scope="col" class="d-none d-md-table-cell">#</th>
 					<th scope="col">Nome appartamento</th>
-					<th scope="col">Città ubicazione</th>
-					<th scope="col">Visibilità</th>
+					<th scope="col" class="d-none d-md-table-cell">Città ubicazione</th>
+					<th scope="col" class="d-none d-md-table-cell">Visibilità</th>
 					<th scope="col">Azioni</th>
 				</tr>
 			</thead>
@@ -24,16 +24,16 @@
 				@foreach ($data as $key => $item)
 					<tr>
 						{{-- row index --}}
-						<th scope="row">{{$key+1}}</th>
+						<th scope="row" class="d-none d-md-table-cell">{{$key+1}}</th>
 
 						{{-- apartment title --}}
 						<td>{{$item->title}}</td>
 
 						{{-- apartment city --}}
-						<td>{{$item->city}}</td>
+						<td class="d-none d-md-table-cell">{{$item->city}}</td>
 
 						{{-- apartment visibility --}}
-						<td>
+						<td class="d-none d-md-table-cell">
 							@if ($item->visibility)
 								<i class="far fa-eye"></i>
 							@else
