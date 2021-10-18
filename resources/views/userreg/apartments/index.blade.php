@@ -12,13 +12,13 @@
 		<table class="table mt-3">
 			<thead>
 				<tr>
-					<th scope="col">#</th>
+					<th scope="col" class="d-none d-md-table-cell">#</th>
 					<th scope="col">Nome appartamento</th>
-					<th scope="col">Città ubicazione</th>
-					<th scope="col">Visibilità</th>
+					<th scope="col" class="d-none d-md-table-cell">Città ubicazione</th>
+					<th scope="col" class="d-none d-md-table-cell">Visibilità</th>
 					<th scope="col">Azioni</th>
 					{{-- <th scope="col">Messaggi</th> --}}
-					<th scope="col">Promozioni</th>
+					<th scope="col" class="d-none d-md-table-cell">Promozioni</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,10 +27,10 @@
 				
 					<tr>
 					
-						<th scope="row">{{$key+1}}</th>
+						<th scope="row" class="d-none d-md-table-cell">{{$key+1}}</th>
 						<td>{{$item->title}}</td>
-						<td>{{$item->city}}</td>
-						<td>
+						<td class="d-none d-md-table-cell">{{$item->city}}</td>
+						<td class="d-none d-md-table-cell">
 							@if ($item->visibility)
 								<i class="far fa-eye"></i>
 							@else
@@ -44,14 +44,14 @@
 							<a href="{{route('userreg.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
 
 							{{-- Edit --}}
-							<a href="{{route('userreg.apartments.edit', $item->id)}}" class="btn btn-warning">Modifica</a>
+							<a href="{{route('userreg.apartments.edit', $item->id)}}" class="btn btn-warning d-none d-md-table-cell">Modifica</a>
 							
 							{{-- delete --}}
 							<form action="{{route('userreg.apartments.destroy', $item->id)}}" method="POST" class="d-inline-block">
 								{{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
 								@csrf
 								@method('DELETE')
-								<div class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{$item->id}}">Elimina</div>
+								<div class="btn btn-danger d-none d-md-table-cell" data-toggle="modal" data-target="#deleteModal{{$item->id}}">Elimina</div>
 								{{-- delete pop-up --}}
 								<div class="modal fade" id="deleteModal{{$item->id}}" tabindex="-1" aria-labelledby="deleteModalLabel{{$item->id}}" aria-hidden="true">
 									<div class="modal-dialog">
@@ -86,7 +86,7 @@
 						{{-- end Messages btn --}}
 
 						{{-- Sponsorships btn --}}
-						<td>
+						<td class="d-none d-md-table-cell">
 
 							<a href="{{route('userreg.apartment-sponsorship.index', ['id' => $item->id])}}" class="btn btn-success">Sponsorizza</a>
 
