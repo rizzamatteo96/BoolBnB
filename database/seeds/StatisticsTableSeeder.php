@@ -14,17 +14,17 @@ class StatisticsTableSeeder extends Seeder
     public function run()
     {
         foreach (Apartment::all() as $apartment){
-            
+
             $randNum = rand(200, 1000);
             for ($i = 0; $i < $randNum; $i++) { 
-                
+
                 // create new stat
                 $newStat = new Statistic();
-    
+
 
                 // set apartment id
                 $newStat->apartment_id = $apartment->id;
-    
+
 
                 // create random date
                 //day
@@ -43,11 +43,11 @@ class StatisticsTableSeeder extends Seeder
 
                 // set visitor
                 $newStat->visitor = mt_rand(0, 254) . "." . mt_rand(0, 254) . "." . mt_rand(0, 254) . "." . mt_rand(0, 254);
-    
-                
+
+
                 // Save new statistic
                 $newStat->save();
-                
+
             }
 
         }

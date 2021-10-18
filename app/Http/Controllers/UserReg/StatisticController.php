@@ -63,8 +63,67 @@ class StatisticController extends Controller
         // check if the apartment is one of the logged user otherwise go to 404 page
         if($apartment && $apartment->user_id == $user){
             $statistics = Statistic::where('apartment_id', $id)->get();
-            // dd($statistics);
-            return view('userreg.statistics.show', compact('statistics', 'apartment'));
+
+            // create arrays for each month
+            $january = [];
+            $february = [];
+            $march = [];
+            $april = [];
+            $may = [];
+            $june = [];
+            $july = [];
+            $august = [];
+            $september = [];
+            $october = [];
+            $november = [];
+            $december = [];
+
+            foreach($statistics as $statistic){
+                $click = substr($statistic->clicked_at, 5, 2);
+                // dd($click);
+                switch($click){
+                    case '01': 
+                        array_push($january, $statistic);
+                        break;
+                    case '02': 
+                        array_push($february, $statistic);
+                        break;
+                    case '03': 
+                        array_push($march, $statistic);
+                        break;
+                    case '04': 
+                        array_push($april, $statistic);
+                        break;
+                    case '05': 
+                        array_push($may, $statistic);
+                        break;
+                    case '06': 
+                        array_push($june, $statistic);
+                        break;
+                    case '07': 
+                        array_push($july, $statistic);
+                        break;
+                    case '08': 
+                        array_push($august, $statistic);
+                        break;
+                    case '09': 
+                        array_push($september, $statistic);
+                        break;
+                    case '10': 
+                        array_push($october, $statistic);
+                        break;
+                    case '11': 
+                        array_push($november, $statistic);
+                        break;
+                    case '12': 
+                        array_push($december, $statistic);
+                        break;
+                }
+            }
+            
+            $maxClick = max($january, $february, $march, $april, $may, $june, $july, $august, $september, $october, $november, $december);
+
+            return view('userreg.statistics.show', compact('statistics', 'apartment', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', 'maxClick'));
         } else {
             abort(403);
         }
