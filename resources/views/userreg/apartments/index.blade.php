@@ -6,7 +6,7 @@
 
 @section('content')
 
-	<a href="{{route('userreg.apartments.create')}}" class="btn btn-secondary mt-4"><i class="fas fa-plus mr-2"></i> Aggiungi appartamento</a>
+	<a href="{{route('userreg.apartments.create')}}" class="btn btn-secondary mt-lg-4"><i class="fas fa-plus mr-2"></i> Aggiungi appartamento</a>
 
 	@if ($data->isNotEmpty())
 		<table class="table mt-3">
@@ -18,7 +18,7 @@
 					<th scope="col" class="d-none d-md-table-cell">Visibilità</th>
 					<th scope="col">Azioni</th>
 					{{-- <th scope="col">Messaggi</th> --}}
-					<th scope="col" class="d-none d-md-table-cell">Promozioni</th>
+					<th scope="col" class="d-none d-lg-table-cell">Promozioni</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,17 +41,17 @@
 						{{-- action btns --}}
 						<td>
 							{{-- show --}}
-							<a href="{{route('userreg.apartments.show', $item->id)}}" class="btn btn-primary">Dettagli</a>
+							<a href="{{route('userreg.apartments.show', $item->id)}}" class="btn btn-primary mb-lg-1 text-center">Dettagli</a>
 
 							{{-- Edit --}}
-							<a href="{{route('userreg.apartments.edit', $item->id)}}" class="btn btn-warning d-none d-md-table-cell">Modifica</a>
+							<a href="{{route('userreg.apartments.edit', $item->id)}}" class="btn btn-warning d-none d-lg-inline-block mb-lg-1 text-center">Modifica</a>
 							
 							{{-- delete --}}
-							<form action="{{route('userreg.apartments.destroy', $item->id)}}" method="POST" class="d-inline-block">
+							<form action="{{route('userreg.apartments.destroy', $item->id)}}" method="POST" class="d-inline-block text-center">
 								{{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
 								@csrf
 								@method('DELETE')
-								<div class="btn btn-danger d-none d-md-table-cell" data-toggle="modal" data-target="#deleteModal{{$item->id}}">Elimina</div>
+								<div class="btn btn-danger d-none d-lg-inline-block mb-lg-1 text-center" data-toggle="modal" data-target="#deleteModal{{$item->id}}">Elimina</div>
 								{{-- delete pop-up --}}
 								<div class="modal fade" id="deleteModal{{$item->id}}" tabindex="-1" aria-labelledby="deleteModalLabel{{$item->id}}" aria-hidden="true">
 									<div class="modal-dialog">
@@ -86,7 +86,7 @@
 						{{-- end Messages btn --}}
 
 						{{-- Sponsorships btn --}}
-						<td class="d-none d-md-table-cell">
+						<td class="d-none d-lg-table-cell">
 
 							<a href="{{route('userreg.apartment-sponsorship.index', ['id' => $item->id])}}" class="btn btn-success">Sponsorizza</a>
 

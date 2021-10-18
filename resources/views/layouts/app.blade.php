@@ -90,12 +90,12 @@
         <div class="container-fluid">
             <div class="row">
                 @auth
-                    <div class="col col-md-2 sidebar py-5">
+                    <div class="col col-lg-2 sidebar py-3 py-lg-5">
                         @yield('dashboard')
                     </div>
                 @endauth
     
-                <main role="main" class="col-12 col-md-8 py-4">
+                <main role="main" class="col-12 col-lg-8 py-lg-4">
                     @yield('content')
                 </main>
             </div>
