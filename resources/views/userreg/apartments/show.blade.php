@@ -57,7 +57,31 @@
         </div>
     </div>
 
-    <div class="row mt-5">
-        <button class="btn btn-outline-dark" onclick="history.go(-1);"><i class="fas fa-arrow-left mr-2"></i> Indietro</button>
+
+    <div class="container d-lg-none">
+        <div class="row justify-content-between mt-5">
+        
+            <div class="col-12 col-md-4">
+            {{-- go to index --}}
+                <button class="btn btn-dark mb-1 w-100" onclick="history.go(-1);"><i class="fas fa-arrow-left"></i> Indietro</button>
+            </div>
+
+            <div class="col-12 col-md-4">
+            {{-- Edit --}}
+                <a href="{{route('userreg.apartments.edit', $apartment->id)}}" class="btn btn-warning mb-1 w-100">Modifica</a>
+            </div>
+
+            <div class="col-12 col-md-4">
+                {{-- delete --}}
+                <form action="{{route('userreg.apartments.destroy', $apartment->id)}}" method="POST" class="mb-1">
+                    {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger w-100">Elimina</button>
+                </form>
+            </div>
+
+        </div>
     </div>
+
 @endsection
