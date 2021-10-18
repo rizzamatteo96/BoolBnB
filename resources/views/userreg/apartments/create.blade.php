@@ -244,16 +244,23 @@
             <hr>
         </div>
 
-        {{-- start btn pop-up (go-back to index.apartment) --}}
-        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
-            <i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i>
-            Torna indietro
-        </button>
-        {{-- start btn pop-up (go-back to index.apartment) --}}
+        <div class="row justify-content-between mt-5">
+            {{-- start btn pop-up (go-back to index.apartment) --}}
+            <div class="col-12 col-md-4">
+                <button type="button" class="btn btn-outline-dark mb-1 w-100" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i>
+                    Torna indietro
+                </button>
+            </div>
+            {{-- start btn pop-up (go-back to index.apartment) --}}
+    
+            {{-- start btn save data --}}
+            <div class="col-12 col-md-4">
+                <button type="submit" class="btn btn-primary mb-1 w-100">Salva</button>
+            </div>
+            {{-- end btn save data --}}
+        </div>
 
-        {{-- start btn save data --}}
-        <button type="submit" class="btn btn-primary">Salva</button>
-        {{-- end btn save data --}}
 
         <div class="mb-0 form-group row">
             <span class="text-danger text-md-left col-md-9 col-form-label">I campi contrassegnati con * sono obbligatori</span>
