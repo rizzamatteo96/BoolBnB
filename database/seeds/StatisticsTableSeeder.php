@@ -50,6 +50,6 @@ class StatisticsTableSeeder extends Seeder
                 
             }
 
-        };
+        }
     }
 }
