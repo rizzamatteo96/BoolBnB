@@ -41,7 +41,7 @@
                 
                     <label class="title-filter" for="radius">Raggio di default </label>
                 
-                    <input class="filter-range" id="radius" type="range" min="0" max="20" step="1" value="0" v-model="distance">
+                    <input class="filter-range" id="radius" type="range" min="1" max="25" step="1" v-model="distance">
                 
                     <output class="number-distance" v-text="distance"></output>
                 
@@ -89,8 +89,8 @@
 
         <div class="box-container row">
 
-            <div class="col-4 p-4" v-for="apartment in apartments" :key="apartment.id">
-                <div class="box m-auto">
+            <div class="col-4 h-100 p-4" v-for="apartment in apartments" :key="apartment.id">
+                <div class="box h-100 m-auto">
 
                     <img class="container-box--img" :src="apartment.image" alt="">
 
@@ -133,9 +133,9 @@
         data(){
 
             return{
-                distance : 3,
-                beds : 0,
-                rooms : 0,
+                distance : 25,
+                beds : 1,
+                rooms : 1,
                 servicesList : '',
                 apiUrl : 'http://localhost:8000/api/apartments/',
                 apiServices : 'http://localhost:8000/api/apartments/services',
@@ -312,7 +312,7 @@
                 margin: 20px 0px;
                 border-radius: 20px;
                 text-align: center;
-                min-height: 650px;
+                // min-height: 650px;
 
                 .container-box--img {
                     width: 100%;

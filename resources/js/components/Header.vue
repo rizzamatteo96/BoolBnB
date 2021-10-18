@@ -96,7 +96,7 @@
             isLogged(){
                 axios.get('http://localhost:8000/api/user')
                      .then( response => {
-                        this.user = response.data.pippo;
+                        this.user = response.data.user;
                      })
                      .finally(()=>{
                         this.loading = false;
