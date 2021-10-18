@@ -72,11 +72,31 @@
 
         <div class="col-12 col-md-4 d-lg-none">
             {{-- delete --}}
-            <form action="{{route('userreg.apartments.destroy', $apartment->id)}}" method="POST" class="mb-1">
+            <form action="{{route('userreg.apartments.destroy', $apartment->id)}}" method="POST" class="d-inline-block text-center mb-1 w-100">
                 {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger w-100">Elimina</button>
+                <div class="btn btn-danger mb-1 w-100" data-toggle="modal" data-target="#deleteModal{{$apartment->id}}">Elimina</div>
+                {{-- delete pop-up --}}
+                <div class="modal fade" id="deleteModal{{$apartment->id}}" tabindex="-1" aria-labelledby="deleteModalLabel{{$apartment->id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel{{$apartment->id}}">{{$apartment->title}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                Sei sicuro di voler eliminare l'appartamento? Perderai anche tutti i messaggi e le statistiche relative all'appartamento.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Annulla</button>
+                                <button type="submit" class="btn btn-danger">Elimina</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
 

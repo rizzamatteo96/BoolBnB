@@ -17,7 +17,36 @@
         </div>
     </div>
 
-    <button class="btn btn-outline-dark mt-5" onclick="history.go(-1);"><i class="fas fa-arrow-left mr-2"></i> Indietro</button>
+    <button class="btn btn-outline-dark" onclick="history.go(-1);"><i class="fas fa-arrow-left mr-2"></i> Indietro</button>
+
+    <button type="button" class="btn btn-danger d-md-none" data-toggle="modal" data-target="#exampleModal{{$message['id']}}">Elimina</button>
+
+    {{-- pop-up --}}
+    <form action="{{route('userreg.messages.destroy',  $message['id'])}}" method="POST" class="d-inline-block">
+        {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
+        @csrf
+        @method('DELETE')
+        <div class="modal fade" id="exampleModal{{$message['id']}}" tabindex="-1" aria-labelledby="exampleModalLabel{{$message['id']}}" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel{{$message['id']}}">Elimina messaggio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    Sei sicuro di voler eliminare il messaggio? Non potrai più risalire all'email di contatto.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Annulla</button>
+                <button type="submit" class="btn btn-danger">Elimina</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </form>
+    {{-- end pup-up --}}
 
 
 @endsection

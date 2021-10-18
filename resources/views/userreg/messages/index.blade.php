@@ -13,9 +13,12 @@
             <thead>
               <tr>
                 <th scope="col" style="width: 45%">Appartamento: {{$apartment->title}}</th>
-                <th scope="col" style="width: 25%">Email di contatto</th>
+                @if (!empty($apartment->messages->all()))
+                <th scope="col" style="width: 25%" class="d-none d-md-table-cell">Email di contatto</th>
                 <th scope="col" style="width: 15%">Mostra</th>
-                <th scope="col" style="width: 15%">Elimina</th>
+                <th scope="col" style="width: 15%" class="d-none d-md-table-cell">Elimina</th>
+                @endif
+
               </tr>
             </thead>
             <tbody>
@@ -37,13 +40,13 @@
                     @foreach ($message as $item)
                         <tr>
                             @if($item['apartment_id'] == $apartment->id)
-                                <td>Messaggio: {{$item['description']}}</td>
-                                <td>{{$item['email']}}</td>
+                                <td>Messaggio del: {{substr(strval($item['created_at']), 0, 10) }}</td>
+                                <td class="d-none d-md-table-cell">{{$item['email']}}</td>
                                 <td>
                                     <a href="{{route('userreg.messages.show', $item['id'])}}" class="btn btn-primary">Dettagli</a>
 
                                 </td>
-                                <td>
+                                <td class="d-none d-md-table-cell">
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$item['id']}}">Elimina</button>
 
                                     {{-- pop-up --}}
