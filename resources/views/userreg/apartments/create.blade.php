@@ -13,7 +13,7 @@
         {{-- Start - Input title field & visibility switch --}}
         <div class="row mb-3 align-items-center">
             {{-- start - Input title field --}}
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 <label for="apartmenttitle" class="form-labe h4">Titolo *</label>
                 <input id="apartmenttitle" type="text" class="form-control @error('title')is-invalid @enderror" required onfocusout="verifyTitle(apartmenttitle)" name="title" value="{{old('title')}}" required>
 
@@ -27,7 +27,7 @@
             {{-- Fine - Input title field --}}
 
             {{-- Start - visibility switch --}}
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 <div class="custom-control custom-switch">
                     {{-- @dd(old('visibility')) --}}
                     <input name="visibility" type="checkbox" class="custom-control-input" id="customSwitch1" 
@@ -53,7 +53,7 @@
                 <label for="image" class="form-label h4 mb-4">Immagine copertina *</label>
             </div>
 
-            <div class="col-4">
+            <div class="col-12 col-lg-4">
                 {{-- Inizio - Campo caricamento foto --}}
                 <div class="mb-3">
                     <input type="file" required accept="image/*" onchange="displayImg(event)" name="image" id="image" class="form-control-file mb-2
@@ -64,7 +64,7 @@
 
             </div>
 
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 {{-- Visualizza immagine in DB --}}
                 <img id="output" class="w-75" src="{{asset("img/empty-image-white.jpg")}}">  
                 @error('image')
@@ -101,7 +101,7 @@
         {{-- Start - Apartment details input fields --}}
         <div class="row mb-3">
             {{-- Start - number of rooms input field --}}
-            <div class="col-3">
+            <div class="col-12 col-lg-3">
                 <label for="n_rooms" class="form-label">Numero di stanze *</label>
                 <input type="number" min="1" class="form-control
                 @error('n_rooms') 
@@ -119,7 +119,7 @@
             {{-- End - number of rooms input field --}}
 
             {{-- Start - number of beds input field --}}
-            <div class="col-3">
+            <div class="col-12 col-lg-3">
                 <label for="n_beds" class="form-label">Numero di posti letto *</label>
                 <input type="number" min="1" class="form-control
                 @error('n_beds') 
@@ -137,7 +137,7 @@
             {{-- End - number of beds input field --}}
 
             {{-- Start - number of bathrooms input field --}}
-            <div class="col-3">
+            <div class="col-12 col-lg-3">
                 <label for="n_bathrooms" class="form-label">Numero di bagni *</label>
                 <input type="number" min="1" class="form-control
                 @error('n_bathrooms') 
@@ -155,7 +155,7 @@
             {{-- End - number of bathrooms input field --}}
 
             {{-- Start - square meters input field --}}
-            <div class="col-3">
+            <div class="col-12 col-lg-3">
                 <label for="n_square_meters" class="form-label">Metri quadri totali *</label>
                 <input type="number" min="1" class="form-control
                 @error('n_square_meters') 
@@ -218,18 +218,19 @@
 
             <h6 class="form-label h4">Servizi *</h6>
 
-            @foreach ($services as $service)
-                <div class="d-inline-block mr-2">
-
-                    {{-- <div class="ms_input-checkbox"></div> --}}
-                    <input type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}"
-                    @if (in_array($service->id, old('services',[])))
-                        checked
-                    @endif>
-                    <label for="{{$service->id}}">{{$service->name}}</label>
-
-                </div>
-            @endforeach
+            <div class="ml-1 row row-cols-1 row-cols-lg-3">
+                @foreach ($services as $service)
+                    <div class="d-inline-block">
+                        {{-- <div class="ms_input-checkbox"></div> --}}
+                        <input type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}"
+                        @if (in_array($service->id, old('services',[])))
+                            checked
+                        @endif>
+                        <label for="{{$service->id}}">{{$service->name}}</label>
+    
+                    </div>
+                @endforeach
+            </div>
 
             
             @error('services')
@@ -243,16 +244,23 @@
             <hr>
         </div>
 
-        {{-- start btn pop-up (go-back to index.apartment) --}}
-        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
-            <i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i>
-            Torna indietro
-        </button>
-        {{-- start btn pop-up (go-back to index.apartment) --}}
+        <div class="row justify-content-between mt-5">
+            {{-- start btn pop-up (go-back to index.apartment) --}}
+            <div class="col-12 col-md-4">
+                <button type="button" class="btn btn-outline-dark mb-1 w-100" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-arrow-left me-2" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"></i>
+                    Torna indietro
+                </button>
+            </div>
+            {{-- start btn pop-up (go-back to index.apartment) --}}
+    
+            {{-- start btn save data --}}
+            <div class="col-12 col-md-4">
+                <button type="submit" class="btn btn-primary mb-1 w-100">Salva</button>
+            </div>
+            {{-- end btn save data --}}
+        </div>
 
-        {{-- start btn save data --}}
-        <button type="submit" class="btn btn-primary">Salva</button>
-        {{-- end btn save data --}}
 
         <div class="mb-0 form-group row">
             <span class="text-danger text-md-left col-md-9 col-form-label">I campi contrassegnati con * sono obbligatori</span>
