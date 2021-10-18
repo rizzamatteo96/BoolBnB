@@ -50,7 +50,7 @@
         <div class="col-12 border border-dark rounded me-2 p-2">
             <div class="row">
                 @forelse ($apartment->services as $service)
-                    <div class="col-6 col-md-2 text-center">{{$service->name}}</div>
+                    <div class="col-6 col-md-3 col-lg-2 text-center">{{$service->name}}</div>
                 @empty
                     <div class="col-12">Nessun servizio in questo appartamento</div>
                 @endforelse
@@ -58,31 +58,28 @@
         </div>
     </div>
 
-
-    <div class="container d-lg-none">
-        <div class="row justify-content-between mt-5">
-        
-            <div class="col-12 col-md-4">
-            {{-- go to index --}}
-                <button class="btn btn-dark mb-1 w-100" onclick="history.go(-1);"><i class="fas fa-arrow-left"></i> Indietro</button>
-            </div>
-
-            <div class="col-12 col-md-4">
-            {{-- Edit --}}
-                <a href="{{route('userreg.apartments.edit', $apartment->id)}}" class="btn btn-warning mb-1 w-100">Modifica</a>
-            </div>
-
-            <div class="col-12 col-md-4">
-                {{-- delete --}}
-                <form action="{{route('userreg.apartments.destroy', $apartment->id)}}" method="POST" class="mb-1">
-                    {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger w-100">Elimina</button>
-                </form>
-            </div>
-
+    <div class="row justify-content-between mt-5">
+    
+        <div class="col-12 col-md-4">
+        {{-- go to index --}}
+            <button class="btn btn-dark mb-1 w-100" onclick="history.go(-1);"><i class="fas fa-arrow-left"></i> Indietro</button>
         </div>
+
+        <div class="col-12 col-md-4 d-lg-none">
+        {{-- Edit --}}
+            <a href="{{route('userreg.apartments.edit', $apartment->id)}}" class="btn btn-warning mb-1 w-100">Modifica</a>
+        </div>
+
+        <div class="col-12 col-md-4 d-lg-none">
+            {{-- delete --}}
+            <form action="{{route('userreg.apartments.destroy', $apartment->id)}}" method="POST" class="mb-1">
+                {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger w-100">Elimina</button>
+            </form>
+        </div>
+
     </div>
 </div>
 
