@@ -7,9 +7,16 @@
             <label class="title-search" for="search-input-for-coordinates">Dove</label>
 
             <div id="search-field"></div>
+            
+            <!-- add filters button -->
+            <button class="btn mt-3 btn-outline-light" @click="viewFilters = !viewFilters">
+                Visualizza filtri
+                <i class="fas fa-chevron-right ml-1" :class="viewFilters ? 'd-none' : 'd-inline-block'"></i>
+                <i class="fas fa-chevron-down ml-1" :class="viewFilters ? 'd-inline-block' : 'd-none'"></i>
+            </button>
 
             <!-- Inizio Filtri -->
-            <div class="container-filter">
+            <div class="container-filter" :class="viewFilters ? 'ms_d-flex' : 'd-none'">
 
                 <div class="filter">
 
@@ -39,32 +46,29 @@
                 
                 <div class="filter">
                 
-                    <label class="title-filter" for="radius">Raggio di default </label>
+                    <label class="title-filter" for="radius">
+                        Raggio: 
+                        <output class="number-distance" v-text="distance"></output>
+                        Km
+                    </label>
                 
                     <input class="filter-range" id="radius" type="range" min="1" max="25" step="1" v-model="distance">
-                
-                    <output class="number-distance" v-text="distance"></output>
-                
-                    <label for="">Km</label>
                 
                 </div>
 
             </div>
 
-            <div class="container-services">
+            <div class="container-services container" :class="viewFilters ? 'ms_d-flex' : 'd-none'">
                 
-
-                <ul v-for="service in services" :key="service.id">
-                
-                    <li>
-                
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-3 text-left" v-for="service in services" :key="service.id">
+                    
                         <input type="checkbox" @click="servicesCheck(service.id)" :id="service.slug" :value="service.id">
                 
                         <label :for="service.slug">{{service.name}}</label>
-                
-                    </li>
-                
-                </ul>
+                    
+                    </div>
+                </div>
 
             </div>
             <!-- Fine Filtri -->
@@ -78,8 +82,6 @@
             <label for="">Adulti</label>
             <input type="number"> -->
 
-            <!-- <button type="button" class="btn btn-outline-light">Cerca</button> -->
-            <!-- <router-link :to="{ name: 'src', params: {slug : citySrc} }" class="btn btn-outline-light">Cerca</router-link> -->
             <div @click="loadCoordinate" class="btn mt-3 btn-outline-light">Cerca</div>
 
 
@@ -89,7 +91,7 @@
 
         <div class="box-container row" v-if="!loading">
 
-            <div class="col-4 h-100 p-4" v-for="apartment in apartments" :key="apartment.id">
+            <div class="col-12 col-md-6 col-lg-4 h-100 p-4" v-for="apartment in apartments" :key="apartment.id">
                 <div class="box h-100 m-auto">
 
                     <img class="container-box--img" :src="apartment.image" alt="">
@@ -155,7 +157,8 @@
                 apiFirst : 'https://api.tomtom.com/search/2/geocode/',
                 apiSecond : '.JSON?key=',
                 apiThird : 'https://api.tomtom.com/search/2/reverseGeocode/',
-                loading : true
+                loading : true,
+                viewFilters : false
             }
 
         },
@@ -294,6 +297,10 @@
 
 <style lang="scss" scoped>
 
+    .ms_d-flex{
+        display: flex;
+    }
+
     .container-search {
         color: white;
         width: 90%;
@@ -324,13 +331,15 @@
 
                 .container-box--img {
                     width: 100%;
-                    height: 250px;
+                    // height: 250px;
+                    height: 30%;
                     border-radius: 10px;
                     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                 }
 
                 .container-description {
                     display: block;
+                    height: calc(100% - 30%);
                     text-align: center;
                     margin-top: 20px;
                     word-wrap: break-word;
@@ -352,6 +361,9 @@
                 display: flex;
                 justify-content: space-around;
                 .filter {
+
+                    width: calc(100% / 3);
+
                     .title-filter {
                         display: block;
                         // position: fixed;
@@ -433,6 +445,7 @@
 
                     .filter {
                         margin: 20px 0px;
+                        width: 100%;
                     }
                 }
 

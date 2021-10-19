@@ -2780,6 +2780,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearcPage',
@@ -2801,7 +2803,8 @@ __webpack_require__.r(__webpack_exports__);
       apiFirst: 'https://api.tomtom.com/search/2/geocode/',
       apiSecond: '.JSON?key=',
       apiThird: 'https://api.tomtom.com/search/2/reverseGeocode/',
-      loading: true
+      loading: true,
+      viewFilters: false
     };
   },
   mounted: function mounted() {
@@ -8454,7 +8457,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n  word-wrap: break-word;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .number-distance[data-v-1c94c414] {\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".ms_d-flex[data-v-1c94c414] {\n  display: flex;\n}\n.container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 30%;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  height: 70%;\n  text-align: center;\n  margin-top: 20px;\n  word-wrap: break-word;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n  width: 33.3333333333%;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .number-distance[data-v-1c94c414] {\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n    width: 100%;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42428,145 +42431,190 @@ var render = function() {
       _vm._v(" "),
       _c("div", { attrs: { id: "search-field" } }),
       _vm._v(" "),
-      _c("div", { staticClass: "container-filter" }, [
-        _c("div", { staticClass: "filter" }, [
-          _c("label", { staticClass: "title-filter", attrs: { for: "" } }, [
-            _vm._v("Numero di stanze")
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "button-filter",
-              on: {
-                click: function($event) {
-                  _vm.rooms != 0 ? _vm.rooms-- : ""
-                }
-              }
-            },
-            [_vm._v("-")]
-          ),
-          _vm._v(" "),
-          _c("output", {
-            staticClass: "number-range",
-            domProps: { textContent: _vm._s(_vm.rooms) }
-          }),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "button-filter",
-              on: {
-                click: function($event) {
-                  _vm.rooms++
-                }
-              }
-            },
-            [_vm._v("+")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "filter" }, [
-          _c("label", { staticClass: "title-filter", attrs: { for: "" } }, [
-            _vm._v("Numero posti letto")
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "button-filter",
-              on: {
-                click: function($event) {
-                  _vm.beds != 0 ? _vm.beds-- : ""
-                }
-              }
-            },
-            [_vm._v("-")]
-          ),
-          _vm._v(" "),
-          _c("output", {
-            staticClass: "number-range",
-            domProps: { textContent: _vm._s(_vm.beds) }
-          }),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "button-filter",
-              on: {
-                click: function($event) {
-                  _vm.beds++
-                }
-              }
-            },
-            [_vm._v("+")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "filter" }, [
-          _c(
-            "label",
-            { staticClass: "title-filter", attrs: { for: "radius" } },
-            [_vm._v("Raggio di default ")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.distance,
-                expression: "distance"
-              }
-            ],
-            staticClass: "filter-range",
-            attrs: {
-              id: "radius",
-              type: "range",
-              min: "1",
-              max: "25",
-              step: "1"
-            },
-            domProps: { value: _vm.distance },
-            on: {
-              __r: function($event) {
-                _vm.distance = $event.target.value
-              }
+      _c(
+        "button",
+        {
+          staticClass: "btn mt-3 btn-outline-light",
+          on: {
+            click: function($event) {
+              _vm.viewFilters = !_vm.viewFilters
             }
+          }
+        },
+        [
+          _vm._v("\n            Visualizza filtri\n            "),
+          _c("i", {
+            staticClass: "fas fa-chevron-right ml-1",
+            class: _vm.viewFilters ? "d-none" : "d-inline-block"
           }),
           _vm._v(" "),
-          _c("output", {
-            staticClass: "number-distance",
-            domProps: { textContent: _vm._s(_vm.distance) }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "" } }, [_vm._v("Km")])
-        ])
-      ]),
+          _c("i", {
+            staticClass: "fas fa-chevron-down ml-1",
+            class: _vm.viewFilters ? "d-inline-block" : "d-none"
+          })
+        ]
+      ),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "container-services" },
-        _vm._l(_vm.services, function(service) {
-          return _c("ul", { key: service.id }, [
-            _c("li", [
-              _c("input", {
-                attrs: { type: "checkbox", id: service.slug },
-                domProps: { value: service.id },
+        {
+          staticClass: "container-filter",
+          class: _vm.viewFilters ? "ms_d-flex" : "d-none"
+        },
+        [
+          _c("div", { staticClass: "filter" }, [
+            _c("label", { staticClass: "title-filter", attrs: { for: "" } }, [
+              _vm._v("Numero di stanze")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "button-filter",
                 on: {
                   click: function($event) {
-                    return _vm.servicesCheck(service.id)
+                    _vm.rooms != 0 ? _vm.rooms-- : ""
                   }
                 }
-              }),
-              _vm._v(" "),
-              _c("label", { attrs: { for: service.slug } }, [
-                _vm._v(_vm._s(service.name))
-              ])
-            ])
+              },
+              [_vm._v("-")]
+            ),
+            _vm._v(" "),
+            _c("output", {
+              staticClass: "number-range",
+              domProps: { textContent: _vm._s(_vm.rooms) }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "button-filter",
+                on: {
+                  click: function($event) {
+                    _vm.rooms++
+                  }
+                }
+              },
+              [_vm._v("+")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "filter" }, [
+            _c("label", { staticClass: "title-filter", attrs: { for: "" } }, [
+              _vm._v("Numero posti letto")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "button-filter",
+                on: {
+                  click: function($event) {
+                    _vm.beds != 0 ? _vm.beds-- : ""
+                  }
+                }
+              },
+              [_vm._v("-")]
+            ),
+            _vm._v(" "),
+            _c("output", {
+              staticClass: "number-range",
+              domProps: { textContent: _vm._s(_vm.beds) }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "button-filter",
+                on: {
+                  click: function($event) {
+                    _vm.beds++
+                  }
+                }
+              },
+              [_vm._v("+")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "filter" }, [
+            _c(
+              "label",
+              { staticClass: "title-filter", attrs: { for: "radius" } },
+              [
+                _vm._v("\n                    Raggio: \n                    "),
+                _c("output", {
+                  staticClass: "number-distance",
+                  domProps: { textContent: _vm._s(_vm.distance) }
+                }),
+                _vm._v("\n                    Km\n                ")
+              ]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.distance,
+                  expression: "distance"
+                }
+              ],
+              staticClass: "filter-range",
+              attrs: {
+                id: "radius",
+                type: "range",
+                min: "1",
+                max: "25",
+                step: "1"
+              },
+              domProps: { value: _vm.distance },
+              on: {
+                __r: function($event) {
+                  _vm.distance = $event.target.value
+                }
+              }
+            })
           ])
-        }),
-        0
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "container-services container",
+          class: _vm.viewFilters ? "ms_d-flex" : "d-none"
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.services, function(service) {
+              return _c(
+                "div",
+                {
+                  key: service.id,
+                  staticClass: "col-12 col-md-4 col-lg-3 text-left"
+                },
+                [
+                  _c("input", {
+                    attrs: { type: "checkbox", id: service.slug },
+                    domProps: { value: service.id },
+                    on: {
+                      click: function($event) {
+                        return _vm.servicesCheck(service.id)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: service.slug } }, [
+                    _vm._v(_vm._s(service.name))
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -42591,7 +42639,10 @@ var render = function() {
             _vm._l(_vm.apartments, function(apartment) {
               return _c(
                 "div",
-                { key: apartment.id, staticClass: "col-4 h-100 p-4" },
+                {
+                  key: apartment.id,
+                  staticClass: "col-12 col-md-6 col-lg-4 h-100 p-4"
+                },
                 [
                   _c(
                     "div",
