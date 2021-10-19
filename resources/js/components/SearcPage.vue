@@ -95,7 +95,7 @@
                 <div class="box">
 
                     <div class="container-box--img">
-                        <img :src="apartment.image" alt="">
+                        <img :src="apartment.image" :alt="apartment.title">
                     </div>
 
                     <div class="container-description">
@@ -340,6 +340,7 @@
                     // border-radius: 10px;
 
                     img {
+                        max-height: 250px;
                         width: 100%;
                         border-radius: 10px;
                         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
