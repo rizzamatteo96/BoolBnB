@@ -26,7 +26,7 @@
         <!-- inizio  menu link -->
         <ul class="container--menu" :class="{active: isActive}" v-if="!isUserLogged && !loading">
 
-            <li class="container--menu--list ">
+            <li class="container--menu--list">
             
                 <a class="container--menu--list--link--home" href="http://localhost:8000">Home</a>
                 
@@ -51,7 +51,7 @@
 
             <div class="container--menu--list">
             
-                <a class="container--menu--list--link--home" href="http://localhost:8000">Home</a>
+                <a class="container--menu--list--link home-btn" href="http://localhost:8000">Home</a>
                 
             </div>
 
@@ -69,17 +69,9 @@
 
 <script>
 
-    //import Login from '@/components/Login.vue'
-
     export default {
 
         name: 'Header',
-
-        components: {
-
-            //Login
-        
-        },
 
         data() {
             
@@ -96,13 +88,6 @@
             this.isLogged()
         },
         methods: {
-
-            prova(){
-                console.log(this.user);
-                console.log(this.loading);
-                console.log(this.isUserLogged);
-                console.log(this.isActive);
-            },
 
             // Funzione per attivare menu mobile
             myFilter: function() {
@@ -176,14 +161,14 @@
                     transform: scale(2);
                 }
 
-                .container--menu--list--link--home{
-                    display: none;
-                }
-
                 .container--menu--list--link {
                     text-decoration: none;
                     color: $ColorText1;
                     text-transform: uppercase;
+                }
+
+                .container--menu--list--link.home-btn{
+                    display: none;
                 }
 
             }
@@ -246,6 +231,10 @@
                 text-align: center;
                 width: 100%;
                 display: none; 
+
+                .container--menu--list--link.home-btn{
+                    display: block !important;
+                }
             }
 
             .active {

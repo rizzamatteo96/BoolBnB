@@ -2535,11 +2535,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//import Login from '@/components/Login.vue'
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Header',
-  components: {//Login
-  },
   data: function data() {
     return {
       isActive: false,
@@ -2552,12 +2562,6 @@ __webpack_require__.r(__webpack_exports__);
     this.isLogged();
   },
   methods: {
-    prova: function prova() {
-      console.log(this.user);
-      console.log(this.loading);
-      console.log(this.isUserLogged);
-      console.log(this.isActive);
-    },
     // Funzione per attivare menu mobile
     myFilter: function myFilter() {
       this.isActive = !this.isActive;
@@ -8430,7 +8434,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-nav[data-v-1f42fb90] {\n  z-index: 10;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background: #000000d0;\n  position: fixed;\n  top: 0;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;\n  height: 60px;\n}\n.container-nav .container--logo[data-v-1f42fb90] {\n  width: 60px;\n  margin-left: 50px;\n}\n.container-nav .container--logo .container--logo--image[data-v-1f42fb90] {\n  width: 50px;\n}\n.container-nav .container--logo-mobile[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .container--menu[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  text-decoration: none;\n}\n.container-nav .container--menu .container--menu--list[data-v-1f42fb90] {\n  margin: 0px 60px;\n  transition: 0.6s ease-out;\n}\n.container-nav .container--menu .container--menu--list[data-v-1f42fb90]:hover {\n  transition: 0.6s ease-out;\n  transform: scale(2);\n}\n.container-nav .container--menu .container--menu--list .container--menu--list--link[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #FF385C;\n  text-transform: uppercase;\n}\n.container-nav .container--burgher-menu[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .active[data-v-1f42fb90] {\n  display: block;\n}\n.container-nav .not-active[data-v-1f42fb90] {\n  display: none;\n}\n@media (max-width: 968px) {\n.container-nav[data-v-1f42fb90] {\n    display: flex;\n    min-height: 121px;\n}\n.container-nav .container--logo[data-v-1f42fb90] {\n    display: none;\n}\n.container-nav .container--logo-mobile[data-v-1f42fb90] {\n    font-size: 0;\n    display: block;\n    margin: 5px auto 0px;\n    width: 70px;\n    text-align: center;\n}\n.container-nav .container--logo-mobile .container--logo--image--mobile[data-v-1f42fb90] {\n    width: 100%;\n}\n.container-nav .container--logo-mobile span[data-v-1f42fb90] {\n    color: #FF385C;\n    font-size: 30px;\n    line-height: 0;\n}\n.container-nav .container--menu[data-v-1f42fb90] {\n    padding: 20px 0;\n    position: absolute;\n    line-height: 5;\n    height: 100vh;\n    top: 121px;\n    background: #000000d0;\n    flex-direction: column;\n    text-align: center;\n    width: 100%;\n    display: none;\n}\n.container-nav .active[data-v-1f42fb90] {\n    display: flex;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-nav[data-v-1f42fb90] {\n  z-index: 10;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background: #000000d0;\n  position: fixed;\n  top: 0;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;\n  height: 60px;\n}\n.container-nav .container--logo[data-v-1f42fb90] {\n  width: 60px;\n  margin-left: 50px;\n}\n.container-nav .container--logo .container--logo--image[data-v-1f42fb90] {\n  width: 50px;\n}\n.container-nav .container--logo-mobile[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .container--menu[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  text-decoration: none;\n}\n.container-nav .container--menu .container--menu--list[data-v-1f42fb90] {\n  margin: 0px 60px;\n  transition: 0.6s ease-out;\n}\n.container-nav .container--menu .container--menu--list[data-v-1f42fb90]:hover {\n  transition: 0.6s ease-out;\n  transform: scale(2);\n}\n.container-nav .container--menu .container--menu--list .container--menu--list--link[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #FF385C;\n  text-transform: uppercase;\n}\n.container-nav .container--menu .container--menu--list .container--menu--list--link.home-btn[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .container--burgher-menu[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .active[data-v-1f42fb90] {\n  display: block;\n}\n.container-nav .not-active[data-v-1f42fb90] {\n  display: none;\n}\n@media (max-width: 968px) {\n.container-nav[data-v-1f42fb90] {\n    display: flex;\n    min-height: 121px;\n}\n.container-nav .container--logo[data-v-1f42fb90] {\n    display: none;\n}\n.container-nav .container--logo-mobile[data-v-1f42fb90] {\n    font-size: 0;\n    display: block;\n    margin: 5px auto 0px;\n    width: 70px;\n    text-align: center;\n}\n.container-nav .container--logo-mobile .container--logo--image--mobile[data-v-1f42fb90] {\n    width: 100%;\n}\n.container-nav .container--logo-mobile span[data-v-1f42fb90] {\n    color: #FF385C;\n    font-size: 30px;\n    line-height: 0;\n}\n.container-nav .container--menu[data-v-1f42fb90] {\n    padding: 20px 0;\n    position: absolute;\n    line-height: 5;\n    height: 100vh;\n    top: 121px;\n    background: #000000d0;\n    flex-direction: column;\n    text-align: center;\n    width: 100%;\n    display: none;\n}\n.container-nav .container--menu .container--menu--list--link.home-btn[data-v-1f42fb90] {\n    display: block !important;\n}\n.container-nav .active[data-v-1f42fb90] {\n    display: flex;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42221,17 +42225,7 @@ var render = function() {
           attrs: { src: "/img/boolbeb-icona.svg", alt: "BoolBnb" }
         }),
         _vm._v(" "),
-        _c(
-          "span",
-          {
-            on: {
-              click: function($event) {
-                return _vm.prova()
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-caret-down" })]
-        )
+        _vm._m(1)
       ]
     ),
     _vm._v(" "),
@@ -42240,6 +42234,8 @@ var render = function() {
           "ul",
           { staticClass: "container--menu", class: { active: _vm.isActive } },
           [
+            _vm._m(2),
+            _vm._v(" "),
             _c("li", { staticClass: "container--menu--list" }, [
               _c(
                 "a",
@@ -42256,7 +42252,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(1)
+            _vm._m(3)
           ]
         )
       : _vm._e(),
@@ -42266,6 +42262,8 @@ var render = function() {
           "div",
           { staticClass: "container--menu", class: { active: _vm.isActive } },
           [
+            _vm._m(4),
+            _vm._v(" "),
             _c("div", { staticClass: "container--menu--list" }, [
               _c(
                 "a",
@@ -42307,6 +42305,27 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("span", [_c("i", { staticClass: "fas fa-caret-down" })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "container--menu--list" }, [
+      _c(
+        "a",
+        {
+          staticClass: "container--menu--list--link--home",
+          attrs: { href: "http://localhost:8000" }
+        },
+        [_vm._v("Home")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("li", { staticClass: "container--menu--list" }, [
       _c(
         "a",
@@ -42315,6 +42334,21 @@ var staticRenderFns = [
           attrs: { href: "http://localhost:8000/register" }
         },
         [_vm._v("register")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container--menu--list" }, [
+      _c(
+        "a",
+        {
+          staticClass: "container--menu--list--link home-btn",
+          attrs: { href: "http://localhost:8000" }
+        },
+        [_vm._v("Home")]
       )
     ])
   }
@@ -43016,7 +43050,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-show" },
+    { staticClass: "container-show mb-2" },
     [
       _c("div", { staticClass: "container--img--desc" }, [
         _c("img", { attrs: { src: _vm.apartment.image, alt: "" } }),
@@ -43090,8 +43124,6 @@ var render = function() {
           )
         ])
       ]),
-      _vm._v(" "),
-      _c("BannerMap"),
       _vm._v(" "),
       _c("ContactForm", { attrs: { apartment: _vm.apartmentId } })
     ],
