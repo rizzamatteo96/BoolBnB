@@ -13,7 +13,10 @@
         <!-- fine logo  -->
 
 
-        <div v-if="user == '' && !loading" class="w-100">
+
+
+
+        <div class="if-container" v-if="user == '' && !loading">
             <!-- inizio  menu mobile -->
             <div class="container--logo-mobile" @click="myFilter">
                 
@@ -23,9 +26,6 @@
         
             </div>
             <!-- fine  menu mobile -->
-        </div>
-
-        <div v-if="user == '' && !loading">
 
             <!-- inizio  menu link -->
             <ul class="container--menu" :class="{active: isActive}">
@@ -184,6 +184,10 @@
 
     // PARTE RESPONSIVE
     @media (max-width: 968px) {
+
+        .if-container{
+            width: 100%;
+        }
 
         .container-nav {
             display: flex;
