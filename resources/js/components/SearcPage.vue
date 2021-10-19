@@ -358,7 +358,16 @@
                     text-align: center;
                     margin-top: 20px;
                     // word-wrap: break-word;
-
+                    
+                    .container-description--title{
+                        height: 70px;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        white-space: normal;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
 
