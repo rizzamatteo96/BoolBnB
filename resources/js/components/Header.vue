@@ -12,16 +12,18 @@
         </div>
         <!-- fine logo  -->
 
-        <!-- inizio  menu mobile -->
-        <div class="container--logo-mobile" @click="myFilter">
-            
-            <img class="container--logo--image--mobile" src="/img/boolbeb-icona.svg" alt="BoolBnb">
 
-            <span><i class="fas fa-caret-down"></i></span>
-       
+        <div v-if="user == '' && !loading" class="w-100">
+            <!-- inizio  menu mobile -->
+            <div class="container--logo-mobile" @click="myFilter">
+                
+                <img class="container--logo--image--mobile" src="/img/boolbeb-icona.svg" alt="BoolBnb">
+
+                <span><i class="fas fa-caret-down"></i></span>
+        
+            </div>
+            <!-- fine  menu mobile -->
         </div>
-        <!-- fine  menu mobile -->
-
 
         <div v-if="user == '' && !loading">
 
@@ -42,7 +44,6 @@
 
             </ul>
             <!-- fine  menu link -->
-        
         </div>
 
         <div v-if="user != '' && !loading" class="container--menu" :class="{active: isActive}">
