@@ -62,12 +62,12 @@
     
         <div class="col-12 col-md-4">
         {{-- go to index --}}
-            <button class="btn btn-dark mb-1 w-100" onclick="history.go(-1);"><i class="fas fa-arrow-left"></i> Indietro</button>
+            <button class="btn btn-outline-dark mb-1 w-100" onclick="history.go(-1);"><i class="fas fa-arrow-left"></i> Indietro</button>
         </div>
 
         <div class="col-12 col-md-4 d-lg-none">
         {{-- Edit --}}
-            <a href="{{route('userreg.apartments.edit', $apartment->id)}}" class="btn btn-warning mb-1 w-100">Modifica</a>
+            <a href="{{route('userreg.apartments.edit', $apartment->id)}}" class="btn btn-outline-warning mb-1 w-100">Modifica</a>
         </div>
 
         <div class="col-12 col-md-4 d-lg-none">
@@ -76,7 +76,7 @@
                 {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
                 @csrf
                 @method('DELETE')
-                <div class="btn btn-danger mb-1 w-100" data-toggle="modal" data-target="#deleteModal{{$apartment->id}}">Elimina</div>
+                <div class="btn btn-outline-danger mb-1 w-100" data-toggle="modal" data-target="#deleteModal{{$apartment->id}}">Elimina</div>
                 {{-- delete pop-up --}}
                 <div class="modal fade" id="deleteModal{{$apartment->id}}" tabindex="-1" aria-labelledby="deleteModalLabel{{$apartment->id}}" aria-hidden="true">
                     <div class="modal-dialog">
