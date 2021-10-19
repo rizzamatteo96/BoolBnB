@@ -87,7 +87,7 @@
 
         </div>
         
-        <h2 class="title-search">Appartamenti nella zona di: </h2>
+        <h2 class="title-search">Appartamenti nella zona di: <span id="searched-city">{{oldInput}}</span></h2>
 
         <div class="box-container row" v-if="!loading">
 
@@ -359,6 +359,15 @@
                     margin-top: 20px;
                     // word-wrap: break-word;
 
+                    .container-description--title{
+                        height: 70px;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        white-space: normal;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
 

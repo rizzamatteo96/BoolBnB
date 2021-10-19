@@ -3,7 +3,7 @@
 
     <div class="container-sponsor">
 
-        <h2 class="title-sponsor color-text">Appartamenti in vetrina</h2>
+        <h2 class="title-sponsor color-text">I nostri appartamenti</h2>
 
         <VueSlickCarousel class="cont-caro" v-bind="settings" v-if="apartments.length>0">
 
@@ -198,7 +198,7 @@
                     padding: 10px;
 
                     .container-description--title{
-                        max-height: 70px;
+                        height: 70px;
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 2;
