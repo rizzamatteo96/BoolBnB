@@ -5,33 +5,31 @@
 
         <h2 class="title-sponsor color-text">Appartamenti in vetrina</h2>
 
-        <div class="row">
-            <VueSlickCarousel class="cont-caro" v-bind="settings" v-if="apartments.length>0">
+        <VueSlickCarousel class="cont-caro" v-bind="settings" v-if="apartments.length>0">
 
-                <div class="box" v-for="apartment in apartments" :key="apartment.id">
+            <div class="box" v-for="apartment in apartments" :key="apartment.id">
 
-                    <div class="box-container">
-                        
-                        <img class="container-box--img" :src="apartment.image" :alt="apartment.title">
-
-                        <div class="container-description" >
-
-                            <h2 class="color-text container-description--title">{{apartment.title}}</h2>
-
-                            <!-- <p class="color-text container-description--price"> <span class="info-text">Prezzo: </span> {{apartment.daily_price}} €</p> -->
-                            <p class="color-text container-box--adress"> <span class="info-text">Citta: </span> {{apartment.city}}</p>
-                            <p class="color-text container-box--adress"> <span class="info-text">Via: </span> {{apartment.address}}, {{apartment.house_num}}</p>
-
-                        </div>
-
-                        <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" @click.native="scrollToTop()" class="btn btn-outline-light">Visualizza dettagli</router-link>
+                <div class="box-container">
                     
+                    <img class="container-box--img" :src="apartment.image" :alt="apartment.title">
+
+                    <div class="container-description" >
+
+                        <h2 class="color-text container-description--title">{{apartment.title}}</h2>
+
+                        <!-- <p class="color-text container-description--price"> <span class="info-text">Prezzo: </span> {{apartment.daily_price}} €</p> -->
+                        <p class="color-text container-box--adress"> <span class="info-text">Citta: </span> {{apartment.city}}</p>
+                        <p class="color-text container-box--adress"> <span class="info-text">Via: </span> {{apartment.address}}, {{apartment.house_num}}</p>
+
                     </div>
 
+                    <router-link :to="{ name: 'apartment-details', params: {slug : apartment.slug} }" @click.native="scrollToTop()" class="btn btn-outline-light">Visualizza dettagli</router-link>
+                
                 </div>
-            
-            </VueSlickCarousel>
-        </div>
+
+            </div>
+        
+        </VueSlickCarousel>
       
     </div>
 
@@ -180,6 +178,16 @@
                     width: 100%;
                     text-align: center;
                     padding: 10px;
+
+                    .container-description--title{
+                        max-height: 70px;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        white-space: normal;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
 
                     .info-text {
                         font-weight: bold;
