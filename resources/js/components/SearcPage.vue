@@ -87,7 +87,7 @@
         
         <h2 class="title-search">Appartamenti nella zona di: </h2>
 
-        <div class="box-container row">
+        <div class="box-container row" v-if="!loading">
 
             <div class="col-4 h-100 p-4" v-for="apartment in apartments" :key="apartment.id">
                 <div class="box h-100 m-auto">
@@ -114,6 +114,12 @@
             <div class="col-4" v-if="(apartments.length % 2) == 0"></div>
 
 
+        </div>
+
+        <div class="text-center mt-5" v-else>
+            <div class="spinner-grow" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
 
 
@@ -148,7 +154,8 @@
                 apiKey : 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
                 apiFirst : 'https://api.tomtom.com/search/2/geocode/',
                 apiSecond : '.JSON?key=',
-                apiThird : 'https://api.tomtom.com/search/2/reverseGeocode/'
+                apiThird : 'https://api.tomtom.com/search/2/reverseGeocode/',
+                loading : true
             }
 
         },
@@ -199,6 +206,7 @@
                 .then(response => {
                     // console.log(response);
                     this.apartments = response.data.results;
+                    this.loading = false;
                 })
                 .catch(e => {
                     console.log(e);

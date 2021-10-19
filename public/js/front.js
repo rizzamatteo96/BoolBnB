@@ -2774,6 +2774,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearcPage',
@@ -2794,7 +2800,8 @@ __webpack_require__.r(__webpack_exports__);
       apiKey: 'K3xnfxcXAODvZopP0scVRnmjNxjruLUo',
       apiFirst: 'https://api.tomtom.com/search/2/geocode/',
       apiSecond: '.JSON?key=',
-      apiThird: 'https://api.tomtom.com/search/2/reverseGeocode/'
+      apiThird: 'https://api.tomtom.com/search/2/reverseGeocode/',
+      loading: true
     };
   },
   mounted: function mounted() {
@@ -2838,6 +2845,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters).then(function (response) {
         // console.log(response);
         _this2.apartments = response.data.results;
+        _this2.loading = false;
       })["catch"](function (e) {
         console.log(e);
       }); // Api to get services from DB
@@ -42575,85 +42583,108 @@ var render = function() {
       _vm._v("Appartamenti nella zona di: ")
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "box-container row" },
-      [
-        _vm._l(_vm.apartments, function(apartment) {
-          return _c(
-            "div",
-            { key: apartment.id, staticClass: "col-4 h-100 p-4" },
-            [
-              _c(
+    !_vm.loading
+      ? _c(
+          "div",
+          { staticClass: "box-container row" },
+          [
+            _vm._l(_vm.apartments, function(apartment) {
+              return _c(
                 "div",
-                { staticClass: "box h-100 m-auto" },
+                { key: apartment.id, staticClass: "col-4 h-100 p-4" },
                 [
-                  _c("img", {
-                    staticClass: "container-box--img",
-                    attrs: { src: apartment.image, alt: "" }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "container-description" }, [
-                    _c("h2", { staticClass: "container-description--title" }, [
-                      _vm._v(_vm._s(apartment.title))
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "container-description--price" }, [
-                      _vm._v("Prezzo: " + _vm._s(apartment.daily_price) + " €")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "container-description--price" }, [
-                      _vm._v("Citta: " + _vm._s(apartment.city))
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "container-box--adress" }, [
-                      _vm._v(
-                        "Indirizzo: " +
-                          _vm._s(apartment.address) +
-                          ", " +
-                          _vm._s(apartment.house_num)
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "router-link",
-                    {
-                      staticClass: "btn btn-outline-light",
-                      attrs: {
-                        to: {
-                          name: "apartment-details",
-                          params: { slug: apartment.slug }
-                        }
-                      },
-                      nativeOn: {
-                        click: function($event) {
-                          return _vm.scrollToTop()
-                        }
-                      }
-                    },
-                    [_vm._v("Visualizza dettagli")]
+                    "div",
+                    { staticClass: "box h-100 m-auto" },
+                    [
+                      _c("img", {
+                        staticClass: "container-box--img",
+                        attrs: { src: apartment.image, alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "container-description" }, [
+                        _c(
+                          "h2",
+                          { staticClass: "container-description--title" },
+                          [_vm._v(_vm._s(apartment.title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "container-description--price" },
+                          [
+                            _vm._v(
+                              "Prezzo: " + _vm._s(apartment.daily_price) + " €"
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "container-description--price" },
+                          [_vm._v("Citta: " + _vm._s(apartment.city))]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "container-box--adress" }, [
+                          _vm._v(
+                            "Indirizzo: " +
+                              _vm._s(apartment.address) +
+                              ", " +
+                              _vm._s(apartment.house_num)
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-outline-light",
+                          attrs: {
+                            to: {
+                              name: "apartment-details",
+                              params: { slug: apartment.slug }
+                            }
+                          },
+                          nativeOn: {
+                            click: function($event) {
+                              return _vm.scrollToTop()
+                            }
+                          }
+                        },
+                        [_vm._v("Visualizza dettagli")]
+                      )
+                    ],
+                    1
                   )
-                ],
-                1
+                ]
               )
-            ]
-          )
-        }),
-        _vm._v(" "),
-        _vm.apartments.length % 2 == 0
-          ? _c("div", { staticClass: "col-4" })
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.apartments.length % 2 == 0
-          ? _c("div", { staticClass: "col-4" })
-          : _vm._e()
-      ],
-      2
-    )
+            }),
+            _vm._v(" "),
+            _vm.apartments.length % 2 == 0
+              ? _c("div", { staticClass: "col-4" })
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.apartments.length % 2 == 0
+              ? _c("div", { staticClass: "col-4" })
+              : _vm._e()
+          ],
+          2
+        )
+      : _c("div", { staticClass: "text-center mt-5" }, [_vm._m(0)])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "spinner-grow", attrs: { role: "status" } },
+      [_c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])]
+    )
+  }
+]
 render._withStripped = true
 
 
