@@ -1,5 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
+.orizontal-chart {
+  height: 30px;
+  line-height: 30px;
+}
+
+.ms_bg {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ms_fs {
+  font-size: 11px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
