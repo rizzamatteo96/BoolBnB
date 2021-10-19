@@ -65,7 +65,7 @@
       
     </div>
     
-    <BannerMap/>
+    <!-- <BannerMap/> -->
 
     <ContactForm :apartment="apartmentId" />
 
