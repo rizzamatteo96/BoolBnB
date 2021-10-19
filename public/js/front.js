@@ -2783,6 +2783,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearcPage',
@@ -2848,8 +2852,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters).then(function (response) {
         // console.log(response);
-        _this2.apartments = response.data.results;
-        _this2.loading = false;
+        _this2.apartments = response.data.results; // this.loading = false;
       })["catch"](function (e) {
         console.log(e);
       }); // Api to get services from DB
@@ -3036,8 +3039,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.css");
 /* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_theme_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel-theme.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel-theme.css");
-//
-//
 //
 //
 //
@@ -8466,7 +8467,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".ms_d-flex[data-v-1c94c414] {\n  display: flex;\n}\n.container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  height: 100%;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n  width: 33.3333333333%;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .number-distance[data-v-1c94c414] {\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n    width: 100%;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".ms_d-flex[data-v-1c94c414] {\n  display: flex;\n}\n.container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  height: 100%;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n  width: 33.3333333333%;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .number-distance[data-v-1c94c414] {\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n.loading-logo[data-v-1c94c414] {\n  height: 50px;\n  -webkit-animation: logoLoading-data-v-1c94c414 1s infinite;\n          animation: logoLoading-data-v-1c94c414 1s infinite;\n}\n@-webkit-keyframes logoLoading-data-v-1c94c414 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(2);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes logoLoading-data-v-1c94c414 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(2);\n}\n100% {\n    transform: scale(1);\n}\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n    width: 100%;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42727,21 +42728,15 @@ var render = function() {
           ],
           2
         )
-      : _c("div", { staticClass: "text-center mt-5" }, [_vm._m(0)])
+      : _c("div", { staticClass: "text-center mt-5" }, [
+          _c("img", {
+            staticClass: "loading-logo",
+            attrs: { src: "/img/boolbeb-white.png", alt: "BoolBnb" }
+          })
+        ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "spinner-grow", attrs: { role: "status" } },
-      [_c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -42806,29 +42801,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-sponsor" }, [
-    _c("h2", { staticClass: "title-sponsor color-text" }, [
-      _vm._v("Appartamenti in vetrina")
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _vm.apartments.length > 0
-          ? _c(
+  return _c(
+    "div",
+    { staticClass: "container-sponsor" },
+    [
+      _c("h2", { staticClass: "title-sponsor color-text" }, [
+        _vm._v("Appartamenti in vetrina")
+      ]),
+      _vm._v(" "),
+      _vm.apartments.length > 0
+        ? _c(
+            "VueSlickCarousel",
+            _vm._b(
+              { staticClass: "cont-caro" },
               "VueSlickCarousel",
-              _vm._b(
-                { staticClass: "cont-caro" },
-                "VueSlickCarousel",
-                _vm.settings,
-                false
-              ),
-              _vm._l(_vm.apartments, function(apartment) {
-                return _c("div", { key: apartment.id, staticClass: "box" }, [
+              _vm.settings,
+              false
+            ),
+            _vm._l(_vm.apartments, function(apartment) {
+              return _c(
+                "div",
+                { key: apartment.id, staticClass: "box h-100" },
+                [
                   _c(
                     "div",
-                    { staticClass: "box-container" },
+                    { staticClass: "box-container h-100" },
                     [
                       _c("img", {
                         staticClass: "container-box--img",
@@ -42894,15 +42891,15 @@ var render = function() {
                     ],
                     1
                   )
-                ])
-              }),
-              0
-            )
-          : _vm._e()
-      ],
-      1
-    )
-  ])
+                ]
+              )
+            }),
+            0
+          )
+        : _vm._e()
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

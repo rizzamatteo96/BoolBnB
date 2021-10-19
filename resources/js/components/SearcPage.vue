@@ -119,9 +119,13 @@
         </div>
 
         <div class="text-center mt-5" v-else>
-            <div class="spinner-grow" role="status">
+            <!-- <div class="spinner-grow" role="status">
                 <span class="sr-only">Loading...</span>
-            </div>
+            </div> -->
+
+            <img class="loading-logo" src="/img/boolbeb-white.png" alt="BoolBnb">
+
+
         </div>
 
 
@@ -209,7 +213,7 @@
                 .then(response => {
                     // console.log(response);
                     this.apartments = response.data.results;
-                    this.loading = false;
+                    // this.loading = false;
                 })
                 .catch(e => {
                     console.log(e);
@@ -431,6 +435,17 @@
             
         }
 
+    }
+
+    .loading-logo{
+        height: 50px;
+        animation: logoLoading 1s infinite;
+    }
+
+    @keyframes logoLoading {
+        0% {transform: scale(1);}
+        50% {transform: scale(2);}
+        100% {transform: scale(1);}
     }
 
     // PARTE RESPONSIVE
