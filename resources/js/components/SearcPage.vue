@@ -94,7 +94,9 @@
             <div class="col-12 col-md-6 col-lg-4 p-4" v-for="apartment in apartments" :key="apartment.id">
                 <div class="box">
 
-                    <img class="container-box--img" :src="apartment.image" alt="">
+                    <div class="container-box--img">
+                        <img :src="apartment.image" :alt="apartment.title">
+                    </div>
 
                     <div class="container-description">
 
@@ -102,7 +104,7 @@
 
                         <!-- <p class="container-description--price">Prezzo: {{apartment.daily_price}} €</p> -->
                         <p class="container-description--price">Citta: {{apartment.city}}</p>
-                        <p class="container-box--adress">Indirizzo: {{apartment.address}}, {{apartment.house_num}}</p>
+                        <p class="container-box--address">Indirizzo: {{apartment.address}}, {{apartment.house_num}}</p>
 
                     </div>
 
@@ -337,9 +339,17 @@
                 .container-box--img {
                     width: 100%;
                     height: 250px;
+                    line-height: 250px;
                     // height: 30%;
-                    border-radius: 10px;
-                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                    // border-radius: 10px;
+
+                    img {
+                        max-height: 250px;
+                        width: 100%;
+                        border-radius: 10px;
+                        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                        vertical-align: middle;
+                    }
                 }
 
                 .container-description {

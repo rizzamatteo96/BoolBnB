@@ -7,11 +7,13 @@
 
         <VueSlickCarousel class="cont-caro" v-bind="settings" v-if="apartments.length>0">
 
-            <div class="box h-100" v-for="apartment in apartments" :key="apartment.id">
+            <div class="box" v-for="apartment in apartments" :key="apartment.id">
 
-                <div class="box-container h-100">
+                <div class="box-container">
                     
-                    <img class="container-box--img" :src="apartment.image" :alt="apartment.title">
+                    <div class="container-box--img">
+                        <img :src="apartment.image" :alt="apartment.title">
+                    </div>
 
                     <div class="container-description" >
 
@@ -162,22 +164,48 @@
                 text-align: center;
 
                 .box-container {
-                    width: 100%;
-                    padding-bottom: 5px;
-                    border-radius: 20px;
-                    box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
+                padding: 10px;
+                height: 100%;
+                // width: 400px;
+                box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
+                margin: 20px 0px;
+                border-radius: 20px;
+                text-align: center;
                 }
 
                 .container-box--img {
                     width: 100%;
                     height: 250px;
-                    border-radius: 10px;
+                    line-height: 250px;
+                    vertical-align: middle;
+                    position: relative;
+                    
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        max-height: 250px;
+                        width: 100%;
+                        border-radius: 10px;
+                        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                        vertical-align: middle;
+                    }
                 }
 
                 .container-description {
                     width: 100%;
                     text-align: center;
                     padding: 10px;
+
+                    .container-description--title{
+                        max-height: 70px;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        white-space: normal;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
 
                     .info-text {
                         font-weight: bold;
