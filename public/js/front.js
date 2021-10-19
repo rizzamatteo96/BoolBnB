@@ -42194,7 +42194,7 @@ var render = function() {
       [
         _c("img", {
           staticClass: "container--logo--image--mobile",
-          attrs: { src: "img/boolbeb-icona.svg", alt: "BoolBnb" }
+          attrs: { src: "/img/boolbeb-icona.svg", alt: "BoolBnb" }
         }),
         _vm._v(" "),
         _vm._m(1)

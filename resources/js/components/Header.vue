@@ -15,7 +15,7 @@
         <!-- inizio  menu mobile -->
         <div class="container--logo-mobile" @click="myFilter">
             
-            <img class="container--logo--image--mobile" src="img/boolbeb-icona.svg" alt="BoolBnb">
+            <img class="container--logo--image--mobile" src="/img/boolbeb-icona.svg" alt="BoolBnb">
 
             <span><i class="fas fa-caret-down"></i></span>
        
