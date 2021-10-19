@@ -17,9 +17,9 @@
         </div>
     </div>
 
-    <button class="btn btn-outline-dark" onclick="history.go(-1);"><i class="fas fa-arrow-left mr-2"></i> Indietro</button>
+    <button class="btn btn-outline-dark mb-2" onclick="history.go(-1);"><i class="fas fa-arrow-left mr-2"></i> Indietro</button>
 
-    <button type="button" class="btn btn-danger d-md-none" data-toggle="modal" data-target="#exampleModal{{$message['id']}}">Elimina</button>
+    <button type="button" class="btn btn-danger d-md-none mb-2" data-toggle="modal" data-target="#exampleModal{{$message['id']}}">Elimina</button>
 
     {{-- pop-up --}}
     <form action="{{route('userreg.messages.destroy',  $message['id'])}}" method="POST" class="d-inline-block">
