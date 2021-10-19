@@ -87,7 +87,7 @@
 
         </div>
         
-        <h2 class="title-search">Appartamenti nella zona di: <span id="searched-city"></span></h2>
+        <h2 class="title-search">Appartamenti nella zona di: <span id="searched-city">{{oldInput}}</span></h2>
 
         <div class="box-container row" v-if="!loading">
 
@@ -189,7 +189,6 @@
                     // console.log(response.data.addresses[0].address.municipality);
                     this.oldInput = response.data.addresses[0].address.municipality;
                     // console.log(this.oldInput);
-                    document.getElementById('searched-city').innerHTML = this.oldInput;
                     this.searchBox();
                 })
                 .catch(e => {
