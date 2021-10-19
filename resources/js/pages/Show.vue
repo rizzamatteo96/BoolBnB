@@ -194,7 +194,7 @@
       margin: 0 auto;
       border-radius: 20px;
       padding: 30px;
-      margin-top: 30px;
+      margin: 30px auto;
       display: flex;
 
       .services {
