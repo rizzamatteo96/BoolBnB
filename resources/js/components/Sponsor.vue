@@ -198,7 +198,7 @@
                     padding: 10px;
 
                     .container-description--title{
-                        max-height: 70px;
+                        height: 70px;
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 2;
