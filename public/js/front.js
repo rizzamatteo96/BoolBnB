@@ -2539,6 +2539,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 //import Login from '@/components/Login.vue'
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Header',
@@ -3073,6 +3074,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -3090,9 +3093,15 @@ __webpack_require__.r(__webpack_exports__);
         "speed": 2000,
         "autoplaySpeed": 4000,
         "responsive": [{
-          "breakpoint": 968,
+          "breakpoint": 992,
           "settings": {
             "slidesToShow": 1,
+            "arrows": false
+          }
+        }, {
+          "breakpoint": 1200,
+          "settings": {
+            "slidesToShow": 2,
             "arrows": false
           }
         }]
@@ -8457,7 +8466,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".ms_d-flex[data-v-1c94c414] {\n  display: flex;\n}\n.container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 30%;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  height: 70%;\n  text-align: center;\n  margin-top: 20px;\n  word-wrap: break-word;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n  width: 33.3333333333%;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .number-distance[data-v-1c94c414] {\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n    width: 100%;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".ms_d-flex[data-v-1c94c414] {\n  display: flex;\n}\n.container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  height: 100%;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n  width: 33.3333333333%;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .number-distance[data-v-1c94c414] {\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n    width: 100%;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42191,18 +42200,25 @@ var render = function() {
   return _c("div", { staticClass: "container-nav" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container--logo-mobile", on: { click: _vm.myFilter } },
-      [
-        _c("img", {
-          staticClass: "container--logo--image--mobile",
-          attrs: { src: "/img/boolbeb-icona.svg", alt: "BoolBnb" }
-        }),
-        _vm._v(" "),
-        _vm._m(1)
-      ]
-    ),
+    _vm.user == "" && !_vm.loading
+      ? _c("div", { staticClass: "w-100" }, [
+          _c(
+            "div",
+            {
+              staticClass: "container--logo-mobile",
+              on: { click: _vm.myFilter }
+            },
+            [
+              _c("img", {
+                staticClass: "container--logo--image--mobile",
+                attrs: { src: "/img/boolbeb-icona.svg", alt: "BoolBnb" }
+              }),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
+        ])
+      : _vm._e(),
     _vm._v(" "),
     _vm.user == "" && !_vm.loading
       ? _c("div", [
@@ -42641,12 +42657,12 @@ var render = function() {
                 "div",
                 {
                   key: apartment.id,
-                  staticClass: "col-12 col-md-6 col-lg-4 h-100 p-4"
+                  staticClass: "col-12 col-md-6 col-lg-4 p-4"
                 },
                 [
                   _c(
                     "div",
-                    { staticClass: "box h-100 m-auto" },
+                    { staticClass: "box" },
                     [
                       _c("img", {
                         staticClass: "container-box--img",
@@ -42658,16 +42674,6 @@ var render = function() {
                           "h2",
                           { staticClass: "container-description--title" },
                           [_vm._v(_vm._s(apartment.title))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          { staticClass: "container-description--price" },
-                          [
-                            _vm._v(
-                              "Prezzo: " + _vm._s(apartment.daily_price) + " €"
-                            )
-                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -42800,113 +42806,103 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-sponsor" },
-    [
-      _c("h2", { staticClass: "title-sponsor color-text" }, [
-        _vm._v("Appartamenti in vetrina")
-      ]),
-      _vm._v(" "),
-      _vm.apartments.length > 0
-        ? _c(
-            "VueSlickCarousel",
-            _vm._b(
-              { staticClass: "cont-caro" },
+  return _c("div", { staticClass: "container-sponsor" }, [
+    _c("h2", { staticClass: "title-sponsor color-text" }, [
+      _vm._v("Appartamenti in vetrina")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm.apartments.length > 0
+          ? _c(
               "VueSlickCarousel",
-              _vm.settings,
-              false
-            ),
-            _vm._l(_vm.apartments, function(apartment) {
-              return _c("div", { key: apartment.id, staticClass: "box" }, [
-                _c(
-                  "div",
-                  { staticClass: "box-container" },
-                  [
-                    _c("img", {
-                      staticClass: "container-box--img",
-                      attrs: { src: apartment.image, alt: apartment.title }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "container-description" }, [
+              _vm._b(
+                { staticClass: "cont-caro" },
+                "VueSlickCarousel",
+                _vm.settings,
+                false
+              ),
+              _vm._l(_vm.apartments, function(apartment) {
+                return _c("div", { key: apartment.id, staticClass: "box" }, [
+                  _c(
+                    "div",
+                    { staticClass: "box-container" },
+                    [
+                      _c("img", {
+                        staticClass: "container-box--img",
+                        attrs: { src: apartment.image, alt: apartment.title }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "container-description" }, [
+                        _c(
+                          "h2",
+                          {
+                            staticClass:
+                              "color-text container-description--title"
+                          },
+                          [_vm._v(_vm._s(apartment.title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "color-text container-box--adress" },
+                          [
+                            _c("span", { staticClass: "info-text" }, [
+                              _vm._v("Citta: ")
+                            ]),
+                            _vm._v(" " + _vm._s(apartment.city))
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "color-text container-box--adress" },
+                          [
+                            _c("span", { staticClass: "info-text" }, [
+                              _vm._v("Via: ")
+                            ]),
+                            _vm._v(
+                              " " +
+                                _vm._s(apartment.address) +
+                                ", " +
+                                _vm._s(apartment.house_num)
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
                       _c(
-                        "h2",
+                        "router-link",
                         {
-                          staticClass: "color-text container-description--title"
+                          staticClass: "btn btn-outline-light",
+                          attrs: {
+                            to: {
+                              name: "apartment-details",
+                              params: { slug: apartment.slug }
+                            }
+                          },
+                          nativeOn: {
+                            click: function($event) {
+                              return _vm.scrollToTop()
+                            }
+                          }
                         },
-                        [_vm._v(_vm._s(apartment.title))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        {
-                          staticClass: "color-text container-description--price"
-                        },
-                        [
-                          _c("span", { staticClass: "info-text" }, [
-                            _vm._v("Prezzo: ")
-                          ]),
-                          _vm._v(" " + _vm._s(apartment.daily_price) + " €")
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        { staticClass: "color-text container-box--adress" },
-                        [
-                          _c("span", { staticClass: "info-text" }, [
-                            _vm._v("Citta: ")
-                          ]),
-                          _vm._v(" " + _vm._s(apartment.city))
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        { staticClass: "color-text container-box--adress" },
-                        [
-                          _c("span", { staticClass: "info-text" }, [
-                            _vm._v("Via: ")
-                          ]),
-                          _vm._v(
-                            " " +
-                              _vm._s(apartment.address) +
-                              ", " +
-                              _vm._s(apartment.house_num)
-                          )
-                        ]
+                        [_vm._v("Visualizza dettagli")]
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "btn btn-outline-light",
-                        attrs: {
-                          to: {
-                            name: "apartment-details",
-                            params: { slug: apartment.slug }
-                          }
-                        },
-                        nativeOn: {
-                          click: function($event) {
-                            return _vm.scrollToTop()
-                          }
-                        }
-                      },
-                      [_vm._v("Visualizza dettagli")]
-                    )
-                  ],
-                  1
-                )
-              ])
-            }),
-            0
-          )
-        : _vm._e()
-    ],
-    1
-  )
+                    ],
+                    1
+                  )
+                ])
+              }),
+              0
+            )
+          : _vm._e()
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

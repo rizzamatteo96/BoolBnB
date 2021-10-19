@@ -100,7 +100,7 @@
 
                         <h2 class="container-description--title">{{apartment.title}}</h2>
 
-                        <p class="container-description--price">Prezzo: {{apartment.daily_price}} €</p>
+                        <!-- <p class="container-description--price">Prezzo: {{apartment.daily_price}} €</p> -->
                         <p class="container-description--price">Citta: {{apartment.city}}</p>
                         <p class="container-box--adress">Indirizzo: {{apartment.address}}, {{apartment.house_num}}</p>
 
