@@ -12,41 +12,36 @@
         </div>
         <!-- fine logo  -->
 
+        <!-- inizio  menu mobile -->
+        <div class="container--logo-mobile" @click="myFilter">
+            
+            <img class="container--logo--image--mobile" src="/img/boolbeb-icona.svg" alt="BoolBnb">
 
-
-
-
-        <div class="if-container" v-if="user == '' && !loading">
-            <!-- inizio  menu mobile -->
-            <div class="container--logo-mobile" @click="myFilter">
-                
-                <img class="container--logo--image--mobile" src="/img/boolbeb-icona.svg" alt="BoolBnb">
-
-                <span><i class="fas fa-caret-down"></i></span>
-        
-            </div>
-            <!-- fine  menu mobile -->
-
-            <!-- inizio  menu link -->
-            <ul class="container--menu" :class="{active: isActive}">
-
-                <li class="container--menu--list">
-                    
-                    <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" >login</a>
-                    
-                </li>
-
-                <li class="container--menu--list">
-                    
-                    <a class="container--menu--list--link" href="http://localhost:8000/register">register</a>
-                    
-                </li>
-
-            </ul>
-            <!-- fine  menu link -->
+            <span @click="prova()"><i class="fas fa-caret-down"></i></span>
+    
         </div>
+        <!-- fine  menu mobile -->
 
-        <div v-if="user != '' && !loading" class="container--menu" :class="{active: isActive}">
+
+        <!-- inizio  menu link -->
+        <ul class="container--menu" :class="{active: isActive}" v-if="!isUserLogged && !loading">
+
+            <li class="container--menu--list">
+                
+                <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" >login</a>
+                
+            </li>
+
+            <li class="container--menu--list">
+                
+                <a class="container--menu--list--link" href="http://localhost:8000/register">register</a>
+                
+            </li>
+
+        </ul>
+        <!-- fine  menu link -->
+
+        <div v-if="isUserLogged && !loading" class="container--menu" :class="{active: isActive}">
             <div class="container--menu--list">
                 <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" ><i class="fas fa-user-circle"></i> {{user.name}} </a>
             </div>
@@ -79,14 +74,22 @@
             
                 isActive: false,
                 user: '',
-                loading: true
+                loading: true,
+                isUserLogged: false
             }
         
         },
-        mounted(){
+        created(){
             this.isLogged()
         },
         methods: {
+
+            prova(){
+                console.log(this.user);
+                console.log(this.loading);
+                console.log(this.isUserLogged);
+                console.log(this.isActive);
+            },
 
             // Funzione per attivare menu mobile
             myFilter: function() {
@@ -100,6 +103,9 @@
                         this.user = response.data.user;
                      })
                      .finally(()=>{
+                        if(this.user != ''){
+                            this.isUserLogged = true;
+                        }
                         this.loading = false;
                      });
             }
@@ -184,10 +190,6 @@
 
     // PARTE RESPONSIVE
     @media (max-width: 968px) {
-
-        .if-container{
-            width: 100%;
-        }
 
         .container-nav {
             display: flex;
