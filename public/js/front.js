@@ -2787,6 +2787,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearcPage',
@@ -2852,7 +2854,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(this.apiUrl + this.$route.params.slug + '&&' + this.filters).then(function (response) {
         // console.log(response);
-        _this2.apartments = response.data.results; // this.loading = false;
+        _this2.apartments = response.data.results;
+        _this2.loading = false;
       })["catch"](function (e) {
         console.log(e);
       }); // Api to get services from DB
@@ -3039,6 +3042,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.css");
 /* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_theme_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel-theme.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel-theme.css");
+//
+//
 //
 //
 //
@@ -8467,7 +8472,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".ms_d-flex[data-v-1c94c414] {\n  display: flex;\n}\n.container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  height: 100%;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n  width: 33.3333333333%;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .number-distance[data-v-1c94c414] {\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n.loading-logo[data-v-1c94c414] {\n  height: 50px;\n  -webkit-animation: logoLoading-data-v-1c94c414 1s infinite;\n          animation: logoLoading-data-v-1c94c414 1s infinite;\n}\n@-webkit-keyframes logoLoading-data-v-1c94c414 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(2);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes logoLoading-data-v-1c94c414 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(2);\n}\n100% {\n    transform: scale(1);\n}\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n    width: 100%;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".ms_d-flex[data-v-1c94c414] {\n  display: flex;\n}\n.container-search[data-v-1c94c414] {\n  color: white;\n  width: 90%;\n  margin: 0px auto 70px;\n  padding-top: 100px;\n}\n.container-search .title-search[data-v-1c94c414] {\n  text-align: center;\n  margin-top: 50px;\n  text-transform: uppercase;\n}\n.container-search .box-container[data-v-1c94c414] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin: 0 auto;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n  padding: 10px;\n  height: 100%;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .box-container .box .container-box--img[data-v-1c94c414] {\n  width: 100%;\n  height: 250px;\n  line-height: 250px;\n}\n.container-search .box-container .box .container-box--img img[data-v-1c94c414] {\n  max-height: 250px;\n  width: 100%;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n  vertical-align: middle;\n}\n.container-search .box-container .box .container-description[data-v-1c94c414] {\n  display: block;\n  text-align: center;\n  margin-top: 20px;\n}\n.container-search .container-form[data-v-1c94c414] {\n  background-color: rgba(0, 0, 0, 0.267);\n  height: 100%;\n  width: 100%;\n  padding: 20px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n  width: 33.3333333333%;\n}\n.container-search .container-form .container-filter .filter .title-filter[data-v-1c94c414] {\n  display: block;\n}\n.container-search .container-form .container-filter .filter input[data-v-1c94c414] {\n  width: 47px;\n  height: 30px;\n  border-radius: 10px;\n  padding: 5px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .number-range[data-v-1c94c414] {\n  margin: 0px 20px;\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .number-distance[data-v-1c94c414] {\n  width: 20px;\n}\n.container-search .container-form .container-filter .filter .button-filter[data-v-1c94c414] {\n  border-radius: 20%;\n  padding: 5px 10px;\n  border: none;\n}\n.container-search .container-form .container-filter .filter .filter-range[data-v-1c94c414] {\n  line-height: middle;\n  width: 90px;\n  height: 20px;\n  vertical-align: middle;\n  margin: 0px 10px;\n}\n.container-search .container-form .container-services[data-v-1c94c414] {\n  margin-top: 30px;\n  display: flex;\n  flex-flow: wrap;\n}\n.container-search .container-form .container-services ul[data-v-1c94c414] {\n  list-style: none;\n}\n.container-search .container-form .container-services ul li[data-v-1c94c414] {\n  margin: 0px 20px;\n}\n.container-search .container-form .title-search[data-v-1c94c414] {\n  text-transform: uppercase;\n  font-size: 30px;\n}\n.loading-logo[data-v-1c94c414] {\n  height: 50px;\n  -webkit-animation: logoLoading-data-v-1c94c414 1s infinite;\n          animation: logoLoading-data-v-1c94c414 1s infinite;\n}\n@-webkit-keyframes logoLoading-data-v-1c94c414 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(2);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes logoLoading-data-v-1c94c414 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(2);\n}\n100% {\n    transform: scale(1);\n}\n}\n@media (max-width: 968px) {\n.container-search[data-v-1c94c414] {\n    padding-top: 150px;\n}\n.container-search .container-form .container-filter[data-v-1c94c414] {\n    display: block;\n}\n.container-search .container-form .container-filter .filter[data-v-1c94c414] {\n    margin: 20px 0px;\n    width: 100%;\n}\n.container-search .box-container[data-v-1c94c414] {\n    width: 90%;\n}\n.container-search .box-container .box[data-v-1c94c414] {\n    word-wrap: break-word;\n    width: 100%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8515,7 +8520,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-sponsor[data-v-0e0d5f7f] {\n  width: 90%;\n  height: 700px;\n  margin: 100px auto;\n  word-wrap: break-word;\n}\n.container-sponsor .color-text[data-v-0e0d5f7f] {\n  color: #c9c9c9;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n  text-transform: uppercase;\n  text-align: center;\n  font-size: 50px;\n  width: 100%;\n}\n.container-sponsor .cont-caro[data-v-0e0d5f7f] {\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n}\n.container-sponsor .cont-caro .box[data-v-0e0d5f7f] {\n  padding: 50px;\n  text-align: center;\n}\n.container-sponsor .cont-caro .box .box-container[data-v-0e0d5f7f] {\n  width: 100%;\n  padding-bottom: 5px;\n  border-radius: 20px;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n}\n.container-sponsor .cont-caro .box .container-box--img[data-v-0e0d5f7f] {\n  width: 100%;\n  height: 250px;\n  border-radius: 10px;\n}\n.container-sponsor .cont-caro .box .container-description[data-v-0e0d5f7f] {\n  width: 100%;\n  text-align: center;\n  padding: 10px;\n}\n.container-sponsor .cont-caro .box .container-description .info-text[data-v-0e0d5f7f] {\n  font-weight: bold;\n}\n@media (max-width: 968px) {\n.container-sponsor[data-v-0e0d5f7f] {\n    padding: 5px;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n    font-size: 39px;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-sponsor[data-v-0e0d5f7f] {\n  width: 90%;\n  height: 700px;\n  margin: 100px auto;\n  word-wrap: break-word;\n}\n.container-sponsor .color-text[data-v-0e0d5f7f] {\n  color: #c9c9c9;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n  text-transform: uppercase;\n  text-align: center;\n  font-size: 50px;\n  width: 100%;\n}\n.container-sponsor .cont-caro[data-v-0e0d5f7f] {\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n}\n.container-sponsor .cont-caro .box[data-v-0e0d5f7f] {\n  padding: 50px;\n  text-align: center;\n}\n.container-sponsor .cont-caro .box .box-container[data-v-0e0d5f7f] {\n  padding: 10px;\n  height: 100%;\n  box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;\n  margin: 20px 0px;\n  border-radius: 20px;\n  text-align: center;\n}\n.container-sponsor .cont-caro .box .container-box--img[data-v-0e0d5f7f] {\n  width: 100%;\n  height: 250px;\n  line-height: 250px;\n  vertical-align: middle;\n  position: relative;\n}\n.container-sponsor .cont-caro .box .container-box--img img[data-v-0e0d5f7f] {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  max-height: 250px;\n  width: 100%;\n  border-radius: 10px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n  vertical-align: middle;\n}\n.container-sponsor .cont-caro .box .container-description[data-v-0e0d5f7f] {\n  width: 100%;\n  text-align: center;\n  padding: 10px;\n}\n.container-sponsor .cont-caro .box .container-description .container-description--title[data-v-0e0d5f7f] {\n  max-height: 70px;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 2;\n  white-space: normal;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.container-sponsor .cont-caro .box .container-description .info-text[data-v-0e0d5f7f] {\n  font-weight: bold;\n}\n@media (max-width: 968px) {\n.container-sponsor[data-v-0e0d5f7f] {\n    padding: 5px;\n}\n.container-sponsor .title-sponsor[data-v-0e0d5f7f] {\n    font-size: 39px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42665,10 +42670,11 @@ var render = function() {
                     "div",
                     { staticClass: "box" },
                     [
-                      _c("img", {
-                        staticClass: "container-box--img",
-                        attrs: { src: apartment.image, alt: "" }
-                      }),
+                      _c("div", { staticClass: "container-box--img" }, [
+                        _c("img", {
+                          attrs: { src: apartment.image, alt: apartment.title }
+                        })
+                      ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "container-description" }, [
                         _c(
@@ -42683,7 +42689,7 @@ var render = function() {
                           [_vm._v("Citta: " + _vm._s(apartment.city))]
                         ),
                         _vm._v(" "),
-                        _c("p", { staticClass: "container-box--adress" }, [
+                        _c("p", { staticClass: "container-box--address" }, [
                           _vm._v(
                             "Indirizzo: " +
                               _vm._s(apartment.address) +
@@ -42819,80 +42825,76 @@ var render = function() {
               false
             ),
             _vm._l(_vm.apartments, function(apartment) {
-              return _c(
-                "div",
-                { key: apartment.id, staticClass: "box h-100" },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "box-container h-100" },
-                    [
+              return _c("div", { key: apartment.id, staticClass: "box" }, [
+                _c(
+                  "div",
+                  { staticClass: "box-container" },
+                  [
+                    _c("div", { staticClass: "container-box--img" }, [
                       _c("img", {
-                        staticClass: "container-box--img",
                         attrs: { src: apartment.image, alt: apartment.title }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "container-description" }, [
-                        _c(
-                          "h2",
-                          {
-                            staticClass:
-                              "color-text container-description--title"
-                          },
-                          [_vm._v(_vm._s(apartment.title))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          { staticClass: "color-text container-box--adress" },
-                          [
-                            _c("span", { staticClass: "info-text" }, [
-                              _vm._v("Citta: ")
-                            ]),
-                            _vm._v(" " + _vm._s(apartment.city))
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          { staticClass: "color-text container-box--adress" },
-                          [
-                            _c("span", { staticClass: "info-text" }, [
-                              _vm._v("Via: ")
-                            ]),
-                            _vm._v(
-                              " " +
-                                _vm._s(apartment.address) +
-                                ", " +
-                                _vm._s(apartment.house_num)
-                            )
-                          ]
-                        )
-                      ]),
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "container-description" }, [
+                      _c(
+                        "h2",
+                        {
+                          staticClass: "color-text container-description--title"
+                        },
+                        [_vm._v(_vm._s(apartment.title))]
+                      ),
                       _vm._v(" "),
                       _c(
-                        "router-link",
-                        {
-                          staticClass: "btn btn-outline-light",
-                          attrs: {
-                            to: {
-                              name: "apartment-details",
-                              params: { slug: apartment.slug }
-                            }
-                          },
-                          nativeOn: {
-                            click: function($event) {
-                              return _vm.scrollToTop()
-                            }
+                        "p",
+                        { staticClass: "color-text container-box--adress" },
+                        [
+                          _c("span", { staticClass: "info-text" }, [
+                            _vm._v("Citta: ")
+                          ]),
+                          _vm._v(" " + _vm._s(apartment.city))
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticClass: "color-text container-box--adress" },
+                        [
+                          _c("span", { staticClass: "info-text" }, [
+                            _vm._v("Via: ")
+                          ]),
+                          _vm._v(
+                            " " +
+                              _vm._s(apartment.address) +
+                              ", " +
+                              _vm._s(apartment.house_num)
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-outline-light",
+                        attrs: {
+                          to: {
+                            name: "apartment-details",
+                            params: { slug: apartment.slug }
                           }
                         },
-                        [_vm._v("Visualizza dettagli")]
-                      )
-                    ],
-                    1
-                  )
-                ]
-              )
+                        nativeOn: {
+                          click: function($event) {
+                            return _vm.scrollToTop()
+                          }
+                        }
+                      },
+                      [_vm._v("Visualizza dettagli")]
+                    )
+                  ],
+                  1
+                )
+              ])
             }),
             0
           )

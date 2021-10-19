@@ -215,7 +215,7 @@
                 .then(response => {
                     // console.log(response);
                     this.apartments = response.data.results;
-                    // this.loading = false;
+                    this.loading = false;
                 })
                 .catch(e => {
                     console.log(e);
