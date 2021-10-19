@@ -179,6 +179,7 @@
                     line-height: 250px;
                     vertical-align: middle;
                     position: relative;
+                    z-index: -1;
                     
                     img {
                         position: absolute;
