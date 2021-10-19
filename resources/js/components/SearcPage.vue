@@ -91,8 +91,8 @@
 
         <div class="box-container row" v-if="!loading">
 
-            <div class="col-12 col-md-6 col-lg-4 h-100 p-4" v-for="apartment in apartments" :key="apartment.id">
-                <div class="box h-100 m-auto">
+            <div class="col-12 col-md-6 col-lg-4 p-4" v-for="apartment in apartments" :key="apartment.id">
+                <div class="box">
 
                     <img class="container-box--img" :src="apartment.image" alt="">
 
@@ -322,6 +322,7 @@
         
             .box {
                 padding: 10px;
+                height: 100%;
                 // width: 400px;
                 box-shadow: rgba(0, 0, 0, 0.178) 1.5px 3px 3px 1.5px;
                 margin: 20px 0px;
@@ -331,18 +332,18 @@
 
                 .container-box--img {
                     width: 100%;
-                    // height: 250px;
-                    height: 30%;
+                    height: 250px;
+                    // height: 30%;
                     border-radius: 10px;
                     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                 }
 
                 .container-description {
                     display: block;
-                    height: calc(100% - 30%);
+                    // height: calc(100% - 30%);
                     text-align: center;
                     margin-top: 20px;
-                    word-wrap: break-word;
+                    // word-wrap: break-word;
 
                 }
             }
