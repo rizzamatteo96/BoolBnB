@@ -17,7 +17,7 @@
             
             <img class="container--logo--image--mobile" src="/img/boolbeb-icona.svg" alt="BoolBnb">
 
-            <span @click="prova()"><i class="fas fa-caret-down"></i></span>
+            <span><i class="fas fa-caret-down"></i></span>
     
         </div>
         <!-- fine  menu mobile -->
@@ -25,6 +25,12 @@
 
         <!-- inizio  menu link -->
         <ul class="container--menu" :class="{active: isActive}" v-if="!isUserLogged && !loading">
+
+            <li class="container--menu--list ">
+            
+                <a class="container--menu--list--link--home" href="http://localhost:8000">Home</a>
+                
+            </li>
 
             <li class="container--menu--list">
                 
@@ -42,6 +48,13 @@
         <!-- fine  menu link -->
 
         <div v-if="isUserLogged && !loading" class="container--menu" :class="{active: isActive}">
+
+            <div class="container--menu--list">
+            
+                <a class="container--menu--list--link--home" href="http://localhost:8000">Home</a>
+                
+            </div>
+
             <div class="container--menu--list">
                 <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" ><i class="fas fa-user-circle"></i> {{user.name}} </a>
             </div>
@@ -161,6 +174,10 @@
                 &:hover {
                     transition: 0.6s ease-out;
                     transform: scale(2);
+                }
+
+                .container--menu--list--link--home{
+                    display: none;
                 }
 
                 .container--menu--list--link {

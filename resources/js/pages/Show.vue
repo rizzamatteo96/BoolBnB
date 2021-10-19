@@ -1,6 +1,6 @@
 <template>
 
-  <div class="container-show">
+  <div class="container-show mb-2">
 
     <div class="container--img--desc">
 
