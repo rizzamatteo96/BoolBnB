@@ -345,7 +345,7 @@
                     height: 250px;
                     line-height: 250px;
                     position: relative;
-                    z-index: -1;
+                    overflow: hidden;
                     // height: 30%;
                     // border-radius: 10px;
 
