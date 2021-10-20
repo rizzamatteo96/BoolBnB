@@ -8,36 +8,26 @@
            
             <p class="description">Condividi il tuo spazio per guardare <br> qualcosa in piu e cogiere nuove opportunita.</p>
            
-            <a href="#accept" class="btn btn-outline-light btn-lg" @click="ActiveLog = !ActiveLog">Scopri di piu</a>
+            <a class="btn btn-outline-light btn-lg" @click="ActiveLog = !ActiveLog">Scopri di piu</a>
 
             <div class="accept" id="accept" :class="(ActiveLog === true) ? 'active' : 'not-active'">
-               
-                <h2>Accetta</h2>
-                
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia illo, omnis quos magni totam quibusdam. Molestias, quisquam obcaecati aliquam odit labore beatae est sunt debitis, iste, sed veniam. Odit, adipisci?
-                Doloribus maiores voluptates totam ea, iure laborum similique odio esse nisi ipsum eum autem quos temporibus numquam, quasi officia tenetur cumque deleniti rem. Explicabo sit a est perferendis minus cumque.
-                Corporis architecto fuga molestiae quia facilis id atque nihil totam hic non! Repellendus dolores aperiam necessitatibus neque enim at corrupti quidem laboriosam ex! Iure ratione fugit, illum nesciunt esse qui.
-                Quidem reprehenderit, quos id saepe nihil alias voluptatem! Iure repudiandae nobis laborum, cum saepe commodi tempore delectus quasi earum? Doloremque officiis vel perferendis odio animi accusantium minima consequuntur quis quibusdam?
-                Architecto explicabo id quo magnam possimus maiores molestiae neque maxime incidunt, quasi amet, tempora obcaecati, saepe delectus. Enim veniam placeat dolor in natus, similique recusandae optio earum, ab, neque asperiores.
-                Recusandae assumenda molestias velit rerum qui repellat nulla labore dolor aliquid excepturi mollitia voluptatibus voluptates exercitationem, necessitatibus reiciendis facere esse in debitis unde quaerat. Debitis amet eius minima commodi voluptates?
-                Hic atque exercitationem adipisci modi delectus repudiandae. Quae in, illum sunt repudiandae officiis recusandae rem nisi excepturi explicabo quisquam! Fugiat distinctio explicabo eaque nemo ipsa ex optio nostrum reiciendis similique.
-                Blanditiis officiis ducimus fugiat ipsum eligendi voluptate mollitia, harum quidem ad esse consectetur tempora suscipit, expedita temporibus distinctio. Vitae consequuntur illo placeat ipsam tenetur libero commodi minus? Harum, reiciendis ratione?
-                At dignissimos, illum eaque ullam sint corporis. Recusandae ducimus facilis eum magnam asperiores culpa hic, veritatis facere distinctio eveniet, neque laudantium quis cum, quo rem quod illo. Id, animi enim.
-                Possimus quod molestias error odio excepturi corporis vero similique dolor ad numquam fugiat incidunt corrupti veritatis laudantium, praesentium fuga voluptates modi aperiam distinctio facilis! Sint a deleniti dolor esse veritatis.
-                Velit, voluptatibus alias nihil accusantium soluta, error numquam exercitationem recusandae voluptate animi repellendus debitis necessitatibus dolorem facere optio, aliquid enim repellat maiores amet libero at molestiae voluptas! Veritatis, cumque ducimus?
-                Minima facere id hic ullam? Illo expedita fuga molestiae perspiciatis provident voluptates debitis, possimus asperiores ab optio, voluptate pariatur dolore, quam eius eum! Fugit repellat adipisci nam corrupti. Reprehenderit, maxime?
-                Pariatur, hic! Rerum sunt cumque, ratione maiores obcaecati vel aliquid ullam enim nobis temporibus ea alias cum dolor sequi? Nam eligendi porro laborum suscipit repudiandae aperiam ad tempore provident dicta.
-                Quia harum, inventore, assumenda facilis consequatur magni ex voluptas dolore natus, facere voluptatum ipsam minus. Deleniti assumenda odio odit, doloribus quod repudiandae iste facilis accusantium asperiores magnam animi ratione error!
-                Provident iusto porro doloribus reiciendis ab earum cumque quidem quas, culpa dolores voluptates quaerat, pariatur quia ratione! Tenetur animi assumenda alias quas cupiditate quam laboriosam aut pariatur dolorem! Saepe, ea.
-                Quidem in veniam architecto eveniet consequatur itaque odit sapiente, dicta minima omnis doloribus reiciendis autem, ab, sunt libero exercitationem quam esse cumque. Alias molestias illo voluptates odio. Tempora, veritatis voluptates!
-                Rerum, consectetur quas repellat deleniti possimus sed enim dolore voluptates, voluptas quia cum accusantium voluptatibus commodi ipsa soluta reiciendis pariatur sequi atque harum. Animi magni incidunt mollitia? Laborum, odio aut.
-                Temporibus debitis illo deserunt a quam tempora, amet provident corporis minus dignissimos. Quod reprehenderit, saepe tempora voluptatem repellat nam omnis error ex voluptate numquam tenetur nobis, eveniet ducimus natus ut.
-                Quisquam voluptatem sunt explicabo accusamus aspernatur maxime quibusdam vitae totam accusantium! Odio, voluptas iusto officiis quibusdam quo, reprehenderit dolorum laborum facilis rem deserunt beatae debitis nesciunt unde modi accusamus iure.
-                Dignissimos ad eveniet laborum, facere odio cumque porro repudiandae sapiente illo eius dicta, quaerat amet fuga vero voluptates possimus accusamus praesentium quidem incidunt odit beatae nobis adipisci ipsam sint? Omnis.</p>
-                
-                <a class="btn btn-outline-light m-3 btn-lg" @click="ActiveLog = !ActiveLog" href="">Rifiuta</a>
-                
-                <a class="btn btn-outline-light m-3 btn-lg" href="http://localhost:8000/userreg/apartments/create">Acconsento</a>
+            
+                <div class="container-md ms_overflow">
+                    <h2>Termini di servizio per gli utenti europei</h2>
+                    
+                    <p>
+                        I consumatori possono accedere alla piattaforma della Commissione europea di risoluzione online delle controversie da qui: https://ec.europa.eu/consumers/odr. Si prega di notare che BoolBnB non è impegnata o tenuta a utilizzare un organismo per la risoluzione delle controversie alternativo per risolvere le controversie coi consumatori. Ultimo aggiornamento: October 20, 2021. Grazie per aver scelto di utilizzare BoolBnB! 
+                        I presenti Termini del servizio per Utenti europei ("Termini") costituiscono un contratto giuridicamente vincolante tra te e BoolBnB, che regola l'utilizzo dei siti web, delle applicazioni e di altre offerte di BoolBnB (collettivamente, la "Piattaforma BoolBnB"). Quando utilizzati nei presenti Termini, "BoolBnB", "noi", "ci" o "nostro" si riferiscono all'entità BoolBnB di cui all'Allegato 1 con cui stai stipulando un contratto.
+                        La Piattaforma BoolBnB offre un luogo online che consente agli utenti ("Members") di pubblicare, offrire, cercare e prenotare servizi. I membri che pubblicano e offrono servizi sono gli "Host" mentre i membri che cercano, prenotano o utilizzano i servizi sono gli "Ospiti". Gli Host propongono alloggi ("Alloggi"), attività, escursioni ed eventi ("Esperienze"), nonché una varietà di viaggi e altri servizi (collettivamente, "Servizi dell'Host" e ciascuna offerta di Servizi dell'Host costituisce un "Annuncio"). Devi registrare un account per utilizzare molte funzioni della Piattaforma BoolBnB e mantenere accurate le informazioni del tuo account. In qualità di fornitore della Piattaforma BoolBnB, BoolBnB non possiede, controlla, offre né gestisce alcun Annuncio o Servizio dell'Host. BoolBnB non è una parte contraente dei contratti stipulati direttamente tra Host e Ospiti, né un agente immobiliare, un assicuratore o un organizzatore o venditore di pacchetti turistici ai sensi della direttiva (UE) 2015/2302. BoolBnB non agisce in qualità di agente per nessun Membro, ad eccezione di quanto specificato nei Termini del servizio di pagamento ("Termini di pagamento"). Per saperne di più sul ruolo di BoolBnB, vai alla Sezione 16.
+                        Altri termini e politiche integrano i presenti Termini, come la nostra Informativa sulla privacy, che descrive il modo in cui raccogliamo e utilizziamo i dati personali, e i nostri Termini di pagamento, che regolano qualsiasi servizio di pagamento fornito ai Membri dalle entità di pagamento di BoolBnB ("BoolBnB Payments").
+
+                        Se sei un Host, è tua responsabilità comprendere e rispettare tutte le leggi, norme, regolamenti e contratti con terze parti applicabili ai tuoi Servizi dell'Host.
+                    </p>
+                    
+                    <a class="btn btn-outline-light m-3 btn-lg" @click="ActiveLog = !ActiveLog" >Rifiuta</a>
+                    
+                    <a class="btn btn-outline-light m-3 btn-lg" href="http://localhost:8000/userreg/apartments/create">Acconsento</a>
+                </div>
            
             </div>
        
@@ -92,14 +82,20 @@
         }
 
         .accept {
-            position: absolute;
+            position: fixed;
             margin: 0 auto;
-            background-color: black;
-            top: 100%;
-            left: 0%;
-            height: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
             z-index: 20;
-            padding: 20px;
+            padding: 50px 20px;
+
+            .ms_overflow{
+                max-height: 100%;
+                overflow-y: auto;
+            }
 
             .btn-accept {
                 margin: 20px;
@@ -140,11 +136,6 @@
                 padding: 50px;
             }
 
-            .accept {
-                height: initial;
-
-            }
-            
         }
 
     }

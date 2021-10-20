@@ -2105,16 +2105,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -8338,7 +8328,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container[data-v-3d01b757] {\n  width: 90%;\n  color: white;\n  padding: 0;\n  border-radius: 20px;\n  background-image: url(\"img/ospitality.jpg\");\n  background-size: cover;\n  background-attachment: fixed;\n  margin-bottom: 100px;\n  background-repeat: no-repeat;\n}\n.container .active[data-v-3d01b757] {\n  display: block;\n}\n.container .not-active[data-v-3d01b757] {\n  display: none;\n}\n.container .accept[data-v-3d01b757] {\n  position: absolute;\n  margin: 0 auto;\n  background-color: black;\n  top: 100%;\n  left: 0%;\n  height: auto;\n  z-index: 20;\n  padding: 20px;\n}\n.container .accept .btn-accept[data-v-3d01b757] {\n  margin: 20px;\n  background-color: white;\n  padding: 10px 20px;\n}\n.container .information[data-v-3d01b757] {\n  background: linear-gradient(83deg, rgba(0, 0, 0, 0.678) 40%, rgba(0, 0, 0, 0) 100%);\n  height: 100%;\n  width: 50%;\n  padding: 100px;\n  border-radius: 20px 0px 0px 20px;\n}\n.container .information .title[data-v-3d01b757] {\n  font-size: 50px;\n}\n.container .information .description[data-v-3d01b757] {\n  font-size: 20px;\n}\n@media (max-width: 968px) {\n.container[data-v-3d01b757] {\n    width: 100%;\n}\n.container .information[data-v-3d01b757] {\n    width: 100%;\n    padding: 50px;\n}\n.container .accept[data-v-3d01b757] {\n    height: initial;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container[data-v-3d01b757] {\n  width: 90%;\n  color: white;\n  padding: 0;\n  border-radius: 20px;\n  background-image: url(\"img/ospitality.jpg\");\n  background-size: cover;\n  background-attachment: fixed;\n  margin-bottom: 100px;\n  background-repeat: no-repeat;\n}\n.container .active[data-v-3d01b757] {\n  display: block;\n}\n.container .not-active[data-v-3d01b757] {\n  display: none;\n}\n.container .accept[data-v-3d01b757] {\n  position: fixed;\n  margin: 0 auto;\n  background-color: rgba(0, 0, 0, 0.95);\n  top: 0;\n  left: 0;\n  height: 100vh;\n  width: 100%;\n  z-index: 20;\n  padding: 50px 20px;\n}\n.container .accept .ms_overflow[data-v-3d01b757] {\n  max-height: 100%;\n  overflow-y: auto;\n}\n.container .accept .btn-accept[data-v-3d01b757] {\n  margin: 20px;\n  background-color: white;\n  padding: 10px 20px;\n}\n.container .information[data-v-3d01b757] {\n  background: linear-gradient(83deg, rgba(0, 0, 0, 0.678) 40%, rgba(0, 0, 0, 0) 100%);\n  height: 100%;\n  width: 50%;\n  padding: 100px;\n  border-radius: 20px 0px 0px 20px;\n}\n.container .information .title[data-v-3d01b757] {\n  font-size: 50px;\n}\n.container .information .description[data-v-3d01b757] {\n  font-size: 20px;\n}\n@media (max-width: 968px) {\n.container[data-v-3d01b757] {\n    width: 100%;\n}\n.container .information[data-v-3d01b757] {\n    width: 100%;\n    padding: 50px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41588,7 +41578,6 @@ var render = function() {
         "a",
         {
           staticClass: "btn btn-outline-light btn-lg",
-          attrs: { href: "#accept" },
           on: {
             click: function($event) {
               _vm.ActiveLog = !_vm.ActiveLog
@@ -41606,36 +41595,39 @@ var render = function() {
           attrs: { id: "accept" }
         },
         [
-          _c("h2", [_vm._v("Accetta")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia illo, omnis quos magni totam quibusdam. Molestias, quisquam obcaecati aliquam odit labore beatae est sunt debitis, iste, sed veniam. Odit, adipisci?\n            Doloribus maiores voluptates totam ea, iure laborum similique odio esse nisi ipsum eum autem quos temporibus numquam, quasi officia tenetur cumque deleniti rem. Explicabo sit a est perferendis minus cumque.\n            Corporis architecto fuga molestiae quia facilis id atque nihil totam hic non! Repellendus dolores aperiam necessitatibus neque enim at corrupti quidem laboriosam ex! Iure ratione fugit, illum nesciunt esse qui.\n            Quidem reprehenderit, quos id saepe nihil alias voluptatem! Iure repudiandae nobis laborum, cum saepe commodi tempore delectus quasi earum? Doloremque officiis vel perferendis odio animi accusantium minima consequuntur quis quibusdam?\n            Architecto explicabo id quo magnam possimus maiores molestiae neque maxime incidunt, quasi amet, tempora obcaecati, saepe delectus. Enim veniam placeat dolor in natus, similique recusandae optio earum, ab, neque asperiores.\n            Recusandae assumenda molestias velit rerum qui repellat nulla labore dolor aliquid excepturi mollitia voluptatibus voluptates exercitationem, necessitatibus reiciendis facere esse in debitis unde quaerat. Debitis amet eius minima commodi voluptates?\n            Hic atque exercitationem adipisci modi delectus repudiandae. Quae in, illum sunt repudiandae officiis recusandae rem nisi excepturi explicabo quisquam! Fugiat distinctio explicabo eaque nemo ipsa ex optio nostrum reiciendis similique.\n            Blanditiis officiis ducimus fugiat ipsum eligendi voluptate mollitia, harum quidem ad esse consectetur tempora suscipit, expedita temporibus distinctio. Vitae consequuntur illo placeat ipsam tenetur libero commodi minus? Harum, reiciendis ratione?\n            At dignissimos, illum eaque ullam sint corporis. Recusandae ducimus facilis eum magnam asperiores culpa hic, veritatis facere distinctio eveniet, neque laudantium quis cum, quo rem quod illo. Id, animi enim.\n            Possimus quod molestias error odio excepturi corporis vero similique dolor ad numquam fugiat incidunt corrupti veritatis laudantium, praesentium fuga voluptates modi aperiam distinctio facilis! Sint a deleniti dolor esse veritatis.\n            Velit, voluptatibus alias nihil accusantium soluta, error numquam exercitationem recusandae voluptate animi repellendus debitis necessitatibus dolorem facere optio, aliquid enim repellat maiores amet libero at molestiae voluptas! Veritatis, cumque ducimus?\n            Minima facere id hic ullam? Illo expedita fuga molestiae perspiciatis provident voluptates debitis, possimus asperiores ab optio, voluptate pariatur dolore, quam eius eum! Fugit repellat adipisci nam corrupti. Reprehenderit, maxime?\n            Pariatur, hic! Rerum sunt cumque, ratione maiores obcaecati vel aliquid ullam enim nobis temporibus ea alias cum dolor sequi? Nam eligendi porro laborum suscipit repudiandae aperiam ad tempore provident dicta.\n            Quia harum, inventore, assumenda facilis consequatur magni ex voluptas dolore natus, facere voluptatum ipsam minus. Deleniti assumenda odio odit, doloribus quod repudiandae iste facilis accusantium asperiores magnam animi ratione error!\n            Provident iusto porro doloribus reiciendis ab earum cumque quidem quas, culpa dolores voluptates quaerat, pariatur quia ratione! Tenetur animi assumenda alias quas cupiditate quam laboriosam aut pariatur dolorem! Saepe, ea.\n            Quidem in veniam architecto eveniet consequatur itaque odit sapiente, dicta minima omnis doloribus reiciendis autem, ab, sunt libero exercitationem quam esse cumque. Alias molestias illo voluptates odio. Tempora, veritatis voluptates!\n            Rerum, consectetur quas repellat deleniti possimus sed enim dolore voluptates, voluptas quia cum accusantium voluptatibus commodi ipsa soluta reiciendis pariatur sequi atque harum. Animi magni incidunt mollitia? Laborum, odio aut.\n            Temporibus debitis illo deserunt a quam tempora, amet provident corporis minus dignissimos. Quod reprehenderit, saepe tempora voluptatem repellat nam omnis error ex voluptate numquam tenetur nobis, eveniet ducimus natus ut.\n            Quisquam voluptatem sunt explicabo accusamus aspernatur maxime quibusdam vitae totam accusantium! Odio, voluptas iusto officiis quibusdam quo, reprehenderit dolorum laborum facilis rem deserunt beatae debitis nesciunt unde modi accusamus iure.\n            Dignissimos ad eveniet laborum, facere odio cumque porro repudiandae sapiente illo eius dicta, quaerat amet fuga vero voluptates possimus accusamus praesentium quidem incidunt odit beatae nobis adipisci ipsam sint? Omnis."
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-outline-light m-3 btn-lg",
-              attrs: { href: "" },
-              on: {
-                click: function($event) {
-                  _vm.ActiveLog = !_vm.ActiveLog
+          _c("div", { staticClass: "container-md ms_overflow" }, [
+            _c("h2", [_vm._v("Termini di servizio per gli utenti europei")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                '\n                    I consumatori possono accedere alla piattaforma della Commissione europea di risoluzione online delle controversie da qui: https://ec.europa.eu/consumers/odr. Si prega di notare che BoolBnB non è impegnata o tenuta a utilizzare un organismo per la risoluzione delle controversie alternativo per risolvere le controversie coi consumatori. Ultimo aggiornamento: October 20, 2021. Grazie per aver scelto di utilizzare BoolBnB! \n                    I presenti Termini del servizio per Utenti europei ("Termini") costituiscono un contratto giuridicamente vincolante tra te e BoolBnB, che regola l\'utilizzo dei siti web, delle applicazioni e di altre offerte di BoolBnB (collettivamente, la "Piattaforma BoolBnB"). Quando utilizzati nei presenti Termini, "BoolBnB", "noi", "ci" o "nostro" si riferiscono all\'entità BoolBnB di cui all\'Allegato 1 con cui stai stipulando un contratto.\n                    La Piattaforma BoolBnB offre un luogo online che consente agli utenti ("Members") di pubblicare, offrire, cercare e prenotare servizi. I membri che pubblicano e offrono servizi sono gli "Host" mentre i membri che cercano, prenotano o utilizzano i servizi sono gli "Ospiti". Gli Host propongono alloggi ("Alloggi"), attività, escursioni ed eventi ("Esperienze"), nonché una varietà di viaggi e altri servizi (collettivamente, "Servizi dell\'Host" e ciascuna offerta di Servizi dell\'Host costituisce un "Annuncio"). Devi registrare un account per utilizzare molte funzioni della Piattaforma BoolBnB e mantenere accurate le informazioni del tuo account. In qualità di fornitore della Piattaforma BoolBnB, BoolBnB non possiede, controlla, offre né gestisce alcun Annuncio o Servizio dell\'Host. BoolBnB non è una parte contraente dei contratti stipulati direttamente tra Host e Ospiti, né un agente immobiliare, un assicuratore o un organizzatore o venditore di pacchetti turistici ai sensi della direttiva (UE) 2015/2302. BoolBnB non agisce in qualità di agente per nessun Membro, ad eccezione di quanto specificato nei Termini del servizio di pagamento ("Termini di pagamento"). Per saperne di più sul ruolo di BoolBnB, vai alla Sezione 16.\n                    Altri termini e politiche integrano i presenti Termini, come la nostra Informativa sulla privacy, che descrive il modo in cui raccogliamo e utilizziamo i dati personali, e i nostri Termini di pagamento, che regolano qualsiasi servizio di pagamento fornito ai Membri dalle entità di pagamento di BoolBnB ("BoolBnB Payments").\n\n                    Se sei un Host, è tua responsabilità comprendere e rispettare tutte le leggi, norme, regolamenti e contratti con terze parti applicabili ai tuoi Servizi dell\'Host.\n                '
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-outline-light m-3 btn-lg",
+                on: {
+                  click: function($event) {
+                    _vm.ActiveLog = !_vm.ActiveLog
+                  }
                 }
-              }
-            },
-            [_vm._v("Rifiuta")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-outline-light m-3 btn-lg",
-              attrs: { href: "http://localhost:8000/userreg/apartments/create" }
-            },
-            [_vm._v("Acconsento")]
-          )
+              },
+              [_vm._v("Rifiuta")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-outline-light m-3 btn-lg",
+                attrs: {
+                  href: "http://localhost:8000/userreg/apartments/create"
+                }
+              },
+              [_vm._v("Acconsento")]
+            )
+          ])
         ]
       )
     ])
