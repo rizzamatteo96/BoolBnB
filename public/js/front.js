@@ -42315,7 +42315,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "container--menu--list--link--home",
+          staticClass: "container--menu--list--link home-btn",
           attrs: { href: "http://localhost:8000" }
         },
         [_vm._v("Home")]
