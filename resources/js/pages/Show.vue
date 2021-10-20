@@ -14,7 +14,7 @@
           <li>Citta: {{apartment.city}}</li>
           <li>Via: {{apartment.address}} {{apartment.house_num}}</li>
           <li>Cap: {{apartment.postal_code}}</li>
-          <li>Prezzo: {{apartment.daily_price}} €</li>
+          <!-- <li>Prezzo: {{apartment.daily_price}} €</li> -->
         </ul>
 
         <h4>Descrizione</h4>
