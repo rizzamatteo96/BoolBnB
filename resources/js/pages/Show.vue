@@ -2,74 +2,93 @@
 
   <div class="container-show mb-2">
 
-    <div class="container--img--desc">
+    <div v-if="!loading">
 
-      <img :src="apartment.image" alt="">
+      <div class="container--img--desc">
 
-      <div class="descrizioni">
-          
-        <h2>{{apartment.title}}</h2>
+        <!-- <img :src="apartment.image" alt=""> -->
 
-        <ul>
-          <li>Citta: {{apartment.city}}</li>
-          <li>Via: {{apartment.address}} {{apartment.house_num}}</li>
-          <li>Cap: {{apartment.postal_code}}</li>
-          <!-- <li>Prezzo: {{apartment.daily_price}} €</li> -->
-        </ul>
+        <div class="img" v-bind:style="{ 'background-image': 'url(' + apartment.image + ')' }"></div>
 
-        <h4>Descrizione</h4>
-
-        <span>{{apartment.description}}</span>
-
-      </div>
-
-    </div>
-    
-    <div class="banner-servizi">
-
-      <div class="services">
-
-        <h2>Servizi</h2>
-
-        <ul class="el-servizi">
-
-          <li><i class="fas fa-bed"></i> Letti: {{apartment.n_beds}}</li>
-          <li><i class="fas fa-house-user"></i> Stanze: {{apartment.n_rooms}}</li>
-          <li><i class="fas fa-restroom"></i> Bagni: {{apartment.n_bathrooms}}</li>
-        
-        </ul>
-
-      </div>
-
-      <div class="cont-separation">
-
-        <hr class="separation">
-
-      </div>
-
-      <div class="addtional-services">
-
-        <h2>Servizi Aggiuntivi</h2>
-       
-        <div class="container-add-serv">
+        <div class="descrizioni">
             
-          <ul class="list-add-serv" v-for="service in apartment.services" :key="service.id">
-                
-            <li>{{service.name}}</li>
-                  
+          <h2>{{apartment.title}}</h2>
+
+          <ul>
+            <li>Citta: {{apartment.city}}</li>
+            <li>Via: {{apartment.address}} {{apartment.house_num}}</li>
+            <li>Cap: {{apartment.postal_code}}</li>
+            <!-- <li>Prezzo: {{apartment.daily_price}} €</li> -->
           </ul>
+
+          <h4>Descrizione</h4>
+
+          <span>{{apartment.description}}</span>
+
+        </div>
+
+      </div>
+      
+      <div class="banner-servizi">
+
+        <div class="services">
+
+          <h2>Servizi</h2>
+
+          <ul class="el-servizi">
+
+            <li><i class="fas fa-bed"></i> Letti: {{apartment.n_beds}}</li>
+            <li><i class="fas fa-house-user"></i> Stanze: {{apartment.n_rooms}}</li>
+            <li><i class="fas fa-restroom"></i> Bagni: {{apartment.n_bathrooms}}</li>
+          
+          </ul>
+
+        </div>
+
+        <div class="cont-separation">
+
+          <hr class="separation">
+
+        </div>
+
+        <div class="addtional-services">
+
+          <h2>Servizi Aggiuntivi</h2>
         
+          <div class="container-add-serv">
+              
+            <ul class="list-add-serv" v-for="service in apartment.services" :key="service.id">
+                  
+              <li>{{service.name}}</li>
+                    
+            </ul>
+          
+          </div>
+          
         </div>
         
       </div>
-      
+
+      <!-- <BannerMap/> -->
+
+      <ContactForm :apartment="apartmentId" />
+
     </div>
     
-    <!-- <BannerMap/> -->
 
-    <ContactForm :apartment="apartmentId" />
+
+    <div class="text-center mt-5 container-logo" v-else>
+            <!-- <div class="spinner-grow" role="status">
+                <span class="sr-only">Loading...</span>
+            </div> -->
+
+            <img class="loading-logo" src="/img/boolbeb-white.png" alt="BoolBnb">
+
+
+        </div>
 
   </div>
+  
 
 </template>
 
@@ -92,7 +111,8 @@
         apartment: [],
         apartmentId: '',
         userIp: '',
-        userEmail: ''
+        userEmail: '',
+        loading: true
       }
     },
     mounted(){
@@ -137,6 +157,7 @@
             })
             .then(response => {
               response.data.success;
+              this.loading = false;
               // console.log(response);
             })
             .catch(error => {
@@ -168,10 +189,12 @@
       animation: animate 2s;
       justify-content: space-between;
 
-      img {
+      .img {
         width: 50%;
         height: 500px;
         border-radius: 20px;
+        background-position: center;
+        background-size: cover;
       }
 
       .descrizioni {
@@ -258,6 +281,21 @@
       
   }
 
+  .container-logo{
+    height: 50vh;
+
+    .loading-logo{
+        height: 50px;
+        animation: logoLoading 1s infinite;
+    }
+  
+    @keyframes logoLoading {
+        0% {transform: scale(1);}
+        50% {transform: scale(2);}
+        100% {transform: scale(1);}
+    }
+  }
+
   @keyframes animate {
 
     from {
@@ -282,7 +320,7 @@
         animation: none;
         width: 90%;
 
-        img { 
+        .img { 
           width: 100%;
           height: 300px;
         }

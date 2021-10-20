@@ -3393,6 +3393,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3409,7 +3428,8 @@ __webpack_require__.r(__webpack_exports__);
       apartment: [],
       apartmentId: '',
       userIp: '',
-      userEmail: ''
+      userEmail: '',
+      loading: true
     };
   },
   mounted: function mounted() {
@@ -3430,6 +3450,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendData: function sendData() {
+      var _this2 = this;
+
       // first of all take the actual date
       var today = new Date();
       var dd = String(today.getDate()).padStart(2, '0');
@@ -3444,7 +3466,8 @@ __webpack_require__.r(__webpack_exports__);
         'clicked_at': today,
         'visitor': this.userIp
       }).then(function (response) {
-        response.data.success; // console.log(response);
+        response.data.success;
+        _this2.loading = false; // console.log(response);
       })["catch"](function (error) {
         console.log(error);
       });
@@ -8575,7 +8598,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-show[data-v-a23480f4] {\n  border-radius: 20px;\n  width: 100%;\n  padding: 100px 0px;\n  color: white;\n}\n.container-show .container--img--desc[data-v-a23480f4] {\n  height: 500px;\n  border-radius: 20px;\n  display: flex;\n  width: 90%;\n  background-color: #000000d0;\n  margin: 0 auto;\n  -webkit-animation: animate-data-v-a23480f4 2s;\n          animation: animate-data-v-a23480f4 2s;\n  justify-content: space-between;\n}\n.container-show .container--img--desc img[data-v-a23480f4] {\n  width: 50%;\n  height: 500px;\n  border-radius: 20px;\n}\n.container-show .container--img--desc .descrizioni[data-v-a23480f4] {\n  width: 50%;\n  padding: 20px;\n  text-align: center;\n  word-wrap: break-word;\n}\n.container-show .container--img--desc .descrizioni ul[data-v-a23480f4] {\n  margin: 20px 0px;\n  list-style: none;\n}\n.container-show .banner-servizi[data-v-a23480f4] {\n  background-color: #000000d0;\n  width: 90%;\n  margin: 0 auto;\n  border-radius: 20px;\n  padding: 30px;\n  margin: 30px auto;\n  display: flex;\n}\n.container-show .banner-servizi .services[data-v-a23480f4] {\n  text-align: center;\n  width: 35%;\n}\n.container-show .banner-servizi .services .el-servizi[data-v-a23480f4] {\n  display: flex;\n  margin: 20px;\n  list-style: none;\n}\n.container-show .banner-servizi .services .el-servizi li[data-v-a23480f4] {\n  margin: 0px 20px;\n}\n.container-show .banner-servizi .cont-separation[data-v-a23480f4] {\n  width: 20%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n}\n.container-show .banner-servizi .cont-separation .separation[data-v-a23480f4] {\n  height: 80%;\n  width: 3px;\n  border-radius: 20px;\n  background-color: #fff;\n}\n.container-show .banner-servizi .addtional-services[data-v-a23480f4] {\n  width: 35%;\n  text-align: center;\n}\n.container-show .banner-servizi .addtional-services .container-add-serv[data-v-a23480f4] {\n  display: flex;\n  justify-content: center;\n  flex-flow: wrap;\n}\n.container-show .banner-servizi .addtional-services .container-add-serv .list-add-serv[data-v-a23480f4] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n}\n.container-show .banner-servizi .addtional-services .container-add-serv .list-add-serv li[data-v-a23480f4] {\n  margin: 0px 10px;\n}\n@-webkit-keyframes animate-data-v-a23480f4 {\nfrom {\n    width: 50%;\n}\nto {\n    width: 90%;\n}\n}\n@keyframes animate-data-v-a23480f4 {\nfrom {\n    width: 50%;\n}\nto {\n    width: 90%;\n}\n}\n@media (max-width: 968px) {\n.container-show[data-v-a23480f4] {\n    padding-top: 150px;\n}\n.container-show .container--img--desc[data-v-a23480f4] {\n    height: auto;\n    display: block;\n    -webkit-animation: none;\n            animation: none;\n    width: 90%;\n}\n.container-show .container--img--desc img[data-v-a23480f4] {\n    width: 100%;\n    height: 300px;\n}\n.container-show .container--img--desc .descrizioni[data-v-a23480f4] {\n    bottom: 0;\n    width: 100%;\n    margin-left: 0;\n}\n.container-show .banner-servizi[data-v-a23480f4] {\n    display: block;\n}\n.container-show .banner-servizi .services[data-v-a23480f4] {\n    text-align: center;\n    width: 100%;\n}\n.container-show .banner-servizi .services h2[data-v-a23480f4] {\n    font-size: 20px;\n}\n.container-show .banner-servizi .services .el-servizi[data-v-a23480f4] {\n    width: 100%;\n    margin: 0 auto;\n}\n.container-show .banner-servizi .services .el-servizi li[data-v-a23480f4] {\n    margin: 9px;\n}\n.container-show .banner-servizi .cont-separation[data-v-a23480f4] {\n    width: 100%;\n}\n.container-show .banner-servizi .cont-separation .separation[data-v-a23480f4] {\n    width: 100%;\n    height: 3px;\n}\n.container-show .banner-servizi .addtional-services[data-v-a23480f4] {\n    width: 100%;\n    text-align: center;\n}\n.container-show .banner-servizi .addtional-services h2[data-v-a23480f4] {\n    font-size: 20px;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-show[data-v-a23480f4] {\n  border-radius: 20px;\n  width: 100%;\n  padding: 100px 0px;\n  color: white;\n}\n.container-show .container--img--desc[data-v-a23480f4] {\n  height: 500px;\n  border-radius: 20px;\n  display: flex;\n  width: 90%;\n  background-color: #000000d0;\n  margin: 0 auto;\n  -webkit-animation: animate-data-v-a23480f4 2s;\n          animation: animate-data-v-a23480f4 2s;\n  justify-content: space-between;\n}\n.container-show .container--img--desc .img[data-v-a23480f4] {\n  width: 50%;\n  height: 500px;\n  border-radius: 20px;\n  background-position: center;\n  background-size: cover;\n}\n.container-show .container--img--desc .descrizioni[data-v-a23480f4] {\n  width: 50%;\n  padding: 20px;\n  text-align: center;\n  word-wrap: break-word;\n}\n.container-show .container--img--desc .descrizioni ul[data-v-a23480f4] {\n  margin: 20px 0px;\n  list-style: none;\n}\n.container-show .banner-servizi[data-v-a23480f4] {\n  background-color: #000000d0;\n  width: 90%;\n  margin: 0 auto;\n  border-radius: 20px;\n  padding: 30px;\n  margin: 30px auto;\n  display: flex;\n}\n.container-show .banner-servizi .services[data-v-a23480f4] {\n  text-align: center;\n  width: 35%;\n}\n.container-show .banner-servizi .services .el-servizi[data-v-a23480f4] {\n  display: flex;\n  margin: 20px;\n  list-style: none;\n}\n.container-show .banner-servizi .services .el-servizi li[data-v-a23480f4] {\n  margin: 0px 20px;\n}\n.container-show .banner-servizi .cont-separation[data-v-a23480f4] {\n  width: 20%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n}\n.container-show .banner-servizi .cont-separation .separation[data-v-a23480f4] {\n  height: 80%;\n  width: 3px;\n  border-radius: 20px;\n  background-color: #fff;\n}\n.container-show .banner-servizi .addtional-services[data-v-a23480f4] {\n  width: 35%;\n  text-align: center;\n}\n.container-show .banner-servizi .addtional-services .container-add-serv[data-v-a23480f4] {\n  display: flex;\n  justify-content: center;\n  flex-flow: wrap;\n}\n.container-show .banner-servizi .addtional-services .container-add-serv .list-add-serv[data-v-a23480f4] {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n}\n.container-show .banner-servizi .addtional-services .container-add-serv .list-add-serv li[data-v-a23480f4] {\n  margin: 0px 10px;\n}\n.container-logo[data-v-a23480f4] {\n  height: 50vh;\n}\n.container-logo .loading-logo[data-v-a23480f4] {\n  height: 50px;\n  -webkit-animation: logoLoading-data-v-a23480f4 1s infinite;\n          animation: logoLoading-data-v-a23480f4 1s infinite;\n}\n@-webkit-keyframes logoLoading-data-v-a23480f4 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(2);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes logoLoading-data-v-a23480f4 {\n0% {\n    transform: scale(1);\n}\n50% {\n    transform: scale(2);\n}\n100% {\n    transform: scale(1);\n}\n}\n@-webkit-keyframes animate-data-v-a23480f4 {\nfrom {\n    width: 50%;\n}\nto {\n    width: 90%;\n}\n}\n@keyframes animate-data-v-a23480f4 {\nfrom {\n    width: 50%;\n}\nto {\n    width: 90%;\n}\n}\n@media (max-width: 968px) {\n.container-show[data-v-a23480f4] {\n    padding-top: 150px;\n}\n.container-show .container--img--desc[data-v-a23480f4] {\n    height: auto;\n    display: block;\n    -webkit-animation: none;\n            animation: none;\n    width: 90%;\n}\n.container-show .container--img--desc .img[data-v-a23480f4] {\n    width: 100%;\n    height: 300px;\n}\n.container-show .container--img--desc .descrizioni[data-v-a23480f4] {\n    bottom: 0;\n    width: 100%;\n    margin-left: 0;\n}\n.container-show .banner-servizi[data-v-a23480f4] {\n    display: block;\n}\n.container-show .banner-servizi .services[data-v-a23480f4] {\n    text-align: center;\n    width: 100%;\n}\n.container-show .banner-servizi .services h2[data-v-a23480f4] {\n    font-size: 20px;\n}\n.container-show .banner-servizi .services .el-servizi[data-v-a23480f4] {\n    width: 100%;\n    margin: 0 auto;\n}\n.container-show .banner-servizi .services .el-servizi li[data-v-a23480f4] {\n    margin: 9px;\n}\n.container-show .banner-servizi .cont-separation[data-v-a23480f4] {\n    width: 100%;\n}\n.container-show .banner-servizi .cont-separation .separation[data-v-a23480f4] {\n    width: 100%;\n    height: 3px;\n}\n.container-show .banner-servizi .addtional-services[data-v-a23480f4] {\n    width: 100%;\n    text-align: center;\n}\n.container-show .banner-servizi .addtional-services h2[data-v-a23480f4] {\n    font-size: 20px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -43049,83 +43072,98 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-show mb-2" },
-    [
-      _c("div", { staticClass: "container--img--desc" }, [
-        _c("img", { attrs: { src: _vm.apartment.image, alt: "" } }),
-        _vm._v(" "),
-        _c("div", { staticClass: "descrizioni" }, [
-          _c("h2", [_vm._v(_vm._s(_vm.apartment.title))]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_vm._v("Citta: " + _vm._s(_vm.apartment.city))]),
-            _vm._v(" "),
-            _c("li", [
-              _vm._v(
-                "Via: " +
-                  _vm._s(_vm.apartment.address) +
-                  " " +
-                  _vm._s(_vm.apartment.house_num)
-              )
+  return _c("div", { staticClass: "container-show mb-2" }, [
+    !_vm.loading
+      ? _c(
+          "div",
+          [
+            _c("div", { staticClass: "container--img--desc" }, [
+              _c("div", {
+                staticClass: "img",
+                style: {
+                  "background-image": "url(" + _vm.apartment.image + ")"
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "descrizioni" }, [
+                _c("h2", [_vm._v(_vm._s(_vm.apartment.title))]),
+                _vm._v(" "),
+                _c("ul", [
+                  _c("li", [_vm._v("Citta: " + _vm._s(_vm.apartment.city))]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v(
+                      "Via: " +
+                        _vm._s(_vm.apartment.address) +
+                        " " +
+                        _vm._s(_vm.apartment.house_num)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v("Cap: " + _vm._s(_vm.apartment.postal_code))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("h4", [_vm._v("Descrizione")]),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(_vm.apartment.description))])
+              ])
             ]),
             _vm._v(" "),
-            _c("li", [_vm._v("Cap: " + _vm._s(_vm.apartment.postal_code))])
-          ]),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Descrizione")]),
-          _vm._v(" "),
-          _c("span", [_vm._v(_vm._s(_vm.apartment.description))])
+            _c("div", { staticClass: "banner-servizi" }, [
+              _c("div", { staticClass: "services" }, [
+                _c("h2", [_vm._v("Servizi")]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "el-servizi" }, [
+                  _c("li", [
+                    _c("i", { staticClass: "fas fa-bed" }),
+                    _vm._v(" Letti: " + _vm._s(_vm.apartment.n_beds))
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("i", { staticClass: "fas fa-house-user" }),
+                    _vm._v(" Stanze: " + _vm._s(_vm.apartment.n_rooms))
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("i", { staticClass: "fas fa-restroom" }),
+                    _vm._v(" Bagni: " + _vm._s(_vm.apartment.n_bathrooms))
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "addtional-services" }, [
+                _c("h2", [_vm._v("Servizi Aggiuntivi")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "container-add-serv" },
+                  _vm._l(_vm.apartment.services, function(service) {
+                    return _c(
+                      "ul",
+                      { key: service.id, staticClass: "list-add-serv" },
+                      [_c("li", [_vm._v(_vm._s(service.name))])]
+                    )
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("ContactForm", { attrs: { apartment: _vm.apartmentId } })
+          ],
+          1
+        )
+      : _c("div", { staticClass: "text-center mt-5 container-logo" }, [
+          _c("img", {
+            staticClass: "loading-logo",
+            attrs: { src: "/img/boolbeb-white.png", alt: "BoolBnb" }
+          })
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "banner-servizi" }, [
-        _c("div", { staticClass: "services" }, [
-          _c("h2", [_vm._v("Servizi")]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "el-servizi" }, [
-            _c("li", [
-              _c("i", { staticClass: "fas fa-bed" }),
-              _vm._v(" Letti: " + _vm._s(_vm.apartment.n_beds))
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("i", { staticClass: "fas fa-house-user" }),
-              _vm._v(" Stanze: " + _vm._s(_vm.apartment.n_rooms))
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("i", { staticClass: "fas fa-restroom" }),
-              _vm._v(" Bagni: " + _vm._s(_vm.apartment.n_bathrooms))
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "addtional-services" }, [
-          _c("h2", [_vm._v("Servizi Aggiuntivi")]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "container-add-serv" },
-            _vm._l(_vm.apartment.services, function(service) {
-              return _c(
-                "ul",
-                { key: service.id, staticClass: "list-add-serv" },
-                [_c("li", [_vm._v(_vm._s(service.name))])]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("ContactForm", { attrs: { apartment: _vm.apartmentId } })
-    ],
-    1
-  )
+  ])
 }
 var staticRenderFns = [
   function() {
