@@ -60,7 +60,7 @@
 
     <div class="row justify-content-between mt-5">
     
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 pl-md-0">
         {{-- go to index --}}
             <button class="btn btn-outline-dark mb-1 w-100" onclick="history.go(-1);"><i class="fas fa-arrow-left"></i> Indietro</button>
         </div>
@@ -70,7 +70,7 @@
             <a href="{{route('userreg.apartments.edit', $apartment->id)}}" class="btn btn-outline-primary mb-1 w-100">Modifica</a>
         </div>
 
-        <div class="col-12 col-md-4 d-lg-none">
+        <div class="col-12 col-md-4 d-lg-none pr-md-0">
             {{-- delete --}}
             <form action="{{route('userreg.apartments.destroy', $apartment->id)}}" method="POST" class="d-inline-block text-center mb-1 w-100">
                 {{-- Per ogni form bisogna inserire il token altrimenti il cambiamento non viene accettato dal sistema --}}
