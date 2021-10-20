@@ -56,7 +56,10 @@
             </div>
 
             <div class="container--menu--list">
-                <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" ><i class="fas fa-user-circle"></i> {{user.name}} </a>
+                <a class="container--menu--list--link" href="http://localhost:8000/login" @click="ActiveLog = !ActiveLog" >
+                    <i class="fas fa-user-circle"></i> 
+                    {{user.name == null ? user.email : user.name}} 
+                </a>
             </div>
         </div>
 
@@ -158,7 +161,7 @@
 
                 &:hover {
                     transition: 0.6s ease-out;
-                    transform: scale(2);
+                    transform: scale(1.2);
                 }
 
                 .container--menu--list--link {

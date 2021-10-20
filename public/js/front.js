@@ -2538,6 +2538,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Header',
   data: function data() {
@@ -8424,7 +8427,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-nav[data-v-1f42fb90] {\n  z-index: 10;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background: #000000d0;\n  position: fixed;\n  top: 0;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;\n  height: 60px;\n}\n.container-nav .container--logo[data-v-1f42fb90] {\n  width: 60px;\n  margin-left: 50px;\n}\n.container-nav .container--logo .container--logo--image[data-v-1f42fb90] {\n  width: 50px;\n}\n.container-nav .container--logo-mobile[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .container--menu[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  text-decoration: none;\n}\n.container-nav .container--menu .container--menu--list[data-v-1f42fb90] {\n  margin: 0px 60px;\n  transition: 0.6s ease-out;\n}\n.container-nav .container--menu .container--menu--list[data-v-1f42fb90]:hover {\n  transition: 0.6s ease-out;\n  transform: scale(2);\n}\n.container-nav .container--menu .container--menu--list .container--menu--list--link[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #FF385C;\n  text-transform: uppercase;\n}\n.container-nav .container--menu .container--menu--list .container--menu--list--link.home-btn[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .container--burgher-menu[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .active[data-v-1f42fb90] {\n  display: block;\n}\n.container-nav .not-active[data-v-1f42fb90] {\n  display: none;\n}\n@media (max-width: 968px) {\n.container-nav[data-v-1f42fb90] {\n    display: flex;\n    min-height: 121px;\n}\n.container-nav .container--logo[data-v-1f42fb90] {\n    display: none;\n}\n.container-nav .container--logo-mobile[data-v-1f42fb90] {\n    font-size: 0;\n    display: block;\n    margin: 5px auto 0px;\n    width: 70px;\n    text-align: center;\n}\n.container-nav .container--logo-mobile .container--logo--image--mobile[data-v-1f42fb90] {\n    width: 100%;\n}\n.container-nav .container--logo-mobile span[data-v-1f42fb90] {\n    color: #FF385C;\n    font-size: 30px;\n    line-height: 0;\n}\n.container-nav .container--menu[data-v-1f42fb90] {\n    padding: 20px 0;\n    position: absolute;\n    line-height: 5;\n    height: 100vh;\n    top: 121px;\n    background: #000000d0;\n    flex-direction: column;\n    text-align: center;\n    width: 100%;\n    display: none;\n}\n.container-nav .container--menu .container--menu--list--link.home-btn[data-v-1f42fb90] {\n    display: block !important;\n}\n.container-nav .active[data-v-1f42fb90] {\n    display: flex;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-nav[data-v-1f42fb90] {\n  z-index: 10;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background: #000000d0;\n  position: fixed;\n  top: 0;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;\n  height: 60px;\n}\n.container-nav .container--logo[data-v-1f42fb90] {\n  width: 60px;\n  margin-left: 50px;\n}\n.container-nav .container--logo .container--logo--image[data-v-1f42fb90] {\n  width: 50px;\n}\n.container-nav .container--logo-mobile[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .container--menu[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  text-decoration: none;\n}\n.container-nav .container--menu .container--menu--list[data-v-1f42fb90] {\n  margin: 0px 60px;\n  transition: 0.6s ease-out;\n}\n.container-nav .container--menu .container--menu--list[data-v-1f42fb90]:hover {\n  transition: 0.6s ease-out;\n  transform: scale(1.2);\n}\n.container-nav .container--menu .container--menu--list .container--menu--list--link[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #FF385C;\n  text-transform: uppercase;\n}\n.container-nav .container--menu .container--menu--list .container--menu--list--link.home-btn[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .container--burgher-menu[data-v-1f42fb90] {\n  display: none;\n}\n.container-nav .active[data-v-1f42fb90] {\n  display: block;\n}\n.container-nav .not-active[data-v-1f42fb90] {\n  display: none;\n}\n@media (max-width: 968px) {\n.container-nav[data-v-1f42fb90] {\n    display: flex;\n    min-height: 121px;\n}\n.container-nav .container--logo[data-v-1f42fb90] {\n    display: none;\n}\n.container-nav .container--logo-mobile[data-v-1f42fb90] {\n    font-size: 0;\n    display: block;\n    margin: 5px auto 0px;\n    width: 70px;\n    text-align: center;\n}\n.container-nav .container--logo-mobile .container--logo--image--mobile[data-v-1f42fb90] {\n    width: 100%;\n}\n.container-nav .container--logo-mobile span[data-v-1f42fb90] {\n    color: #FF385C;\n    font-size: 30px;\n    line-height: 0;\n}\n.container-nav .container--menu[data-v-1f42fb90] {\n    padding: 20px 0;\n    position: absolute;\n    line-height: 5;\n    height: 100vh;\n    top: 121px;\n    background: #000000d0;\n    flex-direction: column;\n    text-align: center;\n    width: 100%;\n    display: none;\n}\n.container-nav .container--menu .container--menu--list--link.home-btn[data-v-1f42fb90] {\n    display: block !important;\n}\n.container-nav .active[data-v-1f42fb90] {\n    display: flex;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42270,7 +42273,13 @@ var render = function() {
                 },
                 [
                   _c("i", { staticClass: "fas fa-user-circle" }),
-                  _vm._v(" " + _vm._s(_vm.user.name) + " ")
+                  _vm._v(
+                    " \n                " +
+                      _vm._s(
+                        _vm.user.name == null ? _vm.user.email : _vm.user.name
+                      ) +
+                      " \n            "
+                  )
                 ]
               )
             ])
@@ -43062,11 +43071,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("li", [_vm._v("Cap: " + _vm._s(_vm.apartment.postal_code))]),
-            _vm._v(" "),
-            _c("li", [
-              _vm._v("Prezzo: " + _vm._s(_vm.apartment.daily_price) + " €")
-            ])
+            _c("li", [_vm._v("Cap: " + _vm._s(_vm.apartment.postal_code))])
           ]),
           _vm._v(" "),
           _c("h4", [_vm._v("Descrizione")]),
