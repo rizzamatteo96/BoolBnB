@@ -67,7 +67,7 @@
 
         <div class="col-12 col-md-4 d-lg-none">
         {{-- Edit --}}
-            <a href="{{route('userreg.apartments.edit', $apartment->id)}}" class="btn btn-outline-warning mb-1 w-100">Modifica</a>
+            <a href="{{route('userreg.apartments.edit', $apartment->id)}}" class="btn btn-outline-primary mb-1 w-100">Modifica</a>
         </div>
 
         <div class="col-12 col-md-4 d-lg-none">

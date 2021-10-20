@@ -18,7 +18,7 @@
 					<th scope="col" class="d-none d-md-table-cell">Visibilità</th>
 					<th scope="col">Azioni</th>
 					{{-- <th scope="col">Messaggi</th> --}}
-					<th scope="col" class="d-none d-lg-table-cell">Promozioni</th>
+					{{-- <th scope="col" class="d-none d-lg-table-cell">Promozioni</th> --}}
 				</tr>
 			</thead>
 			<tbody>
@@ -86,11 +86,11 @@
 						{{-- end Messages btn --}}
 
 						{{-- Sponsorships btn --}}
-						<td class="d-none d-lg-table-cell">
+						{{-- <td class="d-none d-lg-table-cell">
 
 							<a href="{{route('userreg.apartment-sponsorship.index', ['id' => $item->id])}}" class="btn btn-success">Sponsorizza</a>
 
-						</td>
+						</td> --}}
 						{{-- end Sponsorships btn --}}
 					</tr>
 				@endforeach
