@@ -114,8 +114,12 @@
             </div>
 
 
-            <div class="col-4" v-if="(apartments.length % 2) == 0"></div>
-            <div class="col-4" v-if="(apartments.length % 2) == 0"></div>
+            <!-- <div class="col-4" v-if="((apartments.length / 3) % 2) == 0 && ((apartments.length / 3) % 2) > 0"></div>
+            <div class="col-4" v-if="((apartments.length / 3) % 2) == 0 && ((apartments.length / 3) % 2) > 0"></div> -->
+            <!-- <div class="col-4" v-if="(apartments.length % 2) == 0 || apartments.length > 4"></div>
+            <div class="col-4" v-if="(apartments.length % 2) == 0 || apartments.length > 4"></div> -->
+            <div class="col-4"></div>
+            <div class="col-4"></div>
 
 
         </div>

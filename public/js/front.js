@@ -2792,6 +2792,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearcPage',
@@ -42763,13 +42767,9 @@ var render = function() {
               )
             }),
             _vm._v(" "),
-            _vm.apartments.length % 2 == 0
-              ? _c("div", { staticClass: "col-4" })
-              : _vm._e(),
+            _c("div", { staticClass: "col-4" }),
             _vm._v(" "),
-            _vm.apartments.length % 2 == 0
-              ? _c("div", { staticClass: "col-4" })
-              : _vm._e()
+            _c("div", { staticClass: "col-4" })
           ],
           2
         )
