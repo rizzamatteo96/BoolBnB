@@ -41746,7 +41746,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row row-contact" }, [
-      _c("div", { staticClass: "col-md-9 mb-md-0 mb-5" }, [
+      _c("div", { staticClass: "col-12 mb-md-0 mb-5" }, [
         _c(
           "form",
           {
@@ -41864,9 +41864,7 @@ var render = function() {
             _vm._m(3)
           ]
         )
-      ]),
-      _vm._v(" "),
-      _vm._m(4)
+      ])
     ])
   ])
 }
@@ -41932,32 +41930,6 @@ var staticRenderFns = [
         { staticClass: "text-danger text-md-left col-md-9 col-form-label" },
         [_vm._v("I campi contrassegnati con * sono obbligatori")]
       )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3 text-center contact-icon" }, [
-      _c("ul", { staticClass: "list-unstyled mb-0" }, [
-        _c("li", [
-          _c("i", { staticClass: "fas fa-map-marker-alt fa-2x" }),
-          _vm._v(" "),
-          _c("p", [_vm._v("Roma, Ita")])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("i", { staticClass: "fas fa-phone mt-4 fa-2x" }),
-          _vm._v(" "),
-          _c("p", [_vm._v("+39 123 456 7890")])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("i", { staticClass: "fas fa-envelope mt-4 fa-2x" }),
-          _vm._v(" "),
-          _c("p", [_vm._v("info@boolbnb.it")])
-        ])
-      ])
     ])
   }
 ]

@@ -10,7 +10,7 @@
         <div class="row row-contact">
 
             <!--Grid column-->
-            <div class="col-md-9 mb-md-0 mb-5">
+            <div class="col-12 mb-md-0 mb-5">
                 <form  @submit.prevent="sendData" id="contact-form" name="contact-form" action="mail.php" method="POST">
 
                     <!--Grid row-->
@@ -80,7 +80,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-md-3 text-center contact-icon">
+            <!-- <div class="col-md-3 text-center contact-icon">
                 <ul class="list-unstyled mb-0">
                     <li>
                         <i class="fas fa-map-marker-alt fa-2x"></i>
@@ -97,7 +97,7 @@
                         <p>info@boolbnb.it</p>
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <!--Grid column-->
 
         </div>
